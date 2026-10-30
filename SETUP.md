@@ -94,3 +94,26 @@ Tested here with a headless Chrome and fake cameras: phone → control room vide
 | Phone cannot open camera | The link must start with `https://` |
 | Phone on mobile data won't connect | Add a TURN server in `app/config.js` (`iceServers`) |
 | Facebook preview never appears | Stream key expired (they are short-lived unless persistent) – copy a fresh one |
+
+---
+
+## Install it as an app (phones and laptop)
+The first time you open the site, a pop-up offers **Install the LCRM app**. Tap **Install**.
+- **Android / Chrome, laptop / Edge:** tap Install in the pop-up (or the install icon in the address bar).
+- **iPhone:** open the site in **Safari**, tap **Share**, then **Add to Home Screen**.
+The app opens full screen with its own icon and still opens if the internet is down briefly (streaming and phone cameras still need internet).
+
+## Can a phone do this instead of a laptop?
+- **Phone as a camera:** yes - this already works on any phone, no Node.js or FFmpeg needed.
+- **Phone as the control screen** (switching, slides, hymns, TV): the control room opens on a phone or tablet, but sending to Facebook needs FFmpeg, which cannot run inside a phone browser. So Facebook streaming from the control room needs one of:
+  1. a laptop running `relay/start.bat` (current setup);
+  2. the relay on a small always-on cloud computer (needs a paid server, about 1 CPU core) - not set up yet;
+  3. for a phone-only service: stream with **Prism Live Studio** on the phone, and use the overlay/control app in the older `church-live-stream` project for lyrics and name bars.
+
+## If the phone never appears in the control room
+- The top bar of the control room should say **Online - room xxxxxx**. If it says **Database blocked**, the Firebase rules in Step 3 are missing.
+- The phone page now prints "The database refused the link" when that happens.
+- The room code on the phone must match the one in **Connect phones**, and the control room must be open.
+
+## Facebook stream key safety
+Treat the stream key like a password. Anyone who has it can broadcast on your page. If it was shared in a chat or screenshot, open Live Producer and click **Reset** next to the key, then paste the new key.

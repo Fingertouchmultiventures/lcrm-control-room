@@ -19,13 +19,16 @@
   function firebaseBackend() {
     if (!firebase.apps.length) firebase.initializeApp({ databaseURL: cfg.databaseURL });
     const db = firebase.database();
+    // any refusal (usually the database rules) is reported to the page so it can tell the user
+    const report = e => { const m = (e && e.message) || String(e); if (window.Signal && typeof Signal.onError === 'function') Signal.onError(m); };
+    const guard = pr => pr.catch(e => { report(e); throw e; });
     return {
       name: 'firebase',
-      set: (p, v) => db.ref(p).set(v),
-      remove: p => db.ref(p).remove(),
-      push: (p, v) => db.ref(p).push(v),
-      onValue(p, cb) { const r = db.ref(p); const h = r.on('value', s => cb(s.val())); return () => r.off('value', h); },
-      onChildAdded(p, cb) { const r = db.ref(p); const h = r.on('child_added', s => cb(s.key, s.val())); return () => r.off('child_added', h); },
+      set: (p, v) => guard(db.ref(p).set(v)),
+      remove: p => guard(db.ref(p).remove()),
+      push: (p, v) => guard(db.ref(p).push(v)),
+      onValue(p, cb) { const r = db.ref(p); const h = r.on('value', s => cb(s.val()), report); return () => r.off('value', h); },
+      onChildAdded(p, cb) { const r = db.ref(p); const h = r.on('child_added', s => cb(s.key, s.val()), report); return () => r.off('child_added', h); },
       onDisconnectRemove: p => db.ref(p).onDisconnect().remove()
     };
   }
@@ -68,6 +71,7 @@
 
   window.Signal = {
     isLocal: useLocal,
+    onError: null,
     async connect() {
       if (useLocal) return localBackend();
       if (typeof firebase === 'undefined') {

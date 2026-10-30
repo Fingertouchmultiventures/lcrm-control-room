@@ -57,9 +57,10 @@
     checkOrientation();
     setStatus('Connecting…', 'warn');
     try { wake = await navigator.wakeLock?.request('screen'); } catch (e) {}
+    Signal.onError = m => setStatus('The database refused the link (' + m.replace(/^.*?:\s*/, '') + '). Ask the admin to set the Firebase rules - see SETUP.', 'bad');
     try { db = await Signal.connect(); } catch (e) { setStatus('No internet: ' + e.message, 'bad'); return; }
     db.onValue(`rooms/${room}/tally/${camId}`, v => { $('stage').className = 'stage ' + (v === 'program' ? 'program' : v === 'preview' ? 'preview' : ''); $('tally').textContent = v === 'program' ? 'ON AIR' : 'NEXT'; });
-    publish();
+    publish().catch(() => { retryTimer = setTimeout(publish, 8000); });
   }
 
   async function publish() {
@@ -79,8 +80,8 @@
       const s = conn.connectionState;
       if (s === 'connected') { setStatus('Connected to control room', 'ok'); clearTimeout(retryTimer); tuneBitrate(); }
       else if (s === 'connecting') setStatus('Connecting…', 'warn');
-      else if (s === 'disconnected') { setStatus('Connection lost… retrying', 'warn'); clearTimeout(retryTimer); retryTimer = setTimeout(publish, 4000); }
-      else if (s === 'failed') { setStatus('Reconnecting…', 'bad'); clearTimeout(retryTimer); retryTimer = setTimeout(publish, 1000); }
+      else if (s === 'disconnected') { setStatus('Connection lost… retrying', 'warn'); clearTimeout(retryTimer); retryTimer = setTimeout(() => publish().catch(() => {}), 4000); }
+      else if (s === 'failed') { setStatus('Reconnecting…', 'bad'); clearTimeout(retryTimer); retryTimer = setTimeout(() => publish().catch(() => {}), 1000); }
     };
     const offer = await conn.createOffer();
     await conn.setLocalDescription(offer);
@@ -95,7 +96,7 @@
     await db.set(`rooms/${room}/cams/${camId}`, { name: camName, sid, facing, offer: { type: offer.type, sdp: offer.sdp }, t: Date.now() });
     db.onDisconnectRemove(`rooms/${room}/cams/${camId}`);
     setStatus('Waiting for control room…', 'warn');
-    watchdog = setTimeout(() => { if (pc === conn && conn.connectionState !== 'connected') publish(); }, 15000);
+    watchdog = setTimeout(() => { if (pc === conn && conn.connectionState !== 'connected') publish().catch(() => {}); }, 15000);
   }
 
   function tuneBitrate() {
@@ -130,7 +131,7 @@
   }
 
   $('start').onclick = start; $('flip').onclick = flip; $('stop').onclick = stop;
-  addEventListener('online', () => { if (db && !stopped) publish(); });
+  addEventListener('online', () => { if (db && !stopped) publish().catch(() => {}); });
   document.addEventListener('visibilitychange', async () => { if (document.visibilityState === 'visible' && !stopped && stream) { try { wake = await navigator.wakeLock?.request('screen'); } catch (e) {} } });
   if (qs.get('auto') === '1') start();   // used when the phone opens a saved link
 })();

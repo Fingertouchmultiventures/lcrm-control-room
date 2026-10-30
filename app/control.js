@@ -309,9 +309,12 @@ const listOfCams = () => ordered().map(s => Object.assign(s, { show: () => putBa
 
 /* phones over WebRTC */
 async function startSignaling() {
+  let blocked = false;
+  Signal.onError = m => { blocked = true; setNet('Database blocked - set Firebase rules', 'bad'); toast('Phones cannot connect: the Firebase database refused access (' + m.replace(/^.*?:\s*/, '') + '). See SETUP, step 3.', 12000); };
   try { db = await Signal.connect(); }
   catch (e) { setNet('No internet - phones cannot connect', 'bad'); return; }
-  setNet(db.name === 'local' ? 'Test mode' : 'Online - room ' + room, 'ok');
+  try { await db.set(`rooms/${room}/_ping`, Date.now()); } catch (e) { return; }   // proves the database accepts us
+  if (!blocked) setNet(db.name === 'local' ? 'Test mode' : 'Online - room ' + room, 'ok');
   db.onChildAdded(`rooms/${room}/cams`, camId => {
     if (watching.has(camId)) return; watching.add(camId);
     db.onValue(`rooms/${room}/cams/${camId}`, v => onCam(camId, v));
