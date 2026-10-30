@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LCRM TV Screen</title>
+<style>
+  html, body { margin:0; height:100%; background:#000; overflow:hidden; }
+  video { position:fixed; inset:0; width:100%; height:100%; object-fit:contain; background:#000; }
+  #hint { position:fixed; left:50%; bottom:6%; transform:translateX(-50%); background:rgba(20,24,32,.88); color:#fff; font:600 18px system-ui,sans-serif; padding:14px 22px; border-radius:12px; transition:opacity .6s; text-align:center; }
+  body.full #hint { opacity:0; pointer-events:none; } body.full { cursor:none; }
+</style>
+</head>
+<body>
+<video id="v" autoplay muted playsinline></video>
+<div id="hint">Waiting for the control room…</div>
+<script>
+  const v = document.getElementById('v'), hint = document.getElementById('hint');
+  window.__ready = true; window.__stream = null;
+  window.setStream = s => { window.__stream = s; v.srcObject = s; v.play().catch(()=>{}); hint.textContent = 'Drag this window onto the TV, then click once to go full screen.'; };
+  function goFull() { if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(()=>{}); }
+  document.addEventListener('click', goFull);
+  document.addEventListener('dblclick', () => { if (document.fullscreenElement) document.exitFullscreen(); });
+  document.addEventListener('fullscreenchange', () => document.body.classList.toggle('full', !!document.fullscreenElement));
+</script>
+</body>
+</html>
