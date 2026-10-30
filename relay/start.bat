@@ -3,7 +3,7 @@ title LCRM Facebook Relay
 cd /d "%~dp0"
 
 rem If your control room is hosted online, put its address here (no slash at the end).
-set ALLOW_ORIGINS=https://little-cherry-e56a.princeademoladebayo.workers.dev
+set ALLOW_ORIGINS=https://lcrm-control-room.loveofchrist.workers.dev,https://lcrm-control-room.vercel.app
 
 where node >nul 2>nul
 if errorlevel 1 (

@@ -313,7 +313,8 @@ async function startSignaling() {
   Signal.onError = m => { blocked = true; setNet('Database blocked - set Firebase rules', 'bad'); toast('Phones cannot connect: the Firebase database refused access (' + m.replace(/^.*?:\s*/, '') + '). See SETUP, step 3.', 12000); };
   try { db = await Signal.connect(); }
   catch (e) { setNet('No internet - phones cannot connect', 'bad'); return; }
-  try { await db.set(`rooms/${room}/_ping`, Date.now()); } catch (e) { return; }   // proves the database accepts us
+  try { await Promise.race([db.set(`rooms/${room}/_ping`, Date.now()), new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 10000))]); }   // proves the database accepts us
+  catch (e) { if (!blocked) { setNet('Cannot reach the database', 'bad'); toast('Cannot reach the Firebase database (' + e.message + '). Check the databaseURL in config.js and the Firebase rules.', 12000); } return; }
   if (!blocked) setNet(db.name === 'local' ? 'Test mode' : 'Online - room ' + room, 'ok');
   db.onChildAdded(`rooms/${room}/cams`, camId => {
     if (watching.has(camId)) return; watching.add(camId);
@@ -365,6 +366,7 @@ $('#addWebcam').onclick = async () => {
     s.stream = st; s.video.srcObject = st; s.state = 'live'; updateTile(s); st.getVideoTracks()[0].onended = () => { s.state = 'offline'; updateTile(s); };
   } catch (e) { toast('Could not open the camera: ' + e.message); }
 };
+if (!(navigator.mediaDevices && navigator.mediaDevices.getDisplayMedia)) { $('#addScreen').hidden = true; }   // phones cannot share a screen
 $('#addScreen').onclick = async () => {
   try {
     const st = await navigator.mediaDevices.getDisplayMedia({ video: { frameRate: 30 }, audio: false });

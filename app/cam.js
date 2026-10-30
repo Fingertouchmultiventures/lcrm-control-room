@@ -7,7 +7,12 @@
     get(k, d) { try { return localStorage.getItem(k) ?? d; } catch (e) { return d; } },
     set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
   };
-  const cleanRoom = s => String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const cleanRoom = s => {
+    s = String(s || '').trim();
+    const m = s.match(/[?&]room=([A-Za-z0-9]+)/);   // someone pasted the whole link: take the code from it
+    return (m ? m[1] : s).toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 12);
+  };
+  const withTimeout = (pr, ms, msg) => Promise.race([pr, new Promise((_, rej) => setTimeout(() => rej(new Error(msg)), ms))]);
 
   let db, stream, pc, room, camId, camName, facing, curSid, unsubs = [], pending = [], watchdog, retryTimer, wake, stopped = false;
 
@@ -60,7 +65,7 @@
     Signal.onError = m => setStatus('The database refused the link (' + m.replace(/^.*?:\s*/, '') + '). Ask the admin to set the Firebase rules - see SETUP.', 'bad');
     try { db = await Signal.connect(); } catch (e) { setStatus('No internet: ' + e.message, 'bad'); return; }
     db.onValue(`rooms/${room}/tally/${camId}`, v => { $('stage').className = 'stage ' + (v === 'program' ? 'program' : v === 'preview' ? 'preview' : ''); $('tally').textContent = v === 'program' ? 'ON AIR' : 'NEXT'; });
-    publish().catch(() => { retryTimer = setTimeout(publish, 8000); });
+    publish().catch(() => { retryTimer = setTimeout(() => publish().catch(() => {}), 8000); });
   }
 
   async function publish() {
@@ -93,7 +98,8 @@
       if (pc !== conn) return;
       if (conn.remoteDescription) conn.addIceCandidate(c).catch(() => {}); else pending.push(c);
     }));
-    await db.set(`rooms/${room}/cams/${camId}`, { name: camName, sid, facing, offer: { type: offer.type, sdp: offer.sdp }, t: Date.now() });
+    try { await withTimeout(db.set(`rooms/${room}/cams/${camId}`, { name: camName, sid, facing, offer: { type: offer.type, sdp: offer.sdp }, t: Date.now() }), 12000, 'no reply from the database'); }
+    catch (e) { setStatus('Cannot reach the database (' + e.message + '). Check the internet and the Firebase rules - retrying…', 'bad'); throw e; }
     db.onDisconnectRemove(`rooms/${room}/cams/${camId}`);
     setStatus('Waiting for control room…', 'warn');
     watchdog = setTimeout(() => { if (pc === conn && conn.connectionState !== 'connected') publish().catch(() => {}); }, 15000);
@@ -130,6 +136,7 @@
     $('live').classList.add('hide'); $('setup').classList.remove('hide');
   }
 
+  $('room').addEventListener('input', () => { const c = cleanRoom($('room').value); if (c !== $('room').value) $('room').value = c; });
   $('start').onclick = start; $('flip').onclick = flip; $('stop').onclick = stop;
   addEventListener('online', () => { if (db && !stopped) publish().catch(() => {}); });
   document.addEventListener('visibilitychange', async () => { if (document.visibilityState === 'visible' && !stopped && stream) { try { wake = await navigator.wakeLock?.request('screen'); } catch (e) {} } });
