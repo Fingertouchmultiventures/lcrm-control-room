@@ -1,0 +1,414 @@
+{
+  "bookInfo": {
+    "id": "HAG",
+    "translationId": "yor_bib",
+    "name": "Hagai",
+    "commonName": "Hagai",
+    "title": "Ìwé Wòlíì Hagai",
+    "order": 37,
+    "numberOfChapters": 2,
+    "sha256": "1a4fc3ad3a4337d35a526636f283d59498fc1945bcbbddbf9ad88e889cba196b",
+    "firstChapterNumber": 1,
+    "firstChapterApiLink": "/api/yor_bib/HAG/1.json",
+    "lastChapterNumber": 2,
+    "lastChapterApiLink": "/api/yor_bib/HAG/2.json",
+    "totalNumberOfVerses": 38
+  },
+  "chapters": {
+    "1": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "HAG",
+        "translationId": "yor_bib",
+        "name": "Hagai",
+        "commonName": "Hagai",
+        "title": "Ìwé Wòlíì Hagai",
+        "order": 37,
+        "numberOfChapters": 2,
+        "sha256": "1a4fc3ad3a4337d35a526636f283d59498fc1945bcbbddbf9ad88e889cba196b",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/HAG/1.json",
+        "lastChapterNumber": 2,
+        "lastChapterApiLink": "/api/yor_bib/HAG/2.json",
+        "totalNumberOfVerses": 38
+      },
+      "chapter": {
+        "number": 1,
+        "content": [
+          {
+            "type": "heading",
+            "content": [
+              "Ìpè láti tún ilé Olúwa kọ́"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Ní ọdún kejì ọba Dariusi ní ọjọ́ kìn-ín-ní oṣù kẹfà, ọ̀rọ̀ Olúwa wá nípasẹ̀ wòlíì Hagai sí Serubbabeli ọmọ Ṣealitieli, baálẹ̀ Juda, àti sọ́dọ̀ Joṣua ọmọ Josadaki, olórí àlùfáà."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "Báyìí ni Olúwa àwọn ọmọ-ogun wí: “Àwọn ènìyàn wọ̀nyí wí pé, ‘Kò tí ì tó àkókò láti kọ́ ilé Olúwa.’ ”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "Nígbà náà ni ọ̀rọ̀ Olúwa wá láti ọ̀dọ̀ wòlíì Hagai wí pé,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "“Ǹjẹ́ àkókò ni fún ẹ̀yin fúnra yín láti máa gbé ní ilé tí a ṣe ní ọ̀ṣọ́ nígbà tí ilé yìí wà ni ahoro?”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "Nísìnsinyìí, èyí ni ohun tí Olúwa àwọn ọmọ-ogun wí: “Ẹ kíyèsi ọ̀nà yín."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "Ẹ̀yin ti gbìn ohun ti ó pọ̀. Ṣùgbọ́n ẹ̀yin kórè díẹ̀ níbẹ̀. Ẹ̀yin jẹun, ṣùgbọ́n ẹ̀yin kò yó. Ẹ̀yin mu ṣùgbọ́n kò tẹ́ ẹ yín lọ́run; ẹ̀yin wọ aṣọ, ṣùgbọ́n kò mú òtútù yin lọ; ẹyin gba owó iṣẹ́ ṣùgbọ́n ẹ ń gbà á sínú ajádìí àpò.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "Báyìí ni Olúwa àwọn ọmọ-ogun wí: “Ẹ kíyèsi ọ̀nà yín."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "Ẹ gun orí àwọn òkè ńlá lọ, kí ẹ sì mú igi wá pẹ̀lú yín. Kí ẹ sì kọ́ ilé náà, kí inú mi bà le è dùn sí i, kí a sì yín mí lógo,” ni Olúwa wí."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "“Ẹyin ti ń retí ọ̀pọ̀, ṣùgbọ́n kíyèsi i, o yípadà sí díẹ̀. Ohun tí ẹ̀yin mú wa ilé, èmi sì fẹ́ ẹ dànù. Nítorí kí ni?” ni Olúwa àwọn ọmọ-ogun wí. “Nítorí ilé mi tí ó dahoro; tí olúkúlùkù yín sì ń sáré fún ilé ara rẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "Nítorí yín ni àwọn ọ̀run ṣe dá ìrì dúró tí ilẹ̀ sì kọ̀ láti mu èso jáde."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              "Mo sì ti pe ọ̀dá sórí ilẹ̀ àti sórí àwọn òkè ńlá, sórí ọkà àti sórí wáìnì tuntun, sórí òróró àti sórí ohun ti ilẹ̀ ń mú jáde, sórí ènìyàn, sórí ẹran àti sórí gbogbo iṣẹ́ ọwọ́ yín.”"
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              "Nígbà náà ni Serubbabeli ọmọ Ṣealitieli, Joṣua ọmọ Josadaki, olórí àlùfáà pẹ̀lú gbogbo ènìyàn ìyókù, gba ohùn Olúwa Ọlọ́run wọn gbọ́ àti ọ̀rọ̀ wòlíì Hagai, nítorí Olúwa Ọlọ́run ni ó rán an. Àwọn ènìyàn sì bẹ̀rù Olúwa."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              "Nígbà náà ni Hagai ìránṣẹ́ Olúwa ń jíṣẹ́ Olúwa fún àwọn ènìyàn pé, “Èmí wà pẹ̀lú yín,” ni Olúwa wí."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              "Nítorí náà, Olúwa ru ẹ̀mí Serubbabeli ọmọ Ṣealitieli sókè, baálẹ̀ Juda àti ẹ̀mí Joṣua ọmọ Josadaki, olórí àlùfáà àti ẹ̀mí gbogbo ènìyàn ìyókù. Wọ́n sì wá, wọ́n sì bẹ̀rẹ̀ sí ní ṣiṣẹ́ lórí ilé Olúwa àwọn ọmọ-ogun Ọlọ́run wọn,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              "ní ọjọ́ kẹrìnlélógún oṣù kẹfà ní ọdún kejì ọba Dariusi."
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/HAG/1.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/HAG/2.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/ZEP/3.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 15
+    },
+    "2": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "HAG",
+        "translationId": "yor_bib",
+        "name": "Hagai",
+        "commonName": "Hagai",
+        "title": "Ìwé Wòlíì Hagai",
+        "order": 37,
+        "numberOfChapters": 2,
+        "sha256": "1a4fc3ad3a4337d35a526636f283d59498fc1945bcbbddbf9ad88e889cba196b",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/HAG/1.json",
+        "lastChapterNumber": 2,
+        "lastChapterApiLink": "/api/yor_bib/HAG/2.json",
+        "totalNumberOfVerses": 38
+      },
+      "chapter": {
+        "number": 2,
+        "content": [
+          {
+            "type": "heading",
+            "content": [
+              "Ẹwà Tẹmpili tuntun náà"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Ní ọjọ́ kọkànlélógún oṣù keje, ni ọ̀rọ̀ Olúwa wá nípasẹ̀ wòlíì Hagai wí pé,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "“Sọ fún Serubbabeli ọmọ Ṣealitieli, baálẹ̀ Juda, àti Joṣua ọmọ Josadaki, olórí àlùfáà àti àwọn ènìyàn yòókù. Béèrè lọ́wọ́ wọn pé,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "‘Ta ni nínú yín tí ó kù tí ó sì ti rí ilé yìí ní ògo rẹ̀ àkọ́kọ́? Báwo ni ó ṣe ri sí yín nísinsin yìí? Ǹjẹ́ kò dàbí asán lójú yín?"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "Ṣùgbọ́n nísinsin yìí, múra gírí, ìwọ Serubbabeli,’ ni Olúwa wí. ‘Múra gírí, ìwọ Joṣua ọmọ Josadaki, olórí àlùfáà. Ẹ sì múra gírí gbogbo ẹ̀yin ènìyàn ilẹ̀ náà,’ ni Olúwa wí, ‘kí ẹ sì ṣiṣẹ́. Nítorí èmi wà pẹ̀lú yín,’ ni Olúwa àwọn ọmọ-ogun wí."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "‘Èyí ni ohun tí Èmi fi bá a yín dá májẹ̀mú nígbà tí ẹ jáde kúrò ní Ejibiti, bẹ́ẹ̀ ni Ẹ̀mí ì mi sì wà pẹ̀lú yín. Ẹ má ṣe bẹ̀rù.’"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "“Báyìí ni Olúwa àwọn ọmọ-ogun wí pé, ‘Láìpẹ́ jọjọ, Èmi yóò mi àwọn ọrun àti ayé, Òkun àti ìyàngbẹ ilẹ̀ lẹ́ẹ̀kan sí i."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "Èmi yóò mi gbogbo orílẹ̀-èdè, ìfẹ́ gbogbo orílẹ̀-èdè yóò fà sí tẹmpili yìí, Èmi yóò sì kún ilé yìí pẹ̀lú ògo,’ ni Olúwa àwọn ọmọ-ogun wí."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "‘Tèmi ni fàdákà àti wúrà,’ ni Olúwa àwọn ọmọ-ogun wí."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "‘Ògo ìkẹyìn ilé yìí yóò pọ̀ ju ti ìṣáájú lọ,’ ni Olúwa àwọn ọmọ-ogun wí, ‘Àti ní ìhín yìí ni Èmi ó sì fi àlàáfíà fún ni,’ ni Olúwa àwọn ọmọ-ogun wí.”"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": [
+              "Ìbùkún fún àwọn ènìyàn tí a sọ di àìmọ́"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "Ní ọjọ́ kẹrìnlélógún oṣù kẹsànán ní ọdún kejì Dariusi, ni ọ̀rọ̀ Olúwa tọ wòlíì Hagai wá pé,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              "“Báyìí ni Olúwa àwọn ọmọ-ogun wí, ‘Béèrè lọ́wọ́ àwọn àlùfáà ohun tí òfin wí pé:"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              "Bí ẹnìkan bá gbé ẹran mímọ́ ní ìṣẹ́tí aṣọ rẹ̀, tí ìṣẹ́tí aṣọ rẹ̀ kan àkàrà tàbí ọbẹ̀, wáìnì, òróró tàbí oúnjẹ mìíràn, ǹjẹ́ yóò ha jẹ́ mímọ́ bí?’ ” Àwọn àlùfáà sì dáhùn wí pé, “Bẹ́ẹ̀ kọ́.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              "Nígbà náà ni Hagai wí pé, “Bí ẹnìkan tí ó jẹ́ aláìmọ́ nípa fífi ara kan òkú bá fi ara kan ọ̀kan lára nǹkan wọ̀nyí, ǹjẹ́ yóò ha jẹ́ aláìmọ́?” Àwọn àlùfáà sì dáhùn wí pé, “Bẹ́ẹ̀ ni, yóò jẹ́ aláìmọ́.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              "Nígbà náà ni Hagai dáhùn ó sì wí pé, “ ‘Bẹ́ẹ̀ ni ènìyàn wọ̀nyí rí, bẹ́ẹ̀ sì ni orílẹ̀-èdè yìí rí níwájú mi,’ ni Olúwa wí. ‘Bẹ́ẹ̀ sì ni olúkúlùkù iṣẹ́ ọwọ́ wọn; èyí tí wọ́n sì fi rú ẹbọ níbẹ̀ jẹ́ aláìmọ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              "“ ‘Ǹjẹ́ nísinsin yìí, ẹ ro èyí dáradára láti òní yìí lọ, ẹ kíyèsi bí nǹkan ṣe rí tẹ́lẹ̀, a to òkúta kan lé orí èkejì ní tẹmpili Olúwa."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 16,
+            "content": [
+              "Nígbà tí ẹnikẹ́ni bá dé ibi òkìtì òsùwọ̀n ogun, mẹ́wàá péré ni yóò ba níbẹ̀. Nígbà tí ẹnikẹ́ni bá dé ibi ìfúntí wáìnì láti wọn àádọ́ta ìwọ̀n, ogún péré ni yóò ba níbẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 17,
+            "content": [
+              "Mo fi ìrẹ̀dànù, ìmúwòdù àti yìnyín bá gbogbo iṣẹ́ ọwọ́ yín jẹ; síbẹ̀ ẹ̀yin kò yípadà sí ọ̀dọ̀ mi,’ ni Olúwa wí."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 18,
+            "content": [
+              "‘Láti òní lọ, láti ọjọ́ kẹrìnlélógún oṣù kẹsànán yìí kí ẹ kíyèsi, kí ẹ sì rò ó dáradára, ọjọ́ ti a fi ìpìlẹ̀ tẹmpili Olúwa lélẹ̀, rò ó dáradára."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 19,
+            "content": [
+              "Ǹjẹ́ èso ha wà nínú abà bí? Títí di àkókò yìí, àjàrà àti igi ọ̀pọ̀tọ́ àti pomegiranate, àti igi olifi kò ì tí ì so èso kankan. “ ‘Láti òní lọ ni èmi yóò bùkún fún un yin.’ ”"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": [
+              "Serubbabeli òrùka èdìdì Olúwa"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 20,
+            "content": [
+              "Ọ̀rọ̀ Olúwa sì tún tọ Hagai wá nígbà kejì, ní ọjọ́ kẹrìnlélógún oṣù náà pé,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 21,
+            "content": [
+              "“Sọ fún Serubbabeli baálẹ̀ Juda pé èmi yóò mi àwọn ọ̀run àti ayé."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 22,
+            "content": [
+              "Èmi yóò bi ìtẹ́ àwọn ìjọba ṣubú, Èmi yóò sì pa agbára àwọn aláìkọlà run, Èmi yóò sì dojú àwọn kẹ̀kẹ́ ogun dé, àti àwọn tí ń gùn wọ́n; ẹṣin àti àwọn ẹlẹ́ṣin yóò ṣubú; olúkúlùkù nípa idà arákùnrin rẹ̀.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 23,
+            "content": [
+              "Olúwa àwọn ọmọ-ogun wí pé, “Ní ọjọ́ náà, ìwọ ìránṣẹ́ mi Serubbabeli ọmọ Ṣealitieli, Èmi yóò mú ọ, Èmi yóò sì sọ ọ di bí òrùka èdìdì mi, nítorí mo ti yan ọ, ni Olúwa àwọn ọmọ-ogun wí.”"
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/HAG/2.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/ZEC/1.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/HAG/1.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 23
+    }
+  }
+}

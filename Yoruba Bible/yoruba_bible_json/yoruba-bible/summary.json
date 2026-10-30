@@ -1,0 +1,472 @@
+{
+  "translation": {
+    "id": "yor_bib",
+    "name": "Yoruba Bible",
+    "totalBooks": 66,
+    "downloadDate": "2025-10-12T10:08:05.356Z"
+  },
+  "books": [
+    {
+      "id": "GEN",
+      "name": "Gẹnẹsisi",
+      "title": "Ìwé Gẹnẹsisi",
+      "numberOfChapters": 50,
+      "totalVerses": 1533
+    },
+    {
+      "id": "EXO",
+      "name": "Eksodu",
+      "title": "Ìwé Eksodu",
+      "numberOfChapters": 40,
+      "totalVerses": 1213
+    },
+    {
+      "id": "LEV",
+      "name": "Lefitiku",
+      "title": "Ìwé Lefitiku",
+      "numberOfChapters": 27,
+      "totalVerses": 859
+    },
+    {
+      "id": "NUM",
+      "name": "Numeri",
+      "title": "Ìwé Numeri",
+      "numberOfChapters": 36,
+      "totalVerses": 1288
+    },
+    {
+      "id": "DEU",
+      "name": "Deuteronomi",
+      "title": "Ìwé Deuteronomi",
+      "numberOfChapters": 34,
+      "totalVerses": 959
+    },
+    {
+      "id": "JOS",
+      "name": "Joṣua",
+      "title": "Ìwé Joṣua",
+      "numberOfChapters": 24,
+      "totalVerses": 658
+    },
+    {
+      "id": "JDG",
+      "name": "Onidajọ",
+      "title": "Ìwé àwọn Onidajọ",
+      "numberOfChapters": 21,
+      "totalVerses": 618
+    },
+    {
+      "id": "RUT",
+      "name": "Rutu",
+      "title": "Ìwé Rutu",
+      "numberOfChapters": 4,
+      "totalVerses": 85
+    },
+    {
+      "id": "1SA",
+      "name": "1 Samuẹli",
+      "title": "Ìwé Samuẹli Kìn-ín-ní",
+      "numberOfChapters": 31,
+      "totalVerses": 810
+    },
+    {
+      "id": "2SA",
+      "name": "2 Samuẹli",
+      "title": "Ìwé Samuẹli Kejì",
+      "numberOfChapters": 24,
+      "totalVerses": 695
+    },
+    {
+      "id": "1KI",
+      "name": "1 Ọba",
+      "title": "Ìwé àwọn Ọba Kìn-ín-ní",
+      "numberOfChapters": 22,
+      "totalVerses": 816
+    },
+    {
+      "id": "2KI",
+      "name": "2 Ọba",
+      "title": "Ìwé àwọn Ọba Kejì",
+      "numberOfChapters": 25,
+      "totalVerses": 719
+    },
+    {
+      "id": "1CH",
+      "name": "1 Kronika",
+      "title": "Ìwé Kronika Kìn-ín-ní",
+      "numberOfChapters": 29,
+      "totalVerses": 942
+    },
+    {
+      "id": "2CH",
+      "name": "2 Kronika",
+      "title": "Ìwé Kronika Kejì",
+      "numberOfChapters": 36,
+      "totalVerses": 822
+    },
+    {
+      "id": "EZR",
+      "name": "Esra",
+      "title": "Ìwé Esra",
+      "numberOfChapters": 10,
+      "totalVerses": 280
+    },
+    {
+      "id": "NEH",
+      "name": "Nehemiah",
+      "title": "Ìwé Nehemiah",
+      "numberOfChapters": 13,
+      "totalVerses": 406
+    },
+    {
+      "id": "EST",
+      "name": "Esteri",
+      "title": "Ìwé Esteri",
+      "numberOfChapters": 10,
+      "totalVerses": 167
+    },
+    {
+      "id": "JOB",
+      "name": "Jobu",
+      "title": "Ìwé Jobu",
+      "numberOfChapters": 42,
+      "totalVerses": 1070
+    },
+    {
+      "id": "PSA",
+      "name": "Saamu",
+      "title": "Ìwé Saamu",
+      "numberOfChapters": 150,
+      "totalVerses": 2461
+    },
+    {
+      "id": "PRO",
+      "name": "Òwe",
+      "title": "Ìwé Òwe",
+      "numberOfChapters": 31,
+      "totalVerses": 915
+    },
+    {
+      "id": "ECC",
+      "name": "Oniwaasu",
+      "title": "Ìwé Oniwaasu",
+      "numberOfChapters": 12,
+      "totalVerses": 222
+    },
+    {
+      "id": "SNG",
+      "name": "Orin Solomoni",
+      "title": "Ìwé Orin Solomoni",
+      "numberOfChapters": 8,
+      "totalVerses": 117
+    },
+    {
+      "id": "ISA",
+      "name": "Isaiah",
+      "title": "Ìwé Wòlíì Isaiah",
+      "numberOfChapters": 66,
+      "totalVerses": 1292
+    },
+    {
+      "id": "JER",
+      "name": "Jeremiah",
+      "title": "Ìwé Wòlíì Jeremiah",
+      "numberOfChapters": 52,
+      "totalVerses": 1364
+    },
+    {
+      "id": "LAM",
+      "name": "Ẹkún Jeremiah",
+      "title": "Ìwé Ẹkún Jeremiah",
+      "numberOfChapters": 5,
+      "totalVerses": 154
+    },
+    {
+      "id": "EZK",
+      "name": "Esekiẹli",
+      "title": "Ìwé Wòlíì Esekiẹli",
+      "numberOfChapters": 48,
+      "totalVerses": 1273
+    },
+    {
+      "id": "DAN",
+      "name": "Daniẹli",
+      "title": "Ìwé Daniẹli",
+      "numberOfChapters": 12,
+      "totalVerses": 357
+    },
+    {
+      "id": "HOS",
+      "name": "Hosea",
+      "title": "Ìwé Wòlíì Hosea",
+      "numberOfChapters": 14,
+      "totalVerses": 197
+    },
+    {
+      "id": "JOL",
+      "name": "Joẹli",
+      "title": "Ìwé Wòlíì Joẹli",
+      "numberOfChapters": 3,
+      "totalVerses": 73
+    },
+    {
+      "id": "AMO",
+      "name": "Amosi",
+      "title": "Ìwé Wòlíì Amosi",
+      "numberOfChapters": 9,
+      "totalVerses": 146
+    },
+    {
+      "id": "OBA",
+      "name": "Obadiah",
+      "title": "Ìwé Wòlíì Obadiah",
+      "numberOfChapters": 1,
+      "totalVerses": 21
+    },
+    {
+      "id": "JON",
+      "name": "Jona",
+      "title": "Ìwé Wòlíì Jona",
+      "numberOfChapters": 4,
+      "totalVerses": 48
+    },
+    {
+      "id": "MIC",
+      "name": "Mika",
+      "title": "Ìwé Wòlíì Mika",
+      "numberOfChapters": 7,
+      "totalVerses": 105
+    },
+    {
+      "id": "NAM",
+      "name": "Nahumu",
+      "title": "Ìwé Wòlíì Nahumu",
+      "numberOfChapters": 3,
+      "totalVerses": 47
+    },
+    {
+      "id": "HAB",
+      "name": "Habakuku",
+      "title": "Ìwé Wòlíì Habakuku",
+      "numberOfChapters": 3,
+      "totalVerses": 56
+    },
+    {
+      "id": "ZEP",
+      "name": "Sefaniah",
+      "title": "Ìwé Wòlíì Sefaniah",
+      "numberOfChapters": 3,
+      "totalVerses": 53
+    },
+    {
+      "id": "HAG",
+      "name": "Hagai",
+      "title": "Ìwé Wòlíì Hagai",
+      "numberOfChapters": 2,
+      "totalVerses": 38
+    },
+    {
+      "id": "ZEC",
+      "name": "Sekariah",
+      "title": "Ìwé Wòlíì Sekariah",
+      "numberOfChapters": 14,
+      "totalVerses": 211
+    },
+    {
+      "id": "MAL",
+      "name": "Malaki",
+      "title": "Ìwé Wòlíì Malaki",
+      "numberOfChapters": 4,
+      "totalVerses": 55
+    },
+    {
+      "id": "MAT",
+      "name": "Matiu",
+      "title": "Ìwé Ìyìnrere Matiu",
+      "numberOfChapters": 28,
+      "totalVerses": 1068
+    },
+    {
+      "id": "MRK",
+      "name": "Marku",
+      "title": "Ìwé Ìyìnrere Marku",
+      "numberOfChapters": 16,
+      "totalVerses": 673
+    },
+    {
+      "id": "LUK",
+      "name": "Luku",
+      "title": "Ìwé Ìyìnrere Luku",
+      "numberOfChapters": 24,
+      "totalVerses": 1149
+    },
+    {
+      "id": "JHN",
+      "name": "Johanu",
+      "title": "Ìwé Ìyìnrere Johanu",
+      "numberOfChapters": 21,
+      "totalVerses": 878
+    },
+    {
+      "id": "ACT",
+      "name": "Ìṣe àwọn Aposteli",
+      "title": "Ìwé Ìṣe àwọn Aposteli",
+      "numberOfChapters": 28,
+      "totalVerses": 1003
+    },
+    {
+      "id": "ROM",
+      "name": "Romu",
+      "title": "Ìwé si àwọn ará Romu",
+      "numberOfChapters": 16,
+      "totalVerses": 432
+    },
+    {
+      "id": "1CO",
+      "name": "1 Kọrinti",
+      "title": "Ìwé sí àwọn ará Kọrinti Kìn-ín-ní",
+      "numberOfChapters": 16,
+      "totalVerses": 437
+    },
+    {
+      "id": "2CO",
+      "name": "2 Kọrinti",
+      "title": "Ìwé si àwọn ará Kọrinti Kejì",
+      "numberOfChapters": 13,
+      "totalVerses": 257
+    },
+    {
+      "id": "GAL",
+      "name": "Galatia",
+      "title": "Ìwé sí àwọn ará Galatia",
+      "numberOfChapters": 6,
+      "totalVerses": 149
+    },
+    {
+      "id": "EPH",
+      "name": "Efesu",
+      "title": "Ìwé sí àwọn ará Efesu",
+      "numberOfChapters": 6,
+      "totalVerses": 155
+    },
+    {
+      "id": "PHP",
+      "name": "Filipi",
+      "title": "Ìwé sí àwọn ará Filipi",
+      "numberOfChapters": 4,
+      "totalVerses": 104
+    },
+    {
+      "id": "COL",
+      "name": "Kolose",
+      "title": "Ìwé sí àwọn ará Kolose",
+      "numberOfChapters": 4,
+      "totalVerses": 95
+    },
+    {
+      "id": "1TH",
+      "name": "1 Tẹsalonika",
+      "title": "Ìwé sí àwọn ará Tẹsalonika Kìn-ín-ní",
+      "numberOfChapters": 5,
+      "totalVerses": 89
+    },
+    {
+      "id": "2TH",
+      "name": "2 Tẹsalonika",
+      "title": "Ìwé sí àwọn ará Tẹsalonika Kejì",
+      "numberOfChapters": 3,
+      "totalVerses": 47
+    },
+    {
+      "id": "1TI",
+      "name": "1 Timotiu",
+      "title": "Ìwé Timotiu Kìn-ín-ní",
+      "numberOfChapters": 6,
+      "totalVerses": 113
+    },
+    {
+      "id": "2TI",
+      "name": "2 Timotiu",
+      "title": "Ìwé Timotiu Kejì",
+      "numberOfChapters": 4,
+      "totalVerses": 83
+    },
+    {
+      "id": "TIT",
+      "name": "Titu",
+      "title": "Ìwé Titu",
+      "numberOfChapters": 3,
+      "totalVerses": 46
+    },
+    {
+      "id": "PHM",
+      "name": "Filemoni",
+      "title": "Ìwé Filemoni",
+      "numberOfChapters": 1,
+      "totalVerses": 25
+    },
+    {
+      "id": "HEB",
+      "name": "Heberu",
+      "title": "Ìwé sí àwọn ará Heberu",
+      "numberOfChapters": 13,
+      "totalVerses": 303
+    },
+    {
+      "id": "JAS",
+      "name": "Jakọbu",
+      "title": "Ìwé Jakọbu",
+      "numberOfChapters": 5,
+      "totalVerses": 108
+    },
+    {
+      "id": "1PE",
+      "name": "1 Peteru",
+      "title": "Ìwé Peteru Kìn-ín-ní",
+      "numberOfChapters": 5,
+      "totalVerses": 105
+    },
+    {
+      "id": "2PE",
+      "name": "2 Peteru",
+      "title": "Ìwé Peteru Kejì",
+      "numberOfChapters": 3,
+      "totalVerses": 61
+    },
+    {
+      "id": "1JN",
+      "name": "1 Johanu",
+      "title": "Ìwé Johanu Kìn-ín-ní",
+      "numberOfChapters": 5,
+      "totalVerses": 105
+    },
+    {
+      "id": "2JN",
+      "name": "2 Johanu",
+      "title": "Ìwé Johanu Kejì",
+      "numberOfChapters": 1,
+      "totalVerses": 13
+    },
+    {
+      "id": "3JN",
+      "name": "3 Johanu",
+      "title": "Ìwé Johanu Kẹta",
+      "numberOfChapters": 1,
+      "totalVerses": 15
+    },
+    {
+      "id": "JUD",
+      "name": "Juda",
+      "title": "Ìwé Juda",
+      "numberOfChapters": 1,
+      "totalVerses": 25
+    },
+    {
+      "id": "REV",
+      "name": "Ìfihàn",
+      "title": "Ìwé Ìfihàn ti Johanu",
+      "numberOfChapters": 22,
+      "totalVerses": 404
+    }
+  ]
+}

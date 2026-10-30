@@ -1,0 +1,36 @@
+{
+"$schema": "https://json-schema.org/draft/2020-12/schema",
+"title": "CAC Hymn",
+"description": "Schema for a CAC hymn entry.",
+"type": "object",
+"properties": {
+"id": {
+"type": "string",
+"description": "Unique identifier for the hymn."
+},
+"number": {
+"type": "string",
+"description": "Hymn number or reference number."
+},
+"metadata": {
+"type": "string",
+"description": "Additional metadata or scripture reference associated with the hymn."
+},
+"category": {
+"type": "string",
+"description": "Category assigned to the hymn."
+},
+"lyrics": {
+"type": "string",
+"description": "Complete hymn lyrics, including verses and chorus where applicable."
+}
+},
+"required": [
+"id",
+"number",
+"metadata",
+"category",
+"lyrics"
+],
+"additionalProperties": false
+}

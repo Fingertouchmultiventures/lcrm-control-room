@@ -1,0 +1,3776 @@
+{
+  "bookInfo": {
+    "id": "NEH",
+    "translationId": "yor_bib",
+    "name": "Nehemiah",
+    "commonName": "Nehemiah",
+    "title": "Ìwé Nehemiah",
+    "order": 16,
+    "numberOfChapters": 13,
+    "sha256": "170de1c62a020318afaaae501c800ef2e9341cf2f630ab757c627027f909f708",
+    "firstChapterNumber": 1,
+    "firstChapterApiLink": "/api/yor_bib/NEH/1.json",
+    "lastChapterNumber": 13,
+    "lastChapterApiLink": "/api/yor_bib/NEH/13.json",
+    "totalNumberOfVerses": 406
+  },
+  "chapters": {
+    "1": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "NEH",
+        "translationId": "yor_bib",
+        "name": "Nehemiah",
+        "commonName": "Nehemiah",
+        "title": "Ìwé Nehemiah",
+        "order": 16,
+        "numberOfChapters": 13,
+        "sha256": "170de1c62a020318afaaae501c800ef2e9341cf2f630ab757c627027f909f708",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/NEH/1.json",
+        "lastChapterNumber": 13,
+        "lastChapterApiLink": "/api/yor_bib/NEH/13.json",
+        "totalNumberOfVerses": 406
+      },
+      "chapter": {
+        "number": 1,
+        "content": [
+          {
+            "type": "heading",
+            "content": [
+              "Àdúrà Nehemiah"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Ọ̀rọ̀ Nehemiah ọmọ Hakaliah.",
+              {
+                "lineBreak": true
+              },
+              {
+                "lineBreak": true
+              },
+              "Ní oṣù Kisleu ní ogún ọdún (ìjọba Ahaswerusi ọba Persia) nígbà tí mo wà ní ààfin Susa,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "Hanani, ọ̀kan nínú àwọn arákùnrin mi wá láti Juda pẹ̀lú àwọn ọkùnrin kan, mo sì béèrè lọ́wọ́ wọn nípa àwọn Júù tí ó ṣẹ́kù tí wọn kò kó ní ìgbèkùn, àti nípa Jerusalẹmu."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "Wọ́n sọ fún mi pé, “Àwọn tí ó kù tí a kó ní ìgbèkùn tí wọ́n sì padà sí agbègbè ìjọba wà nínú wàhálà púpọ̀ àti ẹ̀gàn. Odi Jerusalẹmu ti wó lulẹ̀ a sì ti fi iná sun ẹnu ibodè rẹ̀.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "Nígbà tí mo gbọ́ àwọn nǹkan wọ̀nyí, mo jókòó mo sì sọkún. Mo ṣọ̀fọ̀, mo gbààwẹ̀, mo sì gbàdúrà fún ọjọ́ díẹ̀ níwájú Ọlọ́run ọ̀run."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "Nígbà náà ni mo wí pé: “Olúwa, Ọlọ́run ọ̀run, Ọlọ́run tí ó tóbi tí ó sì ní ẹ̀rù, tí ó ń pa májẹ̀mú ìfẹ́ rẹ̀ mọ́ pẹ̀lú wọn tí ó fẹ́ ẹ tí wọ́n sì ń pa àṣẹ mọ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "Jẹ́ kí etí rẹ kí ó ṣí sílẹ̀, kí ojú ù rẹ kí ó sì ṣí sílẹ̀ láti gbọ́ àdúrà tí ìránṣẹ́ rẹ ń gbà ní iwájú rẹ ní ọ̀sán àti ní òru fún àwọn ìránṣẹ́ rẹ, àwọn ènìyàn Israẹli. Mo jẹ́wọ́ ẹ̀ṣẹ̀ àwa ọmọ Israẹli àti tèmi àti ti ilé baba mi, tí a ti ṣẹ̀ sí ọ."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "Àwa ti ṣe búburú sí ọ. A kò sì pa àṣẹ ìlànà àti òfin tí ìwọ fún Mose ìránṣẹ́ rẹ mọ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "“Rántí ìlànà tí o fún Mose ìránṣẹ́ rẹ, wí pé, ‘Bí ìwọ bá jẹ́ aláìṣòótọ́, èmi yóò fọ́n yín ká sí àárín àwọn orílẹ̀-èdè."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "Ṣùgbọ́n tí ẹ̀yin bá yípadà sí mi, tí ẹ bá sì pa àṣẹ mi mọ́, nígbà náà bí àwọn ènìyàn yín tí a kó ní ìgbèkùn tilẹ̀ wà ní jìnnà réré ìpẹ̀kun ọ̀run, èmi yóò kó wọn jọ láti ibẹ̀, èmi yóò sì mú wọn wá, sí ibi tí èmi ti yàn bí i ibùgbé fún orúkọ mi.’"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "“Àwọn ni ìránṣẹ́ rẹ àti ènìyàn rẹ àwọn tí ìwọ rà padà pẹ̀lú agbára ńlá rẹ àti ọwọ́ agbára ńlá rẹ."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              "Olúwa, jẹ́ kí etí rẹ ṣí sílẹ̀ sí àdúrà ìránṣẹ́ rẹ yìí, àti sí àdúrà àwọn ìránṣẹ́ rẹ tí wọ́n ní inú dídùn láti bọ̀wọ̀ fún orúkọ rẹ. Fún ìránṣẹ́ rẹ ní àṣeyọrí lónìí kí o sì síjú àánú wò ó níwájú ọkùnrin yìí.” Nítorí tí mo jẹ́ agbọ́tí ọba nígbà náà."
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/NEH/1.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/NEH/2.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/EZR/10.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 11
+    },
+    "2": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "NEH",
+        "translationId": "yor_bib",
+        "name": "Nehemiah",
+        "commonName": "Nehemiah",
+        "title": "Ìwé Nehemiah",
+        "order": 16,
+        "numberOfChapters": 13,
+        "sha256": "170de1c62a020318afaaae501c800ef2e9341cf2f630ab757c627027f909f708",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/NEH/1.json",
+        "lastChapterNumber": 13,
+        "lastChapterApiLink": "/api/yor_bib/NEH/13.json",
+        "totalNumberOfVerses": 406
+      },
+      "chapter": {
+        "number": 2,
+        "content": [
+          {
+            "type": "heading",
+            "content": [
+              "Artasasta rán Nehemiah lọ Jerusalẹmu"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Ní oṣù Nisani, ní ogún ọdún ìjọba ọba Artasasta, nígbà tí a gbé wáìnì wá fún un, mo gbé wáìnì náà, mo fi fún ọba, ìbànújẹ́ kò hàn ní ojú mi rí ní iwájú rẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "Nítorí náà ni ọba béèrè lọ́wọ́ mi pé, “Èéṣe tí ojú rẹ fi fàro nígbà tí kò rẹ̀ ọ́? Èyí kì í ṣe ohun mìíràn bí kò ṣe ìbànújẹ́ ọkàn.” Ẹ̀rù bà mí gidigidi,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "ṣùgbọ́n mo wí fún ọba pé, “Kí ọba kí ó pẹ́! Èéṣe tí ojú mi ko ṣe ní fàro, nígbà tí ìlú tí a sin àwọn baba mi sí wà ní ahoro, tí a sì ti fi iná run àwọn ibodè rẹ̀?”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "Ọba wí fún mi pé, “Kí ni ìwọ ń fẹ́?” Nígbà náà, ni mo gbàdúrà sí Ọlọ́run ọ̀run,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "mo sì dá ọba lóhùn pé, “Ti ó bá wu ọba, tí ìránṣẹ́ rẹ bá sì rí ojúrere ní ojú rẹ, jẹ́ kí ó rán mi lọ sí ìlú náà ní Juda níbi tí a sin àwọn baba mi nítorí kí èmi lè tún un kọ́.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "Nígbà náà ni ọba, pẹ̀lú ìyàwó rẹ̀ tí ó jókòó lẹ́gbẹ̀ẹ́ rẹ̀, bi mí pé, “Báwo ni ìrìnàjò náà yóò ṣe pẹ́ ọ tó, nígbà wo sì ni ìwọ yóò padà?” Ó dùn mọ́ ọba láti rán mi lọ, bẹ́ẹ̀ ni mo dá àkókò kan."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "Mo sì tún wí fún ọba pé, “Bí ó bá wu ọba, kí ó fún mi ní lẹ́tà sí àwọn baálẹ̀ òkè odò Eufurate kí wọ́n le mú mi kọjá títí èmi yóò fi dé Juda láìléwu."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "Kí èmi sì gba lẹ́tà kan lọ́wọ́ fún Asafu, olùṣọ́ igbó ọba, nítorí kí ó lè fún mi ní igi láti fi ṣe àtẹ́rígbà fún ibodè ilé ìṣọ́ tẹmpili àti fún odi ìlú náà àti fún ilé tí èmi yóò gbé?” Nítorí ọwọ́ àánú Ọlọ́run mi wà lórí mi, ọba fi ìbéèrè mi fún mi."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "Bẹ́ẹ̀ ni mo lọ sí ọ̀dọ̀ àwọn baálẹ̀ agbègbè Eufurate, mo sì fún wọn ní àwọn lẹ́tà ọba. Ọba sì ti rán àwọn ológun àti àwọn ẹlẹ́ṣin ogun pẹ̀lú mi."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "Nígbà tí Sanballati ará Horoni àti Tobiah ará a Ammoni tí wọ́n jẹ́ ìjòyè gbọ́ nípa èyí pé, ẹnìkan wá láti mú ìtẹ̀síwájú bá àlàáfíà àwọn ará Israẹli inú bí wọn gidigidi."
+            ]
+          },
+          {
+            "type": "heading",
+            "content": [
+              "Nehemiah bẹ àwọn odi Jerusalẹmu wò"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              "Mo sì lọ sí Jerusalẹmu, lẹ́yìn ìgbà tí mo dúró níbẹ̀ fún ọjọ́ mẹ́ta."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              "Mo jáde ní òru pẹ̀lú àwọn ọkùnrin díẹ̀. Èmi kò sì sọ fún ẹnìkankan ohun tí Ọlọ́run mi ti fi sí ọkàn mi láti ṣe fún Jerusalẹmu. Kò sí ẹranko kankan pẹ̀lú mi, bí kò ṣe ọ̀kan ṣoṣo tí mo gùn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              "Ní òru, mo jáde lọ sí àfonífojì ibodè sí ìhà kànga Jakali àti sí ẹnu ibodè Ààtàn àti ẹnu ibodè rẹ̀ èyí tí ó ti wó odi Jerusalẹmu tí ó lulẹ̀, tí a ti fi iná sun."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              "Nígbà náà ni mo lọ sí ẹnu ibodè orísun àti sí adágún omi ọba, ṣùgbọ́n kò sí ààyè tó fún ẹranko mi láti kọjá;"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              "bẹ́ẹ̀ ni mo gòkè àfonífojì ní òru, mo ń wo odi. Ní ìparí, mo padà sẹ́yìn, mo sì tún wọlé láti ibodè àfonífojì."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 16,
+            "content": [
+              "Àwọn olórí kò mọ ibi tí mo lọ tàbí mọ ohun tí mo ń ṣe, nítorí èmi kò tí ì sọ fún àwọn ará Júù tàbí àwọn àlùfáà tàbí àwọn ọlọ́lá tàbí àwọn ìjòyè tàbí ẹnikẹ́ni mìíràn tí yóò máa ṣe iṣẹ́ náà."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 17,
+            "content": [
+              "Nígbà náà ni mo sọ fún wọn pé, “Ṣé ẹ rí wàhálà tí a ni: Jerusalẹmu wà nínú ìparun, ibodè rẹ̀ ni a sì ti fi iná jó. Ẹ wá, ẹ jẹ́ kí a tún odi Jerusalẹmu mọ, àwa kò sì ní jẹ́ ẹni ẹ̀gàn mọ́”."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 18,
+            "content": [
+              "Èmi sì tún sọ fún wọn nípa bí ọwọ́ àánú Ọlọ́run mi ṣe wà lára mi àti ohun tí ọba ti sọ fún mi. Wọ́n dáhùn wí pé, “Ẹ jẹ́ kí a bẹ̀rẹ̀ àtúnmọ rẹ̀.” Bẹ́ẹ̀ ni wọ́n sì bẹ̀rẹ̀ iṣẹ́ rere yìí."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 19,
+            "content": [
+              "Ṣùgbọ́n nígbà tí Sanballati ará a Horoni, Tobiah ara olóyè Ammoni àti Geṣemu ará a Arabia gbọ́ nípa rẹ̀, wọ́n fi wá ṣe ẹlẹ́yà, wọ́n sì fi wá ṣe ẹ̀sín. Wọ́n béèrè pé, “Kí ni èyí tí ẹ ń ṣe yìí? Ṣé ẹ ń ṣọ̀tẹ̀ sí ọba ni?”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 20,
+            "content": [
+              "Mo dá wọn lóhùn, mo wí fún wọn pé, “Ọlọ́run ọ̀run yóò fún wa ní àṣeyọrí. Àwa ìránṣẹ́ rẹ̀ yóò bẹ̀rẹ̀ láti tún un mọ, ṣùgbọ́n fún un yin, ẹ̀yin kò ní ìpín tàbí ipa tàbí ẹ̀tọ́ ohunkóhun tí ó jẹ mọ́ ìtàn ní Jerusalẹmu.”"
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/NEH/2.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/NEH/3.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/NEH/1.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 20
+    },
+    "3": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "NEH",
+        "translationId": "yor_bib",
+        "name": "Nehemiah",
+        "commonName": "Nehemiah",
+        "title": "Ìwé Nehemiah",
+        "order": 16,
+        "numberOfChapters": 13,
+        "sha256": "170de1c62a020318afaaae501c800ef2e9341cf2f630ab757c627027f909f708",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/NEH/1.json",
+        "lastChapterNumber": 13,
+        "lastChapterApiLink": "/api/yor_bib/NEH/13.json",
+        "totalNumberOfVerses": 406
+      },
+      "chapter": {
+        "number": 3,
+        "content": [
+          {
+            "type": "heading",
+            "content": [
+              "Àwọn tí ó mọ odi"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Eliaṣibu olórí àlùfáà àti àwọn àlùfáà arákùnrin rẹ̀ lọ ṣiṣẹ́, wọ́n sì tún ibodè Àgùntàn mọ. Wọ́n yà á sí mímọ́, wọ́n sì gbé ìlẹ̀kùn dúró sí ibi tí ó yẹ, wọ́n mọ ọ́n títí dé ilé ìṣọ́ ọgọ́rùn-ún, èyí tí wọ́n yà sí mímọ́ títí dé ilé ìṣọ́ gíga Hananeli."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "Àwọn ọkùnrin Jeriko sì mọ ní ẹ̀gbẹ́ rẹ̀, Sakkuri ọmọ Imri sì mọ ní ẹ̀gbẹ́ àwọn ọkùnrin Jeriko."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "Àwọn ọkùnrin Senaa ni wọ́n mọ ibodè ẹja. Wọ́n kún ọ̀pọ̀ ìgbéró rẹ̀, wọ́n sì gbé ìlẹ̀kùn rẹ̀, ìdábùú ìlẹ̀kùn àti àwọn ìdè e rẹ̀ sí ààyè e wọn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "Meremoti ọmọ Uriah, ọmọ Hakosi tún èyí tí ó wà ní ẹ̀gbẹ́ ẹ wọn mọ. Ẹni tí ó tún wà ní ẹ̀gbẹ́ rẹ̀ ni Meṣullamu ọmọ Berekiah, ọmọ Meṣesabeli tún èyí ti ó wà ní ẹ̀gbẹ́ wọn mọ. Bákan náà ni ẹ̀gbẹ́ rẹ̀, Sadoku ọmọ Baanah náà tún odi mọ."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "Èyí tí ó tún wà ní ẹ̀gbẹ́ wọn ni àwọn ọkùnrin Tekoa tún mọ, ṣùgbọ́n àwọn ọlọ́lá kò ṣe àtìlẹ́yìn fún iṣẹ́ náà lábẹ́ àwọn olórí wọn."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "Jehoida ọmọ Pasea àti Meṣullamu ọmọ Besodeiah ni wọ́n tún ẹnu ibodè àtijọ́ ṣe. Wọ́n kún bíìmù rẹ̀, wọ́n ri àwọn ìlẹ̀kùn rẹ̀, àwọn ìdábùú ìlẹ̀kùn àti àwọn ìdè rẹ̀ sí ààyè wọn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "Lẹ́yìn in wọn ni àtúnṣe tún wà láti ọ̀dọ̀ àwọn ọkùnrin Gibeoni àti Mispa; Melatiah ti Gibeoni àti Jadoni ti Meronoti; àwọn ibi tí ó wà lábẹ́ àṣẹ baálẹ̀ agbègbè Eufurate."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "Usieli ọmọ Harhiah, ọ̀kan lára àwọn alágbẹ̀dẹ wúrà, túnṣe àtúnṣe èyí tí ó wà lẹ́gbẹ̀ẹ́ rẹ̀; àti Hananiah, ọ̀kan lára àwọn tí ó ń ṣe tùràrí, túnṣe àtúnṣe èyí tí ó tún tẹ̀lé e. Wọ́n mú Jerusalẹmu padà bọ̀ sípò títí dé Odi gbígbòòrò."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "Refaiah ọmọ Huri, alákòóso ìdajì agbègbè Jerusalẹmu, tún èyí tí ó wà lẹ́gbẹ̀ẹ́ rẹ̀ ṣe."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "Ní ẹ̀gbẹ́ èyí Jedaiah ọmọ Haramafu tún èyí tí ó wà ní ọ̀ọ́kán ilé rẹ̀ mọ, Hattusi ọmọ Haṣbneiah sì tún tí ẹ̀gbẹ́ rẹ̀ mọ."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              "Malkiah ọmọ Harimu àti Haṣubu ọmọ Pahati-Moabu tún ẹ̀gbẹ́ kejì ṣe àti ilé ìṣọ́ ìléru."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              "Ṣallumu ọmọ Halloheṣi, alákòóso ìdajì agbègbè Jerusalẹmu tún ti ẹ̀gbẹ́ rẹ̀ mọ pẹ̀lú ìrànlọ́wọ́ àwọn ọmọbìnrin rẹ̀."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              "Ibodè àfonífojì ni Hanuni àti àwọn ará Sanoa tún mọ. Wọ́n tún un kọ́, wọ́n ri àwọn ìlẹ̀kùn àti àwọn ìdè rẹ̀ sí ààyè rẹ̀. Wọ́n sì tún tún ẹgbẹ̀rún (1,000) kan ìgbọ̀nwọ́ odi mọ títí dé ẹnu ibodè ààtàn."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              "Ẹnu ibodè Ààtàn ni Malkiah ọmọ Rekabu, alákòóso agbègbè Beti-Hakeremu tún mọ. Ó tún un mọ, ó sì gbé àwọn ìlẹ̀kùn rẹ̀, àwọn ìdábùú ìlẹ̀kùn àti àwọn ìdè rẹ̀ sí ààyè wọn."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              "Ẹnu ibodè orísun ni Ṣalluni Koli-Hose, alákòóso agbègbè Mispa tún mọ. Ó tún ún mọ, ó kan òrùlé e rẹ̀ yíká, ó gbé àwọn ìlẹ̀kùn rẹ̀ àwọn ìdábùú ìlẹ̀kùn àti àwọn idẹ rẹ̀ ró sí ààyè wọn. Ó tún tún odi adágún Siloamu mọ, ní ẹ̀gbẹ́ ọgbà ọba, títí dé àwọn àtẹ̀gùn tí ó sọ̀kalẹ̀ lọ láti ìlú Dafidi."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 16,
+            "content": [
+              "Lẹ́yìn in rẹ̀ ni, Nehemiah ọmọ Asbuku, alákòóso ìdajì agbègbè Beti-Suri ṣe àtúnmọ dé ibi ọ̀ọ́kán òdìkejì ibojì Dafidi, títí dé adágún omi àtọwọ́dá àti títí dé ilé àwọn alágbára."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 17,
+            "content": [
+              "Lẹ́yìn rẹ̀ ni àwọn ará a Lefi, ní abẹ́ ẹ Rehumu ọmọ Bani. Lẹ́gbẹ̀ẹ́ rẹ̀ ni Haṣabiah, alákòóso ìdajì agbègbè Keila ṣe àtúnṣe fún agbègbè tirẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 18,
+            "content": [
+              "Lẹ́yìn rẹ̀ ni àwọn Lefi arákùnrin wọn ní abẹ́ àkóso Binnui ṣe àtúnṣe, Bafai ọmọ Henadadi, ìjòyè àwọn ìdajì agbègbè Keila."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 19,
+            "content": [
+              "Lẹ́yìn rẹ̀ ni Eseri ọmọ Jeṣua, alákòóso Mispa, tún ìbò mìíràn ṣe, láti ibìkan tí ó kojú sí ibi gíga sí ilé-ìhámọ́ra títí dé orígun."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 20,
+            "content": [
+              "Lẹ́yìn rẹ̀ ni Baruku ọmọ Sakkai fi ìtara tún apá mìíràn ṣe, láti orígun dé ẹnu-ọ̀nà ilé Eliaṣibu olórí àlùfáà."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 21,
+            "content": [
+              "Lẹ́yìn rẹ̀ ni, Meremoti ọmọ Uriah, ọmọ Hakosi tún apá mìíràn ṣe, láti ẹnu-ọ̀nà ilé Eliaṣibu títí dé òpin rẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 22,
+            "content": [
+              "Àtúnṣe tí a tún túnṣe lẹ́yìn rẹ̀ ní àwọn àlùfáà ní àyíká agbègbè túnṣe."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 23,
+            "content": [
+              "Lẹ́yìn wọn ni Benjamini àti Haṣubu tún èyí ti iwájú ilé wọn ṣe; lẹ́yìn wọn ni, Asariah ọmọ Maaseiah ọmọ Ananiah tún ti ẹ̀gbẹ́ ilé rẹ̀ ṣe."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 24,
+            "content": [
+              "Lẹ́yìn rẹ̀ ni Binnui ọmọ Henadadi tún apá mìíràn ṣe, láti ilé Asariah dé orígun àti kọ̀rọ̀,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 25,
+            "content": [
+              "àti Palali ọmọ Usai tún òdìkejì orígun ṣe àti ilé ìṣọ́ tí ó yọ sóde láti ibi gíga ní ẹ̀gbẹ́ ààfin ọba ti òkè lẹ́gbẹ̀ẹ́ agbègbè àwọn olùṣọ́. Lẹ́yìn rẹ̀ ni, Pedaiah ọmọ Paroṣi"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 26,
+            "content": [
+              "àti àwọn ìránṣẹ́ tẹmpili tí ó ń gbé ní òkè Ofeli ṣe àtúnṣe títí dé ibi ọ̀kánkán òdìkejì ibodè omi sí ìhà ìlà-oòrùn àti ilé ìṣọ́ tí ó yọ sóde."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 27,
+            "content": [
+              "Lẹ́yìn wọn ni àwọn ènìyàn Tekoa tún apá mìíràn ṣe, láti ilé ìṣọ́ ńlá tí ó yọ sóde títí dé ògiri Ofeli."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 28,
+            "content": [
+              "Àwọn àlùfáà ni ó ṣe àtúnṣe òkè ibodè ẹṣin ṣe, ẹnìkọ̀ọ̀kan ní iwájú ilé e rẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 29,
+            "content": [
+              "Lẹ́yìn wọn, Sadoku ọmọ Immeri tún ọ̀kánkán òdìkejì ilé rẹ̀ ṣe. Lẹ́yìn rẹ̀ ni Ṣemaiah ọmọ Ṣekaniah, olùṣọ́ ibodè ìhà ìlà-oòrùn ṣe àtúnṣe."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 30,
+            "content": [
+              "Lẹ́yìn rẹ̀ ni, Hananiah ọmọ Ṣelemiah, àti Hanuni ọmọ ẹ̀kẹfà Salafi, tún apá ibòmíràn ṣe. Lẹ́yìn wọn ni, Meṣullamu ọmọ Berekiah tún ọ̀kánkán òdìkejì ibùgbé ẹ̀ ṣe."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 31,
+            "content": [
+              "Lẹ́yìn in rẹ̀ ni Malkiah, ọ̀kan nínú àwọn alágbẹ̀dẹ wúrà ṣe àtúnṣe títí dé ilé àwọn ìránṣẹ́ tẹmpili àti àwọn oníṣòwò, ní ọ̀kánkán òdìkejì ibodè àyẹ̀wò títí dé yàrá òkè kọ̀rọ̀;"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 32,
+            "content": [
+              "àti láàrín yàrá òkè kọ̀rọ̀ àti ibodè àgùntàn ni àwọn alágbẹ̀dẹ wúrà àti àwọn oníṣòwò túnṣe."
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/NEH/3.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/NEH/4.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/NEH/2.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 32
+    },
+    "4": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "NEH",
+        "translationId": "yor_bib",
+        "name": "Nehemiah",
+        "commonName": "Nehemiah",
+        "title": "Ìwé Nehemiah",
+        "order": 16,
+        "numberOfChapters": 13,
+        "sha256": "170de1c62a020318afaaae501c800ef2e9341cf2f630ab757c627027f909f708",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/NEH/1.json",
+        "lastChapterNumber": 13,
+        "lastChapterApiLink": "/api/yor_bib/NEH/13.json",
+        "totalNumberOfVerses": 406
+      },
+      "chapter": {
+        "number": 4,
+        "content": [
+          {
+            "type": "heading",
+            "content": [
+              "Àtakò sí àtúnkọ́ odi Jerusalẹmu"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Nígbà tí Sanballati gbọ́ pé àwa ń tún odi náà mọ, ó bínú, ó sì bínú púpọ̀. Ó fi àwọn ará Júù ṣe ẹlẹ́yà,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "ó sọ níwájú àwọn ẹlẹgbẹ́ rẹ̀ àti níwájú àwọn ọmọ-ogun Samaria pé, “Kí ni àwọn aláìlera Júù wọ̀nyí ń ṣe yìí? Ṣé wọn yóò mú odi wọn padà ni? Ṣé wọn yóò rú ẹbọ ni? Ṣé wọn yóò parí i rẹ̀ lóòjọ́ ni bí? Ṣé wọ́n lè mú òkúta tí a ti sun láti inú òkìtì padà bọ̀ sípò tí ó jóná bí wọ́n ṣe wà?”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "Tobiah ará Ammoni, ẹni tí ó wà lẹ́gbẹ̀ẹ́ rẹ̀, wí pé, “Ohun tí wọ́n ń mọ—bí kọ̀lọ̀kọ̀lọ̀ lásán bá gùn ún sókè, yóò fọ́ odi òkúta wọn lulẹ̀!”"
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "Gbọ́ ti wa, Ọlọ́run wa, nítorí àwa di ẹni ẹ̀gàn. Dá ẹ̀gàn wọn padà sórí ara wọn. Kí o sì fi wọ́n fún ìkógun ní ilẹ̀ ìgbèkùn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "Má ṣe bo ẹ̀bi wọn tàbí wẹ àwọn ẹ̀ṣẹ̀ wọn nù kúrò níwájú rẹ, nítorí wọ́n mú ọ bínú níwájú àwọn ọ̀mọ̀lé."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "Bẹ́ẹ̀ ni àwa mọ odi náà títí gbogbo rẹ̀ fi dé ìdajì gíga rẹ̀, nítorí àwọn ènìyàn ṣiṣẹ́ pẹ̀lú gbogbo ọkàn an wọn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "Ṣùgbọ́n nígbà tí Sanballati, Tobiah, àwọn ará Arabia, ará Ammoni, àti àwọn ènìyàn Aṣdodu gbọ́ pé àtúnṣe odi Jerusalẹmu ti ga dé òkè àti pé a ti mọ àwọn ibi tí ó yá dí, inú bí wọn gidigidi."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "Gbogbo wọn jọ gbìmọ̀ pọ̀ láti wá bá Jerusalẹmu jà àti láti dìde wàhálà sí í."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "Ṣùgbọ́n àwa gbàdúrà sí Ọlọ́run wa, a sì yan olùṣọ́ ọ̀sán àti ti òru láti kojú ìhàlẹ̀ yìí."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "Lákòókò yìí, àwọn ènìyàn Juda wí pé, “Agbára àwọn òṣìṣẹ́ ti dínkù, àlàpà púpọ̀ ni ó wà tó bẹ́ẹ̀ tí àwa kò fi le è mọ odi náà.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              "Bẹ́ẹ̀ sì ni àwọn ọ̀tá wa wí pé, “Kí wọn tó mọ̀ tàbí kí wọn tó rí wa, àwa yóò ti dé àárín wọn, a ó sì pa wọ́n, a ó sì dá iṣẹ́ náà dúró.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              "Nígbà náà ni àwọn Júù tí ó ń gbé ní ẹ̀gbẹ́ wọn wá sọ fún wa ní ìgbà mẹ́wàá pé, “Ibikíbi tí ẹ̀yin bá padà sí, wọn yóò kọlù wá.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              "Nítorí náà mo dá ènìyàn díẹ̀ dúró níbi tí ó rẹlẹ̀ jù lẹ́yìn odi ní ibi gbangba, mo fi wọ́n síbẹ̀ nípa àwọn ìdílé wọn, pẹ̀lú àwọn idà wọn, àwọn ọ̀kọ̀ wọn àti àwọn ọrun wọn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              "Lẹ́yìn ìgbà tí mo wo àwọn nǹkan yíká, mo dìde mo sì wí fún àwọn ọlọ́lá àwọn ìjòyè àti àwọn ènìyàn tókù pé, “Ẹ má ṣe bẹ̀rù u wọn. Ẹ rántí Olúwa, ẹni tí ó tóbi, tí ó sì ní ẹ̀rù, kí ẹ sì jà fún àwọn arákùnrin yín, àwọn ọmọkùnrin yín, àwọn ọmọbìnrin yín, àwọn ìyàwó yín àti àwọn ilé yín.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              "Nígbà tí àwọn ọ̀tá wa gbọ́ pé àwa ti mọ èrò wọn àti wí pé Ọlọ́run ti bà á jẹ́, gbogbo wa padà sí ibi odi, ẹnìkọ̀ọ̀kan sí ibi iṣẹ́ tirẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 16,
+            "content": [
+              "Láti ọjọ́ náà lọ, ìdajì àwọn ènìyàn ń ṣe iṣẹ́ náà, nígbà tí àwọn ìdajì tókù múra pẹ̀lú ọ̀kọ̀, asà, ọrun àti ìhámọ́ra. Àwọn ìjòyè sì pín ara wọn sẹ́yìn gbogbo ènìyàn Juda."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 17,
+            "content": [
+              "Àwọn ẹni tí ó ń mọ odi. Àwọn tí ń ru àwọn ohun èlò ṣe iṣẹ́ náà pẹ̀lú ọwọ́ kan, wọ́n sì fi ọwọ́ kejì di ohun ìjà mú,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 18,
+            "content": [
+              "olúkúlùkù àwọn ọ̀mọ̀lé fi idà wọn sí ẹ̀gbẹ́ wọn bí wọ́n ṣe ń ṣiṣẹ́. Ṣùgbọ́n ọkùnrin tí ń fọn ìpè dúró pẹ̀lú mi."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 19,
+            "content": [
+              "Nígbà náà ni mo sọ fún àwọn ọlọ́lá, àwọn ìjòyè àti àwọn ènìyàn tókù pé, “Iṣẹ́ náà fẹ̀ ó sì pọ̀, a sì ti jìnnà sí ara wa púpọ̀ lórí odi."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 20,
+            "content": [
+              "Níbikíbi tí ẹ bá ti gbọ́ ohùn ìpè, ẹ da ara pọ̀ mọ́ wa níbẹ̀. Ọlọ́run wa yóò jà fún wa!”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 21,
+            "content": [
+              "Bẹ́ẹ̀ ni àwa ṣe iṣẹ́ náà pẹ̀lú àwọn ìdajì ènìyàn tí ó di ọ̀kọ̀ mú, láti òwúrọ̀ kùtùkùtù títí di ìgbà tí ìràwọ̀ yóò fi yọ."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 22,
+            "content": [
+              "Ní ìgbà náà mo tún sọ fún àwọn ènìyàn pé, “Jẹ́ kí olúkúlùkù ènìyàn àti olùrànlọ́wọ́ rẹ̀ dúró ní Jerusalẹmu ní òru, nítorí kí wọn le jẹ́ ẹ̀ṣọ́ fún wa ní òru, kí wọn sì le ṣe iṣẹ́ ní ọ̀sán.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 23,
+            "content": [
+              "Bẹ́ẹ̀ ni èmi àti àwọn arákùnrin mi àti àwọn ènìyàn mi àti àwọn ẹ̀ṣọ́ tí ó wà pẹ̀lú mi kò bọ́ aṣọ wa, olúkúlùkù wa ní ohun ìjà tirẹ̀, kódà nígbà tí wọ́n bá ń lọ pọn omi."
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/NEH/4.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/NEH/5.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/NEH/3.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 23
+    },
+    "5": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "NEH",
+        "translationId": "yor_bib",
+        "name": "Nehemiah",
+        "commonName": "Nehemiah",
+        "title": "Ìwé Nehemiah",
+        "order": 16,
+        "numberOfChapters": 13,
+        "sha256": "170de1c62a020318afaaae501c800ef2e9341cf2f630ab757c627027f909f708",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/NEH/1.json",
+        "lastChapterNumber": 13,
+        "lastChapterApiLink": "/api/yor_bib/NEH/13.json",
+        "totalNumberOfVerses": 406
+      },
+      "chapter": {
+        "number": 5,
+        "content": [
+          {
+            "type": "heading",
+            "content": [
+              "Nehemiah ran àwọn aláìní lọ́wọ́"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Nísinsin yìí àwọn ènìyàn àti àwọn ìyàwó wọn kígbe ńlá sókè sí àwọn Júù arákùnrin wọn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "Àwọn kan ń wí pé, “Àwa àti àwọn ọmọkùnrin àti àwọn ọmọbìnrin wa pọ̀; kí àwa kí ó le è jẹ, kí a sì wà láààyè, a gbọdọ̀ rí oúnjẹ.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "Àwọn mìíràn wí pé, “Àwa ti fi oko wa ọgbà àjàrà wa àti ilé wa dógò kí àwa kí ó lè rí oúnjẹ ní àkókò ìyàn.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "Síbẹ̀ àwọn mìíràn wí pé, “Àwa ní láti yá owó láti san ìṣákọ́lẹ̀ fún ọba lórí àwọn oko wa àti àwọn ọgbà àjàrà wa."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "Bí ó tilẹ̀ jẹ́ pé a jẹ́ ẹran-ara kan àti ẹ̀jẹ̀ kan gẹ́gẹ́ bí àwọn ará ìlú wa tí àwọn ọmọkùnrin wa sì dára bí í tiwọn, síbẹ̀ àwa ní láti fi àwọn ọmọkùnrin àti àwọn ọmọbìnrin wa sí oko ẹrú. Díẹ̀ nínú àwọn ọmọbìnrin wa ti wà lóko ẹrú náà, ṣùgbọ́n àwa kò ní agbára, nítorí àwọn oko àti ọgbà àjàrà wa ti di ti ẹlòmíràn.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "Èmi bínú gidigidi nígbà tí mo gbọ́ igbe wọn àti àwọn ẹ̀sùn wọ̀nyí."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "Mo rò wọ́n wò ní ọkàn mi mo sì fi ẹ̀sùn kan ọlọ́lá àti àwọn ìjòyè. Mo sọ fún wọn pé, ẹ̀yin ń gba owó èlé lọ́wọ́ àwọn ará ìlú u yín! Nítorí náà mo pe àpéjọ ńlá láti bá wọn wí."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "Mo sì wí fún wọn pé, “Níbi tí àwa ní agbára mọ, àwa ti ra àwọn Júù arákùnrin wa tí a ti tà fún àwọn tí kì í ṣe Júù padà. Nísinsin yìí ẹ̀yìn ń ta àwọn arákùnrin yín, tí àwa sì tún ní láti rà wọ́n padà!” Wọ́n dákẹ́, nítorí wọn kò rí ohunkóhun sọ."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "Nítorí náà, mo tẹ̀síwájú pé, “Ohun tí ẹ̀ ń ṣe kò dára. Kò ha yẹ kí ẹ máa rìn nínú ìbẹ̀rù Ọlọ́run bí, láti yẹra fún ẹ̀gàn àwọn orílẹ̀-èdè mìíràn tí í ṣe ọ̀tá wa?"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "Èmi àti àwọn arákùnrin mi àti àwọn ènìyàn mi, pẹ̀lú ń yá àwọn ènìyàn lówó àti oúnjẹ. Ṣùgbọ́n ẹ jẹ́ kí a dáwọ́ owó èlé gbígbà yìí dúró!"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              "Ẹ fún wọn ní oko wọn, ọgbà àjàrà wọn, ọgbà olifi wọn àti ilé e wọn pẹ̀lú owó èlé tí ẹ ti gbà lọ́wọ́ wọn ìdá ọgọ́rùn-ún owó, oúnjẹ, wáìnì tuntun àti òróró tí ẹ ti gbà lọ́wọ́ wọn padà kíákíá.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              "Wọ́n wí pé, “Àwa yóò dá a padà. Àwa kì yóò sì béèrè ohunkóhun lọ́wọ́ wọn mọ́. Àwa yóò ṣe bí o ti wí.” Nígbà náà mo pe àwọn àlùfáà, mo sì mú kí àwọn ọlọ́lá àti àwọn ìjòyè búra láti jẹ́ kí wọ́n ṣe ohun tí wọ́n ti ṣe ìlérí."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              "Mo sì gbọn ìṣẹ́tí aṣọ mi, mo wí pé, “Báyìí ni kí Ọlọ́run gbọn olúkúlùkù ènìyàn tí kò bá pa ìlérí yìí mọ́ jáde kúrò ní ilẹ̀ ìní i rẹ̀. Bẹ́ẹ̀ ni kí a gbọn irú ẹni bẹ́ẹ̀ jáde kí ó sì ṣófo!” Gbogbo ìjọ ènìyàn sì wí pé, “Àmín,” wọ́n sì fi ìyìn fún Olúwa. Àwọn ènìyàn náà sì ṣe bí wọ́n ti ṣe ìlérí."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              "Síwájú sí í, láti ogún ọdún ọba Artasasta, nígbà tí a ti yàn mí láti jẹ́ baálẹ̀ wọn ní ilẹ̀ Juda, títí di ọdún kejìlélọ́gbọ̀n ìjọba rẹ̀—ọdún méjìlá, èmi àti àwọn arákùnrin mi kò jẹ oúnjẹ baálẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              "Ṣùgbọ́n àwọn baálẹ̀ ìṣáájú—tí ó ti wà ṣáájú mi—gbe àjàgà wúwo lé àwọn ènìyàn lórí yàtọ̀ fún oúnjẹ àti wáìnì wọ́n sì tún gba ogójì ṣékélì fàdákà lọ́wọ́ wọn. Kódà àwọn ìránṣẹ́ wọn tún jẹ gàba lórí wọn. Ṣùgbọ́n èmi kò ṣe bẹ́ẹ̀ nítorí ìbẹ̀rù Ọlọ́run."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 16,
+            "content": [
+              "Dípò bẹ́ẹ̀, mo fi ara mi jì fún iṣẹ́ lórí odi yìí. Gbogbo àwọn ènìyàn mi péjọ síbẹ̀ fún iṣẹ́ náà; a kò sì gba ilẹ̀ kankan."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 17,
+            "content": [
+              "Síwájú sí í, àádọ́jọ àwọn Júù àti àwọn ìjòyè jẹun lórí tábìlì mi, àti pẹ̀lú àwọn tí wọ́n wá bá wa láti àwọn orílẹ̀-èdè tí ó yí wa ká."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 18,
+            "content": [
+              "Ní ọjọ́ kọ̀ọ̀kan ni a máa ń pèsè màlúù kan, ààyò àgùntàn mẹ́fà àti adìyẹ fún mi àti lẹ́ẹ̀kan ní ọjọ́ mẹ́wàá ni wọ́n máa ń pèsè onírúurú wáìnì tí ó pọ̀ fún mi. Fún gbogbo èyí, èmi kò béèrè oúnjẹ baálẹ̀, nítorí ohun ti a ń béèrè lọ́wọ́ àwọn ènìyàn wọ̀nyí pọ̀ jọjọ."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 19,
+            "content": [
+              "Rántí mi, Ọlọ́run mi, fún rere, nítorí fún gbogbo ohun tí mo ti ṣe fún àwọn ènìyàn yìí."
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/NEH/5.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/NEH/6.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/NEH/4.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 19
+    },
+    "6": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "NEH",
+        "translationId": "yor_bib",
+        "name": "Nehemiah",
+        "commonName": "Nehemiah",
+        "title": "Ìwé Nehemiah",
+        "order": 16,
+        "numberOfChapters": 13,
+        "sha256": "170de1c62a020318afaaae501c800ef2e9341cf2f630ab757c627027f909f708",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/NEH/1.json",
+        "lastChapterNumber": 13,
+        "lastChapterApiLink": "/api/yor_bib/NEH/13.json",
+        "totalNumberOfVerses": 406
+      },
+      "chapter": {
+        "number": 6,
+        "content": [
+          {
+            "type": "heading",
+            "content": [
+              "Àwọn ọ̀tá kò dáwọ́ àtakò dúró"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Nígbà tí Sanballati, Tobiah Geṣemu ará Arabia àti àwọn ọ̀tá wa tókù gbọ́ pé, mo ti tún odi náà mọ, kò sì sí àlàfo kankan tí ó ṣẹ́kù nínú rẹ̀—bí ó tilẹ̀ jẹ́ pé èmi kò ì tí ì ri àwọn ìlẹ̀kùn ibodè ní àkókò náà."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "Sanballati àti Geṣemu rán iṣẹ́ yìí sí mi pé, “Wá jẹ́ kí a jọ pàdé pọ̀ nínú ọ̀kan lára àwọn ìletò ní pẹ̀tẹ́lẹ̀ Ono.” Ṣùgbọ́n wọ́n ń gbèrò láti ṣe mí ní ibi;"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "bẹ́ẹ̀ ni mo rán oníṣẹ́ padà pẹ̀lú èsì yìí pé, “Èmi ń ṣe iṣẹ́ ńlá kan, èmi kò le è sọ̀kalẹ̀ wá. Èéṣe tí iṣẹ́ náà yóò fi dúró, nígbà tí mo bá fi í sílẹ̀ tí mo sì sọ̀kalẹ̀ tọ̀ yín wá?”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "Wọ́n rán iṣẹ́ náà sí mi nígbà mẹ́rin ọ̀tọ̀ọ̀tọ̀, mo sì fún wọn ní èsì bákan náà fún ìgbà kọ̀ọ̀kan."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "Ní ìgbà karùn-ún, Sanballati rán ọmọ ọ̀dọ̀ rẹ̀ sí mi pẹ̀lú irú iṣẹ́ kan náà, lẹ́tà kan tí a kò fi sínú àpò ìwé wà ní ọwọ́ rẹ̀"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "tí a kọ sínú un rẹ̀ pé, “A ròyìn rẹ láàrín àwọn orílẹ̀-èdè, Geṣemu sì sọ pé, òtítọ́ ni, pé ìwọ àti àwọn Júù ń gbèrò láti ṣọ̀tẹ̀, nítorí náà ni ẹ ṣe ń mọ odi. Síwájú sí i, gẹ́gẹ́ bí ìròyìn yìí, ìwọ sì ń gbèrò láti di ọba wọn"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "àti pé ó ti yan àwọn wòlíì kí wọn lè kéde nípa rẹ̀ ní Jerusalẹmu: ‘Ọba kan wà ní Juda!’ Nísinsin yìí, ìròyìn yìí yóò padà sí ọ̀dọ̀ ọba; nítorí náà wá, jẹ́ kí a bá ara wa sọ̀rọ̀.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "Mo dá èsì yìí padà sí i pé, “Kò sí ohun kan nínú irú ohun tí ìwọ sọ tí ó ṣẹlẹ̀; ìwọ kàn rò wọ́n ní orí ara rẹ ni.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "Gbogbo wọn múra láti dẹ́rùbà wá, wọ́n ń rò ó wí pé, “Ọwọ́ wọn kò ní ran iṣẹ́ náà, àti wí pé wọn kò ní parí rẹ̀.” Ṣùgbọ́n mo gbàdúrà pé, “Nísinsin yìí Ọlọ́run fi agbára fún ọwọ́ mi.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "Ní ọjọ́ kan mo lọ sí ilé Ṣemaiah ọmọ Delaiah, ọmọ Mehetabeeli, ẹni tí a há mọ́ sínú ilé rẹ̀. Ó wí pé, “Jẹ́ kí a pàdé ní ilé Ọlọ́run nínú tẹmpili, kí o sì jẹ́ kí a pa àwọn ìlẹ̀kùn tẹmpili dé, nítorí àwọn ènìyàn ń bọ̀ láti pa ọ́, ní òru ni wọn yóò wá láti pa ọ́.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              "Ṣùgbọ́n mo wí pé, “Ǹjẹ́ ó yẹ kí irú ènìyàn bí èmi sálọ? Tàbí kí ènìyàn bí èmi sálọ sínú tẹmpili láti gba ẹ̀mí ara rẹ̀ là? Èmi kò ní lọ!”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              "Èmi wòye pé Ọlọ́run kò rán an, ṣùgbọ́n ó sọ àsọtẹ́lẹ̀ sí mi nítorí Tobiah àti Sanballati ti bẹ̀ ẹ́ ní ọ̀wẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              "Wọ́n bẹ̀ ẹ́ ní ọ̀wẹ̀ láti dẹ́rùbà mí nítorí kí èmi lè dẹ́ṣẹ̀ nípa ṣíṣe èyí, kí wọn lè bà mí lórúkọ jẹ́, kí n sì di ẹni ẹ̀gàn."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              "A! Ọlọ́run mi, rántí Tobiah àti Sanballati, nítorí ohun tí wọ́n ti ṣe; kí o sì tún rántí Noadiah wòlíì obìnrin àti àwọn wòlíì tókù tí wọ́n ń gbèrò láti dẹ́rùbà mí."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              "Bẹ́ẹ̀ ni a parí odi náà ní ọjọ́ kẹẹdọ́gbọ̀n oṣù Eluli,",
+              {
+                "noteId": 0
+              },
+              "láàrín ọjọ́ méjìléláàádọ́ta."
+            ]
+          },
+          {
+            "type": "heading",
+            "content": [
+              "Píparí odi"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 16,
+            "content": [
+              "Nígbà tí àwọn ọ̀tá wa gbọ́ èyí, gbogbo àwọn orílẹ̀-èdè tí ó yí wa ká bẹ̀rù jìnnìjìnnì sì mú wọn, nítorí wọ́n wòye pé iṣẹ́ yìí di ṣíṣe pẹ̀lú ìrànlọ́wọ́ Ọlọ́run wa."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 17,
+            "content": [
+              "Bákan náà, ní ọjọ́ wọ̀n-ọn-nì àwọn ọlọ́lá Juda ń kọ ọ̀pọ̀lọpọ̀ lẹ́tà ránṣẹ́ sí Tobiah, èsì láti ọ̀dọ̀ Tobiah sì ń wá sí ọ̀dọ̀ wọn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 18,
+            "content": [
+              "Nítorí ọ̀pọ̀lọpọ̀ àwọn Juda ti mulẹ̀ pẹ̀lú rẹ̀, nítorí tí ó jẹ́ àna Ṣekaniah ọmọ Arah (Sanballati fẹ́ ọmọ Ṣekaniah), ọmọ rẹ̀ Jehohanani sì tún fẹ́ ọmọbìnrin Meṣullamu ọmọ Berekiah."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 19,
+            "content": [
+              "Síwájú sí í, wọ́n túbọ̀ ń ròyìn iṣẹ́ rere rẹ̀ fún mi, wọ́n sì ń sọ ohun tí mo sọ fún un. Tobiah sì ń kọ àwọn lẹ́tà ránṣẹ́ sí mi láti dẹ́rùbà mí."
+            ]
+          }
+        ],
+        "footnotes": [
+          {
+            "noteId": 0,
+            "caller": "+",
+            "text": "tí ó túmọ̀ sí, oṣù kẹsànán",
+            "reference": {
+              "chapter": 6,
+              "verse": 15
+            }
+          }
+        ]
+      },
+      "thisChapterLink": "/api/yor_bib/NEH/6.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/NEH/7.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/NEH/5.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 19
+    },
+    "7": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "NEH",
+        "translationId": "yor_bib",
+        "name": "Nehemiah",
+        "commonName": "Nehemiah",
+        "title": "Ìwé Nehemiah",
+        "order": 16,
+        "numberOfChapters": 13,
+        "sha256": "170de1c62a020318afaaae501c800ef2e9341cf2f630ab757c627027f909f708",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/NEH/1.json",
+        "lastChapterNumber": 13,
+        "lastChapterApiLink": "/api/yor_bib/NEH/13.json",
+        "totalNumberOfVerses": 406
+      },
+      "chapter": {
+        "number": 7,
+        "content": [
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Lẹ́yìn ìgbà tí a tún odi mọ tán tí mo sì ri àwọn ìlẹ̀kùn sí ààyè wọn, a sì yan àwọn aṣọ́bodè, àwọn akọrin àti àwọn Lefi."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "Mo fún Hanani arákùnrin mi pẹ̀lú Hananiah olórí ilé ìṣọ́ ní àṣẹ lórí Jerusalẹmu, nítorí tí ó jẹ́ ènìyàn olóòtítọ́, ó sì bẹ̀rù Ọlọ́run jù bí ọ̀pọ̀lọpọ̀ ènìyàn ti ṣe lọ."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "Mo sọ fún wọn pé, “A kò gbọdọ̀ ṣí ìlẹ̀kùn Jerusalẹmu títí oòrùn yóò fi mú. Nígbà tí àwọn aṣọ́bodè bá sì wà lẹ́nu iṣẹ́, jẹ́ kí wọn ti ìlẹ̀kùn kí wọn sì há wọn. Bákan náà, yàn nínú àwọn tí ń gbé Jerusalẹmu gẹ́gẹ́ bí olùṣọ́. Àwọn mìíràn níbi tí a pín wọn sí àti àwọn mìíràn ní tòsí ilé e wọn.”"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": [
+              "Àkọsílẹ̀ orúkọ àwọn ìgbèkùn tí wọ́n padà"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "Ìlú náà tóbi ó sì ní ààyè, ṣùgbọ́n ènìyàn inú rẹ̀ kéré, a kò sì tí ì tún àwọn ilé inú rẹ̀ kọ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "Nígbà náà ni Ọlọ́run mi fi sí mi ní ọkàn láti kó àwọn ọlọ́lá, àwọn ìjòyè, àti àwọn ènìyàn jọ fún ìforúkọsílẹ̀ ní ìdílé ìdílé. Mo rí ìwé àkọsílẹ̀ ìtàn ìran àwọn tí ó kọ́ gòkè padà wá láti ìgbèkùn. Èyí ni ohun tí mo rí tí a kọ sínú ìwé náà."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "Èyí ni àwọn ènìyàn agbègbè náà tí wọ́n sọ̀kalẹ̀ wá láti ìgbèkùn, àwọn tí Nebukadnessari ọba Babeli ti kó ní ìgbèkùn (wọ́n padà sí Jerusalẹmu àti Juda, olúkúlùkù sí ìlú u rẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "Wọ́n jọ rìn wá pẹ̀lú u Serubbabeli, Jeṣua, Nehemiah, Asariah, Raamiah, Nahamani, Mordekai, Bilṣani, Misperi, Bigfai, Nehumu, àti Baanah).",
+              {
+                "lineBreak": true
+              },
+              "Àkọsílẹ̀ orúkọ àwọn ọkùnrin Israẹli,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "àwọn ọmọ Paroṣi jẹ́ ẹgbàá ó lé méjìléláàádọ́sàn-án (2,172)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "Ṣefatia jẹ́ òjìdínnírinwó ó lé méjìlá (372)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "Arah jẹ́ ẹgbẹ̀tàléláàádọ́ta ó lé méjì (652)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              "Pahati-Moabu (láti ipasẹ̀ ọmọ Jeṣua àti Joabu) jẹ́ ẹgbàá mẹ́rìnlá ó lé méjìdínlógún (2,818)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              "Elamu jẹ́ àádọ́ta lé lẹ́gbẹ̀fà ó lé mẹ́rin (1,254)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              "Sattu jẹ́ òjìlélẹ́gbẹ̀rin ó lé márùn-ún (845)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              "Sakkai jẹ́ òjìdínlẹ́gbẹ̀rin (760)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              "Binnui jẹ́ òjìlélẹ́gbẹ̀ta ó lé mẹ́jọ (648)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 16,
+            "content": [
+              "Bebai jẹ́ ẹgbẹ̀ta ó lé méjìdínlọ́gbọ̀n (628)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 17,
+            "content": [
+              "Asgadi jẹ́ ẹgbẹ̀ta ó dín méjìdínlọ́gọ́rin (2,322)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 18,
+            "content": [
+              "Adonikami jẹ́ ọ̀tàlélẹ́gbẹ̀ta ó lé méje (667)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 19,
+            "content": [
+              "Bigfai jẹ́ ẹgbàá ó lé mẹ́tàdínláàádọ́rin (2,067)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 20,
+            "content": [
+              "Adini jẹ́ àádọ́ta lé lẹ́gbẹ̀ta ó lé márùn-ún (655)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 21,
+            "content": [
+              "Ateri (láti ipasẹ̀ Hesekiah) jẹ́ méjìdínlọ́gọ́rùn-ún (98)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 22,
+            "content": [
+              "Haṣumu jẹ́ ọ̀rìndínnírinwó ó lé mẹ́jọ (328)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 23,
+            "content": [
+              "Besai jẹ́ ọ̀rìndínnírinwó ó lé mẹ́rin (324)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 24,
+            "content": [
+              "Harifu jẹ́ méjìléláàádọ́fà (112)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 25,
+            "content": [
+              "Gibeoni jẹ́ márùndínlọ́gọ́rùn (95)."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 26,
+            "content": [
+              "Àwọn ọmọ Bẹtilẹhẹmu àti Netofa jẹ́ igba ó dín méjìlélógún (188)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 27,
+            "content": [
+              "Anatoti jẹ́ méjìdínláàádóje (128)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 28,
+            "content": [
+              "Beti-Asmafeti jẹ́ méjìlélógójì (42)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 29,
+            "content": [
+              "Kiriati-Jearimu, Kefira, àti Beeroti jẹ́ ọ̀tàdínlẹ́gbẹ̀rin ó lé mẹ́ta (743)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 30,
+            "content": [
+              "Rama àti Geba jẹ́ ẹgbẹ̀ta ó lé mọ́kànlélógún (621)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 31,
+            "content": [
+              "Mikmasi jẹ́ méjìlélọ́gọ́fà (122)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 32,
+            "content": [
+              "Beteli àti Ai jẹ́ mẹ́tàlélọ́gọ́fà (123)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 33,
+            "content": [
+              "Nebo mìíràn jẹ́ méjìléláàádọ́ta (52)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 34,
+            "content": [
+              "Elamu mìíràn jẹ́ ẹgbẹ̀fà ó lé mẹ́rìnléláàádọ́ta (1,254)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 35,
+            "content": [
+              "Harimu jẹ́ ọ̀rìndínnírinwó (320)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 36,
+            "content": [
+              "Jeriko jẹ́ ọ̀tàdínnírinwó ó lé márùn-ún (345)."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 37,
+            "content": [
+              "Lodi, Hadidi, àti Ono jẹ́ ọ̀rìndínlẹ́gbẹ̀rin ó lé ọ̀kan (721)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 38,
+            "content": [
+              "Senaa jẹ́ ẹgbàajì ó dín àádọ́rin (3,930)."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 39,
+            "content": [
+              "Àwọn àlùfáà: àwọn ọmọ Jedaiah (láti ipasẹ̀ ìdílé Jeṣua) jẹ́ ogún dín lẹ́gbẹ̀rin ó dín méje (973)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 40,
+            "content": [
+              "Immeri jẹ́ àádọ́ta lé lẹ́gbẹ̀rún ó lé méjì (1,052)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 41,
+            "content": [
+              "Paṣuri jẹ́ ẹgbẹ̀fà ó lé mẹ́tàdínláàádọ́ta (1,247)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 42,
+            "content": [
+              "Harimu jẹ́ ẹgbẹ̀rún ó lé mẹ́tàdínlógún (1,017)."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 43,
+            "content": [
+              "Àwọn ọmọ Lefi: àwọn ọmọ Jeṣua (láti ipasẹ̀ Kadmieli, láti ipasẹ̀ Hodafiah) jẹ́ mẹ́rìnléláàádọ́rin (74)."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 44,
+            "content": [
+              "Àwọn akọrin: àwọn ọmọ Asafu jẹ́ méjìdínláàádọ́jọ (148)."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 45,
+            "content": [
+              "Àwọn aṣọ́nà: àwọn ọmọ Ṣallumu, Ateri, Talmoni, Akkubu, Hatita, àti Ṣobai jẹ́ méjìdínlógóje (138)."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 46,
+            "content": [
+              "Àwọn ìránṣẹ́ tẹmpili. Àwọn ọmọ Siha, Hasufa, Tabboati,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 47,
+            "content": [
+              "Kerosi, Sia, Padoni,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 48,
+            "content": [
+              "Lebana, Hagaba, Ṣalmai,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 49,
+            "content": [
+              "Hanani, Giddeli, Gahari,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 50,
+            "content": [
+              "Reaiah, Resini, Nekoda,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 51,
+            "content": [
+              "Gassamu, Ussa, Pasea,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 52,
+            "content": [
+              "Besai, Mehuni, Nefisimu,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 53,
+            "content": [
+              "Bakbu, Hakufa, Harhuri,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 54,
+            "content": [
+              "Basluti, Mehida, Harṣa,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 55,
+            "content": [
+              "Barkosi, Sisera, Tema,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 56,
+            "content": [
+              "Nesia, àti Hatifa."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 57,
+            "content": [
+              "Àwọn ọmọ àwọn ìránṣẹ́ Solomoni: àwọn ọmọ Sotai, Sofereti; Perida,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 58,
+            "content": [
+              "Jaala, Darkoni, Giddeli,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 59,
+            "content": [
+              "Ṣefatia, Hattili, Pokereti-Haṣṣebaimu, àti Amoni."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 60,
+            "content": [
+              "Àwọn ìránṣẹ́ tẹmpili àti àwọn ọmọ ìránṣẹ́ Solomoni jẹ́ irinwó ó dín mẹ́jọ (392)."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 61,
+            "content": [
+              "Àwọn wọ̀nyí gòkè wá láti àwọn ìlú ti Teli-Mela, Teli-Harṣa, Kerubu, Addoni àti Immeri, ṣùgbọ́n wọn kò lè sọ pẹ̀lú ìdánilójú pé ìdílé àwọn wá láti ara ìran ẹ̀yà Israẹli."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 62,
+            "content": [
+              "Àwọn ọmọ Delaiah, Tobiah àti Nekoda jẹ́ òjìlélẹ́gbẹ̀ta ó lé méjì (642)."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 63,
+            "content": [
+              "Lára àwọn àlùfáà ni: àwọn ọmọ Hobaiah, Hakosi àti Barsillai (ọkùnrin tí ó fẹ́ ọmọbìnrin Barsillai ará Gileadi, ẹni tí a ń fi orúkọ yìí pè)."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 64,
+            "content": [
+              "Àwọn wọ̀nyí wá àkọsílẹ̀ orúkọ ìran wọn, ṣùgbọ́n wọn kò rí í níbẹ̀, fún ìdí èyí, a yọ wọ́n kúrò nínú àwọn tí ń ṣiṣẹ́ àlùfáà gẹ́gẹ́ bí aláìmọ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 65,
+            "content": [
+              "Baálẹ̀ sọ fún wọn nítorí náà pé wọn kò gbọdọ̀ kópa nínú jíjẹ oúnjẹ mímọ́ títí tí àlùfáà tí yóò wá tí ń ṣiṣẹ́ ìránṣẹ́ pẹ̀lú Urimu àti Tumimu yóò fi dé."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 66,
+            "content": [
+              "Gbogbo ìjọ ènìyàn náà jẹ́ ẹgbàá mọ́kànlélógún ó lé òjìdínnírinwó (42,360),"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 67,
+            "content": [
+              "yàtọ̀ sí àwọn ìránṣẹ́kùnrin àti ìránṣẹ́bìnrin tí wọ́n jẹ́ ẹgbẹ̀ta dín lẹ́gbàárin ó dín ẹ̀tàlélọ́gọ́ta (7,337); wọ́n sì tún ní àwọn akọrin ọkùnrin àti obìnrin tí wọ́n jẹ́ òjìlúgba ó lé márùn-ún (245)."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 68,
+            "content": [
+              "Ẹṣin wọn jẹ́ ọ̀tàdínlẹ́gbẹ̀rin ó dín mẹ́rin (736), ìbákasẹ wọn jẹ́ òjìlúgba ó dín márùn-ún (245);"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 69,
+            "content": [
+              "ìbákasẹ wọn jẹ́ òjìlénírinwó ó dín márùn-ún (435); kẹ́tẹ́kẹ́tẹ́ wọ́n jẹ́ ẹgbẹ̀rìnlélọ́gbọ̀n ó dín ọgọ́rin (6,720)."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 70,
+            "content": [
+              "Díẹ̀ lára àwọn olórí ìdílé náà kópa nínú ṣíṣe iṣẹ́ náà. Baálẹ̀ fún ilé ìṣúra ní ẹgbẹ̀rún (1,000) dariki wúrà, àádọ́ta àwo koto àti ọ̀rìndínlẹ́gbẹ̀ta lé mẹ́wàá (530) ẹ̀wù fún àwọn àlùfáà."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 71,
+            "content": [
+              "Díẹ̀ lára àwọn olórí ìdílé fún ilé ìṣúra ní ogún ẹgbẹ̀rún (20,000) dariki wúrà àti ẹgbọ̀kànlá (2,200) mina fàdákà."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 72,
+            "content": [
+              "Àròpọ̀ gbogbo ohun tí àwọn ènìyàn tókù fi sílẹ̀ jẹ́ ogún ẹgbẹ̀rún (20,000) dariki wúrà, ẹgbẹ̀rún méjì (2,000) mina fàdákà àti ẹẹ́tàdínláàdọ́rin ẹ̀wù fún àwọn àlùfáà."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 73,
+            "content": [
+              "Àwọn àlùfáà, àwọn Lefi, àwọn aṣọ́bodè, àwọn akọrin, àwọn ènìyàn díẹ̀, àwọn ìránṣẹ́ ilé Ọlọ́run, àti gbogbo ènìyàn Israẹli wà ní ìlú wọn. Esra ka òfin Nígbà tí ó di oṣù keje, tí àwọn ọmọ Israẹli sì ti wà nínú ìlú u wọn,"
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/NEH/7.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/NEH/8.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/NEH/6.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 73
+    },
+    "8": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "NEH",
+        "translationId": "yor_bib",
+        "name": "Nehemiah",
+        "commonName": "Nehemiah",
+        "title": "Ìwé Nehemiah",
+        "order": 16,
+        "numberOfChapters": 13,
+        "sha256": "170de1c62a020318afaaae501c800ef2e9341cf2f630ab757c627027f909f708",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/NEH/1.json",
+        "lastChapterNumber": 13,
+        "lastChapterApiLink": "/api/yor_bib/NEH/13.json",
+        "totalNumberOfVerses": 406
+      },
+      "chapter": {
+        "number": 8,
+        "content": [
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "gbogbo àwọn ènìyàn kó ara wọn jọ bí ẹnìkan ní gbangba ìta níwájú ibodè omi. Wọ́n sọ fún Esra akọ̀wé pé kí ó gbé ìwé òfin Mose jáde, èyí tí Olúwa ti pàṣẹ fún Israẹli."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "Ní ọjọ́ kìn-ín-ní oṣù keje ni àlùfáà Esra gbé ìwé òfin jáde ní iwájú ìjọ ènìyàn, èyí tí ó jẹ́ àpapọ̀ ọkùnrin àti obìnrin àti gbogbo àwọn ènìyàn tí wọ́n le è gbọ́ ọ ní àgbọ́yé."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "Ó kà á sókè láti òwúrọ̀ títí di ọ̀sán bí ó ti kọjú sí ìta ní iwájú ibodè omi ní ojú u gbogbo ọkùnrin, obìnrin àti àwọn ènìyàn tókù tí òye le è yé tí wọ́n wà níbẹ̀. Gbogbo ènìyàn sì fetísílẹ̀ sí ìwé òfin náà pẹ̀lú ìfarabalẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "Akọ̀wé Esra dìde dúró lórí i pẹpẹ ìdúrólé tí a fi igi kàn fún ètò yìí. Ní ẹ̀gbẹ́ rẹ̀ ọ̀tún ni Mattitiah, Ṣema, Anaiah, Uriah, Hilkiah àti Maaseiah gbé dúró sí, ní ẹ̀gbẹ́ òsì rẹ̀ ní Pedaiah, Misaeli, Malkiah, Haṣumu, Haṣabadana, Sekariah àti Meṣullamu dúró sí."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "Esra ṣí ìwé náà, gbogbo ènìyàn sì le rí í nítorí ó dúró níbi tí ó ga ju gbogbo ènìyàn lọ; bí ó sì ti ṣí ìwé náà, gbogbo ènìyàn dìde dúró."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "Esra yin Olúwa, Ọlọ́run alágbára; gbogbo ènìyàn gbé ọwọ́ wọn sókè, wọ́n sì wí pé, “Àmín! Àmín!” Nígbà náà ni wọ́n wólẹ̀ wọ́n sì sin Olúwa ní ìdojúbolẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "Àwọn Lefi—Jeṣua, Bani, Ṣerebiah, Jamini, Akkubu, Ṣabbetai, Hodiah, Maaseiah, Kelita, Asariah, Josabadi, Hanani àti Pelaiah—kọ́ wọn ni òfin náà bí àwọn ènìyàn ṣe wà ní ìdúró síbẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "Wọ́n kà láti inú ìwé òfin Ọlọ́run, wọ́n túmọ̀ rẹ̀, wọ́n ṣe àlàyé kí ohun tí wọ́n kà bá à le yé àwọn ènìyàn yékéyéké."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "Nígbà náà ni Nehemiah tí ó jẹ́ baálẹ̀, Esra àlùfáà àti akọ̀wé, àti àwọn Lefi tí wọ́n ń kọ́ àwọn ènìyàn wí fún gbogbo wọn pé, “Ọjọ́ yìí jẹ́ ọjọ́ mímọ́ fún Olúwa Ọlọ́run yín. Ẹ má ṣe ṣọ̀fọ̀ tàbí sọkún,” nítorí gbogbo àwọn ènìyàn ti ń sọkún bí wọ́n ti ń tẹ́tí sí ọ̀rọ̀ inú òfin náà."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "Nehemiah wí pé, “Ẹ lọ kí ẹ gbádùn oúnjẹ tí ẹ yàn láàyò kí ẹ sì mú ohun dídùn, kí ẹ sì mú díẹ̀ ránṣẹ́ sí àwọn tí kò ní. Ọjọ́ yìí, mímọ́ ni fún Olúwa wa. Ẹ má ṣe banújẹ́, nítorí ayọ̀ Olúwa ni agbára yín.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              "Àwọn ọmọ Lefi mú kí gbogbo ènìyàn dákẹ́ jẹ́, wọ́n wí pé, “Ẹ dákẹ́, nítorí mímọ́ ni ọjọ́ yìí. Ẹ má ṣe banújẹ́.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              "Nígbà náà ni gbogbo ènìyàn lọ láti jẹ àti láti mu, wọ́n sì fi ìpín oúnjẹ ránṣẹ́, wọ́n sì ṣe àjọyọ̀ pẹ̀lú ayọ̀ ńlá, nítorí báyìí àwọn òfin tí a sọ di mímọ́ fun wọn ti yé wọn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              "Ní ọjọ́ kejì oṣù náà, àwọn olórí, gbogbo ìdílé, àti àwọn àlùfáà àti àwọn ọmọ Lefi, péjọ sọ́dọ̀ Esra akọ̀wé, wọ́n fi ara balẹ̀ láti fetí sí àwọn ọ̀rọ̀ òfin."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              "Wọ́n ri ní àkọsílẹ̀ nínú ìwé òfin, èyí tí Olúwa ti pa ní àṣẹ nípasẹ̀ Mose, kí àwọn ọmọ Israẹli gbé inú àgọ́ ní àkókò àjọ àgọ́ oṣù keje"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              "àti kí wọn kéde ọ̀rọ̀ yìí, kí wọn sì tàn án kálẹ̀ ní gbogbo ìlú wọn àti ní Jerusalẹmu: “Ẹ jáde lọ sí ìlú olókè, kí ẹ mú àwọn ẹ̀ka inú olifi àti ẹ̀ka igi olifi igbó, àti láti inú maritili, àwọn imọ̀ ọ̀pẹ àti àwọn igi tí ó léwé dáradára wá, láti ṣe àgọ́”—gẹ́gẹ́ bí a ti kọ ọ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 16,
+            "content": [
+              "Bẹ́ẹ̀ ni àwọn ènìyàn jáde lọ, wọ́n sì mú àwọn ẹ̀ka wá, wọ́n sì kọ́ àgọ́ fún ara wọn sí orí òrùlé ara wọn, ní àgbàlá wọn àti ní àgbàlá ilé Ọlọ́run àti ní ìta gbangba lẹ́gbẹ̀ẹ́ ẹnu ibodè omi àti èyí tí ó wà lẹ́gbẹ̀ẹ́ ẹnu ibodè Efraimu."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 17,
+            "content": [
+              "Gbogbo ìjọ ènìyàn tí wọ́n padà láti ìgbèkùn kọ́ àgọ́, wọ́n sì ń gbé inú wọn. Láti ọjọ́ Jeṣua ọmọ Nuni títí di ọjọ́ náà, àwọn ọmọ Israẹli kò tí ì ṣe àjọyọ̀ ọ rẹ̀ bí irú èyí. Ayọ̀ ọ wọn sì pọ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 18,
+            "content": [
+              "Esra kà nínú ìwé òfin Ọlọ́run, bí ọjọ́ ṣe ń gorí ọjọ́, láti ọjọ́ kìn-ín-ní dé ọjọ́ ìkẹyìn. Wọ́n ṣe àjọyọ̀ àjọ náà fún ọjọ́ méje, ní ọjọ́ kẹjọ wọ́n ní àpéjọ, ní ìbámu pẹ̀lú òfin."
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/NEH/8.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/NEH/9.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/NEH/7.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 18
+    },
+    "9": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "NEH",
+        "translationId": "yor_bib",
+        "name": "Nehemiah",
+        "commonName": "Nehemiah",
+        "title": "Ìwé Nehemiah",
+        "order": 16,
+        "numberOfChapters": 13,
+        "sha256": "170de1c62a020318afaaae501c800ef2e9341cf2f630ab757c627027f909f708",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/NEH/1.json",
+        "lastChapterNumber": 13,
+        "lastChapterApiLink": "/api/yor_bib/NEH/13.json",
+        "totalNumberOfVerses": 406
+      },
+      "chapter": {
+        "number": 9,
+        "content": [
+          {
+            "type": "heading",
+            "content": [
+              "Àwọn ọkùnrin Israẹli jẹ́wọ́ ẹ̀ṣẹ̀ wọn"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Ní ọjọ́ kẹrìnlélógún oṣù kan náà, àwọn ọmọ Israẹli péjọpọ̀, wọ́n gbààwẹ̀, wọ́n wọ aṣọ ọ̀fọ̀, wọ́n sì da eruku sórí ara wọn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "Àwọn ọkùnrin Israẹli sì ya ara wọn sọ́tọ̀ kúrò nínú gbogbo àwọn àjèjì. Wọ́n dúró ní ààyè e wọn, wọ́n sì ń jẹ́wọ́ àwọn ẹ̀ṣẹ̀ ẹ wọn àti iṣẹ́ búburú àwọn baba wọn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "Wọ́n dúró sí ibi tí wọ́n wà, wọ́n sì fi ìdámẹ́rin ọjọ́ kà nínú ìwé òfin Olúwa Ọlọ́run wọn, wọ́n sì tún fi ìdámẹ́rin mìíràn ní ìjẹ́wọ́ ẹ̀ṣẹ̀ àti ní sí sin Olúwa Ọlọ́run wọn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "Nígbà náà ni Jeṣua, àti Bani, Kadmieli, Ṣebaniah, Bunni, Ṣerebiah, Bani àti Kenaani gòkè dúró lórí àwọn àtẹ̀gùn àwọn ọmọ Lefi, wọ́n sì fi ohùn rara kígbe sí Olúwa Ọlọ́run wọn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "Nígbà náà ni àwọn ọmọ Lefi: Jeṣua, Kadmieli, Bani, Haṣbneiah, Ṣerebiah, Hodiah, Ṣebaniah àti Petahiah—wí pé, “Ẹ dìde ẹ fi ìyìn fún Olúwa Ọlọ́run yín, tí ó wà láé àti láéláé.” “Ìbùkún ni fún orúkọ rẹ tí ó ní ògo, kí ó sì di gbígbéga ju gbogbo ìbùkún àti ìyìn lọ."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "Ìwọ nìkan ni Olúwa. Ìwọ ni ó dá ọ̀run, àní àwọn ọ̀run tí ó ga jù pẹ̀lú gbogbo ogun wọn, ayé àti ohun gbogbo tí ń bẹ nínú rẹ̀, òkun, àti ohun gbogbo tí ń bẹ nínú rẹ̀. Ìwọ sì pa gbogbo wọn mọ́ láàyè, ogun ọ̀run sì ń sìn ọ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "“Ìwọ ni Olúwa Ọlọ́run, tí ó yan Abramu tí ó sì mú u jáde láti Uri ti Kaldea, tí ó sì sọ orúkọ rẹ̀ ní Abrahamu."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "Ìwọ sì rí í pé ọkàn rẹ̀ jẹ́ olóòtítọ́ sí ọ, ìwọ sì dá májẹ̀mú pẹ̀lú u rẹ̀ láti fi ilẹ̀ àwọn ará a Kenaani, Hiti, Amori, Peresi, Jebusi àti Girgaṣi fún irú àwọn ọmọ rẹ̀. Ìwọ ti pa ìpinnu rẹ̀ mọ́ nítorí tí ìwọ jẹ́ olódodo."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "“Ìwọ rí ìpọ́njú àwọn baba ńlá wa ní Ejibiti; ìwọ gbọ́ igbe ẹkún wọn ní Òkun Pupa."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "Ìwọ rán iṣẹ́ àmì àti iṣẹ́ ìyanu sí Farao, sí gbogbo àwọn ìjòyè rẹ̀ àti sí gbogbo ènìyàn ilẹ̀ ẹ rẹ̀, nítorí ìwọ mọ ìwà ìgbéraga tí àwọn ará Ejibiti hù sí wọn. Ìwọ ra orúkọ fún ara à rẹ, èyí tí ó sì wà títí di òní yìí."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              "Ìwọ pín òkun níwájú wọn, nítorí kí wọn lè kọjá ní ìyàngbẹ ilẹ̀, ṣùgbọ́n ìwọ sọ àwọn tí ń lépa wọn sínú ibú, bí òkúta sínú omi ńlá."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              "Ní ọ̀sán ìwọ darí i wọn pẹ̀lú ọ̀wọn àwọsánmọ̀ àti ní òru ni ìwọ darí i wọn pẹ̀lú ọ̀wọn iná láti fún wọn ní ìmọ́lẹ̀ ní ọ̀nà tí wọn yóò gbà."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              "“Ìwọ sọ̀kalẹ̀ wá sí orí òkè Sinai; ìwọ bá wọn sọ̀rọ̀ láti ọ̀run. Ìwọ fún wọn ní ìlànà àti àwọn òfin tí ó jẹ́ òdodo tí ó sì tọ́ àti ìlànà tí ó dára."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              "Ìwọ mú ọjọ́ ìsinmi rẹ mímọ́ di mí mọ̀ fún wọn, o sì fún wọn ní àwọn ìlànà, àwọn àṣẹ àti àwọn òfin láti ọwọ́ Mose ìránṣẹ́ rẹ."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              "Ìwọ fún wọn ní oúnjẹ láti ọ̀run wá nígbà tí ebi ń pa wọ́n àti nígbà òǹgbẹ, o fún wọn ní omi láti inú àpáta; o sì sọ fún wọn pé, kí wọ́n lọ láti lọ gba ilẹ̀ náà tí ìwọ ti jẹ́ ẹ̀jẹ́ láti fi fún wọn nípa ìgbọ́wọ́sókè."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 16,
+            "content": [
+              "“Ṣùgbọ́n àwọn, baba ńlá wa, wọ́n ṣe ìgbéraga, wọ́n sì ṣe agídí, wọn kò sì tẹríba fún àwọn ìlànà rẹ."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 17,
+            "content": [
+              "Wọ́n kọ̀ láti fetísílẹ̀, wọ́n sì kùnà láti rántí iṣẹ́ ìyanu tí ìwọ ṣe ní àárín wọn. Wọ́n ṣe agídí, nínú ìṣọ̀tẹ̀ wọn, wọ́n yan olórí láti padà sí oko ẹrú wọn. Ṣùgbọ́n ìwọ Ọlọ́run tí ó ń dáríjì, olóore-ọ̀fẹ́ àti aláàánú, ó lọ́ra láti bínú, ó sì pọ̀ ní ìfẹ́. Nítorí náà ìwọ kò sì kọ̀ wọ́n sílẹ̀,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 18,
+            "content": [
+              "nítòótọ́ nígbà tí wọ́n ṣe ẹgbọrọ màlúù dídá, tí wọ́n sì wí pé, ‘Èyí ni Ọlọ́run rẹ tí ó mú ọ gòkè láti Ejibiti wá; tàbí nígbà tí wọ́n sọ ọ̀rọ̀-òdì tí ó burú jàì’."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 19,
+            "content": [
+              "“Nítorí àánú ńlá rẹ, ìwọ kò kọ̀ wọ́n sílẹ̀ ní aginjù. Ní ọ̀sán ọ̀wọn ìkùùkuu kò kúrò ní ọ̀dọ̀ wọn láti ṣe amọ̀nà an wọn, tàbí ọ̀wọ́n iná láti tàn sí wọn ní òru ní ọ̀nà tí wọn yóò rìn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 20,
+            "content": [
+              "Ìwọ fi ẹ̀mí rere rẹ fún wọn láti kọ́ wọn. Ìwọ kò dá manna rẹ dúró ní ẹnu wọn, ó sì fún wọn ní omi fún òǹgbẹ."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 21,
+            "content": [
+              "Fún ogójì ọdún ni ìwọ fi bọ́ wọn ní aginjù; wọn kò ṣe aláìní ohunkóhun, aṣọ wọn kò gbó bẹ́ẹ̀ ni ẹsẹ̀ wọn kò wú."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 22,
+            "content": [
+              "“Ìwọ fi àwọn ìjọba àti àwọn orílẹ̀-èdè fún wọn, ó sì fi gbogbo ilẹ̀ náà fún wọ́n. Wọ́n sì gba ilẹ̀ ọba Sihoni ará a Heṣboni àti ilẹ̀ Ogu ọba Baṣani."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 23,
+            "content": [
+              "Ìwọ ti mú àwọn ọmọ wọn pọ̀ bí ìràwọ̀ ojú ọ̀run, ó sì mú wọn wá sí ilẹ̀ tí o ti sọ fún àwọn baba wọn pé kí wọn wọ̀, kí wọn sì jogún un rẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 24,
+            "content": [
+              "Àwọn ọkùnrin wọn wọ inú rẹ̀, wọ́n sì gbà ilẹ̀ náà. Ìwọ sì tẹ orí àwọn ará a Kenaani, tí ń gbé inú ilẹ̀ náà ba níwájú wọn; ó fi àwọn ará a Kenaani lé wọn lọ́wọ́ pẹ̀lú àwọn ọba wọn àti àwọn ènìyàn ilẹ̀ náà kí wọn ṣe wọn bí ó ti wù wọ́n."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 25,
+            "content": [
+              "Wọ́n gba àwọn ìlú olódi àti ilẹ̀ ọlọ́ràá; wọ́n gba àwọn ilé tí ó kún fún onírúurú gbogbo nǹkan rere, àwọn kànga tí a ti gbẹ́, àwọn ọgbà àjàrà, àwọn ọgbà olifi àti àwọn igi eléso ní ọ̀pọ̀lọpọ̀. Wọ́n jẹ, wọ́n yó, wọ́n sì sanra dáradára; wọ́n sì yọ̀ nínú oore ńlá rẹ."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 26,
+            "content": [
+              "“Ṣùgbọ́n wọ́n ṣe àìgbọ́ràn, wọ́n sì ṣọ̀tẹ̀ sí ọ; wọ́n gbàgbé òfin rẹ. Wọ́n pa àwọn wòlíì rẹ, tí o fi gbà wọn ni ìyànjú pé kí wọn yí padà sí ọ; wọ́n sì se ọ̀rọ̀-òdì tí ó burú jàì."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 27,
+            "content": [
+              "Nítorí náà, ìwọ fi wọ́n lé àwọn ọ̀tá wọn lọ́wọ́, àwọn tí ó ni wọ́n lára. Ṣùgbọ́n nígbà tí a ni wọ́n lára wọ́n kígbe sí ọ. Ìwọ gbọ́ wọn láti ọ̀run wá àti nínú ọ̀pọ̀lọpọ̀ àánú rẹ, ìwọ fún wọn ní olùgbàlà, tí ó gbà wọ́n lọ́wọ́ àwọn ọ̀tá wọn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 28,
+            "content": [
+              "“Ṣùgbọ́n bí wọ́n bá ti wà nínú ìsinmi, wọn a sì túnṣe búburú lójú rẹ. Nígbà náà ni ìwọ kọ̀ wọ́n sílẹ̀ ṣọ́wọ́ àwọn ọ̀tá kí wọ́n lè jẹ ọba lórí wọn. Nígbà tí wọ́n bá sì tún kígbe sí ọ, ìwọ a gbọ́ láti ọ̀run wá, àti nínú àánú rẹ ni ìwọ gbà láti ìgbà dé ìgbà."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 29,
+            "content": [
+              "“Ìwọ kìlọ̀ fún wọn láti padà sínú òfin rẹ, ṣùgbọ́n wọ́n hu ìwà ìgbéraga, wọ́n sì ṣe àìgbọ́ràn si àṣẹ rẹ. Wọ́n ṣẹ̀ sí ìlànà rẹ, nípa èyí tí ènìyàn yóò yè tí wọ́n bá pa wọ́n mọ́. Nínú agídí ọkàn wọ́n kọ ẹ̀yìn sí ọ, wọ́n jẹ́ olórí kunkun wọn kò sì fẹ́ gbọ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 30,
+            "content": [
+              "Fún ọ̀pọ̀lọpọ̀ ọdún ni ìwọ fi ní sùúrù pẹ̀lú wọn. Nípa ẹ̀mí rẹ ni ìwọ kìlọ̀ fún wọn nípasẹ̀ àwọn wòlíì. Síbẹ̀ wọn kò fi etí sílẹ̀, nítorí náà ni ìwọ ṣe fi wọ́n lé àwọn aládùúgbò wọn lọ́wọ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 31,
+            "content": [
+              "Ṣùgbọ́n nínú ọ̀pọ̀ àánú rẹ, ìwọ kò mú òpin bá wọn tàbí kọ̀ wọ́n sílẹ̀, nítorí ìwọ ni Ọlọ́run olóore-ọ̀fẹ́ àti aláàánú."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 32,
+            "content": [
+              "“Ǹjẹ́ nítorí náà, Ọlọ́run wa, Ọlọ́run tí ó tóbi, tí ó lágbára, tí ó sì ní ẹ̀rù, ẹni tí ó pa májẹ̀mú ìfẹ́ mọ́, má ṣe jẹ́ gbogbo ìnira yìí dàbí ohun kékeré ní ojú rẹ—ìnira tí ó ti wá sórí wa, sórí àwọn ọba wa àti àwọn olórí wa, sórí àwọn àlùfáà wa àti àwọn wòlíì, sórí àwọn baba wa àti sórí gbogbo ènìyàn rẹ̀, láti àwọn ọjọ́ àwọn ọba Asiria wá títí di òní."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 33,
+            "content": [
+              "Ìwọ jẹ́ olódodo nínú ohun gbogbo tí ó ti ṣẹlẹ̀ sí wa; ìwọ sì ti ṣe òtítọ́, nígbà tí a bá ṣe búburú."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 34,
+            "content": [
+              "Àwọn ọba wa, àwọn olórí wa, àwọn àlùfáà wa, àti àwọn baba wa kò tẹ̀lé òfin rẹ; wọn kò fetísílẹ̀ sí àṣẹ rẹ tàbí àwọn ìkìlọ̀ tí ìwọ fún wọn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 35,
+            "content": [
+              "Àní nígbà tí wọ́n wà nínú ìjọba wọn, tí wọ́n ń gbádùn oore ńlá tí ìwọ fi fún wọn, ní ilẹ̀ tí ó tóbi tí ó sì lọ́ràá, wọn kò sìn ọ́ tàbí padà kúrò nínú àwọn ọ̀nà búburú wọn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 36,
+            "content": [
+              "“Ṣùgbọ́n wò ó, àwa jẹ́ ẹrú lónìí, àwa jẹ́ ẹrú ní ilẹ̀ tí ìwọ fún àwọn baba ńlá wa, nítorí kí wọn bá máa jẹ èso rẹ̀ àti ìre mìíràn tí ó mú jáde."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 37,
+            "content": [
+              "Nítorí àwọn ẹ̀ṣẹ̀ wa, ọ̀pọ̀lọpọ̀ ìkórè rẹ lọ sí ọ̀dọ̀ àwọn ọba tí ó fi ṣe olórí wa. Wọ́n ń ṣe àkóso lórí wa àti lórí ẹran wa bí ó ti wù wọ́n, àwa sì wà nínú ìpọ́njú ńlá."
+            ]
+          },
+          {
+            "type": "heading",
+            "content": [
+              "Àdéhùn àwọn ènìyàn"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 38,
+            "content": [
+              "“Nítorí gbogbo èyí, a ń ṣe àdéhùn tí ó fẹsẹ̀múlẹ̀, a sì kọ ọ́ sínú ìwé, àwọn olórí ọmọ Lefi àwọn àlùfáà sì fi èdìdì dì í.”"
+            ]
+          },
+          {
+            "type": "line_break"
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/NEH/9.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/NEH/10.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/NEH/8.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 38
+    },
+    "10": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "NEH",
+        "translationId": "yor_bib",
+        "name": "Nehemiah",
+        "commonName": "Nehemiah",
+        "title": "Ìwé Nehemiah",
+        "order": 16,
+        "numberOfChapters": 13,
+        "sha256": "170de1c62a020318afaaae501c800ef2e9341cf2f630ab757c627027f909f708",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/NEH/1.json",
+        "lastChapterNumber": 13,
+        "lastChapterApiLink": "/api/yor_bib/NEH/13.json",
+        "totalNumberOfVerses": 406
+      },
+      "chapter": {
+        "number": 10,
+        "content": [
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Àwọn tí ó fi èdìdì dì í ni:",
+              {
+                "lineBreak": true
+              },
+              "Nehemiah baálẹ̀, ọmọ Hakaliah.",
+              {
+                "lineBreak": true
+              },
+              "Sedekiah"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "Seraiah, Asariah, Jeremiah,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "Paṣuri, Amariah, Malkiah,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "Hattusi, Ṣebaniah, Malluki,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "Harimu, Meremoti, Obadiah,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "Daniẹli, Ginetoni, Baruku,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "Meṣullamu, Abijah, Mijamini,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "Maasiah, Bilgai àti Ṣemaiah. Àwọn wọ̀nyí ni àwọn àlùfáà."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "Àwọn ọmọ Lefi: Jeṣua ọmọ Asaniah, Binnui ọ̀kan nínú àwọn ọmọ Henadadi, Kadmieli,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "àti àwọn ẹlẹgbẹ́ ẹ wọn: Ṣebaniah, Hodiah, Kelita, Pelaiah, Hanani,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              "Mika, Rehobu, Haṣabiah,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              "Sakkuri, Ṣerebiah, Ṣebaniah,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              "Hodiah, Bani àti Beninu."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              "Àwọn olórí àwọn ènìyàn: Paroṣi, Pahati-Moabu, Elamu, Sattu, Bani,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              "Bunni, Asgadi, Bebai."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 16,
+            "content": [
+              "Adonijah, Bigfai, Adini,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 17,
+            "content": [
+              "Ateri, Hesekiah, Assuri,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 18,
+            "content": [
+              "Hodiah, Haṣumu, Besai,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 19,
+            "content": [
+              "Harifu, Anatoti, Nebai,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 20,
+            "content": [
+              "Magpiaṣi, Meṣullamu, Hesiri"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 21,
+            "content": [
+              "Meṣesabeli, Sadoku, Jaddua"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 22,
+            "content": [
+              "Pelatiah, Hanani, Anaiah,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 23,
+            "content": [
+              "Hosea, Hananiah, Haṣubu,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 24,
+            "content": [
+              "Halloheṣi, Pileha, Ṣobeki,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 25,
+            "content": [
+              "Rehumu, Haṣabna, Maaseiah,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 26,
+            "content": [
+              "Ahijah, Hanani, Anani,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 27,
+            "content": [
+              "Malluki, Harimu, àti Baanah."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 28,
+            "content": [
+              "“Àwọn ènìyàn tókù—àwọn àlùfáà, àwọn ọmọ Lefi, àwọn aṣọ́nà, àwọn ìránṣẹ́ tẹmpili àti gbogbo àwọn tí wọ́n ya ara wọn sọ́tọ̀ kúrò lára àwọn ènìyàn àjèjì nítorí òfin Ọlọ́run, papọ̀ pẹ̀lú ìyàwó wọn, gbogbo ọmọkùnrin àti àwọn ọmọbìnrin wọn, tí òye yé"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 29,
+            "content": [
+              "gbogbo wọn fi ara mọ́ àwọn arákùnrin wọn, àwọn ọlọ́lá, wọ́n sì fi ègún àti ìbúra dé ara wọn láti máa tẹ̀lé òfin Ọlọ́run tí a fi fún wọn ní ipasẹ̀ Mose ìránṣẹ́ Ọlọ́run àti láti pa gbogbo àṣẹ, ìlànà àti òfin Olúwa, wa mọ́ dáradára."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 30,
+            "content": [
+              "“A ti ṣe ìlérí pé, a kò ní fi àwọn ọmọbìnrin wa fún àwọn tí wọ́n wà ní àyíká wa bí ìyàwó, tàbí fẹ́ àwọn ọmọbìnrin wọn fún àwọn ọmọkùnrin wa."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 31,
+            "content": [
+              "“Nígbà tí àwọn ènìyàn àdúgbò bá mú ọjà tàbí oúnjẹ wá ní ọjọ́ ìsinmi láti tà, àwa kò ní rà á ní ọwọ́ wọn ní ọjọ́ ìsinmi tàbí ní ọjọ́ mímọ́ kankan. Ní gbogbo ọdún keje àwa kò ní ro ilẹ̀ náà, a ó sì pa gbogbo àwọn gbèsè rẹ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 32,
+            "content": [
+              "“Àwa gbà ojúṣe láti máa pa àṣẹ mọ́ pé, a ó máa san ìdámẹ́ta ṣékélì ní ọdọọdún fún iṣẹ́ ilé Ọlọ́run wa:"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 33,
+            "content": [
+              "nítorí oúnjẹ tí ó wà lórí tábìlì; nítorí ọrẹ ohun jíjẹ àti ẹbọ sísun ìgbà gbogbo; nítorí ọrẹ ọjọ́ ìsinmi, ti àyajọ́ oṣù tuntun àti àjọ̀dún tí a yàn; nítorí ọrẹ mímọ́; nítorí ọrẹ ẹ̀ṣẹ̀ láti ṣe ètùtù fún Israẹli; àti fún gbogbo iṣẹ́ ilé Ọlọ́run wa."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 34,
+            "content": [
+              "“Àwa, àwọn àlùfáà, àwọn ọmọ Lefi àti àwọn ènìyàn náà ti dìbò láti pinnu ìgbà tí olúkúlùkù àwọn ìdílé yóò mú ọrẹ igi wá láti sun lọ́ríi pẹpẹ Olúwa Ọlọ́run wa sí ilé Ọlọ́run wa, ní àkókò tí a yàn ní ọdọọdún. Gẹ́gẹ́ bí a ti kọ ọ́ sínú ìwé òfin."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 35,
+            "content": [
+              "“Àwa tún gbà ojúṣe láti mú àkọ́so àwọn èso wa wá àti gbogbo èso igi wá ní ilé Olúwa."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 36,
+            "content": [
+              "“Gẹ́gẹ́ bí a sì ti kọ ọ́ sínú ìwé òfin, àwa yóò mú àkọ́bí àwọn ọmọkùnrin wa, ti ohun ọ̀sìn wa, ti àwọn abo màlúù àti ti àwọn àgùntàn wa, wá sí ilé Ọlọ́run wa, fún àwọn àlùfáà tí ń ṣiṣẹ́ níbẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 37,
+            "content": [
+              "“Síwájú sí i, àwa yóò mú àkọ́so oúnjẹ ilẹ̀ wa ti ọrẹ oúnjẹ, ti gbogbo èso àwọn igi àti ti wáìnì tuntun wa àti ti òróró wá sí yàrá ìkó nǹkan pamọ́ sí ilé Ọlọ́run wa àti fún àwọn àlùfáà. Àwa yóò sì mú ìdámẹ́wàá ohun ọ̀gbìn wá fún àwọn ọmọ Lefi, nítorí àwọn ọmọ Lefi ni ó ń gba ìdámẹ́wàá ní gbogbo àwọn ìlú tí a ti ń ṣiṣẹ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 38,
+            "content": [
+              "Àlùfáà tí o ti ìdílé Aaroni wá ni yóò wá pẹ̀lú àwọn ọmọ Lefi nígbà tí wọ́n bá ń gba ìdámẹ́wàá, àwọn ọmọ Lefi yóò sì mú ìdámẹ́wàá ti ìdámẹ́wàá náà wá sí ilé Ọlọ́run, sí yàrá ìkó nǹkan pamọ́ sí inú ilé ìṣúra."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 39,
+            "content": [
+              "Àwọn ènìyàn Israẹli, àti àwọn ọmọ Lefi gbọdọ̀ mú ọrẹ oúnjẹ, wáìnì tuntun àti òróró wá sí yàrá ìkó nǹkan pamọ́ sí níbi tí a pa ohun èlò ibi mímọ́ mọ́ sí àti ibi tí àwọn àlùfáà tí ń ṣe ìránṣẹ́ lọ́wọ́, àwọn aṣọ́nà àti àwọn akọrin máa ń dúró sí. “Àwa kì yóò gbàgbé tàbí ṣe àìbìkítà nípa ilé Ọlọ́run wa.”"
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/NEH/10.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/NEH/11.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/NEH/9.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 39
+    },
+    "11": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "NEH",
+        "translationId": "yor_bib",
+        "name": "Nehemiah",
+        "commonName": "Nehemiah",
+        "title": "Ìwé Nehemiah",
+        "order": 16,
+        "numberOfChapters": 13,
+        "sha256": "170de1c62a020318afaaae501c800ef2e9341cf2f630ab757c627027f909f708",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/NEH/1.json",
+        "lastChapterNumber": 13,
+        "lastChapterApiLink": "/api/yor_bib/NEH/13.json",
+        "totalNumberOfVerses": 406
+      },
+      "chapter": {
+        "number": 11,
+        "content": [
+          {
+            "type": "heading",
+            "content": [
+              "Àwọn olùgbé tuntun ní Jerusalẹmu"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Nísinsin yìí àwọn olórí àwọn ènìyàn tẹ̀dó sí Jerusalẹmu, àwọn ènìyàn tókù sì dìbò láti mú ẹnìkọ̀ọ̀kan jáde nínú àwọn mẹ́wàá mẹ́wàá láti máa gbé ní Jerusalẹmu, ìlú mímọ́, nígbà tí àwọn mẹ́sàn-án tókù yóò dúró sí àwọn ìlú u wọn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "Àwọn ènìyàn súre fún gbogbo àwọn ọkùnrin tí wọ́n jọ̀wọ́ ara wọn láti gbé ní Jerusalẹmu."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "Wọ̀nyí ni àwọn olórí agbègbè ìjọba tí wọ́n tẹ̀dó sí Jerusalẹmu (díẹ̀ nínú àwọn ọmọ Israẹli àwọn àlùfáà, àwọn ọmọ Lefi, àwọn ìránṣẹ́ tẹmpili àti àwọn ìran àwọn ìránṣẹ́ Solomoni ń gbé àwọn ìlú Juda, olúkúlùkù ń gbé lórí ilẹ̀ ìní rẹ̀ ní àwọn ìlú náà."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "Nígbà tí àwọn ènìyàn tókù nínú àwọn Juda àti Benjamini ń gbé ní Jerusalẹmu).",
+              {
+                "lineBreak": true
+              },
+              "Nínú àwọn ọmọ Juda: Ataiah ọmọ Ussiah ọmọ Sekariah, ọmọ Amariah, ọmọ Ṣefatia, ọmọ Mahalaleli, ìran Peresi;"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "àti Maaseiah ọmọ Baruku, ọmọ Koli-Hose, ọmọ Hasaiah, ọmọ Adaiah, ọmọ Joiaribu, ọmọ Sekariah, ọmọ Ṣilo."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "Àwọn ìran Peresi tó gbé ní Jerusalẹmu jẹ́ àádọ́rinlénírinwó ó dín méjì (468) alágbára ọkùnrin."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "Nínú àwọn ìran Benjamini: Sallu ọmọ Meṣullamu, ọmọ Joẹdi, ọmọ Pedaiah, ọmọ Kolaiah, ọmọ Maaseiah, ọmọ Itieli, ọmọ Jeṣaiah,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "àti àwọn ọmọ-ẹ̀yìn rẹ̀, Gabbai àti Sallai jẹ́ ọ̀rìndínlẹ́gbẹ̀rún ó lé mẹ́jọ (928) ọkùnrin."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "Joẹli ọmọ Sikri ni olórí òṣìṣẹ́ wọn, Juda ọmọ Hasenuah sì ni olórí agbègbè kejì ní ìlú náà."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "Nínú àwọn àlùfáà: Jedaiah; ọmọ Joiaribu; Jakini;"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              "Seraiah ọmọ Hilkiah, ọmọ Meṣullamu, ọmọ Sadoku, ọmọ Meraioti, ọmọ Ahitubu, àwọn ni olórí tó ń bojútó ilé Ọlọ́run,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              "àti àwọn ẹlẹgbẹ́ wọn, ẹni tí ó ń ṣe iṣẹ́ ní tẹmpili jẹ́ ẹgbẹ̀rin ó lé mẹ́rìnlélógún (822) ọkùnrin: Adaiah ọmọ Jerohamu, ọmọ Pelaiah, ọmọ Amisi, ọmọ Sekariah, ọmọ Paṣuri, ọmọ Malkiah,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              "àti àwọn ẹlẹgbẹ́ ẹ rẹ̀ tí wọ́n jẹ́ olórí ìdílé jẹ́ òjìlúgba ó lé méjì (242) ọkùnrin: Amaṣai ọmọ Asareeli, ọmọ Ahsai, ọmọ Meṣilemoti, ọmọ Immeri,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              "àti àwọn ẹlẹgbẹ́ ẹ rẹ̀ tí wọ́n jẹ́ alágbára ọkùnrin jẹ́ méjìdínláàádóje (128). Olórí òṣìṣẹ́ ẹ wọn ni Sabdieli ọmọ Hagedolimu."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              "Láti inú àwọn ọmọ Lefi: Ṣemaiah ọmọ Haṣubu, ọmọ Asrikamu, ọmọ Haṣabiah ọmọ Bunni;"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 16,
+            "content": [
+              "Ṣabbetai àti Josabadi, olórí méjì nínú àwọn ọmọ Lefi, àwọn tí ó jẹ́ alábojútó iṣẹ́ tí ó wà ní ẹ̀yìn àgbàlá ilé Ọlọ́run;"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 17,
+            "content": [
+              "Mattaniah ọmọ Mika, ọmọ Sabdi, ọmọ Asafu, adarí tí ó ń ṣáájú ìdúpẹ́ àti àdúrà; Bakbukiah ẹnìkejì láàrín àwọn ẹlẹgbẹ́ ẹ rẹ̀; àti Abida ọmọ Ṣammua, ọmọ Galali, ọmọ Jedutuni."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 18,
+            "content": [
+              "Àwọn ọmọ Lefi nínú ìlú mímọ́ jẹ́ ọ̀rìnlélúgba ó lé mẹ́rin (284)."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 19,
+            "content": [
+              "Àwọn aṣọ́nà: Akkubu, Talmoni, àti àwọn ẹlẹgbẹ́ ẹ wọn, tí wọ́n máa ń ṣọ́nà jẹ́ méjìléláàádọ́sàn-án (172) ọkùnrin."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 20,
+            "content": [
+              "Àwọn tókù nínú àwọn ọmọ Israẹli, pẹ̀lú àwọn àlùfáà àti àwọn ọmọ Lefi, wà ní gbogbo ìlú u Juda, olúkúlùkù lórí ilẹ̀ ìní tirẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 21,
+            "content": [
+              "Àwọn ìránṣẹ́ tẹmpili ń gbé lórí òkè Ofeli, Siha àti Giṣpa sì ni alábojútó wọn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 22,
+            "content": [
+              "Olórí òṣìṣẹ́ àwọn ọmọ Lefi ní Jerusalẹmu ní Ussi ọmọ Bani, ọmọ Haṣabiah, ọmọ Mattaniah ọmọ Mika. Ussi jẹ́ ọ̀kan nínú àwọn ìran Asafu tí wọ́n jẹ́ akọrin ojúṣe nínú ìjọ́sìn ní ilé Ọlọ́run."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 23,
+            "content": [
+              "Àwọn akọrin wà ní abẹ́ àṣẹ ọba, èyí tí ó n díwọ̀n iṣẹ́ ojoojúmọ́ wọn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 24,
+            "content": [
+              "Petahiah ọmọ Meṣesabeli, ọ̀kan nínú àwọn Sera ọmọ Juda ní aṣojú ọba nínú ohun gbogbo tí ó jẹ mọ́ ti àwọn ènìyàn náà."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 25,
+            "content": [
+              "Fún ìletò pẹ̀lú oko wọn, díẹ̀ nínú àwọn ènìyàn Juda tí ń gbé Kiriati-Arba, àti àwọn ìletò agbègbè e rẹ̀, ní Diboni àti ìletò rẹ̀, ní Jekabseeli."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 26,
+            "content": [
+              "Ní Jeṣua, ní Molada, ní Beti-Peleti"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 27,
+            "content": [
+              "ní Hasari-Ṣuali, ní Beerṣeba àti àwọn agbègbè rẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 28,
+            "content": [
+              "Ní Siklagi, ní Mekona àti àwọn ìletò rẹ̀,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 29,
+            "content": [
+              "ní Ẹni-Rimoni, ní Sora, ní Jarmatu,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 30,
+            "content": [
+              "Sanoa, Adullamu àti àwọn ìletò o wọn, ní Lakiṣi àti àwọn oko rẹ̀, àti ní Aseka àti àwọn ìletò rẹ̀. Bẹ́ẹ̀ ni wọ́n ń gbé láti Beerṣeba títí dé àfonífojì Hinnomu."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 31,
+            "content": [
+              "Àwọn ọmọ Benjamini láti Geba ń gbé ní Mikmasi, Aija, Beteli àti àwọn ìletò rẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 32,
+            "content": [
+              "Ní Anatoti, Nobu àti Ananiah,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 33,
+            "content": [
+              "ní Hasori Rama àti Gittaimu,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 34,
+            "content": [
+              "ní Hadidi, Seboimu àti Neballati,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 35,
+            "content": [
+              "ní Lodi àti Ono, àti ní àfonífojì àwọn gbẹ́nàgbẹ́nà."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 36,
+            "content": [
+              "Nínú ìpín àwọn ọmọ Lefi ni Juda tẹ̀dó sí Benjamini."
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/NEH/11.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/NEH/12.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/NEH/10.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 36
+    },
+    "12": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "NEH",
+        "translationId": "yor_bib",
+        "name": "Nehemiah",
+        "commonName": "Nehemiah",
+        "title": "Ìwé Nehemiah",
+        "order": 16,
+        "numberOfChapters": 13,
+        "sha256": "170de1c62a020318afaaae501c800ef2e9341cf2f630ab757c627027f909f708",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/NEH/1.json",
+        "lastChapterNumber": 13,
+        "lastChapterApiLink": "/api/yor_bib/NEH/13.json",
+        "totalNumberOfVerses": 406
+      },
+      "chapter": {
+        "number": 12,
+        "content": [
+          {
+            "type": "heading",
+            "content": [
+              "Àwọn àlùfáà àti àwọn ọmọ Lefi"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Àwọn wọ̀nyí ni àwọn àlùfáà àti àwọn ọmọ Lefi tí ó bá Serubbabeli ọmọ Ṣealitieli àti Jeṣua padà:",
+              {
+                "lineBreak": true
+              },
+              "Seraiah, Jeremiah, Esra,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "Amariah, Malluki, Hattusi,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "Ṣekaniah, Rehumu, Meremoti,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "Iddo, Ginetoni, Abijah,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "Mijamini, Moadiah, Bilgah,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "Ṣemaiah, Joiaribu, Jedaiah,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "Sallu, Amoki, Hilkiah, àti Jedaiah.",
+              {
+                "lineBreak": true
+              },
+              "Wọ̀nyí ni olórí àwọn àlùfáà àti àwọn ẹlẹgbẹ́ ẹ wọn ní ìgbà ayé e Jeṣua."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "Àwọn ọmọ Lefi ni Jeṣua, Binnui, Kadmieli, Ṣerebiah, Juda àti Mattaniah ẹni tí òun pẹ̀lú àwọn ẹlẹgbẹ́ rẹ̀, ni wọn ṣe àkóso orin ìdúpẹ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "Bakbukiah àti Unni, àwọn ẹlẹgbẹ́ wọn dúró sí òdìkejì wọn nínú ìsìn."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "Jeṣua ni baba Joiakimu, Joiakimu ni baba Eliaṣibu, Eliaṣibu ni baba Joiada,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              "Joiada ni baba Jonatani, Jonatani sì ni baba Jaddua."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              "Ní ìgbé ayé Joiakimu, wọ̀nyí ni àwọn olórí àwọn ìdílé àwọn àlùfáà:",
+              {
+                "lineBreak": true
+              },
+              "ti ìdílé Seraiah, Meraiah; ti ìdílé Jeremiah, Hananiah;"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              "ti ìdílé Esra, Meṣullamu; ti ìdílé Amariah, Jehohanani;"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              "ti ìdílé Malluki, Jonatani; ti ìdílé Ṣekaniah, Josẹfu;"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              "ti ìdílé Harimu, Adna; ti ìdílé Meraioti Helikai;"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 16,
+            "content": [
+              "ti ìdílé Iddo, Sekariah; ti ìdílé Ginetoni, Meṣullamu;"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 17,
+            "content": [
+              "ti ìdílé Abijah, Sikri; ti ìdílé Miniamini àti ti ìdílé Moadiah, Piltai;"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 18,
+            "content": [
+              "ti ìdílé Bilgah, Ṣammua; ti ìdílé Ṣemaiah, Jehonatani;"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 19,
+            "content": [
+              "ti ìdílé Joiaribu, Mattenai; ti ìdílé Jedaiah, Ussi;"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 20,
+            "content": [
+              "ti ìdílé Sallu, Kallai; ti ìdílé Amoki, Eberi;"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 21,
+            "content": [
+              "ti ìdílé Hilkiah, Haṣabiah; ti ìdílé Jedaiah, Netaneli."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 22,
+            "content": [
+              "Àwọn olórí ìdílé àwọn ọmọ Lefi ní ìgbà ayé Eliaṣibu, Joiada, Johanani àti Jaddua, àti pẹ̀lú ti àwọn àlùfáà ni a kọ sílẹ̀ ní ìgbà ìjọba Dariusi ará Persia."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 23,
+            "content": [
+              "Àwọn olórí ìdílé láàrín àwọn ọmọ Lefi títí di àkókò Johanani ọmọ Eliaṣibu ni a kọ sílẹ̀ nínú ìwé ìtàn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 24,
+            "content": [
+              "Àti àwọn olórí àwọn ọmọ Lefi ni Haṣabiah, Ṣerebiah, Jeṣua ọmọ Kadmieli, àti àwọn ẹlẹgbẹ́ wọn, tí wọ́n dúró ní ìdojúkojú wọn láti fi ìyìn àti láti dúpẹ́, apá kan ń dá èkejì lóhùn, gẹ́gẹ́ bí àṣẹ Dafidi ènìyàn Ọlọ́run."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 25,
+            "content": [
+              "Mattaniah, Bakbukiah, Obadiah, Meṣullamu, Talmoni àti Akkubu ni aṣọ́nà tí wọ́n ń sọ yàrá ìkó nǹkan pamọ́ sí ní ẹnu-ọ̀nà."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 26,
+            "content": [
+              "Wọ́n ṣiṣẹ́ ìránṣẹ́ ní ìgbà ayé e Joiakimu ọmọ Jeṣua, ọmọ Josadaki, àti ní ọjọ́ ọ Nehemiah baálẹ̀ àti ní ọjọ́ Esra àlùfáà àti akọ̀wé."
+            ]
+          },
+          {
+            "type": "heading",
+            "content": [
+              "Ìyàsímímọ́ odi Jerusalẹmu"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 27,
+            "content": [
+              "Nígbà ìyàsímímọ́ odi Jerusalẹmu a mú àwọn ọmọ Lefi jáde wá láti ibi tí wọ́n ń gbé, wọ́n sì mú wọn wá sí Jerusalẹmu láti fi ayọ̀ ṣe ayẹyẹ ìyàsímímọ́ pẹ̀lú orin ìdúpẹ́ àti pẹ̀lú ohun èlò orin kimbali, haapu àti ohun èlò orin olókùn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 28,
+            "content": [
+              "A kó àwọn akọrin náà jọ papọ̀ láti àwọn ìletò tí ó yí Jerusalẹmu náà ká—láti àwọn abúlé Netofa,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 29,
+            "content": [
+              "láti Beti-Gilgali, àti láti àwọn agbègbè Geba àti Asmafeti, nítorí àwọn akọrin ti kọ́ àwọn ìletò fúnra wọn ní agbègbè Jerusalẹmu."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 30,
+            "content": [
+              "Nígbà tí àwọn àlùfáà àti àwọn ọmọ Lefi ti ya ara wọn sí mímọ́, wọ́n ya àwọn ènìyàn sí mímọ́, àti ẹnu ibodè àti odi pẹ̀lú."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 31,
+            "content": [
+              "Mo sì tún yan àwọn olórí Juda láti gun orí odi náà. Mo sì tún yan àwọn ẹgbẹ́ akọrin ńlá méjì láti dúpẹ́. Àwọn kan yóò gòkè odi lọ sí apá ọ̀tún sí ọ̀nà ibodè Ààtàn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 32,
+            "content": [
+              "Hoṣaiah àti ìdajì àwọn olórí Juda tẹ̀lé wọn,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 33,
+            "content": [
+              "àwọn wọ̀nyí náà sì lọ pẹ̀lú wọn, Asariah, Esra, Meṣullamu,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 34,
+            "content": [
+              "Juda, Benjamini, Ṣemaiah, Jeremiah,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 35,
+            "content": [
+              "pẹ̀lú àwọn àlùfáà díẹ̀ pẹ̀lú ìpè, pẹ̀lú u Sekariah ọmọ Jonatani, ọmọ Ṣemaiah, ọmọ Mattaniah, ọmọ Mikaiah, ọmọ Sakkuri, ọmọ Asafu,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 36,
+            "content": [
+              "àti àwọn ẹlẹgbẹ́ rẹ̀, Ṣemaiah, Asareeli, Milalai, Gilalai, Maai, Netaneli, Juda àti Hanani—pẹ̀lú ohun èlò orin bí àṣẹ Dafidi ènìyàn Ọlọ́run. Esra akọ̀wé ni ó ṣáájú wọn bí wọ́n ti ń tò lọ lọ́wọ̀ọ̀wọ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 37,
+            "content": [
+              "Ní ẹnu ibodè orísun wọ́n ti ń lọ tààrà sí ọ̀nà ní orí àtẹ̀gùn ìlú Dafidi ní orí òkè tí ó kángun sí odi, wọ́n sì gba ẹ̀gbẹ́ ilé Dafidi kọjá títí dé ẹnu ibodè omi ní ìhà ìlà-oòrùn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 38,
+            "content": [
+              "Àwọn ẹgbẹ́ akọrin kejì gba ọ̀nà òdìkejì lọ. Mo tẹ̀lé wọn ní orí odi, pẹ̀lú ìdajì àwọn ènìyàn, kọjá ilé ìṣọ́ ìléru lọ sí odi fífẹ̀,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 39,
+            "content": [
+              "kọjá ẹnu ibodè Efraimu ibodè Jeṣana, ẹnu ibodè ẹja, ilé ìṣọ́ Hananeli àti ilé ìṣọ́ ọgọ́rùn-ún, títí dé ẹnu ibodè àgùntàn. Wọ́n sì dúró ní ibodè ìṣọ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 40,
+            "content": [
+              "Àwọn ẹgbẹ́ akọrin méjèèjì tí wọ́n dúpẹ́ wà ní ààyè nínú ilé Ọlọ́run, èmi náà sì dúró ní ààyè mi pẹ̀lú ìdajì àwọn ìjòyè,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 41,
+            "content": [
+              "àti àwọn àlùfáà Eliakimu, Maaseiah, Miniamini, Mikaiah, Elioenai, Sekariah àti Hananiah pẹ̀lú àwọn ìpè wọn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 42,
+            "content": [
+              "Àti pẹ̀lú Maaseiah, Ṣemaiah, Eleasari àti Ussi, àti Jehohanani, àti Malkiah, àti Elamu, àti Eseri. Àwọn akọrin kọrin sókè ní abẹ́ alábojútó Jesrahiah."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 43,
+            "content": [
+              "Ní ọjọ́ náà wọ́n rú ẹbọ ńlá, wọ́n ṣe àjọyọ̀ nítorí Ọlọ́run ti fún wọn ní ayọ̀ ńlá. Àwọn obìnrin àti àwọn ọmọdé sì yọ̀ pẹ̀lú. A lè gbọ́ ariwo ayọ̀ tí ó jáde láti Jerusalẹmu ní jìnnà réré."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 44,
+            "content": [
+              "Ní àkókò náà, a yan àwọn ènìyàn láti jẹ́ alábojútó yàrá ìṣúra fún àwọn ọrẹ àkọ́so èso àti àwọn ìdámẹ́wàá. Láti inú àwọn oko tí ó wà ní àyíká ìlú ni wọ́n ti ní láti mú wá sínú yàrá ìṣúra, ìpín tí òfin sọ fún àwọn àlùfáà àti àwọn ọmọ Lefi, nítorí inú àwọn ará a Juda yọ́ sí àwọn àlùfáà àti àwọn ọmọ Lefi tó ń ṣiṣẹ́ ìránṣẹ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 45,
+            "content": [
+              "Wọ́n ń ṣiṣẹ́ Ọlọ́run wọn àti iṣẹ́ ìyàsímímọ́, bẹ́ẹ̀ náà ni fún àwọn akọrin àti àwọn aṣọ́nà, wọ́n ń ṣe gẹ́gẹ́ bí Dafidi àti Solomoni ọmọ rẹ̀ ti pàṣẹ fún wọn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 46,
+            "content": [
+              "Ní ọjọ́ pípẹ́ sẹ́yìn ní ìgbà Dafidi àti Asafu, ni àwọn atọ́nisọ́nà ti wà fún àwọn akọrin àti fún orin ìyìn àti orin ọpẹ́ sí Ọlọ́run."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 47,
+            "content": [
+              "Nítorí náà ní ìgbà ayé Serubbabeli àti Nehemiah, gbogbo Israẹli ni ó ń dá ìpín lójoojúmọ́ fún àwọn akọrin àti àwọn aṣọ́nà. Wọ́n sì tún yan ìpín mìíràn sọ́tọ̀ fún àwọn ọmọ Lefi tókù, àwọn ọmọ Lefi náà tún ya ìpín ti àwọn ọmọ Aaroni sọ́tọ̀ fún wọn."
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/NEH/12.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/NEH/13.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/NEH/11.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 47
+    },
+    "13": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "NEH",
+        "translationId": "yor_bib",
+        "name": "Nehemiah",
+        "commonName": "Nehemiah",
+        "title": "Ìwé Nehemiah",
+        "order": 16,
+        "numberOfChapters": 13,
+        "sha256": "170de1c62a020318afaaae501c800ef2e9341cf2f630ab757c627027f909f708",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/NEH/1.json",
+        "lastChapterNumber": 13,
+        "lastChapterApiLink": "/api/yor_bib/NEH/13.json",
+        "totalNumberOfVerses": 406
+      },
+      "chapter": {
+        "number": 13,
+        "content": [
+          {
+            "type": "heading",
+            "content": [
+              "Àtúnṣe ìkẹyìn tí Nehemiah ṣe"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Ní ọjọ́ náà ni a ka ìwé Mose sókè sí etí ìgbọ́ àwọn ènìyàn, nínú rẹ̀ ni a ti rí i tí a kọ ọ́ sílẹ̀ pé a kò gbọdọ̀ gba àwọn ará a Ammoni tàbí àwọn ará a Moabu sí àárín ìjọ ènìyàn Ọlọ́run láéláé."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "Nítorí wọn kò mú oúnjẹ àti omi wá pàdé àwọn ọmọ Israẹli lọ́nà, dípò bẹ́ẹ̀, wọ́n bẹ Balaamu ní ọ̀wẹ̀ láti gégùn ún lé wọn lórí. (Ṣùgbọ́n Ọlọ́run wa yí ègún náà padà sí ìbùkún.)"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "Nígbà tí àwọn ènìyàn gbọ́ òfin yìí, wọ́n yọ gbogbo àwọn àjèjì ènìyàn tí ó darapọ̀ mọ́ wọn kúrò láàrín àwọn Israẹli."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "Ṣáájú èyí a ti fi Eliaṣibu àlùfáà ṣe alákòóso yàrá ìkó nǹkan ilé Ọlọ́run wa sí. Ó súnmọ́ Tobiah pẹ́kípẹ́kí."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "Ó sì ti pèsè yàrá ńlá kan fún un, èyí tí a ń lò tẹ́lẹ̀ fún ìtọ́jú ọrẹ ọkà, tùràrí àti àwọn ohun èlò tẹmpili àti ìdámẹ́wàá ọkà, wáìnì tuntun àti òróró ti a fi lélẹ̀ bí ìlànà fún àwọn ọmọ Lefi, àwọn akọrin àti àwọn aṣọ́nà àti pẹ̀lú gbogbo ọrẹ fún àwọn àlùfáà."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "Ṣùgbọ́n nígbà tí gbogbo èyí ń lọ lọ́wọ́, èmi kò sí ní Jerusalẹmu, nítorí pé ní ọdún kejìlélọ́gbọ̀n Artasasta ọba Babeli ni mo padà tọ ọba lọ. Ṣùgbọ́n nígbà tí ó ṣe díẹ̀, mo gba ààyè lọ́dọ̀ọ rẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "Mo sì padà sí Jerusalẹmu. Níhìn-ín ni mo ti mọ̀ nípa onírúurú ohun búburú tí Eliaṣibu ti ṣe ní ti pípèsè yàrá fún Tobiah nínú àgbàlá ilé Ọlọ́run."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "Kò tẹ́ mi lọ́rùn rárá, mo kó gbogbo ohun èlò ìdílé e Tobiah dà síta láti inú iyàrá náà."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "Mo pàṣẹ kí wọn ya àwọn iyàrá náà sí mímọ́, mo sì kó àwọn ohun èlò ilé Ọlọ́run padà síbẹ̀ pẹ̀lú ọrẹ ọkà àti tùràrí."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "Mo sì tún gbọ́ pé, kò fi àwọn ìpín tí a yà sọ́tọ̀ fún àwọn Lefi, àwọn akọrin tí ń ṣe àkóso ìsìn sì ti padà sí ẹnu onírúurú iṣẹ́ wọn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              "Nígbà náà ni mo bá àwọn ìjòyè wí, mo sì béèrè lọ́wọ́ wọn pé, “Èéṣe tí a fi kọ ilé Ọlọ́run sílẹ̀?” Nígbà náà ni mo pè wọ́n jọ pọ̀, mo sì fi olúkúlùkù sí ẹnu iṣẹ́ rẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              "Gbogbo Juda mú ìdámẹ́wàá ọkà, wáìnì tuntun àti òróró wá sínú yàrá ìkó nǹkan pamọ́ sí."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              "Mo sì fi àlùfáà Ṣelemiah, Sadoku akọ̀wé àti ọmọ Lefi kan tí orúkọ rẹ̀ ń jẹ́ Pedaiah ṣe alákòóso àwọn yàrá ìkó nǹkan pamọ́ sí. Mo sì yan Hanani ọmọ Sakkuri, ọmọ Mattaniah bí olùrànlọ́wọ́ ọ wọn. Àwọn ènìyàn wọ̀nyí ni a kà sí àwọn tó ṣé e gbẹ́kẹ̀lé. Àwọn ni a yàn láti máa pín ohun èlò fún àwọn arákùnrin wọn."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              "Rántí ì mi fún èyí, Ọlọ́run mi, kí o má sì ṣe gbàgbé ohun tí mo fi òtítọ́ ṣe fún ilé Ọlọ́run mi yìí àti fún iṣẹ́ ẹ rẹ̀ gbogbo."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              "Ní ọjọ́ wọ̀n-ọn-nì, mo rí àwọn ènìyàn ní Juda tí wọ́n ń fúntí ní ọjọ́ ìsinmi, tí wọ́n sì ń gbé ọkà wọlé, tí wọn ń di ẹrù lé orí kẹ́tẹ́kẹ́tẹ́ pẹ̀lú wáìnì, èso àjàrà, ọ̀pọ̀tọ́ àti onírúurú ẹrù. Wọ́n sì ń kó gbogbo èyí wá sí Jerusalẹmu ní ọjọ́ ìsinmi. Nítorí náà, mo kìlọ̀ fún wọn nípa títa oúnjẹ ní ọjọ́ náà."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 16,
+            "content": [
+              "Àwọn ará Tire ti ń gbé nínú Jerusalẹmu ń gbé ẹja àti onírúurú ọjà wá fún títà ní ọjọ́ ìsinmi fún àwọn ènìyàn Jerusalẹmu àti fún àwọn ọmọ Juda."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 17,
+            "content": [
+              "Mo bá àwọn ọlọ́lá Juda wí, mo wí fún wọn pé, “Èwo ni ohun búburú tí ẹ ń ṣe yìí ti ẹ ń ba ọjọ́ ìsinmi jẹ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 18,
+            "content": [
+              "Ṣé àwọn baba ńlá yín kò ha ti ṣe nǹkan kan náà tí Ọlọ́run wa fi mú gbogbo àjálù yìí wá orí wa, àti sórí ìlú yìí? Báyìí, ẹ̀yin tún ń ru ìbínú sókè sí i sórí Israẹli nípa bíba ọjọ́ ìsinmi jẹ́.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 19,
+            "content": [
+              "Nígbà tí ojú ọjọ́ ń bora ní ẹnu ibodè Jerusalẹmu, ṣáájú ọjọ́ ìsinmi, mo pàṣẹ pé kí a ti àwọn ìlẹ̀kùn, kí wọn má sì ṣí i títí tí ọjọ́ ìsinmi yóò fi kọjá. Mo yan àwọn ìránṣẹ́ mi láti ṣọ́ ẹnu ibodè, kí a má ba à lè gbé ẹrù kankan wọlé ní ọjọ́ ìsinmi."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 20,
+            "content": [
+              "Síbẹ̀, àwọn tí ń tà àti àwọn tí ń rà sùn ẹ̀yìn odi Jerusalẹmu ní ẹ̀ẹ̀kan tàbí ẹ̀ẹ̀mejì."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 21,
+            "content": [
+              "Ṣùgbọ́n mo kìlọ̀ fún wọn pé, “Èétijẹ́ ti ẹ̀yin fi ń sùn ní ẹ̀yin odi ní òru? Bí ẹ̀yìn bá tún dánwò mọ́, èmi yóò fi ọwọ́ líle mú yín.” Láti ọjọ́ náà lọ, wọn kò sì wá ní ọjọ́ ìsinmi mọ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 22,
+            "content": [
+              "Nígbà náà ni mo pàṣẹ fún àwọn ọmọ Lefi pé kí wọn ya ara wọn sí mímọ́, kí wọn sì ṣọ́ ẹnu ibodè kí a lè pa ọjọ́ ìsinmi mọ́.",
+              {
+                "lineBreak": true
+              },
+              "Tún rántí mi fún èyí, Ọlọ́run mi, kí o sì fi àánú un rẹ hàn fún mi gẹ́gẹ́ bí i títóbi ìfẹ́ ẹ̀ rẹ."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 23,
+            "content": [
+              "Ní ọjọ́ wọ̀n-ọn-nì, mo rí àwọn ọkùnrin Juda tí wọ́n fẹ́ àwọn obìnrin láti Aṣdodu, Ammoni àti Moabu."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 24,
+            "content": [
+              "Ìdajì àwọn ọmọ wọn ń sọ èdè Aṣdodu tàbí èdè ọ̀kan lára àwọn ènìyàn mìíràn tókù, wọn kò sì mọ bí a ṣe ń sọ èdè Juda."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 25,
+            "content": [
+              "Mo bá wọn wí mo sì gégùn ún lé wọn lórí. Mo lu àwọn ènìyàn díẹ̀ nínú wọn mo sì fa irun orí wọn tu. Mo mú kí wọn búra ní orúkọ Ọlọ́run, kí wọn wí pé, “Ẹ̀yin kì yóò fi àwọn ọmọbìnrin wọn fún àwọn ọmọkùnrin yín ní ìyàwó tàbí fún ẹ̀yin tìkára yín."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 26,
+            "content": [
+              "Kì í ha á ṣe àwọn ìgbéyàwó bí irú èyí ni ọba Solomoni fi dá ẹ̀ṣẹ̀? Láàrín àwọn orílẹ̀-èdè, kò sí ọba kan bí i tirẹ̀. Ọlọ́run rẹ̀ fẹ́ràn rẹ̀, Ọlọ́run sì fi jẹ ọba lórí i gbogbo Israẹli, ṣùgbọ́n àwọn obìnrin àjèjì ti sọ ọ́ sínú òfin ẹ̀ṣẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 27,
+            "content": [
+              "Ǹjẹ́ ó ha yẹ kí àwa tún gbọ́ báyìí pé ẹ̀yin náà tún ń ṣe àwọn nǹkan tí ó burú jọjọ wọ̀nyí tí ẹ sì ń ṣe aláìṣòótọ́ sí Ọlọ́run wa nípa fífẹ́ àwọn obìnrin àjèjì?”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 28,
+            "content": [
+              "Ọ̀kan lára àwọn ọmọ Joiada, ọmọ Eliaṣibu olórí àlùfáà jẹ́ àna Sanballati ará a Horoni. Mo sì lé e jáde kúrò lọ́dọ̀ mi."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 29,
+            "content": [
+              "Rántí wọn, Ọlọ́run mi, nítorí wọ́n ti ba iṣẹ́ àlùfáà jẹ́ pẹ̀lú májẹ̀mú iṣẹ́ àlùfáà àti ti àwọn Lefi."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 30,
+            "content": [
+              "Nítorí náà, mo ya àwọn àlùfáà àti àwọn Lefi sí mímọ́ kúrò nínú gbogbo ohun àjèjì, mo sì yan iṣẹ́ fún wọn, olúkúlùkù sí ẹnu iṣẹ́ rẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 31,
+            "content": [
+              "Mo sì tún pèsè fún ọrẹ, igi—pákó ní àkókò tí a yàn àti fún àwọn èso àkọ́so.",
+              {
+                "lineBreak": true
+              },
+              "Rántí mi fún rere, Ọlọ́run mi."
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/NEH/13.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/EST/1.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/NEH/12.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 31
+    }
+  }
+}

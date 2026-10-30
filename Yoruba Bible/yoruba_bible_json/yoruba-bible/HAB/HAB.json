@@ -1,0 +1,1428 @@
+{
+  "bookInfo": {
+    "id": "HAB",
+    "translationId": "yor_bib",
+    "name": "Habakuku",
+    "commonName": "Habakuku",
+    "title": "Ìwé Wòlíì Habakuku",
+    "order": 35,
+    "numberOfChapters": 3,
+    "sha256": "169e679ac4840cf44f6e508e7cde621809e8da218857c7ad7c4da760fe5b0e86",
+    "firstChapterNumber": 1,
+    "firstChapterApiLink": "/api/yor_bib/HAB/1.json",
+    "lastChapterNumber": 3,
+    "lastChapterApiLink": "/api/yor_bib/HAB/3.json",
+    "totalNumberOfVerses": 56
+  },
+  "chapters": {
+    "1": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "HAB",
+        "translationId": "yor_bib",
+        "name": "Habakuku",
+        "commonName": "Habakuku",
+        "title": "Ìwé Wòlíì Habakuku",
+        "order": 35,
+        "numberOfChapters": 3,
+        "sha256": "169e679ac4840cf44f6e508e7cde621809e8da218857c7ad7c4da760fe5b0e86",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/HAB/1.json",
+        "lastChapterNumber": 3,
+        "lastChapterApiLink": "/api/yor_bib/HAB/3.json",
+        "totalNumberOfVerses": 56
+      },
+      "chapter": {
+        "number": 1,
+        "content": [
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Àsọtẹ́lẹ̀ tí wòlíì Habakuku rí."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "heading",
+            "content": [
+              "Ìráhùn Habakuku"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              {
+                "text": "Olúwa, èmi yóò ti ké pẹ́ tó fún ìrànlọ́wọ́,",
+                "poem": 1
+              },
+              {
+                "text": "ṣùgbọ́n ti ìwọ kò ni fetí sí mi?",
+                "poem": 2
+              },
+              {
+                "text": "Tàbí kígbe sí ọ ní ti, “Ìwà ipá!”",
+                "poem": 1
+              },
+              {
+                "text": "Ṣùgbọ́n tí ìwọ kò sì gbàlà?",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              {
+                "text": "Èéṣe tí ìwọ fi mú mi rí àìṣedéédéé?",
+                "poem": 1
+              },
+              {
+                "text": "Èéṣe tí ìwọ sì fi ààyè gba ìwà ìkà?",
+                "poem": 2
+              },
+              {
+                "text": "Ìparun àti ìwà ipá wà ní iwájú mi;",
+                "poem": 1
+              },
+              {
+                "text": "ìjà ń bẹ, ìkọlù sì wà pẹ̀lú.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              {
+                "text": "Nítorí náà, òfin di ohun àìkàsí,",
+                "poem": 1
+              },
+              {
+                "text": "ìdájọ́ òdodo kò sì borí.",
+                "poem": 2
+              },
+              {
+                "text": "Àwọn ẹni búburú yí àwọn olódodo ká,",
+                "poem": 1
+              },
+              {
+                "text": "nítorí náà ni ìdájọ́ òdodo ṣe yí padà.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "content": [
+              "Ìdáhùn Olúwa"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              {
+                "text": "“Ẹ wo inú àwọn kèfèrí, ki ẹ sí wòye,",
+                "poem": 1
+              },
+              {
+                "text": "kí háà kí ó sì ṣe yin gidigidi.",
+                "poem": 2
+              },
+              {
+                "text": "Nítorí èmi ó ṣe ohun kan ní ọjọ́ yín",
+                "poem": 1
+              },
+              {
+                "text": "tí ẹ̀yin kò jẹ́ gbàgbọ́,",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "bí a tilẹ̀ sọ fún yin.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              {
+                "text": "Nítorí pé, èmi yóò gbé àwọn ara Babeli dìde,",
+                "poem": 1
+              },
+              {
+                "text": "àwọn aláìláàánú àti onínú-fùfù ènìyàn",
+                "poem": 2
+              },
+              {
+                "text": "tí ó rin gbogbo ilẹ̀ ayé já",
+                "poem": 1
+              },
+              {
+                "text": "láti fi agbára gbà àwọn ibùgbé tí kì í ṣe tiwọn.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              {
+                "text": "Wọn jẹ́ ènìyàn ti a bẹ̀rù, tí a sì páyà,",
+                "poem": 1
+              },
+              {
+                "text": "ìdájọ́ wọn, àti ọláńlá wọn,",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "yóò máa ti inú wọn jáde.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              {
+                "text": "Ẹṣin wọn yára ju ẹkùn lọ,",
+                "poem": 1
+              },
+              {
+                "text": "wọ́n sì gbóná jú ìkookò àṣálẹ́ lọ",
+                "poem": 2
+              },
+              {
+                "text": "àwọn ẹlẹ́ṣin wọn yóò sí tan ara wọn ká;",
+                "poem": 1
+              },
+              {
+                "text": "wọn yóò sì wá láti ọ̀nà jíjìn réré,",
+                "poem": 2
+              },
+              {
+                "text": "wọn yóò sí fò bí ẹyẹ igún tí ń wá láti jẹrun,",
+                "poem": 1
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              {
+                "text": "gbogbo wọn sì wà fún ìwà ipá",
+                "poem": 2
+              },
+              {
+                "text": "ìwò ojú wọn yóò sì wá síwájú;",
+                "poem": 1
+              },
+              {
+                "text": "wọn sì ko ìgbèkùn jọ bí iyanrìn.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              {
+                "text": "Wọn ó si máa fi àwọn ọba ṣẹ̀sín",
+                "poem": 1
+              },
+              {
+                "text": "wọn ó sì tún kẹ́gàn àwọn aládé.",
+                "poem": 2
+              },
+              {
+                "text": "Wọn yóò sì fi gbogbo ìlú odi alágbára nì rẹ́rìn-ín;",
+                "poem": 1
+              },
+              {
+                "text": "nítorí pé, wọn yóò ko erùpẹ̀ jọ, wọn yóò sì gbà á.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              {
+                "text": "Nígbà náà ni inú rẹ̀ yóò yípadà,",
+                "poem": 1
+              },
+              {
+                "text": "yóò sì rékọjá, yóò si ṣẹ̀ ní kíka agbára rẹ̀ yìí sí iṣẹ́ òrìṣà rẹ̀.”",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "content": [
+              "Ìráhùn lẹ́ẹ̀kejì Habakuku"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              {
+                "text": "Olúwa, ǹjẹ́ láti ayérayé kọ ni ìwọ tí wà?",
+                "poem": 1
+              },
+              {
+                "text": "Olúwa Ọlọ́run mi. Ẹni mímọ́ mi, àwa kì yóò kú",
+                "poem": 2
+              },
+              {
+                "text": "Olúwa, ìwọ tí yàn wọn fún ìdájọ́;",
+                "poem": 1
+              },
+              {
+                "text": "Ọlọ́run alágbára, ìwọ tí fi ẹsẹ̀ wọn múlẹ̀ fún ìbáwí.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              {
+                "text": "Ojú rẹ mọ́ tónítóní láti wo ibi;",
+                "poem": 1
+              },
+              {
+                "text": "ìwọ kò le gbà ìwà ìkà",
+                "poem": 2
+              },
+              {
+                "text": "nítorí kí ni ìwọ ṣe gba àwọn alárékérekè láààyè?",
+                "poem": 1
+              },
+              {
+                "text": "Nítorí kí ni ìwọ ṣe dákẹ́ nígbà tí ẹni búburú ń pa",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "ẹni tí i ṣe olódodo ju wọn lọ run?",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              {
+                "text": "Ìwọ sì tí sọ ènìyàn di bí ẹja inú Òkun,",
+                "poem": 1
+              },
+              {
+                "text": "bí ohun tí ń rákò tí wọn ko ni alákòóso.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              {
+                "text": "Àwọn ènìyàn búburú fi àwọ̀n wọn gbé wọn sókè",
+                "poem": 1
+              },
+              {
+                "text": "ó sì kó wọn jọ nínú àwọ̀n ńlá rẹ̀;",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "nítorí náà, ó dunnú, ó sì yọ̀ pẹ̀lú.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 16,
+            "content": [
+              {
+                "text": "Nítorí náà, ó rú ẹbọ sí àwọ̀n rẹ̀,",
+                "poem": 1
+              },
+              {
+                "text": "ó sì ń sun tùràrí fún àwọ̀n ńlá rẹ̀",
+                "poem": 2
+              },
+              {
+                "text": "nítorí pẹ̀lú àwọ̀n rẹ̀ ni ó fi ń gbé ní ìgbádùn",
+                "poem": 1
+              },
+              {
+                "text": "tí ó sì ń gbádùn pẹ̀lú oúnjẹ tí ó bá wù ú.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 17,
+            "content": [
+              {
+                "text": "Ǹjẹ́ wọn yóò ha máa pa àwọ̀n wọn mọ́ ní òfìfo bí,",
+                "poem": 1
+              },
+              {
+                "text": "tí wọn yóò sì pa orílẹ̀-èdè run láìsí àánú?",
+                "poem": 2
+              }
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/HAB/1.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/HAB/2.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/NAM/3.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 17
+    },
+    "2": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "HAB",
+        "translationId": "yor_bib",
+        "name": "Habakuku",
+        "commonName": "Habakuku",
+        "title": "Ìwé Wòlíì Habakuku",
+        "order": 35,
+        "numberOfChapters": 3,
+        "sha256": "169e679ac4840cf44f6e508e7cde621809e8da218857c7ad7c4da760fe5b0e86",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/HAB/1.json",
+        "lastChapterNumber": 3,
+        "lastChapterApiLink": "/api/yor_bib/HAB/3.json",
+        "totalNumberOfVerses": 56
+      },
+      "chapter": {
+        "number": 2,
+        "content": [
+          {
+            "type": "heading",
+            "content": [
+              "Ìdáhùn Ọlọ́run sí ìráhùn wòlíì Habakuku"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              {
+                "text": "Èmi yóò dúró lórí ibusọ́ mi láti máa wòye,",
+                "poem": 1
+              },
+              {
+                "text": "èmi yóò sì gbé ara mi ka orí alóre,",
+                "poem": 2
+              },
+              {
+                "text": "èmi yóò si ṣọ́ láti gbọ́ ohun tí yóò sọ fún mi",
+                "poem": 1
+              },
+              {
+                "text": "àti èsì ti èmi yóò fún ẹ̀sùn yìí nígbà tó bá ń bá mi wí.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "content": [
+              "Ìdáhùn Olúwa"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "Nígbà náà ni Olúwa dáhùn pé,",
+              {
+                "text": "“Kọ ìṣípayá náà sílẹ̀",
+                "poem": 1
+              },
+              {
+                "text": "kí o sì fi hàn ketekete lórí wàláà",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "kí ẹni tí ń kà á, lè máa sáré.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              {
+                "text": "Nítorí ìṣípayá náà jẹ́ tí ìgbà kan tí a múra sílẹ̀ dè;",
+                "poem": 1
+              },
+              {
+                "text": "yóò máa yára sí ìgbẹ̀yìn",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "kí yóò sìsọ èké.",
+                "poem": 2
+              },
+              {
+                "text": "Bí o tilẹ̀ lọ́ra, dúró dè é;",
+                "poem": 1
+              },
+              {
+                "text": "nítorí, dájúdájú, yóò dé, kí yóò sí pẹ́.”",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              {
+                "text": "“Kíyèsi, ọkàn rẹ tí ó gbéga,",
+                "poem": 1
+              },
+              {
+                "text": "ìfẹ́ rẹ̀ kò dúró ṣinṣin nínú rẹ̀,",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "ṣùgbọ́n olódodo yóò wa nípa ìgbàgbọ́ rẹ̀.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              {
+                "text": "Bẹ́ẹ̀ ni pẹ̀lú, nítorí tí ọtí wáìnì ni ẹ̀tàn,",
+                "poem": 1
+              },
+              {
+                "text": "agbéraga ènìyàn òun, kò sì ní sinmi",
+                "poem": 2
+              },
+              {
+                "text": "ẹni tí ó sọ ìwọra rẹ di gbígbòòrò bí isà òkú,",
+                "poem": 1
+              },
+              {
+                "text": "ó sì dàbí ikú, a kò sì le tẹ́ ẹ lọ́rùn,",
+                "poem": 2
+              },
+              {
+                "text": "ó kó gbogbo orílẹ̀-èdè jọ sí ọ̀dọ̀",
+                "poem": 1
+              },
+              {
+                "text": "ó sì gba gbogbo ènìyàn jọ sí ọ̀dọ̀ rẹ̀.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "“Gbogbo àwọn wọ̀nyí kì yóò máa pa òwe sí i tí wọn yóò sì máa kọ orin òwe sí i wí pé,",
+              {
+                "text": "“ ‘Ègbé ni fún ẹni tí ń mu ohun tí kì í ṣe tirẹ̀ pọ̀ sí i!",
+                "poem": 1
+              },
+              {
+                "text": "Tí ó sì sọ ara rẹ̀ di ọlọ́rọ̀ nípasẹ̀ ìlọ́nilọ́wọ́gbà!",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "Eléyìí yóò ha ti pẹ́ tó?’",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              {
+                "text": "Ǹjẹ́ ẹni ti ó yọ ọ́ lẹ́nu, kí yóò ha dìde ní òjijì?",
+                "poem": 1
+              },
+              {
+                "text": "Àti àwọn tí ó wàhálà rẹ kì yóò jí, kí wọn ó sì dẹ́rùbà ọ́?",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "Nígbà náà ni ìwọ yóò wa dí ìkógun fún wọn.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              {
+                "text": "Nítorí ìwọ ti kó Orílẹ̀-èdè púpọ̀,",
+                "poem": 1
+              },
+              {
+                "text": "àwọn ènìyàn tókù yóò sì kó ọ",
+                "poem": 2
+              },
+              {
+                "text": "nítorí ìwọ tí ta ẹ̀jẹ̀ ènìyàn sílẹ̀; nítorí ẹ̀jẹ̀,",
+                "poem": 1
+              },
+              {
+                "text": "ìwọ tí pa ilẹ̀ àti ìlú ńlá run",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "àti gbogbo ènìyàn to ń gbé inú rẹ̀.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              {
+                "text": "“Ègbé ni fún ẹni tí ń jẹ èrè ìjẹkújẹ sí ilé rẹ̀,",
+                "poem": 1
+              },
+              {
+                "text": "tí o sí gbé ìtẹ́ rẹ̀ lórí ibi gíga,",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "kí a ba le gbà á sílẹ̀ kúrò lọ́wọ́ ibi!",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              {
+                "text": "Ìwọ ti gbìmọ̀ ìtìjú sí ilé rẹ",
+                "poem": 1
+              },
+              {
+                "text": "nípa kíké ènìyàn púpọ̀ kúrò;",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "ìwọ sì ti pàdánù ẹ̀mí rẹ.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              {
+                "text": "Nítorí tí òkúta yóò kígbe jáde láti inú ògiri wá,",
+                "poem": 1
+              },
+              {
+                "text": "àti ìtí igi láti inú igi rírẹ́ wá yóò sì dá a lóhùn.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              {
+                "text": "“Ègbé ni fún ẹni tí ó fi ẹ̀jẹ̀ kọ́ ìlú,",
+                "poem": 1
+              },
+              {
+                "text": "tí o sì fi àìṣedéédéé tẹ ìlú ńlá dó?",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              {
+                "text": "Olúwa àwọn ọmọ-ogun kò ha ti ṣètò rẹ̀ pé",
+                "poem": 1
+              },
+              {
+                "text": "làálàá àwọn ènìyàn jẹ́ epo fún iná",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "kí àwọn orílẹ̀-èdè náà sì máa ṣe wàhálà fún asán?",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              {
+                "text": "Nítorí tí ayé yóò kún fún ìmọ̀ ògo Olúwa,",
+                "poem": 1
+              },
+              {
+                "text": "bí omi ti bo Òkun.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              {
+                "text": "“Ègbé ni fún ẹni tí ó fi ohun mímu fún aládùúgbò rẹ̀,",
+                "poem": 1
+              },
+              {
+                "text": "tí ó sì fi ọtí-lílé rẹ̀ fún un, tí o sì jẹ́ kó mu àmupara,",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "kí ìwọ kí ó ba lè wo ìhòhò wọn.”",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 16,
+            "content": [
+              {
+                "text": "Ìtìjú yóò bò ọ́ dípò ògo, ìwọ náà mu pẹ̀lú",
+                "poem": 1
+              },
+              {
+                "text": "kí ìhòhò rẹ kí ó lè hàn,",
+                "poem": 2
+              },
+              {
+                "text": "ago ọwọ́ ọ̀tún Olúwa, yóò yípadà sí ọ,",
+                "poem": 1
+              },
+              {
+                "text": "ìtìjú yóò sì bo ògo rẹ.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 17,
+            "content": [
+              {
+                "text": "Nítorí ìwà ipá tí ó tí hù sí Lebanoni yóò bò ọ́,",
+                "poem": 1
+              },
+              {
+                "text": "àti ìparun àwọn ẹranko yóò dẹ́rùbà ọ́ mọ́lẹ̀.",
+                "poem": 2
+              },
+              {
+                "text": "Nítorí ìwọ tí ta ẹ̀jẹ̀ ènìyàn sílẹ̀;",
+                "poem": 1
+              },
+              {
+                "text": "ìwọ tí pa ilẹ̀ náà àti ìlú ńlá run àti gbogbo àwọn tí ń gbé inú rẹ̀.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 18,
+            "content": [
+              {
+                "text": "“Èrè kí ni òrìṣà ni, tí oníṣọ̀nà rẹ̀ fi gbẹ́ ẹ,",
+                "poem": 1
+              },
+              {
+                "text": "ère dídá ti ń kọ ni èké?",
+                "poem": 2
+              },
+              {
+                "text": "Nítorí ti ẹni ti ó dá a gbẹ́kẹ̀ rẹ̀ lé ohun tí ó fúnra rẹ̀ dá;",
+                "poem": 1
+              },
+              {
+                "text": "ó sì mọ ère tí kò le fọhùn.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 19,
+            "content": [
+              {
+                "text": "Ègbé ni fún ẹni ti ń sọ fún igi pé, ‘Di alààyè?’",
+                "poem": 1
+              },
+              {
+                "text": "Fún òkúta tí kò lè fọhùn pé, ‘Dìde.’",
+                "poem": 2
+              },
+              {
+                "text": "Ǹjẹ́ òun lè tọ́ ni sí ọ̀nà?",
+                "poem": 1
+              },
+              {
+                "text": "Wúrà àti fàdákà ni a fi bò ó yíká;",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "kò sì sí èémí kan nínú rẹ.”",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 20,
+            "content": [
+              {
+                "text": "Ṣùgbọ́n Olúwa wà nínú tẹmpili mímọ́ rẹ̀;",
+                "poem": 1
+              },
+              {
+                "text": "ẹ jẹ́ kí gbogbo ayé parọ́rọ́ níwájú rẹ.",
+                "poem": 2
+              }
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/HAB/2.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/HAB/3.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/HAB/1.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 20
+    },
+    "3": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "HAB",
+        "translationId": "yor_bib",
+        "name": "Habakuku",
+        "commonName": "Habakuku",
+        "title": "Ìwé Wòlíì Habakuku",
+        "order": 35,
+        "numberOfChapters": 3,
+        "sha256": "169e679ac4840cf44f6e508e7cde621809e8da218857c7ad7c4da760fe5b0e86",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/HAB/1.json",
+        "lastChapterNumber": 3,
+        "lastChapterApiLink": "/api/yor_bib/HAB/3.json",
+        "totalNumberOfVerses": 56
+      },
+      "chapter": {
+        "number": 3,
+        "content": [
+          {
+            "type": "heading",
+            "content": [
+              "Àdúrà Habakuku"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              {
+                "text": "Àdúrà wòlíì Habakuku gẹ́gẹ́ bí sígónótì. Ohun èlò orin.",
+                "descriptive": true
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              {
+                "text": "Olúwa mo tí gbọ́ ohùn rẹ;",
+                "poem": 1
+              },
+              {
+                "text": "ẹ̀rù sì ba mi fún iṣẹ́ rẹ Olúwa",
+                "poem": 2
+              },
+              {
+                "text": "sọ wọn di ọ̀tún ní ọjọ́ ti wa,",
+                "poem": 1
+              },
+              {
+                "text": "ní àkókò tiwa, jẹ́ kó di mí mọ̀;",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "ni ìbínú, rántí àánú.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              {
+                "text": "Ọlọ́run yóò wa láti Temani,",
+                "poem": 1
+              },
+              {
+                "text": "ibi mímọ́ jùlọ láti òkè Parani",
+                "poem": 2
+              },
+              {
+                "text": "ògo rẹ̀ sí bo àwọn ọ̀run,",
+                "poem": 1
+              },
+              {
+                "text": "ilé ayé sì kún fún ìyìn rẹ.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              {
+                "text": "Dídán rẹ sí dàbí ìmọ́lẹ̀ oòrùn",
+                "poem": 1
+              },
+              {
+                "text": "ìtànṣán ìmọ́lẹ̀ jáde wa láti ọwọ́ rẹ,",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "níbi tí wọn fi agbára rẹ̀ pamọ́ sí.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              {
+                "text": "Àjàkálẹ̀-ààrùn ń lọ ni iwájú rẹ;",
+                "poem": 1
+              },
+              {
+                "text": "ìyọnu sí ń tọ ẹsẹ̀ rẹ lọ.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              {
+                "text": "Ó dúró, ó sì mi ayé;",
+                "poem": 1
+              },
+              {
+                "text": "ó wò, ó sì mú àwọn orílẹ̀-èdè wárìrì",
+                "poem": 2
+              },
+              {
+                "text": "a sì tú àwọn òkè ńlá ayérayé ká,",
+                "poem": 1
+              },
+              {
+                "text": "àwọn òkè kéékèèké ayérayé sì tẹríba:",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "ọ̀nà rẹ ayérayé ni.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              {
+                "text": "Mo rí àgọ́ Kuṣani nínú ìpọ́njú",
+                "poem": 1
+              },
+              {
+                "text": "àti àwọn ibùgbé Midiani nínú ìrora.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              {
+                "text": "Ǹjẹ́ ìwọ ha ń bínú sí àwọn odò nì, Olúwa?",
+                "poem": 1
+              },
+              {
+                "text": "Ǹjẹ́ ìbínú rẹ wa lórí àwọn odò ṣíṣàn bí?",
+                "poem": 2
+              },
+              {
+                "text": "Ìbínú rẹ ha wá sórí Òkun",
+                "poem": 1
+              },
+              {
+                "text": "tí ìwọ fi ń gun ẹṣin,",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "àti kẹ̀kẹ́ ìgbàlà rẹ?",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              {
+                "text": "A ṣí ọrun rẹ sílẹ̀ pátápátá,",
+                "poem": 1
+              },
+              {
+                "text": "gẹ́gẹ́ bí ìbúra àwọn ẹ̀yà, àní ọ̀rọ̀ rẹ,",
+                "poem": 2
+              },
+              {
+                "text": "ìwọ sì fi odò pín ilẹ̀ ayé.",
+                "poem": 1
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              {
+                "text": "Àwọn òkè ńlá ri ọ wọn sì wárìrì",
+                "poem": 2
+              },
+              {
+                "text": "àgbàrá òjò ń sàn án kọjá lọ;",
+                "poem": 1
+              },
+              {
+                "text": "ibú ń ké ramúramù",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "ó sì gbé irú omi sókè.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              {
+                "text": "Òòrùn àti Òṣùpá dúró jẹ́ẹ́jẹ́ ni ibùgbé wọn,",
+                "poem": 1
+              },
+              {
+                "text": "pẹ̀lú ìmọ́lẹ̀ ọfà rẹ ni wọn yára lọ,",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "àti ni dídán ọ̀kọ̀ rẹ ti ń kọ mànà.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              {
+                "text": "Ní ìrunú ni ìwọ rin ilẹ̀ náà já,",
+                "poem": 1
+              },
+              {
+                "text": "ní ìbínú ni ìwọ tí tẹ́ àwọn orílẹ̀-èdè rẹ.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              {
+                "text": "Ìwọ jáde lọ láti tú àwọn ènìyàn rẹ sílẹ̀,",
+                "poem": 1
+              },
+              {
+                "text": "àti láti gba ẹni àmì òróró rẹ là,",
+                "poem": 2
+              },
+              {
+                "text": "Ìwọ ti run àwọn olórí kúrò nínú ilẹ̀ àwọn ènìyàn búburú,",
+                "poem": 1
+              },
+              {
+                "text": "ó sì bọ ìhámọ́ra rẹ láti orí de ẹsẹ̀.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              {
+                "text": "Pẹ̀lú ọ̀kọ̀ rẹ̀ kí ó fi gún orí rẹ",
+                "poem": 1
+              },
+              {
+                "text": "nígbà tí àwọn jagunjagun rẹ̀",
+                "poem": 2
+              },
+              {
+                "text": "jáde láti tú wá ká,",
+                "poem": 1
+              },
+              {
+                "text": "ayọ̀ wọn sì ni láti jẹ tálákà run ní ìkọ̀kọ̀.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              {
+                "text": "Ìwọ fi ẹṣin rẹ rìn Òkun já,",
+                "poem": 1
+              },
+              {
+                "text": "ó sì da àwọn omi ńlá ru.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 16,
+            "content": [
+              {
+                "text": "Mo gbọ́, ọkàn mi sì wárìrì,",
+                "poem": 1
+              },
+              {
+                "text": "ètè mi sì gbọ̀n sí ìró náà;",
+                "poem": 2
+              },
+              {
+                "text": "ìbàjẹ́ sì wọ inú egungun mi lọ,",
+                "poem": 1
+              },
+              {
+                "text": "ẹsẹ̀ mi sì wárìrì,",
+                "poem": 2
+              },
+              {
+                "text": "mo dúró ni ìdákẹ́ jẹ́ẹ́ fún ọjọ́ ìdààmú",
+                "poem": 1
+              },
+              {
+                "text": "láti de sórí àwọn ènìyàn tó ń dojúkọ wá.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 17,
+            "content": [
+              {
+                "text": "Bí igi ọ̀pọ̀tọ́ ko tilẹ̀ tanná,",
+                "poem": 1
+              },
+              {
+                "text": "tí èso kò sí nínú àjàrà;",
+                "poem": 2
+              },
+              {
+                "text": "tí igi olifi ko le so,",
+                "poem": 1
+              },
+              {
+                "text": "àwọn oko ko sì mú oúnjẹ wá;",
+                "poem": 2
+              },
+              {
+                "text": "tí a sì ké agbo ẹran kúrò nínú agbo,",
+                "poem": 1
+              },
+              {
+                "text": "tí kò sì sí ọwọ́ ẹran ni ibùso mọ́,",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 18,
+            "content": [
+              {
+                "text": "síbẹ̀, èmi ó láyọ̀ nínú Olúwa,",
+                "poem": 1
+              },
+              {
+                "text": "èmi yóò sí máa yọ nínú Ọlọ́run ìgbàlà mi.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 19,
+            "content": [
+              {
+                "text": "Olúwa Olódùmarè ni agbára mi,",
+                "poem": 1
+              },
+              {
+                "text": "òun yóò sí ṣe ẹsẹ̀ mi bí ẹsẹ̀ abo àgbọ̀nrín,",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "yóò sí mú mi rìn lórí ibi gíga.",
+                "poem": 2
+              },
+              {
+                "text": "Sí olórí akọrin lórí ohun èlò orin olókùn mi.",
+                "descriptive": true
+              }
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/HAB/3.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/ZEP/1.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/HAB/2.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 19
+    }
+  }
+}

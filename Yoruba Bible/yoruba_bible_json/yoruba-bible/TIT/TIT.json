@@ -1,0 +1,541 @@
+{
+  "bookInfo": {
+    "id": "TIT",
+    "translationId": "yor_bib",
+    "name": "Titu",
+    "commonName": "Titu",
+    "title": "Ìwé Titu",
+    "order": 56,
+    "numberOfChapters": 3,
+    "sha256": "3cb4e160dfa5f9f9b7f5f10a15cf169ca65a61c9759f344122a6c8532af9594f",
+    "firstChapterNumber": 1,
+    "firstChapterApiLink": "/api/yor_bib/TIT/1.json",
+    "lastChapterNumber": 3,
+    "lastChapterApiLink": "/api/yor_bib/TIT/3.json",
+    "totalNumberOfVerses": 46
+  },
+  "chapters": {
+    "1": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "TIT",
+        "translationId": "yor_bib",
+        "name": "Titu",
+        "commonName": "Titu",
+        "title": "Ìwé Titu",
+        "order": 56,
+        "numberOfChapters": 3,
+        "sha256": "3cb4e160dfa5f9f9b7f5f10a15cf169ca65a61c9759f344122a6c8532af9594f",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/TIT/1.json",
+        "lastChapterNumber": 3,
+        "lastChapterApiLink": "/api/yor_bib/TIT/3.json",
+        "totalNumberOfVerses": 46
+      },
+      "chapter": {
+        "number": 1,
+        "content": [
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Paulu, ìránṣẹ́ Ọlọ́run àti aposteli Jesu Kristi, gẹ́gẹ́ bí ìgbàgbọ́ àwọn àyànfẹ́ Ọlọ́run àti ìmọ̀ òtítọ́ irú èyí tí í máa darí ènìyàn sí ìgbé ayé ìwà-bí-Ọlọ́run—"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "ìgbàgbọ́ àti ìmọ̀ tí ó dúró lórí ìrètí iyè àìnípẹ̀kun, èyí tí Ọlọ́run tí kì í purọ́ ti ṣe ìlérí rẹ̀ ṣáájú kí ayé tó bẹ̀rẹ̀,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "àti pé ní àkókò tirẹ̀, òun ti fi ọ̀rọ̀ rẹ̀ hàn nínú ìwàásù tí a fi lé mi lọ́wọ́ nípa àṣẹ Ọlọ́run Olùgbàlà wa,"
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "Sí Titu, ọmọ mi tòótọ́ nínú ìgbàgbọ́ wa kan náà:",
+              {
+                "lineBreak": true
+              },
+              "Oore-ọ̀fẹ́ àti àlàáfíà láti ọ̀dọ̀ Ọlọ́run Baba àti Kristi Jesu Olùgbàlà wa."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "heading",
+            "content": [
+              "Iṣẹ́ Titu sí Krete"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "Ìdí tí mo fi fi ọ́ sílẹ̀ ní Krete ni pé kí o lè ṣe àṣepé àwọn iṣẹ́ tó ṣẹ́kù. Mo sì ń rọ̀ ọ́ kí o yan àwọn alàgbà ní ìlú kọ̀ọ̀kan gẹ́gẹ́ bí mo ṣe darí rẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "Ẹni tí yóò jẹ́ alàgbà gbọdọ̀ jẹ́ aláìlábùkù, wọ́n gbọdọ̀ jẹ́ onìyàwó kan, ọmọ wọn náà gbọdọ̀ jẹ́ onígbàgbọ́ tí kò ní ẹ̀sùn ìwà ipá tàbí ẹ̀sùn àìgbọ́ràn kankan."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "Alábojútó jẹ́ ẹni tí a gbé iṣẹ́ Ọlọ́run lé lọ́wọ́, nítorí náà, kò gbọdọ̀ ní àbùkù kankan tàbí agbéraga, oníjà, kò gbọdọ̀ jẹ́ ọ̀mùtí tàbí alágídí tàbí olójúkòkòrò."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "Wọ́n ní láti jẹ́ olùfẹ́ àlejò ṣíṣe, olùfẹ́ ohun tí ó dára. Wọ́n ní láti jẹ́ ẹni tí ó kò ara rẹ̀ ní ìjánu, ẹni dúró ṣinṣin, ọlọ́kàn mímọ́, àti ẹni oníwàtítọ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "Ó gbọdọ̀ di ẹ̀kọ́ nípa ìdúró ṣinṣin mú dáradára gẹ́gẹ́ bí ó ti kọ́ ọ, kí ó lè fi ẹ̀kọ́ tí ó yè kooro kọ́ àwọn ẹlòmíràn. Nípa èyí, yóò lè fi ìdí òtítọ́ múlẹ̀ fún àwọn alátakò."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "Nítorí ọ̀pọ̀lọpọ̀ ènìyàn ni ọlọ̀tẹ̀, asọ̀rọ̀ asán àti ẹlẹ́tàn pàápàá jùlọ láàrín àwọn onílà."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              "Ó gbọdọ̀ pa wọ́n lẹ́nu mọ́, nítorí wí pé wọ́n ń pa agbo Ọlọ́run run, nípasẹ̀ àwọn ẹ̀kọ́ tí kò jẹ́ èyí tí wọ́n ń kọ́ni. Èyí ni wọ́n ń ṣe fún ère àìṣòdodo."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              "Ọ̀kan nínú àwọn wòlíì wọn pàápàá sọ wí pé. “Òpùrọ́ ní àwọn ará Krete, wọ́n jẹ́ ẹranko búburú tí kò sé tù lójú, ọ̀lẹ, àti oníwọra”."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              "Òtítọ́ ni ẹ̀rí yìí. Nítorí náà, bá wọn wí gidigidi, kí wọn ba à lè yè koro nínú ìgbàgbọ́"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              "kí àwọn má ṣe fiyèsí ìtàn lásán ti àwọn Júù, àti òfin àwọn ènìyàn tí wọ́n yípadà kúrò nínú òtítọ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              "Sí ọlọ́kàn mímọ́, ohun gbogbo ló jẹ́ mímọ́, ṣùgbọ́n àwọn tó ti díbàjẹ́ tí wọ́n kò sí ka ohunkóhun sí mímọ́. Nítòótọ́, àti ọkàn àti ẹ̀rí ọkàn wọn ló ti díbàjẹ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 16,
+            "content": [
+              "Wọ́n ń fẹnu sọ wí pé àwọn mọ Ọlọ́run, ṣùgbọ́n wọ́n sẹ́ ẹ nípa ìṣe wọn. Wọ́n díbàjẹ́, wọn si jẹ aláìgbọ́ràn, bẹ́ẹ̀ ni wọ́n kò wúlò lọ́nàkọnà ní ti iṣẹ́ rere gbogbo."
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/TIT/1.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/TIT/2.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/2TI/4.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 16
+    },
+    "2": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "TIT",
+        "translationId": "yor_bib",
+        "name": "Titu",
+        "commonName": "Titu",
+        "title": "Ìwé Titu",
+        "order": 56,
+        "numberOfChapters": 3,
+        "sha256": "3cb4e160dfa5f9f9b7f5f10a15cf169ca65a61c9759f344122a6c8532af9594f",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/TIT/1.json",
+        "lastChapterNumber": 3,
+        "lastChapterApiLink": "/api/yor_bib/TIT/3.json",
+        "totalNumberOfVerses": 46
+      },
+      "chapter": {
+        "number": 2,
+        "content": [
+          {
+            "type": "heading",
+            "content": [
+              "Àwọn ẹ̀kọ́ tí a gbọdọ̀ kọ́ ní onírúurú àkójọpọ̀"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Ṣùgbọ́n ìwọ gbọdọ̀ máa kọ́ni ní ẹ̀kọ́ tí ó yè kooro lórí ìgbé ayé onígbàgbọ́ tòótọ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "Kọ́ àwọn àgbà ọkùnrin lẹ́kọ̀ọ́ láti ní ìrònú àti láti jẹ́ ẹni àpọ́nlé àti ẹni ìwọ̀ntúnwọ̀nsì. Wọn gbọdọ̀ jẹ́ ẹni tí ó jinlẹ̀ nínú ìgbàgbọ́, nínú ìfẹ́ àti nínú ìpamọ́ra."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "Bákan náà, ni kí ó kọ́ àwọn àgbà obìnrin lẹ́kọ̀ọ́ láti kọ́ bí à a tí gbé ìgbé ayé ẹni ọ̀wọ̀, wọn kò gbọdọ̀ jẹ́ afọ̀rọ̀kẹ́lẹ́ batẹnijẹ́ tàbí olùfẹ́ ọtí mímu, ṣùgbọ́n wọ́n gbọdọ̀ jẹ́ olùkọ́ni ní ohun rere."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "Nípa èyí, wọ́n yóò lè máa kọ́ àwọn ọ̀dọ́bìnrin láti nífẹ̀ẹ́ àwọn ọkọ wọn àti àwọn ọmọ wọn,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "láti jẹ́ ẹni ìwọ̀ntúnwọ̀nsì àti ọlọ́kàn mímọ́, kí wọ́n máa ṣe ojúṣe wọn nínú ilé, wọ́n gbọdọ̀ jẹ́ onínúrere, kí wọ́n sì máa tẹríba fún àwọn ọkọ wọ́n, kí ẹnikẹ́ni máa ba à sọ̀rọ̀-òdì sí ọ̀rọ̀ Ọlọ́run."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "Bákan náà, rọ àwọn ọ̀dọ́ ọkùnrin láti kó ara wọn ni ìjánu."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "Nínú ohun gbogbo fi ara rẹ̀ hàn gẹ́gẹ́ bí alápẹẹrẹ ohun rere. Nínú ẹ̀kọ́ rẹ fi àpẹẹrẹ ìwà pípé hàn, ẹni tó kún ojú òsùwọ̀n"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "ọ̀rọ̀ tí ó yè kooro, tí a kò lè dá lẹ́bi, kí ojú kí ó ti ẹni tí ó ń sòdì, ní àìní ohun búburú kan láti wí sí wa."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "Kọ́ àwọn ẹrú láti ṣe ìgbọ́ràn sí àwọn olówó wọn nínú ohun gbogbo, láti máa gbìyànjú láti tẹ́ wọn lọ́rùn, wọn kò gbọdọ̀ gbó olówó wọn lẹ́nu,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "wọn kò gbọdọ̀ jà wọ́n lólè ohunkóhun, ṣùgbọ́n kí wọ́n jẹ́ ẹni tó ṣe é gbẹ́kẹ̀lé, kí wọn ó làkàkà ní gbogbo ọ̀nà láti jẹ́ kí ìkọ́ni nípa Ọlọ́run àti Olùgbàlà ní ìtumọ̀ rere."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              "Nítorí oore-ọ̀fẹ́ Ọlọ́run tó mú ìgbàlà wà ti fi ara hàn fún gbogbo ènìyàn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              "Ó ń kọ́ wa láti sẹ́ àìwà-bí-Ọlọ́run àti ìfẹ́kúfẹ̀ẹ́ ayé, kí a sì máa wà ní àìrékọjá, ní òdodo àti ní ìwà-bí-Ọlọ́run ní ayé ìsinsin yìí,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              "bí a ti ń wọ́nà fún ìrètí tó ní bùkún, èyí ń ní ìfarahàn ògo Ọlọ́run wa tí ó tóbi àti Olùgbàlà wa Jesu Kristi."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              "Ẹni tí ó fi ara rẹ̀ fún wa láti rà fún ìràpadà kúrò nínú ìwà búburú gbogbo àti kí ó sì le wẹ̀ àwọn ènìyàn kan mọ́ fún ara rẹ̀ fún ìní ohun tìkára rẹ̀, àwọn tó ń ní ìtara fún iṣẹ́ rere."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              "Àwọn nǹkan wọ̀nyí ni kí ìwọ kí ó máa kọ wọn. Gbani níyànjú kí ó sì máa fi gbogbo àṣẹ bá ni wí. Máa jẹ́ kí ẹnikẹ́ni kí ó gàn ọ́."
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/TIT/2.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/TIT/3.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/TIT/1.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 15
+    },
+    "3": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "TIT",
+        "translationId": "yor_bib",
+        "name": "Titu",
+        "commonName": "Titu",
+        "title": "Ìwé Titu",
+        "order": 56,
+        "numberOfChapters": 3,
+        "sha256": "3cb4e160dfa5f9f9b7f5f10a15cf169ca65a61c9759f344122a6c8532af9594f",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/TIT/1.json",
+        "lastChapterNumber": 3,
+        "lastChapterApiLink": "/api/yor_bib/TIT/3.json",
+        "totalNumberOfVerses": 46
+      },
+      "chapter": {
+        "number": 3,
+        "content": [
+          {
+            "type": "heading",
+            "content": [
+              "Ṣíṣe ohun tí o tọ̀nà"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Rán àwọn ènìyàn náà létí láti máa tẹríba fún ìjọba àti àwọn aláṣẹ. Kí wọn ṣe ìgbọ́ràn nígbà gbogbo, kí wọn sì múra fún iṣẹ́ rere gbogbo."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "Wọn kò gbọdọ̀ sọ̀rọ̀ ẹnikẹ́ni ní ibi, kí wọn jẹ́ ẹni àlàáfíà àti ẹni pẹ̀lẹ́, kí wọn sì máa fi ìwà tútù gbogbo hàn sí gbogbo ènìyàn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "Nígbà kan rí, àwa pàápàá jẹ́ òpè àti aláìgbọ́ràn, àti tàn wá jẹ, a sì ti sọ wá di ẹrú fún onírúurú ìfẹ́kúfẹ̀ẹ́ àti adùn ayé. À ń gbé ìgbé ayé àrankàn àti owú kíkorò, a jẹ́ ẹni ìríra, a sì ń kórìíra ọmọ ẹnìkejì wa pẹ̀lú."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "Ṣùgbọ́n nígbà tí inú rere àti ìfẹ́ Ọlọ́run Olùgbàlà wa farahàn,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "o gbà wá là. Kì í ṣe nípa iṣẹ́ tí àwa ṣe nínú òdodo bí kò ṣe nítorí àánú rẹ̀. Ó gbà wá là, nípasẹ̀ ìwẹ̀nù àtúnbí àti ìsọdọ̀tun ti Ẹ̀mí Mímọ́,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "èyí tí tú lé wa lórí ní ẹ̀kúnrẹ́rẹ́ nípasẹ̀ Jesu Kristi Olùgbàlà wá."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "Tó bẹ́ẹ̀ gẹ́ẹ́ tí ó jẹ́ wí pé lẹ́hìn tí a tí dá wa láre nípasẹ̀ oore-ọ̀fẹ́, kí a lè jẹ́ àjùmọ̀jogún ìrètí ìyè àìnípẹ̀kun."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "Òtítọ́ ni ọ̀rọ̀ wọ̀nyí. Mo sì fẹ́ kí ó ṣe ìtẹnumọ́ rẹ̀ gidigidi, kí àwọn tí wọ́n ti gbàgbọ́ nínú Ọlọ́run le kíyèsi láti máa fi ara wọn jì fún iṣẹ́ rere. Nǹkan wọ̀nyí dára, wọ́n sì jẹ́ èrè fún gbogbo ènìyàn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "Ṣùgbọ́n yẹra kúrò nínú àwọn ìbéèrè òmùgọ̀, àti ìtàn ìran, àti àríyànjiyàn àti ìjà nípa ti òfin, nítorí pé àwọn nǹkan báyìí jẹ́ aláìlérè àti asán."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "Bí ẹnikẹ́ni bá fẹ́ dá ìyapa sílẹ̀ láàrín yín, ẹ bá a wí lẹ́ẹ̀kínní àti lẹ́ẹ̀kejì. Lẹ́yìn náà, ẹ má ṣe ní ohunkóhun í ṣe pẹ̀lú rẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              "Kí ó dá ọ lójú wí pé irú ẹni bẹ́ẹ̀ ti yapa, ó jẹ́ ẹlẹ́ṣẹ̀, ó sì dá ara rẹ̀ lẹ́bi."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "heading",
+            "content": [
+              "Àwọn ìkíni ìkẹyìn"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              "Ní kété tí mo bá ti rán Artema tàbí Tikiku sí ọ, sa gbogbo ipá rẹ láti tọ̀ mí wá ní Nikopoli, nítorí mo ti pinnu láti lo ìgbà òtútù mi níbẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              "Sa gbogbo agbára rẹ láti ran Senasi amòfin àti Apollo lọ́wọ́ nínú ìrìnàjò wọn. Rí i dájú pé wọ́n ní ohun gbogbo tí wọn nílò."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              "Àwọn ènìyàn nílò láti kọ́ bí a tí ń fi ara ẹni jì sí iṣẹ́ rere kí wọn ba à le pèsè ohun kòsémánìí fún ara wọn, nípa èyí, wọn kì yóò jẹ́ aláìléso."
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              "Gbogbo àwọn tí ń bẹ lọ́dọ̀ mi kí ọ. Bá mi kí àwọn tí ó fẹ́ wa nínú ìgbàgbọ́.",
+              {
+                "lineBreak": true
+              },
+              "Kí oore-ọ̀fẹ́ Ọlọ́run wà pẹ̀lú gbogbo yín."
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/TIT/3.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/PHM/1.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/TIT/2.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 15
+    }
+  }
+}

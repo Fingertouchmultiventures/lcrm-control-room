@@ -1,0 +1,878 @@
+{
+  "bookInfo": {
+    "id": "RUT",
+    "translationId": "yor_bib",
+    "name": "Rutu",
+    "commonName": "Rutu",
+    "title": "Ìwé Rutu",
+    "order": 8,
+    "numberOfChapters": 4,
+    "sha256": "5a2a632698c318d69091b5df9c402fc09043e4a65129c58ef15b80af41121c99",
+    "firstChapterNumber": 1,
+    "firstChapterApiLink": "/api/yor_bib/RUT/1.json",
+    "lastChapterNumber": 4,
+    "lastChapterApiLink": "/api/yor_bib/RUT/4.json",
+    "totalNumberOfVerses": 85
+  },
+  "chapters": {
+    "1": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "RUT",
+        "translationId": "yor_bib",
+        "name": "Rutu",
+        "commonName": "Rutu",
+        "title": "Ìwé Rutu",
+        "order": 8,
+        "numberOfChapters": 4,
+        "sha256": "5a2a632698c318d69091b5df9c402fc09043e4a65129c58ef15b80af41121c99",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/RUT/1.json",
+        "lastChapterNumber": 4,
+        "lastChapterApiLink": "/api/yor_bib/RUT/4.json",
+        "totalNumberOfVerses": 85
+      },
+      "chapter": {
+        "number": 1,
+        "content": [
+          {
+            "type": "heading",
+            "content": [
+              "Naomi àti Rutu"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Ní ìgbà tí àwọn onídàájọ́ ń ṣe àkóso ilẹ̀ Israẹli, ìyàn kan mú ní ilẹ̀ náà, ọkùnrin kan láti Bẹtilẹhẹmu ti Juda, òun àti aya rẹ̀ pẹ̀lú àwọn ọmọ rẹ̀ ọkùnrin méjì lọ láti máa gbé ní ilẹ̀ Moabu fún ìgbà díẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "Orúkọ ọkùnrin náà ń jẹ́ Elimeleki, orúkọ ìyàwó rẹ̀ ni Naomi, orúkọ àwọn ọmọ rẹ̀ méjèèjì sì ni Maloni àti Kilioni àwọn ará Efrata, ti Bẹtilẹhẹmu ti Juda. Wọ́n sì lọ sí ilẹ̀ Moabu, wọ́n ń gbé níbẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "Ní àsìkò tí wọ́n ń gbé ibẹ̀, Elimeleki, ọkọ Naomi kú, ó sì ku òun pẹ̀lú àwọn ọmọ rẹ̀ ọkùnrin méjèèjì."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "Wọ́n sì fẹ́ àwọn ọmọbìnrin ará Moabu méjì, orúkọ ọ̀kan ń jẹ́ Oripa, èkejì sì ń jẹ́ Rutu. Lẹ́yìn ìgbà tí wọ́n sì ti gbé níbẹ̀ fún bí ọdún mẹ́wàá,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "Maloni àti Kilioni náà sì kú, Naomi sì wà láìsí ọkọ tàbí ọmọ kankan fún un mọ́."
+            ]
+          },
+          {
+            "type": "heading",
+            "content": [
+              "Naomi padà láti ilẹ̀ Moabu"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "Nígbà tí Naomi gbọ́ ní Moabu tí ó wà wí pé Olúwa ti bẹ àwọn ènìyàn rẹ̀ wò nípa fífún wọn ní ọ̀pọ̀ oúnjẹ. Ó sì dìde pẹ̀lú àwọn ìyàwó ọmọ rẹ̀ méjèèjì láti padà sí ìlú rẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "Òun pẹ̀lú àwọn ìyàwó ọmọ rẹ̀ méjèèjì ni wọ́n jọ fi ibi tí ó ń gbé sílẹ̀ tí wọ́n sì bẹ̀rẹ̀ ìrìnàjò wọn padà sí ilẹ̀ Juda."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "Ṣùgbọ́n ní ojú ọ̀nà, Naomi wí fún àwọn aya ọmọ rẹ̀ méjèèjì pé, “Kí ẹnìkọ̀ọ̀kan yín padà sí ilé ìyá rẹ̀. Kí Olúwa ṣe àánú fún yín bí ẹ ti ṣe sí èmi àti àwọn ọkọ yín tí ó kú."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "Kí Olúwa kí ó fi yín lọ́kàn balẹ̀ ní ilé ọkọ mìíràn.” Naomi sì fi ẹnu kò wọ́n ní ẹnu wí pé “Ó dìgbà,” wọ́n sì sọkún kíkankíkan."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "Wọ́n sì wí fún un pé, “Rárá, a ó bà ọ lọ sí ọ̀dọ̀ àwọn ènìyàn rẹ.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              "Ṣùgbọ́n Naomi dáhùn wí pé, “Ẹ padà sílé ẹ̀yin ọmọ mi. Nítorí kí ni ẹ fi fẹ́ wá pẹ̀lú mi? Ṣé mo tún le bí àwọn ọmọkùnrin mìíràn ni, tí ó le ṣe ọkọ yin?"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              "Ẹ padà sílé, ẹ̀yin ọmọ mi, nítorí èmi ti di arúgbó jù láti ní ọkọ mìíràn. Bí èmí wí pé, èmí ní ìrètí, bí èmí tilẹ̀ ní ọkọ mìíràn ní alẹ́ yìí, tí èmí sì bí àwọn ọmọkùnrin mìíràn,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              "ẹ̀yin ha le è dúró dìgbà tí wọ́n yóò fi dàgbà? Ẹ̀yin ó le è dúró dè wọ́n láì fẹ́ ọkọ mìíràn? Rárá, ẹ̀yin ọmọbìnrin mi, nítorí pé inú mi bàjẹ́ gidigidi ju tiyín lọ, nítorí tí ọwọ́ Olúwa fi jáde sí mi!”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              "Wọ́n sì gbé ohùn wọn sókè, wọ́n sì tún sọkún. Nígbà náà ní Oripa fi ẹnu ko ìyá ọkọ rẹ̀ ní ẹnu wí pé ó dìgbà, ṣùgbọ́n Rutu dì mọ́ ọn síbẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              "Naomi wí pé, “Wò ó, arábìnrin rẹ ti padà lọ sí ọ̀dọ̀ àwọn ènìyàn rẹ̀ àti òrìṣà rẹ̀, ìwọ náà padà pẹ̀lú rẹ̀.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 16,
+            "content": [
+              "Ṣùgbọ́n Rutu dáhùn wí pé, “Má ṣe rọ̀ mí láti fi ọ́ sílẹ̀ tàbí láti padà lẹ́yìn rẹ. Ibi tí ìwọ bá lọ ní èmi yóò lọ, ibi ti ìwọ bá dúró ni èmi yóò dúró, àwọn ènìyàn rẹ ni yóò jẹ́ ènìyàn mi, Ọlọ́run rẹ ni yóò sì jẹ́ Ọlọ́run mi."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 17,
+            "content": [
+              "Níbi tí ìwọ bá kú sí ni èmi yóò kú sí, níbẹ̀ ni wọn yóò sì sin mí sí. Kí Olúwa jẹ mí ní ìyà tí ó lágbára, bí ohunkóhun bí kò ṣe ikú bá yà wá.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 18,
+            "content": [
+              "Nígbà tí Naomi rí i wí pé Rutu ti pinnu láti tẹ̀lé òun kò rọ̀ láti padà mọ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 19,
+            "content": [
+              "Àwọn méjèèjì sì ń lọ títí wọ́n fi dé ìlú Bẹtilẹhẹmu. Nígbà tí wọ́n dé ibẹ̀, ariwo ìpadàbọ̀ wọn gba ìlú kan, àwọn obìnrin ibẹ̀ sì kígbe ní ohùn rara wí pé, “Naomi ni èyí bí?”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 20,
+            "content": [
+              "Naomi sì dáhùn wí pé, “Ẹ má ṣe pè mí ní Naomi mọ́, ẹ pè mí ní Mara,",
+              {
+                "noteId": 0
+              },
+              "nítorí wí pé Olódùmarè ti mú kí ayé mi di kíkorò."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 21,
+            "content": [
+              "Mo jáde ní kíkún, ṣùgbọ́n Olúwa mú mi padà ní òfo. Nítorí náà kín ló dé tí ẹ fi ń pè mí ní Naomi, nígbà tí Olódùmarè ti kọ̀ mí sílẹ̀, tí ó sì mú ìdààmú bá mi?”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 22,
+            "content": [
+              "Báyìí ni Naomi ṣe padà láti Moabu pẹ̀lú Rutu, ará Moabu ìyàwó ọmọ rẹ̀. Wọ́n gúnlẹ̀ sí Bẹtilẹhẹmu ní ìbẹ̀rẹ̀ ìkórè ọkà barle."
+            ]
+          }
+        ],
+        "footnotes": [
+          {
+            "noteId": 0,
+            "caller": "+",
+            "text": "tí ó túmọ̀ sí, Ìkorò",
+            "reference": {
+              "chapter": 1,
+              "verse": 20
+            }
+          }
+        ]
+      },
+      "thisChapterLink": "/api/yor_bib/RUT/1.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/RUT/2.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/JDG/21.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 22
+    },
+    "2": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "RUT",
+        "translationId": "yor_bib",
+        "name": "Rutu",
+        "commonName": "Rutu",
+        "title": "Ìwé Rutu",
+        "order": 8,
+        "numberOfChapters": 4,
+        "sha256": "5a2a632698c318d69091b5df9c402fc09043e4a65129c58ef15b80af41121c99",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/RUT/1.json",
+        "lastChapterNumber": 4,
+        "lastChapterApiLink": "/api/yor_bib/RUT/4.json",
+        "totalNumberOfVerses": 85
+      },
+      "chapter": {
+        "number": 2,
+        "content": [
+          {
+            "type": "heading",
+            "content": [
+              "Rutu pàdé Boasi"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Naomi ní ìbátan kan láti ìdílé Elimeleki ọkọ rẹ̀, aláàánú ọlọ́rọ̀, ẹni tí orúkọ rẹ̀ ń jẹ́ Boasi."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "Rutu ará Moabu sì wí fún Naomi pé, “Jẹ́ kí èmi kí ó lọ sí inú oko láti ṣá ọkà tí àwọn olùkórè fi sílẹ̀ ní ọ̀dọ̀ ẹnikẹ́ni tí èmi yóò bá ojúrere rẹ̀ pàdé.” Naomi sì sọ fún un pé, “Máa lọ, ọmọbìnrin mi.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "Rutu sì jáde lọ láti ṣá ọkà tí àwọn olùkórè fi sílẹ̀ lẹ́yìn wọn. Ó wá jẹ́ wí pé inú oko Boasi tí ó ti ìdílé Elimeleki wá ni ó lọ láìmọ̀-ọ́n-mọ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "Nígbà náà ni Boasi dé láti Bẹtilẹhẹmu tí ó sì kí àwọn olùkórè wí pé, “Kí Olúwa wà pẹ̀lú yín.” Wọ́n sì dá a lóhùn pé, “Kí Olúwa bùkún fún ọ.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "Boasi sì béèrè lọ́wọ́ olórí àwọn olùkórè wí pé, “Ti ta ni ọ̀dọ́mọbìnrin yẹn?”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "Ìránṣẹ́ tí ó jẹ́ olórí àwọn olùkórè náà sì fèsì pé, “Ọ̀dọ́mọbìnrin ará Moabu tí ó tẹ̀lé Naomi wá láti ilẹ̀ Moabu ni."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "Ó sọ wí pé, ‘Kí ń jọ̀wọ́ jẹ́ kí òun máa ṣá ọkà lẹ́yìn àwọn olùkórè.’ Ó sì ti ń ṣe iṣẹ́ kárakára láti òwúrọ̀ títí di ìsinsin yìí nínú oko àyàfi ìgbà tí ó lọ láti sinmi fún ìgbà díẹ̀ lábẹ́ ibojì.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "Nígbà náà ni Boasi sọ fún Rutu pé, “Gbọ́ ọmọbìnrin mi, má ṣe lọ sí oko mìíràn láti ṣá ọkà, má sì ṣe kúrò ní ibi. Dúró níbí pẹ̀lú àwọn ìránṣẹ́bìnrin mi."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "Wo ibi tí wọ́n ti ń kórè kí o sì máa tẹ̀lé àwọn obìnrin. Mo ti pàṣẹ fún àwọn ọkùnrin kí wọ́n má ṣe fi ọwọ́ kàn ọ́. Nígbàkígbà tí òǹgbẹ bá sì ń gbẹ ọ́, lọ kí ó sì mu omi nínú àmù èyí tí àwọn ọkùnrin ti pọn omi sí nínú.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "Rutu wólẹ̀, ó sì wí fún Boasi pé, “Èéṣe tí èmi fi bá ojúrere rẹ pàdé tó báyìí, tí o sì kíyèsi mi, èmi àjèjì àti àlejò?”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              "Boasi sì fèsì wí pé, “Èmi ti gbọ́ gbogbo bí o ti ń ṣe sí ìyá ọkọ ọ̀ rẹ láti ìgbà tí ọkọ rẹ ti kú àti bí o ti ṣe fi baba àti ìyá rẹ àti ilẹ̀ rẹ sílẹ̀, tí o sì wá láti gbé láàrín àwọn ènìyàn tí ìwọ kò mọ̀ tẹ́lẹ̀ rí."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              "Kí Olúwa kí ó san ẹ̀san ohun tí ìwọ ṣe fún ọ. Kí o sì gba èrè kíkún láti ọ̀dọ̀ Olúwa Ọlọ́run Israẹli, abẹ́ ìyẹ́ ẹni tí ìwọ sá wá fún ààbò.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              "Rutu sì fèsì wí pé, “Kí èmi kí ó máa rí ojúrere láti ọ̀dọ̀ rẹ síwájú sí i olúwa mi. Ìwọ ti tù mí nínú nípa sísọ ọ̀rọ̀ rere sí ìránṣẹ́bìnrin rẹ, bí ó tilẹ̀ jẹ́ pé èmi kò tó ọ̀kan nínú àwọn ìránṣẹ́bìnrin rẹ.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              "Nígbà tí àkókò oúnjẹ sì tó, Boasi sọ fún Rutu pé, “Wá gba ìwọ̀n àkàrà yìí kí o sì fi run wáìnì kíkan.” Òun sì jókòó pẹ̀lú àwọn olùkórè, Boasi sì fún un ní ọkà yíyan. Òun sì jẹ́, ó yó, ó sì tún ṣẹ́kù."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              "Nígbà tí ó sì dìde láti máa ṣá ọkà, Boasi pàṣẹ fún àwọn òṣìṣẹ́ rẹ̀ wí pé, “Bí ó tilẹ̀ ń ṣà láàrín oko ọkà pàápàá, ẹ má ṣe dí i lọ́wọ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 16,
+            "content": [
+              "Bí kò ṣe pé kí ẹ mú lára àwọn ìtí sílẹ̀ fún láti ṣá, kí ẹ má sì ṣe ba a wí.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 17,
+            "content": [
+              "Rutu sì ń ṣá ọkà títí ó fi di ìrọ̀lẹ́, nígbà tí ó sì pa ọkà barle tí ó rí ṣà, tí ó sì fẹ́ ẹ tán, èyí tí ó rí sì tó ìwọ̀n garawa kan (lita méjìlélógún)."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 18,
+            "content": [
+              "Ó sì gbé e, ó sì lọ sí ìlú, ìyá ọkọ rẹ sì rí ọkà tí ó rí ṣà bi o tí pọ̀ tó, Rutu sì mú oúnjẹ tí ó jẹ kù lẹ́yìn tí ó ti yó tan fún ìyá ọkọ rẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 19,
+            "content": [
+              "Ìyá ọkọ rẹ̀ sì bi í léèrè wí pé, “Níbo ni ìwọ ti ṣá ọkà lónìí? Àti wí pé oko ta ni ìwọ gbé ṣiṣẹ́? Alábùkún fún ni ọkùnrin náà tí ó bojú wò ọ.” Rutu sì sọ ọ̀dọ̀ ẹni tí ó ti ṣiṣẹ́ fún ìyá ọkọ rẹ̀ pé, “Ní oko ọkùnrin kan tí orúkọ rẹ̀ ń jẹ́ Boasi ni mo ti ṣiṣẹ́ lónìí.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 20,
+            "content": [
+              "Naomi sì wí fún un pé, “Kí Olúwa, kí ó bùkún fún ọkùnrin náà. Ọlọ́run kò dáwọ́ oore àti àánú ṣíṣe sí àwọn alààyè àti òkú dúró.” Naomi sì sọ síwájú sí i wí pé, “Ìbátan tí ó súnmọ́ wa pẹ́kípẹ́kí ni ọkùnrin náà ń ṣe, ó sì jẹ́ ọ̀kan nínú àwọn tí ó ní ẹ̀tọ́ láti ra ohun ìní ìdílé padà.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 21,
+            "content": [
+              "Rutu, ará Moabu sì wí pé, “Ju gbogbo rẹ̀ lọ, ó sọ fún mi pé, ‘Kí ń máa ṣá ọkà pẹ̀lú àwọn òṣìṣẹ́ òun, títí wọn yóò fi parí ìkórè.’ ”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 22,
+            "content": [
+              "Naomi sì sọ fún Rutu, ìyàwó ọmọ rẹ̀ pé, “Ìbá dára bí ó bá le bá àwọn ìránṣẹ́bìnrin rẹ̀ ṣiṣẹ́. Nítorí pé wọ́n le è dà ọ́ láàmú bí o bá lọ sí oko ẹlòmíràn.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 23,
+            "content": [
+              "Rutu sì bá àwọn ìránṣẹ́bìnrin Boasi ṣiṣẹ́ títí tí wọ́n fi parí ìkórè ọkà barle àti ti jéró. Ó sì ń gbé pẹ̀lú ìyá ọkọ rẹ̀."
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/RUT/2.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/RUT/3.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/RUT/1.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 23
+    },
+    "3": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "RUT",
+        "translationId": "yor_bib",
+        "name": "Rutu",
+        "commonName": "Rutu",
+        "title": "Ìwé Rutu",
+        "order": 8,
+        "numberOfChapters": 4,
+        "sha256": "5a2a632698c318d69091b5df9c402fc09043e4a65129c58ef15b80af41121c99",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/RUT/1.json",
+        "lastChapterNumber": 4,
+        "lastChapterApiLink": "/api/yor_bib/RUT/4.json",
+        "totalNumberOfVerses": 85
+      },
+      "chapter": {
+        "number": 3,
+        "content": [
+          {
+            "type": "heading",
+            "content": [
+              "Rutu àti Boasi ní ilẹ̀ ìpakà"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Ní ọjọ́ kan, Naomi, ìyá ọkọ Rutu wí fún un pé, “Ọmọbìnrin mi, ǹjẹ́ kò yẹ kí èmi bá ọ wá ilé ọkọ mìíràn, níbi tí wọn yóò ti le è máa tọ́jú rẹ?"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "Wò ó, Boasi ọkùnrin nì tí ìwọ bá àwọn ìránṣẹ́bìnrin rẹ̀ ṣiṣẹ́, tí í ṣe ìbátan wa, yóò wá láti fẹ́ ọkà barle ní ilẹ̀ ìpakà rẹ̀ ní àṣálẹ́ yìí."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "Wẹ̀, kí o sì fi ìpara olóòórùn dídùn pa ara rẹ, kí o sì wọ aṣọ rẹ tí ó dára jùlọ, kí o sì lọ sí ilẹ̀ ìpakà tí ó gbé ń pa ọkà, ṣùgbọ́n má ṣe jẹ́ kí ó mọ̀ pé o wà níbẹ̀ títí tí yóò fi jẹ tí yóò sì mu tán."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "Rí í dájú pé o mọ ibi tí ó sùn sí, lẹ́yìn ìgbà tí ó bá ti sùn, lọ kí o ṣí aṣọ ìbora rẹ̀ níbi ẹsẹ̀ rẹ̀ sókè kí o sì sùn sí ibi ẹsẹ̀ náà. Òun yóò sì sọ ohun tí ìwọ yóò ṣe fún ọ.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "Rutu sì fèsì pé, “Gbogbo ohun tí ìwọ sọ fún mi ni èmi yóò ṣe.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "Bẹ́ẹ̀ ni Rutu lọ sí ilẹ̀ ìpakà tí ó sì ṣe gbogbo ohun tí ìyá ọkọ rẹ̀ sọ fún un, pé kí o ṣe."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "Nígbà tí Boasi parí jíjẹ àti mímu tán, tí ọkàn rẹ̀ sì kún fún ayọ̀. Ó lọ, ó sì dùbúlẹ̀ ní ẹ̀yìn ọkà tí wọ́n kójọ. Rutu yọ́ kẹ́lẹ́kẹ́lẹ́ lọ sí ibẹ̀, ó ṣí aṣọ ẹsẹ̀ rẹ̀ sókè, ó sì sùn sí ibi ẹsẹ̀ rẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "Ó sì ṣe nígbà tí ọkùnrin náà tají ní àárín òru, ẹ̀rù bà á, ó sì yí ara padà, ó sì ṣàkíyèsí obìnrin kan tí ó sùn sí ibi ẹsẹ̀ rẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "Ó sì béèrè pé, “Ta ni ìwọ í ṣe?” Rutu sì fèsì wí pé, “Èmi ni Rutu, ìránṣẹ́bìnrin rẹ. Da etí aṣọ rẹ bò mí, nítorí pé ìwọ ni ìbátan tí ó le è rà mí padà.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "Boasi sì wí fún un pé, “Kí Olúwa bùkún fún ọ, ọmọbìnrin mi. Ìfẹ́ tí o fihàn yí ti pọ̀ ju ti àtẹ̀yìnwá lọ, bí ó ti jẹ́ wí pé ìwọ kò lọ láti wá àwọn ọ̀dọ́mọkùnrin bóyá ọlọ́rọ̀ tàbí tálákà."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              "Ǹjẹ́ nísinsin yìí, ìwọ ọmọbìnrin mi, má bẹ̀rù. Èmi yóò sì ṣe ohun gbogbo tí o béèrè fún ọ. Gbogbo ènìyàn ni ó mọ̀ ọ́n ní obìnrin oníwà rere."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              "Nítòótọ́ ni mo wí pé èmi jẹ́ ìbátan tí ó súnmọ́ ọ, ṣùgbọ́n ìbátan kan wà tí ó súnmọ́ ọ ju ti tèmi lọ."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              "Dúró síbí títí ilẹ̀ yóò fi mọ́, bí ó bá sì di òwúrọ̀ tí ọkùnrin náà sì ṣe tan láti ṣe ìràpadà, ó dára kí ó ṣe bẹ́ẹ̀, bí bẹ́ẹ̀ kọ́, bí Olúwa ti ń bẹ láààyè nígbà náà ni èmi yóò ṣe ìràpadà, sùn sí ìhín títí ilẹ̀ yóò fi mọ́.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              "Ó sì sùn ní ẹsẹ̀ rẹ̀ títí di òwúrọ̀, ṣùgbọ́n ó dìde ní òwúrọ̀ kùtùkùtù kí ẹnìkínní tó le è dá ẹnìkejì mọ̀. Boasi sì sọ fún un wí pé, “Má ṣe jẹ́ kí ó di mí mọ̀ wí pé obìnrin kan wá sí ilẹ̀ ìpakà.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              "Ó sì tún wí fún un pé, “Mú aṣọ ìborùn rẹ tí o dà bora, kí o tẹ̀ ẹ sílẹ̀.” Rutu sì ṣe bẹ́ẹ̀, Boasi sì wọn òsùwọ̀n ọkà barle mẹ́fà sí i, ó sì gbé e rù ú. Nígbà náà ni ó padà sí ìlú."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 16,
+            "content": [
+              "Nígbà tí Rutu dé ilé Naomi ìyá ọkọ sì bí léèrè pé, “Báwo ni ó ti rí ọmọbìnrin mi?” Nígbà náà ni ó sì sọ gbogbo ohun tí ọkùnrin náà ṣe fún un fún ìyá ọkọ rẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 17,
+            "content": [
+              "Ó fi kún un wí pé, “Ó sọ fún mi wí pé, ‘Má ṣe padà sí ọ̀dọ̀ ìyá ọkọ rẹ ní ọwọ́ òfo, nítorí náà, ó fún mi ní ìwọ̀n ọkà barle mẹ́fà.’ ”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 18,
+            "content": [
+              "Naomi sì wí fún un pé, “Dúró, ọmọbìnrin mi títí tí ìwọ yóò fi mọ bí ohun gbogbo yóò ti rí, nítorí pé ọkùnrin náà kò ní sinmi títí tí ọ̀rọ̀ náà yóò fi yanjú lónìí.”"
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/RUT/3.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/RUT/4.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/RUT/2.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 18
+    },
+    "4": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "RUT",
+        "translationId": "yor_bib",
+        "name": "Rutu",
+        "commonName": "Rutu",
+        "title": "Ìwé Rutu",
+        "order": 8,
+        "numberOfChapters": 4,
+        "sha256": "5a2a632698c318d69091b5df9c402fc09043e4a65129c58ef15b80af41121c99",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/RUT/1.json",
+        "lastChapterNumber": 4,
+        "lastChapterApiLink": "/api/yor_bib/RUT/4.json",
+        "totalNumberOfVerses": 85
+      },
+      "chapter": {
+        "number": 4,
+        "content": [
+          {
+            "type": "heading",
+            "content": [
+              "Boasi gbé Rutu ní ìyàwó"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Nígbà náà ni Boasi gòkè lọ sí ẹnu ibodè ìlú, ó sì jókòó síbẹ̀. Nígbà tí ìbátan tí ó súnmọ́ Elimeleki jùlọ, arákùnrin tí Boasi ti sọ̀rọ̀ rẹ̀ ń kọjá, Boasi pè é wí pé, “Máa bọ̀ wá síbí ìwọ ọ̀rẹ́ mi, kí o sì jókòó.” Ó sì lọ jókòó."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "Boasi sì pe mẹ́wàá nínú àwọn àgbàgbà ìlú, wí pé ki wọn jókòó, wọn sí ṣe bẹ́ẹ̀,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "ó sì sọ fún ìbátan rẹ̀ náà pé, “Arábìnrin Naomi tí ó dé láti ilẹ̀ Moabu fẹ́ ta ilẹ̀, èyí tí ó ṣe ti arákùnrin Elimeleki wa."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "Mó sì rò wí pé ó yẹ kí n mú ọ̀rọ̀ náà wá sí etí ìgbọ́ rẹ, wí pé kí o rà á ní iwájú gbogbo àwọn tí ó jókòó sí ibi yìí. Bí ìwọ yóò bá rà á padà rà á. Ṣùgbọ́n bí ìwọ kò bá ní rà á padà, sọ fún mi, kí èmi ó le è mọ̀. Nítorí pé kò sí ẹlòmíràn tí ó ní ẹ̀tọ́ láti rà á ju ìwọ lọ, èmi sì ni ẹni tí ó tún kàn lẹ́yìn rẹ̀.” Ọkùnrin náà sì sọ wí pé, “Èmi yóò rà á padà.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "Nígbà náà ni Boasi sọ wí pé, “Bí ìwọ bá ti ra ilẹ̀ náà lọ́wọ́ Naomi àti lọ́wọ́ Rutu ará Moabu, ìwọ gbọdọ̀ fẹ́ opó ọkùnrin náà, kí orúkọ ọkùnrin tí ó kú náà má ba à parẹ́ pẹ̀lú ohun ìní rẹ̀ àti kí o le è bímọ ní orúkọ rẹ̀.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "Nígbà náà ni ọkùnrin náà dáhùn sí èyí pé, “Nípa ti èyí, èmi kò le è rà á padà, nítorí pé, ọmọ rẹ̀, ọkùnrin yóò wá jẹ́ ajogún àwọn ohun ìní mi pẹ̀lú. Rà á fún ara rẹ, èmi kò le ṣe é.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "Ní ayé ìgbàanì, kí a tó le sọ wí pé ohun ìràpadà tàbí pàṣípàrọ̀ ohun ìní fi ìdí múlẹ̀ ní ilẹ̀ Israẹli, ẹnìkan ni láti yọ bàtà rẹ̀ kúrò ní ẹsẹ̀ rẹ̀ kí ó sì fi fún ẹnìkejì, ó jẹ́ òfin fún ẹni tí ó fẹ́ rà á. Nípa ṣíṣe èyí, àwọn ará Israẹli fihàn wí pé ọ̀rọ̀ náà ti fìdímúlẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "Nítorí náà, nígbà tí ọkùnrin náà sọ fún Boasi wí pé, “Ìwọ rà á fúnra rẹ̀,” ó yọ bàtà rẹ̀ kúrò ní ẹsẹ̀ rẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "Nígbà náà ni Boasi wí fún àwọn àgbàgbà àti àwọn mìíràn tí ó wà ní ibẹ̀ pé, “Gbogbo yín jẹ́ ẹlẹ́rìí mi ní òní wí pé mo ti ra ohun gbogbo tí í ṣe ti Elimeleki àti àwọn ọmọ rẹ̀ ọkùnrin méjèèjì: Maloni àti Kilioni lọ́wọ́ Naomi."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "Ní àfikún, mo ra Rutu ará Moabu opó Maloni padà láti di aya mi. Èyí tí yóò mú kí orúkọ ọkùnrin òkú náà wà pẹ̀lú ohun ìní rẹ̀, kí ìran rẹ̀ má ba à lè parẹ́ láàrín àwọn ẹbí rẹ̀ àti ìlú rẹ̀. Ẹ̀yin ni ẹlẹ́rìí ní òní.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              "Nígbà náà ni àwọn àgbàgbà àti àwọn ènìyàn tí ó wà ní ibẹ̀ dáhùn wí pé, “Bẹ́ẹ̀ ni, àwa ni ẹlẹ́rìí, kí Olúwa jẹ́ kí obìnrin tí ó ń bọ̀ wá sí inú ilẹ̀ rẹ dàbí Rakeli àti Lea láti ara àwọn ẹni tí gbogbo ìdílé Israẹli ti jáde wá. Kí ìwọ sì di ọlọ́rọ̀ ní ìran Efrata àti olókìkí ní ìlú Bẹtilẹhẹmu."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              "Kí Olúwa fún ọ ní ọmọ tí yóò mú ìdílé rẹ dàbí ti Peresi ọmọkùnrin tí Tamari bí fún Juda láti ipasẹ̀ ọ̀dọ́mọbìnrin yìí.”"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": [
+              "Ìṣesí Naomi"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              "Báyìí ni Boasi ṣe mú Rutu, tí ó sì di aya rẹ̀. Nígbà náà ni ó wọlé tọ aya rẹ̀, Olúwa sì mú kí ó lóyún, ó sì bí ọmọ ọkùnrin kan."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              "Àwọn obìnrin sì wí fún Naomi pé, “Ìyìn ni fún Olúwa tí kò fi ọ sílẹ̀ ní òní yìí láìní ìbátan, Olùràpadà. Kí ọmọ náà di olókìkí ní Israẹli."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              "Yóò tún ayé rẹ ṣe, yóò sì dáàbò bò ọ́ ní ọjọ́ ogbó rẹ. Nítorí pé ìyàwó ọmọ rẹ, èyí tí ó sàn fún ọ ju ọmọkùnrin méje lọ, tí ó sì fẹ́ràn rẹ ni ó bí ọmọ yìí fún.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 16,
+            "content": [
+              "Naomi sì gbé ọmọ náà lé orí ẹsẹ̀ rẹ̀, ó sì ń tọ́jú rẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 17,
+            "content": [
+              "Àwọn obìnrin àdúgbò sì wí pé, “A bí ọmọkùnrin kan fún Naomi.” Wọ́n sì pe orúkọ rẹ̀ ní Obedi. Òun sì ni baba Jese tí í ṣe baba Dafidi."
+            ]
+          },
+          {
+            "type": "heading",
+            "content": [
+              "Èyí ni ìran Dafidi"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 18,
+            "content": [
+              "Èyí ni ìran Peresi:",
+              {
+                "lineBreak": true
+              },
+              "Peresi ni baba Hesroni,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 19,
+            "content": [
+              "Hesroni ni baba Ramu, Ramu ni baba Amminadabu"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 20,
+            "content": [
+              "Amminadabu ni baba Nahiṣoni, Nahiṣoni ni baba Salmoni,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 21,
+            "content": [
+              "Salmoni ni baba Boasi, Boasi ni baba Obedi,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 22,
+            "content": [
+              "Obedi ní baba Jese, Jese ni baba Dafidi."
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/RUT/4.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/1SA/1.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/RUT/3.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 22
+    }
+  }
+}

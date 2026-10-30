@@ -1,0 +1,707 @@
+{
+  "bookInfo": {
+    "id": "JON",
+    "translationId": "yor_bib",
+    "name": "Jona",
+    "commonName": "Jona",
+    "title": "Ìwé Wòlíì Jona",
+    "order": 32,
+    "numberOfChapters": 4,
+    "sha256": "f665a2eaf2e2b6652f1b2083a3f9129af6a1414fe2cece312808aa39dc05349d",
+    "firstChapterNumber": 1,
+    "firstChapterApiLink": "/api/yor_bib/JON/1.json",
+    "lastChapterNumber": 4,
+    "lastChapterApiLink": "/api/yor_bib/JON/4.json",
+    "totalNumberOfVerses": 48
+  },
+  "chapters": {
+    "1": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "JON",
+        "translationId": "yor_bib",
+        "name": "Jona",
+        "commonName": "Jona",
+        "title": "Ìwé Wòlíì Jona",
+        "order": 32,
+        "numberOfChapters": 4,
+        "sha256": "f665a2eaf2e2b6652f1b2083a3f9129af6a1414fe2cece312808aa39dc05349d",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/JON/1.json",
+        "lastChapterNumber": 4,
+        "lastChapterApiLink": "/api/yor_bib/JON/4.json",
+        "totalNumberOfVerses": 48
+      },
+      "chapter": {
+        "number": 1,
+        "content": [
+          {
+            "type": "heading",
+            "content": [
+              "Jona sá ní iwájú Olúwa"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Ọ̀rọ̀ Olúwa sì tọ Jona ọmọ Amittai wá, wí pé:"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "“Dìde lọ sí ìlú ńlá Ninefe kí o sì wàásù sí i, nítorí ìwà búburú rẹ̀ gòkè wá iwájú mi.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "Ṣùgbọ́n Jona dìde kúrò láti sálọ sí Tarṣiṣi kúrò níwájú Olúwa, ó sì sọ̀kalẹ̀ lọ sí Joppa, ìbí ti ó tí rí ọkọ̀ kan tí ń lọ sí Tarṣiṣi: lẹ́yìn ti ó sanwó ọkọ̀, ó wọlé sínú rẹ̀, láti bá wọn lọ sí Tarṣiṣi kúrò níwájú Olúwa."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "Nígbà náà ni Olúwa rán ìjì ńlá jáde sí ojú Òkun, ìjì líle sì wà nínú Òkun tó bẹ́ẹ̀ tí ọkọ̀ náà dàbí ẹni pé yóò fọ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "Nígbà náà ni àwọn atukọ̀ bẹ̀rù, olúkúlùkù sì ń kígbe sí ọlọ́run rẹ̀, wọ́n kó ẹrù tí ó wà nínú ọkọ̀ dà sínú Òkun, kí ó bá à lè fúyẹ́. Ṣùgbọ́n Jona sọ̀kalẹ̀ lọ sí ìsàlẹ̀ ọkọ̀ ó sì dùbúlẹ̀, ó sùn wọra."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "Bẹ́ẹ̀ ni olórí ọkọ̀ tọ̀ ọ́ wá, ó sì wí fún un pé, “Èéṣe tí ìwọ fi sùn, ìwọ olóòórùn? Dìde kí o ké pe Ọlọ́run rẹ! Bóyá yóò ro tiwa, kí àwa má ba à ṣègbé.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "Nígbà náà ni àwọn atukọ̀ sọ fún ara wọn pé, “Wá, ẹ jẹ́ kí a sẹ́ kèké, kí àwa kí o le mọ̀ nítorí ta ni búburú yìí ṣe wá sórí wa.” Wọ́n ṣẹ́ kèké, kèké sì mú Jona."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "Nígbà náà ni wọn wí fún un pé, “Sọ fún wa, àwa bẹ̀ ọ́, nítorí ta ni búburú yìí ṣe wá sórí wa? Kí ni iṣẹ́ rẹ? Níbo ni ìwọ ti wá? Kí ni orúkọ ìlú rẹ? Ẹ̀yà orílẹ̀-èdè wo sì ni ìwọ sì í ṣe?”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "Òun sì dá wọn lóhùn pé, “Heberu ni èmi, mo sì bẹ̀rù Olúwa, Ọlọ́run ọ̀run ẹni tí ó dá Òkun àti ìyàngbẹ ilẹ̀.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "Nígbà náà ni àwọn ọkùnrin náà bẹ̀rù gidigidi, wọn sì wí fún un pé, “Èéṣe tí ìwọ fi ṣe èyí?” (Nítorí àwọn ọkùnrin náà mọ̀ pé ó ń sá kúrò ní iwájú Olúwa ni, nítorí òun ti sọ fun wọn bẹ́ẹ̀)."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              "Nígbà náà ni wọ́n wí fún un pé, “Kí ni kí àwa ó ṣe sí ọ kí Òkun lè dákẹ́ fún wa?” Nítorí Òkun ru, ó sì ja ẹ̀fúùfù líle."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 12,
+            "content": [
+              "Òun sì wí fún wọn pé, “Ẹ gbé mi, kí ẹ sì sọ mi sínú Òkun, bẹ́ẹ̀ ni okun yóò sì dákẹ́ fún un yin. Nítorí èmi mọ̀ pé, nítorí mi ni ẹ̀fúùfù líle yìí ṣe dé bá a yín.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 13,
+            "content": [
+              "Ṣùgbọ́n àwọn ọkùnrin náà gbìyànjú gidigidi láti mú ọkọ̀ wà sí ilẹ̀, ṣùgbọ́n wọn kò lè ṣe é: nítorí tí Òkun túbọ̀ ru sí i, ó sì ja ẹ̀fúùfù líle sí wọn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 14,
+            "content": [
+              "Nítorí náà wọ́n kígbe sí Olúwa, wọ́n sì wí pé, “Olúwa àwa bẹ̀ ọ́, má ṣe jẹ́ kí àwa ṣègbé nítorí ẹ̀mí ọkùnrin yìí. Má sì ka ẹ̀jẹ̀ aláìṣẹ̀ sí wa ní ọrùn, nítorí ìwọ, Olúwa, ti ṣe bí ó ti wù ọ́.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 15,
+            "content": [
+              "Bẹ́ẹ̀ ni wọ́n gbé Jona, tí wọ́n sì sọ ọ́ sínú Òkun, Òkun sì dẹ́kun ríru rẹ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 16,
+            "content": [
+              "Nígbà náà ni àwọn ọkùnrin náà bẹ̀rù Olúwa gidigidi, wọn si rú ẹbọ sí Olúwa, wọ́n sì jẹ́ ẹ̀jẹ́."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 17,
+            "content": [
+              "Ṣùgbọ́n Olúwa ti pèsè ẹja ńlá kan láti gbé Jona mì. Jona sì wà nínú ẹja náà ni ọ̀sán mẹ́ta àti òru mẹ́ta."
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/JON/1.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/JON/2.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/OBA/1.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 17
+    },
+    "2": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "JON",
+        "translationId": "yor_bib",
+        "name": "Jona",
+        "commonName": "Jona",
+        "title": "Ìwé Wòlíì Jona",
+        "order": 32,
+        "numberOfChapters": 4,
+        "sha256": "f665a2eaf2e2b6652f1b2083a3f9129af6a1414fe2cece312808aa39dc05349d",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/JON/1.json",
+        "lastChapterNumber": 4,
+        "lastChapterApiLink": "/api/yor_bib/JON/4.json",
+        "totalNumberOfVerses": 48
+      },
+      "chapter": {
+        "number": 2,
+        "content": [
+          {
+            "type": "heading",
+            "content": [
+              "Àdúrà Jona"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Nígbà náà ni Jona gbàdúrà sí Olúwa Ọlọ́run rẹ̀ láti inú ẹja náà wá,"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "Ó sì wí pé:",
+              {
+                "text": "“Nínú ìpọ́njú mi ni mo kígbe sí Olúwa,",
+                "poem": 1
+              },
+              {
+                "text": "òun sì gbọ́ ohùn mi.",
+                "poem": 2
+              },
+              {
+                "text": "Mo kígbe láti inú ipò òkú, mo pè fún ìrànwọ́,",
+                "poem": 1
+              },
+              {
+                "text": "ìwọ sì gbọ́ ohùn mi.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              {
+                "text": "Nítorí tí ìwọ ti sọ mí sínú ibú,",
+                "poem": 1
+              },
+              {
+                "text": "ní àárín Òkun,",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "ìṣàn omi sì yí mi káàkiri;",
+                "poem": 2
+              },
+              {
+                "text": "gbogbo bíbì omi àti rírú omi",
+                "poem": 1
+              },
+              {
+                "text": "rékọjá lórí mi.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              {
+                "text": "Nígbà náà ni mo wí pé,",
+                "poem": 1
+              },
+              {
+                "text": "‘A ta mí nù kúrò níwájú rẹ;",
+                "poem": 2
+              },
+              {
+                "text": "ṣùgbọ́n síbẹ̀ èmi yóò tún",
+                "poem": 1
+              },
+              {
+                "text": "máa wo ìhà tẹmpili mímọ́ rẹ.’",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              {
+                "text": "Omi yí mi káàkiri, àní títí dé ọkàn;",
+                "poem": 1
+              },
+              {
+                "text": "ibú yí mi káàkiri,",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "a fi koríko odò wé mi lórí.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              {
+                "text": "Èmi sọ̀kalẹ̀ lọ sí ìsàlẹ̀ àwọn òkè ńlá;",
+                "poem": 1
+              },
+              {
+                "text": "ilẹ̀ ayé pẹ̀lú ìdènà rẹ̀ yí mi ká títí:",
+                "poem": 2
+              },
+              {
+                "text": "ṣùgbọ́n ìwọ ti mú ẹ̀mí mi wá sókè láti inú ibú wá,",
+                "poem": 1
+              },
+              {
+                "text": "Olúwa Ọlọ́run mi.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              {
+                "text": "“Nígbà tí ó rẹ ọkàn mi nínú mi,",
+                "poem": 1
+              },
+              {
+                "text": "èmi rántí rẹ, Olúwa,",
+                "poem": 2
+              },
+              {
+                "text": "àdúrà mi sì wá sí ọ̀dọ̀ rẹ,",
+                "poem": 1
+              },
+              {
+                "text": "nínú tẹmpili mímọ́ rẹ.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "line_break"
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              {
+                "text": "“Àwọn tí ń fàmọ́ òrìṣà èké",
+                "poem": 1
+              },
+              {
+                "text": "kọ àánú ara wọn sílẹ̀.",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              {
+                "text": "Ṣùgbọ́n èmi yóò fi orin ọpẹ́, rú ẹbọ sí ọ.",
+                "poem": 1
+              },
+              {
+                "text": "Èmi yóò san ẹ̀jẹ́ tí mo ti jẹ́.",
+                "poem": 2
+              },
+              {
+                "lineBreak": true
+              },
+              {
+                "text": "‘Ìgbàlà wá láti ọ̀dọ̀ Olúwa.’ ”",
+                "poem": 2
+              }
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "Olúwa sì pàṣẹ fún ẹja náà, ó sì pọ Jona sí orí ilẹ̀ gbígbẹ."
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/JON/2.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/JON/3.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/JON/1.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 10
+    },
+    "3": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "JON",
+        "translationId": "yor_bib",
+        "name": "Jona",
+        "commonName": "Jona",
+        "title": "Ìwé Wòlíì Jona",
+        "order": 32,
+        "numberOfChapters": 4,
+        "sha256": "f665a2eaf2e2b6652f1b2083a3f9129af6a1414fe2cece312808aa39dc05349d",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/JON/1.json",
+        "lastChapterNumber": 4,
+        "lastChapterApiLink": "/api/yor_bib/JON/4.json",
+        "totalNumberOfVerses": 48
+      },
+      "chapter": {
+        "number": 3,
+        "content": [
+          {
+            "type": "heading",
+            "content": [
+              "Jona lọ si Ninefe"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Ọ̀rọ̀ Olúwa sì tọ Jona wá nígbà kejì wí pé:"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "“Dìde lọ sí Ninefe, ìlú ńlá a nì, kí o sì kéde sí i, ìkéde tí mo sọ fún ọ.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "Jona sì dìde ó lọ sí Ninefe gẹ́gẹ́ bí ọ̀rọ̀ Olúwa. Ninefe jẹ́ ìlú títóbi gidigidi, ó tó ìrìn ọjọ́ mẹ́ta."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "Jona sì bẹ̀rẹ̀ sí wọ ìlú náà lọ ní ìrìn ọjọ́ kan, ó sì ń kéde, ó sì wí pé, “Níwọ́n ogójì ọjọ́ sí i, a ó bi Ninefe wó.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "Àwọn ènìyàn Ninefe sì gba Ọlọ́run gbọ́. Wọ́n sì kéde àwẹ̀, gbogbo wọ́n sì wọ aṣọ ọ̀fọ̀, bẹ̀rẹ̀ láti orí ọmọdé títí dé orí àgbà wọn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "Ọ̀rọ̀ náà sì dé ọ̀dọ̀ ọba Ninefe, ó sì dìde kúrò lórí ìtẹ́ rẹ̀, ó sì bọ́ aṣọ ìgúnwà rẹ̀ kúrò lára rẹ̀, ó sì da aṣọ ọ̀fọ̀ bora, ó sì jókòó nínú eérú."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "Nígbà náà ní ó kéde rẹ̀ ni Ninefe pé, “Kí a la Ninefe já nípa àṣẹ ọba, àti àwọn àgbàgbà rẹ̀ pé: “Má ṣe jẹ́ kí ènìyàn, tàbí ẹranko, ọ̀wọ́ ẹran tàbí agbo ẹran, tọ́ ohunkóhun wò, má jẹ́ kí wọn jẹ tàbí mu omi."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "Ṣùgbọ́n jẹ́ kí ènìyàn àti ẹranko da aṣọ ọ̀fọ̀ bo ara, kí wọn sì kígbe kíkan sí Ọlọ́run, sì jẹ́ kí wọn yípadà, olúkúlùkù kúrò ní ọ̀nà ibi rẹ̀ àti kúrò ní ìwà ìpa tí ó wà lọ́wọ́ wọn."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "Ta ni ó lè mọ̀ bí Ọlọ́run yóò yípadà kí ó sì ronúpìwàdà, kí ó sì yípadà kúrò ní ìbínú gbígbóná rẹ̀, kí àwa má ṣègbé?”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "Ọlọ́run sì rí ìṣe wọn pé wọ́n yípadà kúrò ní ọ̀nà ibi wọn, Ọlọ́run sì ronúpìwàdà ibi tí òun ti wí pé òun yóò ṣe sí wọn, òun kò sì ṣe e mọ́."
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/JON/3.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/JON/4.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/JON/2.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 10
+    },
+    "4": {
+      "translation": {
+        "id": "yor_bib",
+        "name": "Biblica® ní oore ọ̀fẹ́ láti lo Bíbélì Mímọ́ ní Èdè Yorùbá Òde-Òní",
+        "website": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseUrl": "https://ebible.org/Scriptures/details.php?id=yor",
+        "licenseNotes": null,
+        "shortName": "BIB",
+        "englishName": "Yoruba Bible",
+        "language": "yor",
+        "textDirection": "ltr",
+        "sha256": "7761f8c9559b01566ca9490fb77c26b38960fb922d29a9e48641b9ea5af56ed6",
+        "availableFormats": [
+          "json"
+        ],
+        "listOfBooksApiLink": "/api/yor_bib/books.json",
+        "numberOfBooks": 66,
+        "totalNumberOfChapters": 1189,
+        "totalNumberOfVerses": 31087,
+        "languageName": "Èdè Yorùbá",
+        "languageEnglishName": "Yoruba"
+      },
+      "book": {
+        "id": "JON",
+        "translationId": "yor_bib",
+        "name": "Jona",
+        "commonName": "Jona",
+        "title": "Ìwé Wòlíì Jona",
+        "order": 32,
+        "numberOfChapters": 4,
+        "sha256": "f665a2eaf2e2b6652f1b2083a3f9129af6a1414fe2cece312808aa39dc05349d",
+        "firstChapterNumber": 1,
+        "firstChapterApiLink": "/api/yor_bib/JON/1.json",
+        "lastChapterNumber": 4,
+        "lastChapterApiLink": "/api/yor_bib/JON/4.json",
+        "totalNumberOfVerses": 48
+      },
+      "chapter": {
+        "number": 4,
+        "content": [
+          {
+            "type": "heading",
+            "content": [
+              "Jona bínú sí àánú tí Olúwa fihàn"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 1,
+            "content": [
+              "Ṣùgbọ́n ó ba Jona nínú jẹ́ gidigidi, ó sì bínú púpọ̀."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 2,
+            "content": [
+              "Ó sì gbàdúrà sí Olúwa, ó sì wí pé, “Èmí bẹ̀ ọ́, Olúwa, ǹjẹ́ ọ̀rọ̀ ti mo sọ kọ́ ni èyí nígbà tí mo wà ní ilẹ̀ mi? Nítorí èyí ni mo ṣé sálọ sí Tarṣiṣi ní ìṣáájú: nítorí èmi mọ̀ pé, Ọlọ́run olóore-ọ̀fẹ́ ní ìwọ, àti aláàánú, O lọ́ra láti bínú, O sì ṣeun púpọ̀, O sì ronúpìwàdà ibi náà."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 3,
+            "content": [
+              "Ǹjẹ́ báyìí, Olúwa, èmi bẹ̀ ọ, gba ẹ̀mí mi kúrò lọ́wọ́ mi nítorí ó sàn fún mi láti kú ju àti wà láààyè lọ.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 4,
+            "content": [
+              "Nígbà náà ni Olúwa wí pé, “Ìwọ́ ha ni ẹ̀tọ́ láti bínú bí?”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 5,
+            "content": [
+              "Jona sì jáde kúrò ní ìlú náà, ó sì jókòó níhà ìlà-oòrùn ìlú náà. Ó sì pa àgọ́ kan níbẹ̀ fún ara rẹ̀, ó sì jókòó ni òjìji ní abẹ́ rẹ̀ títí yóò fi rí ohun tí yóò ṣẹlẹ̀ sí ìlú náà."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 6,
+            "content": [
+              "Olúwa Ọlọ́run sì pèsè ìtàkùn kan, ó ṣe é kí ó gòkè wá sórí Jona; kí ó lè ṣe ìji bò ó lórí; láti gbà á kúrò nínú ìbànújẹ́ rẹ̀. Jona sì yọ ayọ̀ ńlá nítorí ìtàkùn náà."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 7,
+            "content": [
+              "Ṣùgbọ́n Ọlọ́run pèsè kòkòrò kan nígbà tí ilẹ̀ mọ́ ní ọjọ́ kejì, ó sì jẹ ìtàkùn náà ó sì rọ."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 8,
+            "content": [
+              "Ó sì ṣe, nígbà tí oòrùn yọ, Ọlọ́run pèsè ẹ̀fúùfù gbígbóná tí ìlà-oòrùn; oòrùn sì pa Jona lórí tó bẹ́ẹ̀ tí ó fi rẹ̀ ẹ́. Ó sì fẹ́ nínú ara rẹ̀ láti kú, ó sì wí pé, “Ó sàn fún mi láti kú ju àti wà láààyè lọ.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 9,
+            "content": [
+              "Ọlọ́run sì wí fún Jona pé, “O ha tọ́ fún ọ láti bínú nítorí ìtàkùn náà?” Òun sì wí pé, “Mo ni ẹ̀tọ́, o tọ́ fún mi láti bínú títí dé ikú.”"
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 10,
+            "content": [
+              "Nígbà náà ni Olúwa wí pé, “Ìwọ kẹ́dùn ìtàkùn náà, nítorí èyí tí ìwọ kò ṣiṣẹ́ fun, tí ìwọ kò mu dàgbà; tí ó hù jáde ní òru kan tí ó sì kú ni òru kan."
+            ]
+          },
+          {
+            "type": "verse",
+            "number": 11,
+            "content": [
+              "Ṣùgbọ́n Ninefe ní jù ọ̀kẹ́ mẹ́fà (120,000) ènìyàn nínú rẹ̀, tí wọn kò mọ ọwọ́ ọ̀tún wọn yàtọ̀ sí ti òsì, àti ọ̀pọ̀lọpọ̀ ohun ọ̀sìn pẹ̀lú. Ṣé èmí kò ha ní kẹ́dùn nípa ìlú ńlá náà?”"
+            ]
+          }
+        ],
+        "footnotes": []
+      },
+      "thisChapterLink": "/api/yor_bib/JON/4.json",
+      "thisChapterAudioLinks": {},
+      "nextChapterApiLink": "/api/yor_bib/MIC/1.json",
+      "nextChapterAudioLinks": {},
+      "previousChapterApiLink": "/api/yor_bib/JON/3.json",
+      "previousChapterAudioLinks": {},
+      "numberOfVerses": 11
+    }
+  }
+}
