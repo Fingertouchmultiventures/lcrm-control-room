@@ -1,7 +1,7 @@
 // Service worker: lets the app install and open quickly. Network first, so updates always win;
 // the cache is only a fallback when the internet is down. It never touches other websites.
-const CACHE = 'lcrm-v2';
-const SHELL = ['index.html', 'control.html', 'cam.html', 'tv.html', 'control.css', 'control.js', 'cam.js', 'signal.js', 'config.js', 'pwa.js', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png'];
+const CACHE = 'lcrm-v3';
+const SHELL = ['index.html', 'control.html', 'cam.html', 'tv.html', 'control.css', 'control.js', 'cam.js', 'signal.js', 'config.js', 'books.js', 'data/hymns-en.json', 'data/hymns-yo.json', 'pwa.js', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL).catch(() => {})).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener('fetch', e => {

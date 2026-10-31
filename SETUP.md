@@ -117,3 +117,9 @@ The app opens full screen with its own icon and still opens if the internet is d
 
 ## Facebook stream key safety
 Treat the stream key like a password. Anyone who has it can broadcast on your page. If it was shared in a chat or screenshot, open Live Producer and click **Reset** next to the key, then paste the new key.
+
+## Hymns, lyrics, scripture and shortcuts
+- **Hymns tab:** the CAC hymn book in **English** and **Yorùbá**, stored inside the app (no internet needed). Type a number (e.g. `46`) or some words. Each verse is a slide. "Show in Yorùbá/English" switches the same hymn.
+- **Lyrics tab:** your own songs (praise and worship, choruses). **Upload songs** takes several `.txt` files at once (file name = song title; blank line between slides). Search is instant while the singer sings; press `/` to jump to the search box.
+- **Scripture tab:** choose **English**, **Yorùbá** (works offline) or **English + Yorùbá** together. Type `John 3:16-18`, `Johanu 3:16` or `Saamu 23`.
+- **Double-click** any item to put it straight on air even when *Preview before air* is on. **Zoom** the on-air camera with `+` `-` `0` (move with Shift+arrows). Press `?` for all keys.

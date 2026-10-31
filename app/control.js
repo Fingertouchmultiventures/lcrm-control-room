@@ -106,7 +106,12 @@ function drawBase(ctx, w, h, src, alpha) {
   else {
     const el = src.type === 'black' ? null : elOf(src);
     ctx.fillStyle = '#000'; ctx.fillRect(0, 0, w, h);
-    if (el) { if (src.type === 'live' && src.fit !== 'contain') drawFitAuto(ctx, el, w, h); else drawContain(ctx, el, w, h); }
+    if (el) {
+      const z = src.zShown || 1;
+      if (z > 1.001) { ctx.save(); ctx.translate(w / 2 - (src.px || 0) * (z - 1) * w / 2, h / 2 - (src.py || 0) * (z - 1) * h / 2); ctx.scale(z, z); ctx.translate(-w / 2, -h / 2); }
+      if (src.type === 'live' && src.fit !== 'contain') drawFitAuto(ctx, el, w, h); else drawContain(ctx, el, w, h);
+      if (z > 1.001) ctx.restore();
+    }
   }
   ctx.globalAlpha = 1;
 }
@@ -200,6 +205,7 @@ const meterBuf = new Uint8Array(1024);
 function tick() {
   const now = performance.now(), dt = Math.min(0.25, (now - last) / 1000); last = now;
   updateScene(P, dt); updateScene(V, dt);
+  sources.forEach(s => { const z = s.src.zoom || 1, a = s.src.zShown || 1; if (a !== z) s.src.zShown = Math.abs(z - a) < 0.01 ? z : a + (z - a) * Math.min(1, dt * 8); });
   LT.alpha += ((LT.on ? 1 : 0) - LT.alpha) * Math.min(1, dt * 9);
   renderScene(pctx, W, H, P, true);
   if (safeMode) renderScene(vctx, 640, 360, V, false);
@@ -448,7 +454,7 @@ function textCards(container, sections, refOf) {
 function renderSongList() {
   const q = $('#songSearch').value.trim().toLowerCase(); const list = $('#songList');
   const rows = songs.filter(s => !q || s.title.toLowerCase().includes(q) || s.text.toLowerCase().includes(q)).sort((a, b) => a.title.localeCompare(b.title, undefined, { numeric: true }));
-  list.innerHTML = rows.length ? '' : '<div class="none">No hymns found. Click “+ New”.</div>';
+  list.innerHTML = rows.length ? '' : '<div class="none">No songs found. Click “+ New” or “Upload songs”.</div>';
   rows.forEach(s => { const b = document.createElement('button'); b.textContent = s.title; b.className = curSong === s.id ? 'on' : ''; b.onclick = () => openSong(s.id); list.appendChild(b); });
 }
 function openSong(id) {
@@ -458,7 +464,7 @@ function openSong(id) {
 }
 function editSong(id) {
   const s = id ? songs.find(x => x.id === id) : { id: 'new', title: '', text: '' };
-  $('#songDlgTitle').textContent = id ? 'Edit hymn' : 'New hymn'; $('#edTitle').value = s.title; $('#edText').value = s.text; $('#edDelete').style.display = id ? '' : 'none';
+  $('#songDlgTitle').textContent = id ? 'Edit song' : 'New song'; $('#edTitle').value = s.title; $('#edText').value = s.text; $('#edDelete').style.display = id ? '' : 'none';
   $('#dlgSong').dataset.id = id || ''; $('#dlgSong').showModal();
 }
 $('#songNew').onclick = () => editSong(null);
@@ -470,43 +476,109 @@ $('#edSave').onclick = () => {
   if (songs.length > 1) songs = songs.filter(s => s.id !== 'sample' || s.text !== SAMPLE[0].text);
   saveSongs(); $('#dlgSong').close(); renderSongList(); openSong(curSong);
 };
-$('#edDelete').onclick = () => { const id = $('#dlgSong').dataset.id; if (!confirm('Delete this hymn?')) return; songs = songs.filter(s => s.id !== id); saveSongs(); curSong = null; $('#songSections').innerHTML = ''; $('#songTitle').textContent = 'Pick a hymn'; $('#songEdit').hidden = true; $('#dlgSong').close(); renderSongList(); };
+$('#edDelete').onclick = () => { const id = $('#dlgSong').dataset.id; if (!confirm('Delete this song?')) return; songs = songs.filter(s => s.id !== id); saveSongs(); curSong = null; $('#songSections').innerHTML = ''; $('#songTitle').textContent = 'Pick a song'; $('#songEdit').hidden = true; $('#dlgSong').close(); renderSongList(); };
 $('#songSearch').oninput = renderSongList;
 $('#songImport').onclick = () => $('#songFiles').click();
 $('#songFiles').onchange = async e => {
   for (const f of e.target.files) songs.push({ id: 's' + Date.now().toString(36) + Math.random().toString(36).slice(2, 4), title: f.name.replace(/\.[^.]+$/, ''), text: await f.text() });
-  e.target.value = ''; songs = songs.filter(s => s.id !== 'sample'); saveSongs(); renderSongList(); toast('Hymns imported.');
+  e.target.value = ''; songs = songs.filter(s => s.id !== 'sample'); saveSongs(); renderSongList(); toast('Songs uploaded.');
 };
-$('#songExport').onclick = () => { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(songs, null, 1)], { type: 'application/json' })); a.download = 'lcrm-hymns-backup.json'; a.click(); };
+$('#songExport').onclick = () => { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(songs, null, 1)], { type: 'application/json' })); a.download = 'lcrm-songs-backup.json'; a.click(); };
 $('#songRestore').onclick = () => $('#songRestoreFile').click();
-$('#songRestoreFile').onchange = async e => { try { const arr = JSON.parse(await e.target.files[0].text()); if (Array.isArray(arr)) { songs = arr; saveSongs(); renderSongList(); toast('Hymns restored.'); } } catch (err) { toast('That file is not a hymn backup.'); } e.target.value = ''; };
+$('#songRestoreFile').onchange = async e => { try { const arr = JSON.parse(await e.target.files[0].text()); if (Array.isArray(arr)) { songs = arr; saveSongs(); renderSongList(); toast('Songs restored.'); } } catch (err) { toast('That file is not a songs backup.'); } e.target.value = ''; };
 
-/* ---------------------------------------------------------------- scripture (free bible-api.com; needs internet) */
-const bibleCache = store.get('bibleCache', {});
+
+/* ---------------------------------------------------------------- CAC hymn books (English + Yoruba, stored with the app) */
+const hymnData = {}; let hymnLang = store.get('hymnLang', 'en'), curHymn = null;
+async function loadHymns(lang) {
+  if (hymnData[lang]) return hymnData[lang];
+  const r = await fetch(`data/hymns-${lang}.json`); if (!r.ok) throw new Error('hymn file not found');
+  return (hymnData[lang] = (await r.json()).map(a => ({ n: a[0], first: a[1], text: a[2], meta: a[3] })));
+}
+function hymnSections(h) {
+  return h.text.split(/\n\s*\n/).map(b => b.trim()).filter(Boolean).map(b => {
+    const lines = b.split('\n').map(l => l.trim()); let label = ''; const m = lines[0].match(/^(\d+)\s*[.)]\s*(.*)$/);
+    if (m) { label = 'Verse ' + m[1]; lines[0] = m[2]; }
+    return { label, text: lines.filter((l, i) => l || i).join('\n').trim() };
+  }).filter(s => s.text);
+}
+async function renderHymnList() {
+  const list = $('#hymnList'); let rows;
+  try { rows = await loadHymns(hymnLang); } catch (e) { list.innerHTML = '<div class="none">Could not load the hymn book (' + esc(e.message) + ').</div>'; return; }
+  const q = $('#hymnSearch').value.trim().toLowerCase(); let res;
+  if (!q) res = rows.slice(0, 100);
+  else if (/^\d+$/.test(q)) { const n = q.padStart(3, '0'); res = rows.filter(h => h.n === n).concat(rows.filter(h => h.n !== n && h.n.replace(/^0+/, '').startsWith(q.replace(/^0+/, '')))); }
+  else res = rows.filter(h => (h.n + ' ' + h.text).toLowerCase().includes(q));
+  $('#hymnCount').textContent = q ? `${res.length} found` + (res.length > 100 ? ' (showing 100)' : '') : `${rows.length} hymns · type a number or some words`;
+  list.innerHTML = res.length ? '' : '<div class="none">No hymn found.</div>';
+  res.slice(0, 100).forEach(h => { const b = document.createElement('button'); b.className = curHymn && curHymn.n === h.n ? 'on' : ''; b.innerHTML = `<b>${esc(h.n.replace(/^0+/, '') || '0')}</b><span>${esc(h.first)}</span>`; b.onclick = () => openHymn(h); list.appendChild(b); });
+}
+function openHymn(h) {
+  curHymn = h; const num = h.n.replace(/^0+/, '');
+  $('#hymnTitle').textContent = `CAC Hymn ${num} · ${h.first}`; $('#hymnOther').hidden = false; $('#hymnOther').textContent = hymnLang === 'en' ? 'Show in Yorùbá' : 'Show in English';
+  const arr = textCards($('#hymnSections'), hymnSections(h), () => `CAC Hymn ${num} (${hymnLang === 'en' ? 'English' : 'Yorùbá'})`);
+  setActive(arr, -1); renderHymnList(); refreshMarks();
+}
+$$('[data-hl]').forEach(b => b.onclick = () => { setHymnLang(b.dataset.hl); });
+function setHymnLang(l) { hymnLang = l; store.set('hymnLang', l); $$('[data-hl]').forEach(x => x.classList.toggle('on', x.dataset.hl === l)); renderHymnList(); }
+$('#hymnSearch').oninput = renderHymnList;
+$('#hymnSearch').onkeydown = async e => { if (e.key === 'Enter') { const rows = await loadHymns(hymnLang), q = e.target.value.trim(); const h = /^\d+$/.test(q) ? rows.find(x => x.n === q.padStart(3, '0')) : null; if (h) openHymn(h); else { const f = $('#hymnList button'); if (f) f.click(); } } };
+$('#hymnOther').onclick = async () => {
+  const n = curHymn && curHymn.n, to = hymnLang === 'en' ? 'yo' : 'en'; setHymnLang(to);
+  const h = (await loadHymns(to)).find(x => x.n === n); if (h) openHymn(h);
+};
+setHymnLang(hymnLang);
+
+/* ---------------------------------------------------------------- scripture
+   English: free bible-api.com (needs internet).  Yoruba: stored with the app (works without internet). */
+const bibleCache = store.get('bibleCache', {}), yorCache = {};
+async function yorChapter(id) {
+  if (!yorCache[id]) { const r = await fetch(`data/yor/${id}.json`); if (!r.ok) throw new Error('Yoruba book file not found'); yorCache[id] = await r.json(); }
+  return yorCache[id];
+}
+async function getYoruba(ref) {
+  const ch = (await yorChapter(ref.book[0]))[ref.chapter]; if (!ch) throw new Error(`${ref.book[2]} has no chapter ${ref.chapter}`);
+  const vs = ch.filter(([n]) => !ref.from || (n >= ref.from && n <= ref.to)); if (!vs.length) throw new Error('verse not found');
+  return vs.map(([v, t]) => ({ b: ref.book[2], c: ref.chapter, v, t }));
+}
+async function getEnglish(refText, ver) {
+  const key = ver + '|' + refText.toLowerCase(); let data = bibleCache[key];
+  if (!data) {
+    const r = await fetch(`https://bible-api.com/${encodeURIComponent(refText)}?translation=${ver}`); data = await r.json();
+    if (!data.verses) throw new Error(data.error || 'Not found'); bibleCache[key] = data;
+    const keys = Object.keys(bibleCache); if (keys.length > 40) delete bibleCache[keys[0]]; store.set('bibleCache', bibleCache);
+  }
+  return { tr: (data.translation_id || ver).toUpperCase(), vs: data.verses.map(v => ({ b: v.book_name, c: v.chapter, v: v.verse, t: v.text.replace(/\s+/g, ' ').trim() })) };
+}
+function rangeOf(ch) { const a = ch[0], z = ch[ch.length - 1]; return ch.length === 1 ? `${a.c}:${a.v}` : a.c === z.c ? `${a.c}:${a.v}-${z.v}` : `${a.c}:${a.v}-${z.c}:${z.v}`; }
 async function findVerses(e) {
   e.preventDefault();
-  const ref = $('#bibleRef').value.trim(), ver = $('#bibleVer').value, group = Number($('#bibleGroup').value) || 1; if (!ref) return;
-  const msg = $('#bibleMsg'); msg.textContent = 'Looking up…'; const key = ver + '|' + ref.toLowerCase();
+  const refText = $('#bibleRef').value.trim(), ver = $('#bibleVer').value, lang = $('#bibleLang').value, group = Number($('#bibleGroup').value) || 1; if (!refText) return;
+  const msg = $('#bibleMsg'); msg.textContent = 'Looking up…';
   try {
-    let data = bibleCache[key];
-    if (!data) {
-      const r = await fetch(`https://bible-api.com/${encodeURIComponent(ref)}?translation=${ver}`); data = await r.json();
-      if (!data.verses) throw new Error(data.error || 'Not found'); bibleCache[key] = data;
-      const keys = Object.keys(bibleCache); if (keys.length > 40) delete bibleCache[keys[0]]; store.set('bibleCache', bibleCache);
+    const ref = Books.parseRef(refText); let en = null, yo = null;
+    if (lang !== 'en') { if (!ref) throw new Error('Type it like “Johanu 3:16” or “John 3:16-18”'); yo = await getYoruba(ref); }
+    if (lang !== 'yo') { try { en = await getEnglish(ref ? `${ref.book[1]} ${ref.chapter}${ref.from ? ':' + ref.from + (ref.to !== ref.from ? '-' + ref.to : '') : ''}` : refText, ver); } catch (err) { if (lang === 'en') throw err; msg.textContent = 'English needs internet - showing Yorùbá only.'; } }
+    let secs = [], head;
+    if (lang === 'both' && en && yo) {
+      const ymap = new Map(yo.map(x => [x.c + ':' + x.v, x]));
+      const rows = en.vs.map(x => ({ b: x.b, c: x.c, v: x.v, t: x.t, y: (ymap.get(x.c + ':' + x.v) || {}).t || '' }));
+      for (let i = 0; i < rows.length; i += group) { const ch = rows.slice(i, i + group); secs.push({ label: '', text: ch.map(x => x.t).join(' ') + '\n\n' + ch.map(x => x.y).join(' '), ref: `${ch[0].b} ${rangeOf(ch)} (${en.tr} · Yorùbá)` }); }
+      head = `${en.vs[0].b} · ${en.tr} + Yorùbá · ${rows.length} verses`;
+    } else {
+      const useY = lang === 'yo' || !en, vs = useY ? yo : en.vs, tr = useY ? 'Yorùbá' : en.tr;
+      for (let i = 0; i < vs.length; i += group) { const ch = vs.slice(i, i + group); secs.push({ label: '', text: ch.map(x => x.t).join(' '), ref: `${ch[0].b} ${rangeOf(ch)} (${tr})` }); }
+      head = `${vs[0].b} ${rangeOf(vs)} · ${tr} · ${vs.length} verse${vs.length === 1 ? '' : 's'}`;
     }
-    const tr = (data.translation_id || ver).toUpperCase(); const vs = data.verses.map(v => ({ b: v.book_name, c: v.chapter, v: v.verse, t: v.text.replace(/\s+/g, ' ').trim() }));
-    const chunks = []; for (let i = 0; i < vs.length; i += group) chunks.push(vs.slice(i, i + group));
-    const secs = chunks.map(ch => {
-      const a = ch[0], z = ch[ch.length - 1]; const range = ch.length === 1 ? `${a.c}:${a.v}` : a.c === z.c ? `${a.c}:${a.v}-${z.v}` : `${a.c}:${a.v}-${z.c}:${z.v}`;
-      return { label: '', text: ch.map(x => x.t).join(' '), ref: `${a.b} ${range} (${tr})` };
-    });
-    msg.textContent = `${data.reference} · ${tr} · ${vs.length} verse${vs.length === 1 ? '' : 's'}`;
+    if (!/internet/.test(msg.textContent)) msg.textContent = head; else msg.textContent += ' ' + head;
     const arr = textCards($('#bibleOut'), secs, s => s.ref); setActive(arr, -1);
   } catch (err) {
-    msg.textContent = (navigator.onLine ? 'Could not find that passage (' + err.message + '). Check the spelling, e.g. “1 Corinthians 13:4-7”.' : 'No internet. Type the verse in the Words tab instead.');
+    msg.textContent = (!navigator.onLine && lang !== 'yo') ? 'No internet. Choose Yorùbá, or type the verse in the Words tab.' : 'Could not find that passage (' + err.message + '). Try e.g. “1 Corinthians 13:4-7” or “Saamu 23”.';
   }
 }
 $('#bibleForm').onsubmit = findVerses;
+$('#bibleLang').value = store.get('bibleLang', 'en'); $('#bibleLang').onchange = e => { store.set('bibleLang', e.target.value); $('#bibleVer').hidden = e.target.value === 'yo'; };
+$('#bibleVer').hidden = $('#bibleLang').value === 'yo';
 
 /* ---------------------------------------------------------------- video files */
 const medias = [];
@@ -564,7 +636,7 @@ $('#btnClearText').onclick = clearText;
 $('#btnTake').onclick = take;
 $('#trans').value = settings.trans; $('#trans').onchange = e => { settings.trans = e.target.value; saveSettings(); };
 $('#safeMode').onchange = e => {
-  e.target.blur(); safeMode = e.target.checked; $('#pvMon').hidden = !safeMode; $('#btnTake').disabled = !safeMode;
+  e.target.blur(); safeMode = e.target.checked; $('#pvMon').hidden = !safeMode; $('#mons').classList.toggle('two', safeMode); $('#btnTake').disabled = !safeMode;
   if (safeMode) { V.base = P.base; V.prev = null; V.fade = 1; V.text = P.text ? Object.assign({}, P.text) : null; }
   afterChange();
 };
@@ -576,10 +648,30 @@ addEventListener('keydown', e => {
   const k = e.key;
   if (t.type === 'range' && k.startsWith('Arrow')) return;          // let sliders use the arrows
   if (k === 'Enter' && tag === 'button') return;                     // Enter on a focused button just presses it
+  if (k === '?') { $('#dlgKeys').showModal(); return; }
+  if (k === '/') { const si = $('.pane.on input[id$=Search]'); if (si) { e.preventDefault(); si.focus(); si.select(); } return; }
+  if (k === '+' || k === '=') { setZoom(0.5); return; } if (k === '-' || k === '_') { setZoom(-0.5); return; } if (k === '0') { setZoom(0, true); return; }
+  if (e.shiftKey && k.startsWith('Arrow')) { e.preventDefault(); panZoom(k === 'ArrowLeft' ? -0.2 : k === 'ArrowRight' ? 0.2 : 0, k === 'ArrowUp' ? -0.2 : k === 'ArrowDown' ? 0.2 : 0); return; }
   if (/^[1-9]$/.test(k)) { const s = ordered()[Number(k) - 1]; if (s) { setActive(listOfCams(), Number(k) - 1); putBase(s.src); } }
   else if (k === 'b' || k === 'B') $('#btnBlack').click(); else if (k === 'w' || k === 'W') $('#btnWelcome').click(); else if (k === 'c' || k === 'C') clearText();
   else if (k === 'Enter') take(); else if (k === 'ArrowRight' || k === 'PageDown') { e.preventDefault(); step(1); } else if (k === 'ArrowLeft' || k === 'PageUp') { e.preventDefault(); step(-1); }
 });
+
+
+/* ---------------------------------------------------------------- zoom, double-click, keys help */
+function zoomTarget() { const t = target().base.type === 'live' ? target().base : P.base.type === 'live' ? P.base : null; return t; }
+function setZoom(d, reset) {
+  const src = zoomTarget(); if (!src) return toast('Zoom works on a camera. Put a camera on the screen first.');
+  src.zoom = reset ? 1 : clamp(Math.round(((src.zoom || 1) + d) * 100) / 100, 1, 4);
+  if (src.zoom === 1) { src.px = 0; src.py = 0; }
+  $('#zReset').textContent = (src.zoom || 1).toFixed(src.zoom % 1 ? 1 : 0) + '×';
+  sources.forEach(s => { s.el.classList.toggle('zoomed', (s.src.zoom || 1) > 1); });
+}
+function panZoom(dx, dy) { const src = zoomTarget(); if (!src || (src.zoom || 1) <= 1) return; src.px = clamp((src.px || 0) + dx, -1, 1); src.py = clamp((src.py || 0) + dy, -1, 1); }
+$('#zIn').onclick = () => setZoom(0.5); $('#zOut').onclick = () => setZoom(-0.5); $('#zReset').onclick = () => setZoom(0, true);
+// double-click anything in the lists: the first click already made it NEXT, this sends it on air at once
+document.addEventListener('dblclick', e => { if (!safeMode) return; const n = e.target.closest('.item'); if (n && !e.target.closest('button')) take(); });
+$('#btnKeys').onclick = () => $('#dlgKeys').showModal(); $('#closeKeys').onclick = () => $('#dlgKeys').close();
 
 /* TV window */
 async function openTV() {

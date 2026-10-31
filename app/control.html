@@ -32,26 +32,31 @@
 
 <main>
   <section class="left">
-    <div class="monitor" id="progMon">
-      <canvas id="prog" width="1280" height="720"></canvas>
-      <span class="tag red">PROGRAM</span>
-      <span class="tag onair" id="onairTag">ON AIR</span>
-    </div>
-    <div class="meter" title="Sound level going to Facebook"><i id="meterBar"></i></div>
-
-    <div class="bar">
-      <button id="btnBlack">Black <kbd>B</kbd></button>
-      <button id="btnWelcome">Welcome <kbd>W</kbd></button>
-      <button id="btnClearText">Clear words <kbd>C</kbd></button>
-      <select id="trans" title="How pictures change"><option value="fade">Fade</option><option value="cut">Cut</option></select>
-    </div>
-    <div class="bar">
-      <label class="switch"><input type="checkbox" id="safeMode"> Preview before air</label>
-      <button id="btnTake" class="take" disabled>TAKE <kbd>Enter</kbd></button>
-    </div>
-    <div class="monitor small" id="pvMon" hidden>
-      <canvas id="pv" width="640" height="360"></canvas>
-      <span class="tag green">NEXT</span>
+    <div class="stage">
+      <div class="mons" id="mons">
+        <div class="monitor" id="progMon">
+          <canvas id="prog" width="1280" height="720"></canvas>
+          <span class="tag red">PROGRAM</span>
+          <span class="tag onair" id="onairTag">ON AIR</span>
+        </div>
+        <div class="monitor small" id="pvMon" hidden>
+          <canvas id="pv" width="640" height="360"></canvas>
+          <span class="tag green">NEXT</span>
+        </div>
+      </div>
+      <div class="meter" title="Sound level going to Facebook"><i id="meterBar"></i></div>
+      <div class="bar">
+        <button id="btnBlack">Black <kbd>B</kbd></button>
+        <button id="btnWelcome">Welcome <kbd>W</kbd></button>
+        <button id="btnClearText">Clear words <kbd>C</kbd></button>
+        <select id="trans" title="How pictures change"><option value="fade">Fade</option><option value="cut">Cut</option></select>
+      </div>
+      <div class="bar">
+        <label class="switch"><input type="checkbox" id="safeMode"> Preview before air</label>
+        <span class="seg" title="Zoom the camera that is on air (keys + and -)"><button id="zOut">&minus;</button><button id="zReset" title="Reset zoom (0)">1&times;</button><button id="zIn">+</button></span>
+        <button id="btnKeys" class="ghost" title="Keyboard shortcuts (?)">Keys</button>
+        <button id="btnTake" class="take" disabled>TAKE <kbd>Enter</kbd></button>
+      </div>
     </div>
 
     <details class="card" open id="fbCard">
@@ -99,7 +104,8 @@
     <nav class="tabs">
       <button data-tab="cams" class="on">Cameras</button>
       <button data-tab="slides">Slides</button>
-      <button data-tab="songs">Hymns &amp; Lyrics</button>
+      <button data-tab="hymns">Hymns</button>
+      <button data-tab="songs">Lyrics</button>
       <button data-tab="bible">Scripture</button>
       <button data-tab="media">Video</button>
       <button data-tab="words">Words</button>
@@ -131,18 +137,33 @@
         <p class="empty" id="slideEmpty">No slides yet.</p>
       </div>
 
+      <div class="pane" id="pane-hymns">
+        <div class="split">
+          <aside class="songlist">
+            <div class="seg wide"><button data-hl="en" class="on">English</button><button data-hl="yo">Yorùbá</button></div>
+            <input id="hymnSearch" placeholder="Hymn number or words…" autocomplete="off" inputmode="search">
+            <div id="hymnList"></div>
+            <p class="hint" id="hymnCount"></p>
+          </aside>
+          <div class="songview">
+            <div class="songhead"><h3 id="hymnTitle">Type a hymn number</h3><button id="hymnOther" hidden>Show in Yorùbá</button></div>
+            <div class="grid text" id="hymnSections"></div>
+          </div>
+        </div>
+      </div>
+
       <div class="pane" id="pane-songs">
         <div class="split">
           <aside class="songlist">
-            <input id="songSearch" placeholder="Search hymns…" autocomplete="off">
+            <input id="songSearch" placeholder="Search your songs…" autocomplete="off">
             <div id="songList"></div>
-            <div class="row2"><button id="songNew">+ New</button><button id="songImport">Import .txt</button></div>
+            <div class="row2"><button id="songNew">+ New</button><button id="songImport">Upload songs</button></div>
             <div class="row2"><button id="songExport" class="ghost">Backup</button><button id="songRestore" class="ghost">Restore</button></div>
             <input type="file" id="songFiles" hidden multiple accept=".txt,text/plain">
             <input type="file" id="songRestoreFile" hidden accept=".json,application/json">
           </aside>
           <div class="songview">
-            <div class="songhead"><h3 id="songTitle">Pick a hymn</h3><button id="songEdit" hidden>Edit</button></div>
+            <div class="songhead"><h3 id="songTitle">Pick a song</h3><button id="songEdit" hidden>Edit</button></div>
             <div class="grid text" id="songSections"></div>
           </div>
         </div>
@@ -150,7 +171,8 @@
 
       <div class="pane" id="pane-bible">
         <form id="bibleForm" class="toolbar">
-          <input id="bibleRef" placeholder="e.g. John 3:16-18  or  Psalm 23" autocomplete="off">
+          <input id="bibleRef" placeholder="e.g. John 3:16-18 or Johanu 3 or Saamu 23" autocomplete="off">
+          <select id="bibleLang" title="Language"><option value="en">English</option><option value="yo">Yorùbá</option><option value="both">English + Yorùbá</option></select>
           <select id="bibleVer"><option value="kjv">KJV</option><option value="web">WEB</option><option value="bbe">BBE</option><option value="almeida">Almeida (Portuguese)</option></select>
           <select id="bibleGroup"><option value="1">1 verse per slide</option><option value="2">2 verses per slide</option><option value="3">3 verses per slide</option></select>
           <button type="submit">Find</button>
@@ -180,6 +202,23 @@
     </div>
   </section>
 </main>
+
+<dialog id="dlgKeys">
+  <h2>Keyboard shortcuts</h2>
+  <table class="keys">
+    <tr><td><kbd>1</kbd>–<kbd>9</kbd></td><td>Put camera 1–9 on the screen</td></tr>
+    <tr><td><kbd>&rarr;</kbd> / <kbd>PgDn</kbd></td><td>Next slide, verse, hymn verse or video</td></tr>
+    <tr><td><kbd>&larr;</kbd> / <kbd>PgUp</kbd></td><td>Previous one</td></tr>
+    <tr><td><kbd>+</kbd> / <kbd>-</kbd> / <kbd>0</kbd></td><td>Zoom the camera in / out / reset</td></tr>
+    <tr><td><kbd>Shift</kbd> + arrows</td><td>Move the zoomed picture</td></tr>
+    <tr><td><kbd>Enter</kbd></td><td>TAKE (send the NEXT picture on air)</td></tr>
+    <tr><td>Double-click</td><td>Send that item straight on air, even with Preview on</td></tr>
+    <tr><td><kbd>B</kbd> <kbd>W</kbd> <kbd>C</kbd></td><td>Black · Welcome screen · Clear words</td></tr>
+    <tr><td><kbd>/</kbd></td><td>Jump to the search box of the open Hymns / Lyrics tab</td></tr>
+    <tr><td><kbd>?</kbd></td><td>Show this list</td></tr>
+  </table>
+  <div class="row2"><button class="ghost" id="closeKeys">Close</button></div>
+</dialog>
 
 <dialog id="dlgPhones">
   <h2>Connect phones</h2>
@@ -222,6 +261,7 @@
 <div id="toast"></div>
 <script src="config.js"></script>
 <script src="signal.js"></script>
+<script src="books.js"></script>
 <script src="control.js"></script>
 <script src="pwa.js"></script>
 </body>
