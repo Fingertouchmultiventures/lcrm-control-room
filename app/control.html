@@ -26,6 +26,7 @@
   </label>
   <span class="spacer"></span>
   <span id="net" class="pill"><span class="dot"></span><span id="netText">Starting…</span></span>
+  <button id="btnFrameSet" class="btn ghost">Frame setup</button>
   <button id="btnSettings" class="btn ghost">Look &amp; logo</button>
   <div id="liveBadge" class="live off">OFF AIR</div>
 </header>
@@ -54,6 +55,8 @@
       <div class="bar">
         <label class="switch"><input type="checkbox" id="safeMode"> Preview before air</label>
         <span class="seg" title="Zoom the camera that is on air (keys + and -)"><button id="zOut">&minus;</button><button id="zReset" title="Reset zoom (0)">1&times;</button><button id="zIn">+</button></span>
+        <button id="btnFrame" title="Photo frame on the live picture (F)">Frame: off</button>
+        <button id="btnShot" title="Take a photo (P)">&#128247; Photo <kbd>P</kbd></button>
         <button id="btnKeys" class="ghost" title="Keyboard shortcuts (?)">Keys</button>
         <button id="btnTake" class="take" disabled>TAKE <kbd>Enter</kbd></button>
       </div>
@@ -107,6 +110,7 @@
       <button data-tab="hymns">Hymns</button>
       <button data-tab="songs">Lyrics</button>
       <button data-tab="bible">Scripture</button>
+      <button data-tab="photos">Photos</button>
       <button data-tab="media">Video</button>
       <button data-tab="words">Words</button>
       <span class="spacer"></span>
@@ -181,6 +185,17 @@
         <div class="grid text" id="bibleOut"></div>
       </div>
 
+      <div class="pane" id="pane-photos">
+        <div class="toolbar">
+          <button id="shotNow">&#128247; Take photo <kbd>P</kbd></button>
+          <button id="shotFolder">Choose photo folder</button>
+          <span class="hint" id="shotWhere">Photos go to your Downloads folder.</span>
+        </div>
+        <p class="hint">Takes a picture of the camera that is on air (full size, with the frame if turned on in Frame setup), or of the whole screen if no camera is on air. On a phone, tap <b>Take photo</b> on the phone, or click the camera button on its tile here. Click a photo to put it on air.</p>
+        <div class="grid slides" id="shotGrid"></div>
+        <p class="empty" id="shotEmpty">No photos yet.</p>
+      </div>
+
       <div class="pane" id="pane-media">
         <div class="toolbar">
           <button id="mediaAdd">+ Add video files</button>
@@ -203,6 +218,13 @@
   </section>
 </main>
 
+<dialog id="dlgFrame">
+  <h2>Photo frame</h2>
+  <p class="hint">The church strip (logo, name, theme, address, date) across the live picture and on photos. It hides while words are on the same edge of the screen.</p>
+  <div class="form" id="frameForm"></div>
+  <div class="row2"><button id="closeFrame">Done</button></div>
+</dialog>
+
 <dialog id="dlgKeys">
   <h2>Keyboard shortcuts</h2>
   <table class="keys">
@@ -213,6 +235,7 @@
     <tr><td><kbd>Shift</kbd> + arrows</td><td>Move the zoomed picture</td></tr>
     <tr><td><kbd>Enter</kbd></td><td>TAKE (send the NEXT picture on air)</td></tr>
     <tr><td>Double-click</td><td>Send that item straight on air, even with Preview on</td></tr>
+    <tr><td><kbd>P</kbd> / <kbd>F</kbd></td><td>Take a photo / turn the photo frame on or off</td></tr>
     <tr><td><kbd>B</kbd> <kbd>W</kbd> <kbd>C</kbd></td><td>Black · Welcome screen · Clear words</td></tr>
     <tr><td><kbd>/</kbd></td><td>Jump to the search box of the open Hymns / Lyrics tab</td></tr>
     <tr><td><kbd>?</kbd></td><td>Show this list</td></tr>
@@ -262,6 +285,7 @@
 <script src="config.js"></script>
 <script src="signal.js"></script>
 <script src="books.js"></script>
+<script src="frame.js"></script>
 <script src="control.js"></script>
 <script src="pwa.js"></script>
 </body>

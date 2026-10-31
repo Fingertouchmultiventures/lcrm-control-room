@@ -123,3 +123,8 @@ Treat the stream key like a password. Anyone who has it can broadcast on your pa
 - **Lyrics tab:** your own songs (praise and worship, choruses). **Upload songs** takes several `.txt` files at once (file name = song title; blank line between slides). Search is instant while the singer sings; press `/` to jump to the search box.
 - **Scripture tab:** choose **English**, **Yorùbá** (works offline) or **English + Yorùbá** together. Type `John 3:16-18`, `Johanu 3:16` or `Saamu 23`.
 - **Double-click** any item to put it straight on air even when *Preview before air* is on. **Zoom** the on-air camera with `+` `-` `0` (move with Shift+arrows). Press `?` for all keys.
+
+## Photos (shutter) and the photo frame
+- **Laptop shutter:** press `P` or click **Photo**. It photographs the camera that is on air at full size (or the whole screen if no camera is on air). Under **Photos → Choose photo folder** pick a folder once (Chrome/Edge) and every photo is saved there; otherwise photos go to Downloads. Click a photo to put it on air, or **To slides**.
+- **Phone shutter:** on the phone page tap **Take photo**. The full-size picture is saved on the phone (share sheet or Downloads) and a smaller copy is sent to the laptop. You can also click the camera button on the phone's tile in the control room to take the photo remotely (the phone must have reloaded the camera page after this update).
+- **Photo frame:** **Frame setup** (or `F` to switch on/off) puts the church strip (logo, name, this week's theme, address, date, TikTok/Facebook) across the live picture, and optionally on the TV and on photos. You can instead upload a flier and use its top or bottom part. The frame hides while words are on the same edge of the screen.

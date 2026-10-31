@@ -37,6 +37,7 @@
   .warn-box { background:#3a2a05; border:1px solid #6b4b0a; color:#ffd98a; border-radius:10px; padding:10px 12px; font-size:14px; margin-top:10px; display:none; }
   .hide { display:none !important; }
   small { color: var(--mute); }
+  .shutter { background:#fff; color:#111; margin-bottom:6px; } .flash { animation:fl .25s; } @keyframes fl { 0%{filter:brightness(3)} 100%{filter:none} }
 </style>
 </head>
 <body>
@@ -68,6 +69,8 @@
         <span class="pill" id="camlabel" style="justify-content:center"></span>
       </div>
       <div id="orient" class="warn-box">Turn the phone sideways (landscape) so the picture fills the TV and Facebook.</div>
+      <button id="shutter" class="shutter">&#128247; Take photo</button>
+      <div id="shotmsg" class="sub" style="margin:6px 0 0"></div>
       <div class="row">
         <button class="ghost" id="flip">Flip camera</button>
         <button class="danger" id="stop">Stop</button>

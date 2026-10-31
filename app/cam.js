@@ -14,7 +14,7 @@
   };
   const withTimeout = (pr, ms, msg) => Promise.race([pr, new Promise((_, rej) => setTimeout(() => rej(new Error(msg)), ms))]);
 
-  let db, stream, pc, room, camId, camName, facing, curSid, unsubs = [], pending = [], watchdog, retryTimer, wake, stopped = false;
+  let dc, db, stream, pc, room, camId, camName, facing, curSid, unsubs = [], pending = [], watchdog, retryTimer, wake, stopped = false;
 
   $('room').value = cleanRoom(qs.get('room')) || store.get('lcrm_cam_room', '');
   $('name').value = qs.get('name') || store.get('lcrm_cam_name', '');
@@ -79,6 +79,8 @@
     await db.remove(`rooms/${room}/cand/${camId}`);
     const conn = pc = new RTCPeerConnection({ iceServers: cfg.iceServers });
     stream.getTracks().forEach(t => conn.addTrack(t, stream));
+    dc = conn.createDataChannel('ctl'); dc.binaryType = 'arraybuffer';      // lets the control room ask for photos and receive them
+    dc.onmessage = e => { try { const m = JSON.parse(e.data); if (m.t === 'shoot') shoot(true); } catch (err) {} };
     conn.onicecandidate = e => { if (e.candidate && curSid === sid) db.push(`rooms/${room}/cand/${camId}/${sid}/phone`, e.candidate.toJSON()); };
     conn.onconnectionstatechange = () => {
       if (pc !== conn) return;
@@ -137,6 +139,42 @@
   }
 
   $('room').addEventListener('input', () => { const c = cleanRoom($('room').value); if (c !== $('room').value) $('room').value = c; });
+
+  /* ---- shutter: full-size photo saved on this phone, and a smaller copy sent to the control room laptop ---- */
+  const shotMsg = t => { $('shotmsg').textContent = t; };
+  async function snap() {
+    const track = stream && stream.getVideoTracks()[0]; if (!track) throw new Error('camera is not on');
+    try { if (window.ImageCapture) { const b = await new ImageCapture(track).takePhoto(); if (b && b.size) return b; } } catch (e) {}
+    const v = $('preview'), cv = document.createElement('canvas'); cv.width = v.videoWidth; cv.height = v.videoHeight; cv.getContext('2d').drawImage(v, 0, 0);
+    return new Promise(ok => cv.toBlob(ok, 'image/jpeg', 0.92));
+  }
+  async function smaller(blob, maxW) {
+    try { const bm = await createImageBitmap(blob), s = Math.min(1, maxW / bm.width), cv = document.createElement('canvas'); cv.width = Math.round(bm.width * s); cv.height = Math.round(bm.height * s);
+      cv.getContext('2d').drawImage(bm, 0, 0, cv.width, cv.height); return await new Promise(ok => cv.toBlob(ok, 'image/jpeg', 0.9)); } catch (e) { return blob; }
+  }
+  async function sendToLaptop(blob, name) {
+    if (!dc || dc.readyState !== 'open') return false;
+    const buf = await blob.arrayBuffer(); dc.send(JSON.stringify({ t: 'shot', name, size: buf.byteLength }));
+    for (let o = 0; o < buf.byteLength; o += 16000) { while (dc.bufferedAmount > 1e6) await new Promise(r => setTimeout(r, 40)); dc.send(buf.slice(o, o + 16000)); }
+    dc.send(JSON.stringify({ t: 'end' })); return true;
+  }
+  async function saveHere(blob, name, remote) {
+    const file = new File([blob], name, { type: 'image/jpeg' });
+    try { if (!remote && navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file] }); return; } } catch (e) { if (e.name === 'AbortError') return; }
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 20000);
+  }
+  async function shoot(remote) {
+    try {
+      $('preview').classList.add('flash'); setTimeout(() => $('preview').classList.remove('flash'), 300); shotMsg('Taking photo…');
+      const full = await snap(), d = new Date(), pad = n => String(n).padStart(2, '0');
+      const name = `LCRM-${(camName || 'camera').replace(/[^A-Za-z0-9]+/g, '')}-${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}-${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}.jpg`;
+      const sent = await sendToLaptop(await smaller(full, 2560), name);
+      await saveHere(full, name, remote);
+      shotMsg(`Photo saved on this phone${sent ? ' and sent to the control room' : ''}.`);
+    } catch (e) { shotMsg('Could not take the photo: ' + e.message); }
+  }
+  $('shutter').onclick = () => shoot(false);
+
   $('start').onclick = start; $('flip').onclick = flip; $('stop').onclick = stop;
   addEventListener('online', () => { if (db && !stopped) publish().catch(() => {}); });
   document.addEventListener('visibilitychange', async () => { if (document.visibilityState === 'visible' && !stopped && stream) { try { wake = await navigator.wakeLock?.request('screen'); } catch (e) {} } });

@@ -120,3 +120,9 @@ dialog h2 { margin:0 0 8px; font-size:18px; }
 .keys { width:100%; border-collapse:collapse; } .keys td { padding:6px 4px; border-bottom:1px solid var(--line); font-size:14px; } .keys td:first-child { white-space:nowrap; color:var(--gold); width:42%; }
 #hymnList button { display:flex; gap:8px; } #hymnList button b { color:var(--gold); min-width:34px; } #hymnList button span { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 .item.zoomed .thumb::after { content:'zoom'; position:absolute; right:6px; bottom:6px; background:var(--gold); color:#1a1300; font-size:11px; font-weight:800; padding:1px 6px; border-radius:6px; }
+
+#progMon.flash { box-shadow:0 0 0 4px #fff, 0 0 40px #fff; } #progMon.flash canvas { filter:brightness(2.2); }
+#btnFrame.on { background:#2a3550; border-color:var(--gold); color:#fff; }
+#dlgFrame .form label { display:block; } #dlgFrame .form input[type=text], #dlgFrame .form textarea, #dlgFrame .form select { width:100%; }
+.item .shotbtns { display:flex; gap:6px; padding:4px 8px 8px; } .item .shotbtns button { padding:3px 8px; font-size:12px; }
+.item .cambtn { padding:2px 6px; }

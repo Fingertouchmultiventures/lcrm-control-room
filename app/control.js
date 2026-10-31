@@ -184,15 +184,22 @@ function drawLogo(ctx, w, h) {
   const lw = w * 0.1, lh = lw * logoImg.naturalHeight / logoImg.naturalWidth;
   ctx.globalAlpha = 0.92; ctx.drawImage(logoImg, w - lw - w * 0.025, h * 0.035, lw, lh); ctx.globalAlpha = 1;
 }
-function renderScene(ctx, w, h, sc, overlays) {
+let frameCfg = Object.assign({}, Frame.DEF, store.get('frame', {}));
+const saveFrame = () => store.set('frame', frameCfg);
+function drawFrameLayer(ctx, w, h, sc) {   // the photo frame stays out of the way of words on the same edge
+  if (!frameCfg.on || (sc.text && (sc.text.mode === 'full' || frameCfg.pos === 'bottom'))) return;
+  Frame.draw(ctx, w, h, frameCfg);
+}
+function renderScene(ctx, w, h, sc, overlays, withFrame) {
   if (sc.fade < 1 && sc.prev) { drawBase(ctx, w, h, sc.prev, 1); drawBase(ctx, w, h, sc.base, sc.fade); } else drawBase(ctx, w, h, sc.base, 1);
   if (sc.text) drawTextLayer(ctx, w, h, sc.text, false);
-  if (overlays) { drawLowerThird(ctx, w, h, !!(sc.text && sc.text.mode === 'lower')); drawLogo(ctx, w, h); }
+  if (withFrame) drawFrameLayer(ctx, w, h, sc);
+  if (overlays) { drawLowerThird(ctx, w, h, !!(sc.text && sc.text.mode === 'lower') || (withFrame && frameCfg.on && frameCfg.pos === 'bottom')); drawLogo(ctx, w, h); }
 }
 function renderTV() {
   const m = settings.tvMode;
-  if (m === 'mirror') renderScene(tctx, TW, TH, P, true);
-  else if (m === 'smart') { if (P.text) drawTextLayer(tctx, TW, TH, P.text, true); else renderScene(tctx, TW, TH, P, false); }
+  if (m === 'mirror') renderScene(tctx, TW, TH, P, true, frameCfg.tv);
+  else if (m === 'smart') { if (P.text) drawTextLayer(tctx, TW, TH, P.text, true); else renderScene(tctx, TW, TH, P, false, frameCfg.tv); }
   else if (m === 'welcome') drawBase(tctx, TW, TH, WELCOME, 1);
   else { tctx.fillStyle = '#000'; tctx.fillRect(0, 0, TW, TH); }
 }
@@ -207,8 +214,8 @@ function tick() {
   updateScene(P, dt); updateScene(V, dt);
   sources.forEach(s => { const z = s.src.zoom || 1, a = s.src.zShown || 1; if (a !== z) s.src.zShown = Math.abs(z - a) < 0.01 ? z : a + (z - a) * Math.min(1, dt * 8); });
   LT.alpha += ((LT.on ? 1 : 0) - LT.alpha) * Math.min(1, dt * 9);
-  renderScene(pctx, W, H, P, true);
-  if (safeMode) renderScene(vctx, 640, 360, V, false);
+  renderScene(pctx, W, H, P, true, true);
+  if (safeMode) renderScene(vctx, 640, 360, V, false, true);
   if (tvWin && !tvWin.closed) { if (tvWin.__ready && tvWin.__stream !== tvStream) tvWin.setStream(tvStream); renderTV(); }
   if (analyser) {
     analyser.getByteTimeDomainData(meterBuf); let pk = 0;
@@ -278,13 +285,14 @@ function ensureSource(id, name, kind) {
   if (kind === 'phone' && !camOrder.includes(id)) { camOrder.push(id); store.set('camOrder', camOrder); }
   s = { id, name, kind, seq: ++seq, video, stream: null, state: 'connecting', src: { type: 'live', id, fit: kind === 'screen' ? 'contain' : 'auto' }, gain: null, audioOn: false, sid: null, pc: null, tally: undefined };
   const tile = document.createElement('div'); tile.className = 'item cam'; tile._item = s; s.el = tile;
-  tile.innerHTML = `<div class="thumb"><span class="num"></span><div class="off"></div></div><div class="meta"><span class="dot"></span><b></b><small class="res"></small><button class="aud" title="Use this camera's sound" hidden>Sound</button><button class="rm" hidden>Remove</button></div>`;
+  tile.innerHTML = `<div class="thumb"><span class="num"></span><div class="off"></div></div><div class="meta"><span class="dot"></span><b></b><small class="res"></small><button class="cambtn" title="Ask this phone to take a photo" hidden>&#128247;</button><button class="aud" title="Use this camera's sound" hidden>Sound</button><button class="rm" hidden>Remove</button></div>`;
   $('.thumb', tile).prepend(video);
   tile.addEventListener('click', e => { if (e.target.closest('button')) return; setActive(listOfCams(), listOfCams().indexOf(s)); putBase(s.src); });
   $('.aud', tile).onclick = () => {
     resumeAudio(); if (!s.gain) s.gain = routeStream(s.stream); if (!s.gain) return toast('This camera is not sending sound. Turn on "Send this phone\'s microphone" on the phone.');
     s.audioOn = !s.audioOn; s.gain.gain.value = s.audioOn ? 1 : 0; $('.aud', tile).classList.toggle('on', s.audioOn); $('.aud', tile).textContent = s.audioOn ? 'Sound on' : 'Sound';
   };
+  $('.cambtn', tile).onclick = () => { if (s.dc && s.dc.readyState === 'open') { s.dc.send(JSON.stringify({ t: 'shoot' })); toast('Photo requested from ' + s.name + '…'); } else toast('This phone is not connected, or it needs to reload the camera page to get the new version.'); };
   $('.rm', tile).onclick = () => removeSource(s);
   sources.set(id, s); $('#camGrid').appendChild(tile); updateTile(s); updateCounts();
   return s;
@@ -295,7 +303,7 @@ function updateTile(s) {
   $('.dot', t).className = 'dot ' + (live ? 'ok' : s.state === 'connecting' ? 'warn' : 'bad');
   $('.off', t).textContent = s.state === 'connecting' ? 'Connecting…' : 'Camera offline';
   t.classList.toggle('offline', !live);
-  $('.rm', t).hidden = s.kind === 'phone' ? live : false; $('.aud', t).hidden = !(s.stream && s.stream.getAudioTracks().length);
+  $('.rm', t).hidden = s.kind === 'phone' ? live : false; $('.cambtn', t).hidden = s.kind !== 'phone' || !live; $('.aud', t).hidden = !(s.stream && s.stream.getAudioTracks().length);
   updateCounts();
 }
 const orderIdx = s => (s.kind === 'phone' ? camOrder.indexOf(s.id) : 1000 + s.seq);
@@ -339,6 +347,13 @@ async function connectPhone(s, v) {
   if (s.pc) { try { s.pc.close(); } catch (e) {} } if (s.unsubCand) s.unsubCand();
   s.state = 'connecting'; updateTile(s);
   const pc = s.pc = new RTCPeerConnection({ iceServers: cfg.iceServers });
+  pc.ondatachannel = e => {   // the phone sends photos here
+    s.dc = e.channel; e.channel.binaryType = 'arraybuffer'; let parts = [], meta = null;
+    e.channel.onmessage = m => {
+      if (typeof m.data === 'string') { const j = JSON.parse(m.data); if (j.t === 'shot') { meta = j; parts = []; } else if (j.t === 'end' && meta) { addShot(new Blob(parts, { type: 'image/jpeg' }), meta.name, s.name); meta = null; parts = []; } }
+      else parts.push(m.data);
+    };
+  };
   pc.ontrack = e => {
     const st = e.streams[0] || new MediaStream([e.track]);
     if (s.stream !== st) { s.stream = st; s.gain = null; s.video.srcObject = st; s.video.play().catch(() => {}); }
@@ -648,6 +663,7 @@ addEventListener('keydown', e => {
   const k = e.key;
   if (t.type === 'range' && k.startsWith('Arrow')) return;          // let sliders use the arrows
   if (k === 'Enter' && tag === 'button') return;                     // Enter on a focused button just presses it
+  if (k === 'p' || k === 'P') { takePhoto(); return; } if (k === 'f' || k === 'F') { $('#btnFrame').click(); return; }
   if (k === '?') { $('#dlgKeys').showModal(); return; }
   if (k === '/') { const si = $('.pane.on input[id$=Search]'); if (si) { e.preventDefault(); si.focus(); si.select(); } return; }
   if (k === '+' || k === '=') { setZoom(0.5); return; } if (k === '-' || k === '_') { setZoom(-0.5); return; } if (k === '0') { setZoom(0, true); return; }
@@ -672,6 +688,79 @@ $('#zIn').onclick = () => setZoom(0.5); $('#zOut').onclick = () => setZoom(-0.5)
 // double-click anything in the lists: the first click already made it NEXT, this sends it on air at once
 document.addEventListener('dblclick', e => { if (!safeMode) return; const n = e.target.closest('.item'); if (n && !e.target.closest('button')) take(); });
 $('#btnKeys').onclick = () => $('#dlgKeys').showModal(); $('#closeKeys').onclick = () => $('#dlgKeys').close();
+
+
+/* ---------------------------------------------------------------- photo frame + shutter */
+function setFrameOn(on) { frameCfg.on = on; saveFrame(); $('#btnFrame').textContent = 'Frame: ' + (on ? 'on' : 'off'); $('#btnFrame').classList.toggle('on', on); }
+$('#btnFrame').onclick = e => { e.target.blur(); setFrameOn(!frameCfg.on); }; setFrameOn(frameCfg.on);
+function buildFrameForm() {
+  const f = $('#frameForm'); f.innerHTML = '';
+  const add = (label, el) => { const l = document.createElement('label'); l.textContent = label; l.appendChild(el); f.appendChild(l); return el; };
+  const chk = (label, key) => { const l = document.createElement('label'); l.className = 'switch'; const i = document.createElement('input'); i.type = 'checkbox'; i.checked = !!frameCfg[key]; i.onchange = () => { frameCfg[key] = i.checked; saveFrame(); if (key === 'on') setFrameOn(i.checked); }; l.append(i, ' ' + label); f.appendChild(l); };
+  const sel = (label, key, opts) => { const s = document.createElement('select'); opts.forEach(([v, t]) => { const o = document.createElement('option'); o.value = v; o.textContent = t; s.appendChild(o); }); s.value = frameCfg[key]; s.onchange = () => { frameCfg[key] = s.value; saveFrame(); rebuild(); }; add(label, s); };
+  const txt = (label, key, area) => { const i = document.createElement(area ? 'textarea' : 'input'); if (area) i.rows = 2; else i.type = 'text'; i.value = frameCfg[key] || ''; i.oninput = () => { frameCfg[key] = i.value; saveFrame(); }; add(label, i); };
+  const rng = (label, key, min, max) => { const i = document.createElement('input'); i.type = 'range'; i.min = min; i.max = max; i.value = frameCfg[key]; i.oninput = () => { frameCfg[key] = Number(i.value); saveFrame(); }; add(label, i); };
+  function rebuild() { buildFrameForm(); }
+  chk('Show the frame on Facebook / the live picture', 'on'); chk('Also show it on the church TV', 'tv'); chk('Put the frame on photos too', 'photos');
+  sel('Put it at the', 'pos', [['top', 'Top of the picture'], ['bottom', 'Bottom of the picture']]);
+  sel('What to show', 'mode', [['strip', 'Church strip (logo, name, theme, address, date)'], ['image', 'Part of a picture I upload (e.g. a flier header)']]);
+  rng('Strength (opacity)', 'op', 30, 100);
+  if (frameCfg.mode === 'image') {
+    const fi = document.createElement('input'); fi.type = 'file'; fi.accept = 'image/*'; fi.onchange = async () => { if (fi.files[0]) { frameCfg.img = await Frame.fromFile(fi.files[0], 1600); saveFrame(); toast('Picture saved.'); } }; add('Upload a flier or any picture', fi);
+    sel('Use which part', 'from', [['top', 'The top'], ['bottom', 'The bottom']]); rng('How much of the picture (%)', 'amount', 8, 100);
+  } else {
+    sel('Logo', 'logo', [['logos/logo-left.png', 'Church logo (left)'], ['logos/logo-right.png', 'Church logo (right)'], ['none', 'No logo']]);
+    txt('Theme / title for this week (Enter for a new line)', 'theme', true); txt('Small line under the theme (e.g. COMMUNION SERVICE)', 'tag'); txt('Date line (empty = today)', 'date');
+    txt('Church name', 'name'); txt('Under the name', 'sub'); txt('Address line 1', 'addr1'); txt('Address line 2', 'addr2'); txt('Address line 3', 'addr3'); txt('TikTok name', 'tiktok'); txt('Facebook name', 'facebook');
+    rng('Strip darkness', 'strip', 20, 95);
+  }
+}
+$('#btnFrameSet').onclick = () => { buildFrameForm(); $('#dlgFrame').showModal(); }; $('#closeFrame').onclick = () => $('#dlgFrame').close();
+
+const shots = []; let shotDir = null;
+const idbOpen = () => new Promise((ok, no) => { const r = indexedDB.open('lcrm', 1); r.onupgradeneeded = () => r.result.createObjectStore('kv'); r.onsuccess = () => ok(r.result); r.onerror = () => no(r.error); });
+async function idbGet(k) { try { const d = await idbOpen(); return await new Promise(ok => { const q = d.transaction('kv').objectStore('kv').get(k); q.onsuccess = () => ok(q.result); q.onerror = () => ok(null); }); } catch (e) { return null; } }
+async function idbSet(k, v) { try { const d = await idbOpen(); d.transaction('kv', 'readwrite').objectStore('kv').put(v, k); } catch (e) {} }
+function whereText() { return shotDir ? `Photos are saved into the folder “${shotDir.name}”.` : 'Photos go to your Downloads folder.'; }
+async function pickShotFolder() {
+  if (!window.showDirectoryPicker) return toast('This browser cannot pick a folder. Use Chrome or Edge on the laptop. Photos go to Downloads.');
+  try { shotDir = await showDirectoryPicker({ id: 'lcrmphotos', mode: 'readwrite' }); idbSet('shotDir', shotDir); $('#shotWhere').textContent = whereText(); toast('Photos will be saved in “' + shotDir.name + '”.'); } catch (e) {}
+}
+$('#shotFolder').onclick = pickShotFolder;
+(async () => { const h = await idbGet('shotDir'); if (h) { shotDir = h; $('#shotWhere').textContent = whereText() + ' (click Take photo once to allow it again)'; } })();
+async function writeToDisk(blob, name) {
+  if (shotDir) {
+    try {
+      if ((await shotDir.queryPermission({ mode: 'readwrite' })) !== 'granted' && (await shotDir.requestPermission({ mode: 'readwrite' })) !== 'granted') throw new Error('no permission');
+      const fh = await shotDir.getFileHandle(name, { create: true }), w = await fh.createWritable(); await w.write(blob); await w.close(); return 'folder';
+    } catch (e) { toast('Could not write to the folder (' + e.message + '). Saving to Downloads instead.'); }
+  }
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 20000); return 'downloads';
+}
+function shotName(prefix) { const d = new Date(); return `LCRM-${prefix}-${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}-${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}.jpg`; }
+async function addShot(blob, name, from, skipDisk) {
+  const where = skipDisk ? null : await writeToDisk(blob, name);
+  const url = URL.createObjectURL(blob), img = new Image(); img.src = url; await img.decode().catch(() => {});
+  const sh = { name, blob, src: { type: 'img', img, fit: 'contain' } }; sh.show = () => putBase(sh.src); shots.unshift(sh);
+  const n = document.createElement('div'); n.className = 'item slide'; n._item = sh; sh.el = n;
+  n.innerHTML = `<div class="thumb"></div><div class="meta"><span>${esc(from ? from + ' · ' : '')}${esc(name.replace(/^LCRM-/, ''))}</span></div><div class="shotbtns"><button class="sv">Save</button><button class="sl">To slides</button><button class="x2">Delete</button></div>`;
+  img.style.cssText = 'width:100%;height:100%;object-fit:cover'; $('.thumb', n).appendChild(img);
+  n.onclick = e => { const b = e.target.closest('button'); if (b) { e.stopPropagation(); if (b.classList.contains('sv')) writeToDisk(blob, name).then(w => toast(w === 'folder' ? 'Saved in your photo folder.' : 'Saved to Downloads.')); else if (b.classList.contains('sl')) { const im2 = new Image(); im2.src = url; addSlide(name, im2); toast('Added to Slides.'); } else { shots.splice(shots.indexOf(sh), 1); if (P.base === sh.src) setBase(P, BLACK); n.remove(); $('#shotEmpty').style.display = shots.length ? 'none' : 'block'; } return; } setActive(shots, shots.indexOf(sh)); putBase(sh.src); };
+  $('#shotGrid').prepend(n); $('#shotEmpty').style.display = 'none';
+  toast(where ? (where === 'folder' ? `Photo saved in “${shotDir.name}”.` : 'Photo saved to Downloads.') : 'Photo received from ' + (from || 'the phone') + '.');
+  if (!skipDisk && from) { /* phone photos are already saved on the phone */ }
+}
+async function takePhoto() {
+  const el = P.base.type === 'live' ? elOf(P.base) : null; let cv = document.createElement('canvas'), name;
+  if (el) {
+    const [vw, vh] = dimsOf(el); cv.width = vw; cv.height = vh; const cx = cv.getContext('2d'); cx.drawImage(el, 0, 0);
+    if (frameCfg.on && frameCfg.photos) { Frame.draw(cx, vw, vh, frameCfg); }
+    const s = sources.get(P.base.id); name = shotName((s && s.name || 'camera').replace(/[^A-Za-z0-9]+/g, ''));
+  } else { cv.width = W; cv.height = H; cv.getContext('2d').drawImage(progCanvas, 0, 0); name = shotName('screen'); }
+  $('#progMon').classList.add('flash'); setTimeout(() => $('#progMon').classList.remove('flash'), 220);
+  const blob = await new Promise(ok => cv.toBlob(ok, 'image/jpeg', 0.93)); addShot(blob, name, '');
+}
+$('#btnShot').onclick = e => { e.target.blur(); takePhoto(); }; $('#shotNow').onclick = takePhoto;
 
 /* TV window */
 async function openTV() {
