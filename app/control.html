@@ -52,10 +52,16 @@
         <button id="btnClearText">Clear words <kbd>C</kbd></button>
         <select id="trans" title="How pictures change"><option value="fade">Fade</option><option value="cut">Cut</option></select>
       </div>
+      <div class="bar" id="planMini" hidden>
+        <button id="pmPrev" title="Previous plan item ([)">&#9664;</button><span id="pmText" class="hint" style="flex:1;margin:0"></span><button id="pmNext" title="Next plan item (])">Next &#9654;</button>
+      </div>
       <div class="bar">
         <label class="switch"><input type="checkbox" id="safeMode"> Preview before air</label>
         <span class="seg" title="Zoom the camera that is on air (keys + and -)"><button id="zOut">&minus;</button><button id="zReset" title="Reset zoom (0)">1&times;</button><button id="zIn">+</button></span>
         <button id="btnFrame" title="Photo frame on the live picture (F)">Frame: off</button>
+        <button id="btnOffer" title="Show the tithe and offering card (O)">Offering: off</button>
+        <button id="btnTicker" title="Scrolling message (S)">Scroll: off</button>
+        <button id="btnRec" title="Record to this computer - works without internet (R)">&#9679; Record</button>
         <button id="btnShot" title="Take a photo (P)">&#128247; Photo <kbd>P</kbd></button>
         <button id="btnKeys" class="ghost" title="Keyboard shortcuts (?)">Keys</button>
         <button id="btnTake" class="take" disabled>TAKE <kbd>Enter</kbd></button>
@@ -110,6 +116,9 @@
       <button data-tab="hymns">Hymns</button>
       <button data-tab="songs">Lyrics</button>
       <button data-tab="bible">Scripture</button>
+      <button data-tab="plan">Plan</button>
+      <button data-tab="msgs">Messages</button>
+      <button data-tab="chat">Chat</button>
       <button data-tab="photos">Photos</button>
       <button data-tab="media">Video</button>
       <button data-tab="words">Words</button>
@@ -185,6 +194,56 @@
         <div class="grid text" id="bibleOut"></div>
       </div>
 
+      <div class="pane" id="pane-plan">
+        <div class="toolbar">
+          <button id="planStart">Start service</button><button id="planPrev">&#9664; Back</button><button id="planNext">Next &#9654;</button>
+          <button id="planAdd" class="ghost">+ Add item</button><button id="planReset" class="ghost">Reset ticks</button>
+          <span class="hint" id="planClock">Service not started.</span>
+        </div>
+        <p class="hint">Your order of service. <b>Go</b> (or Next) opens the item: a hymn number puts the hymn ready, a scripture reference finds the verses, <i>Offering</i> shows the offering card, <i>Words</i> shows the text on screen. Work stays on this computer.</p>
+        <div id="planList"></div>
+      </div>
+
+      <div class="pane" id="pane-msgs">
+        <div class="card2">
+          <h3>Scrolling message</h3>
+          <textarea id="tkText" rows="2" placeholder="e.g. Welcome to LCRM. Tithe and offering: Opay 8130864566 - Abiodun Isaac Daramola. God bless you."></textarea>
+          <div class="toolbar">
+            <label class="inl">Speed <input type="range" id="tkSpeed" min="30" max="160" value="70"></label>
+            <label class="inl">Position <select id="tkPos"><option value="bottom">Bottom</option><option value="top">Top</option></select></label>
+            <button id="tkToggle">Show scrolling message</button>
+          </div>
+        </div>
+        <div class="card2">
+          <h3>Tithe &amp; offering card</h3>
+          <div class="form2">
+            <label>Heading<input id="ofHead"></label><label>Bank<input id="ofBank"></label>
+            <label>Account number<input id="ofNo" inputmode="numeric"></label><label>Account name<input id="ofName"></label>
+            <label>Message<input id="ofNote"></label>
+            <label>Show as<select id="ofMode"><option value="card">Card over the picture</option><option value="full">Full screen</option></select></label>
+          </div>
+          <div class="toolbar"><button id="ofToggle">Show offering card</button><label class="switch"><input type="checkbox" id="extTv"> Also on the church TV</label></div>
+        </div>
+      </div>
+
+      <div class="pane" id="pane-chat">
+        <div class="card2">
+          <h3>Facebook live comments</h3>
+          <p class="hint">Reads the comments on your live video so you can put a comment on screen with a click. Reply to people in Facebook itself (button below). You need a Facebook <b>Page access token</b> (see Help).</p>
+          <div class="toolbar">
+            <input type="password" id="chTok" placeholder="Page access token" autocomplete="off" style="min-width:260px">
+            <label class="switch"><input type="checkbox" id="chRem"> Remember on this computer</label>
+            <button id="chStart">Start reading comments</button><button id="chStop" class="ghost">Stop</button>
+          </div>
+          <div class="toolbar"><a class="btn" id="chOpen" target="_blank" rel="noopener">Open Facebook chat &amp; reply</a><button id="chHide" class="ghost">Remove comment from screen</button><span class="hint" id="chMsg"></span></div>
+          <details><summary>Help: how to get the token</summary>
+            <ol class="hint"><li>Open <b>developers.facebook.com/tools/explorer</b> while signed in as the page admin.</li><li>Choose your app, then <b>Get Page Access Token</b> and pick the LCRM Church page. Allow <i>pages_show_list</i>, <i>pages_read_engagement</i> and <i>pages_read_user_content</i>.</li><li>Copy the token here. Short tokens last 1-2 hours; a "long-lived" page token lasts much longer.</li></ol>
+          </details>
+        </div>
+        <div class="grid text" id="chatList"></div>
+        <p class="empty" id="chatEmpty">No comments yet.</p>
+      </div>
+
       <div class="pane" id="pane-photos">
         <div class="toolbar">
           <button id="shotNow">&#128247; Take photo <kbd>P</kbd></button>
@@ -235,6 +294,8 @@
     <tr><td><kbd>Shift</kbd> + arrows</td><td>Move the zoomed picture</td></tr>
     <tr><td><kbd>Enter</kbd></td><td>TAKE (send the NEXT picture on air)</td></tr>
     <tr><td>Double-click</td><td>Send that item straight on air, even with Preview on</td></tr>
+    <tr><td><kbd>O</kbd> / <kbd>S</kbd> / <kbd>R</kbd></td><td>Offering card / Scrolling message / Record on this computer</td></tr>
+    <tr><td><kbd>[</kbd> / <kbd>]</kbd></td><td>Previous / next item of the service plan</td></tr>
     <tr><td><kbd>P</kbd> / <kbd>F</kbd></td><td>Take a photo / turn the photo frame on or off</td></tr>
     <tr><td><kbd>B</kbd> <kbd>W</kbd> <kbd>C</kbd></td><td>Black · Welcome screen · Clear words</td></tr>
     <tr><td><kbd>/</kbd></td><td>Jump to the search box of the open Hymns / Lyrics tab</td></tr>
@@ -268,7 +329,8 @@
     <label>Text position<select id="sAlign"><option value="center">Centre</option><option value="left">Left</option></select></label>
     <label>Background picture <input type="file" id="sBgImg" accept="image/*"></label>
     <label>Logo (top corner) <input type="file" id="sLogoImg" accept="image/*"></label>
-    <label class="switch"><input type="checkbox" id="sLogoOn"> Show logo on Facebook</label>
+    <label class="switch"><input type="checkbox" id="sCorner"> Show the church (LCRM) and CAC logos at the two top corners</label>
+    <label class="switch"><input type="checkbox" id="sLogoOn"> Show my uploaded logo on Facebook</label>
   </div>
   <div class="row2"><button id="clearImgs" class="ghost">Remove pictures</button><button id="closeLook">Done</button></div>
 </dialog>

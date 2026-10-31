@@ -184,22 +184,65 @@ function drawLogo(ctx, w, h) {
   const lw = w * 0.1, lh = lw * logoImg.naturalHeight / logoImg.naturalWidth;
   ctx.globalAlpha = 0.92; ctx.drawImage(logoImg, w - lw - w * 0.025, h * 0.035, lw, lh); ctx.globalAlpha = 1;
 }
+
+/* ---------------------------------------------------------------- scrolling message, offering card, corner logos */
+const EXT_DEF = { tk: { on: false, text: '', speed: 70, pos: 'bottom' }, of: { on: false, head: 'TITHE & OFFERING', bank: 'Opay', no: '8130864566', name: 'Abiodun Isaac Daramola', note: 'God bless your giving.', mode: 'card' }, tv: false };
+const ext = Object.assign({}, EXT_DEF, store.get('ext', {})); ext.tk = Object.assign({}, EXT_DEF.tk, ext.tk); ext.of = Object.assign({}, EXT_DEF.of, ext.of);
+const saveExt = () => store.set('ext', ext);
+if (settings.corner === undefined) settings.corner = true;
+const cornerImgs = { left: loadImg('logos/logo-left.png'), right: loadImg('logos/logo-right.png') };   // left = CAC, right = LCRM
+let offerAlpha = 0;
+function drawCorners(ctx, w, h, sc) {
+  if (!settings.corner) return;
+  const framed = frameCfg.on && frameCfg.pos === 'top' && !(sc && sc.text && sc.text.mode === 'full');
+  const y = framed ? h * 0.31 : h * 0.02, sz = w * 0.075, m = w * 0.012;
+  [['left', m], ['right', w - m - sz]].forEach(([k, x]) => {
+    const im = cornerImgs[k]; if (!im || !im.complete || !im.naturalWidth) return;
+    const r = im.naturalWidth / im.naturalHeight, dw = r >= 1 ? sz : sz * r, dh = r >= 1 ? sz / r : sz;
+    ctx.save(); ctx.shadowColor = 'rgba(0,0,0,.5)'; ctx.shadowBlur = h * 0.01; ctx.drawImage(im, x + (sz - dw) / 2, y, dw, dh); ctx.restore();
+  });
+}
+function drawTicker(ctx, w, h) {
+  const t = ext.tk; if (!t.on || !t.text.trim()) return;
+  const bh = h * 0.075, y = t.pos === 'top' ? 0 : h - bh; ctx.save();
+  ctx.fillStyle = 'rgba(8,12,22,.9)'; ctx.fillRect(0, y, w, bh); ctx.fillStyle = settings.accent; ctx.fillRect(0, t.pos === 'top' ? y + bh - 3 : y, w, 3);
+  ctx.beginPath(); ctx.rect(0, y, w, bh); ctx.clip(); ctx.font = `700 ${bh * 0.5}px ${fontStack()}`; ctx.fillStyle = '#fff'; ctx.textBaseline = 'middle'; ctx.textAlign = 'left';
+  const txt = t.text.replace(/\s*\n\s*/g, '   ●   ') + '   ●   ', tw = ctx.measureText(txt).width, sp = t.speed * (w / 1280), off = (performance.now() / 1000 * sp) % tw;
+  for (let x = -off; x < w; x += tw) ctx.fillText(txt, x, y + bh / 2 + 1);
+  ctx.restore();
+}
+function drawOffer(ctx, w, h) {
+  if (offerAlpha < 0.02) return; const o = ext.of, full = o.mode === 'full';
+  ctx.save(); ctx.globalAlpha = offerAlpha;
+  let x, y, bw, bh;
+  if (full) { drawBackground(ctx, w, h, false); x = w * 0.1; y = h * 0.1; bw = w * 0.8; bh = h * 0.8; }
+  else { bw = w * 0.5; bh = h * 0.5; x = (w - bw) / 2; y = h * 0.2; ctx.fillStyle = 'rgba(8,12,22,.9)'; ctx.fillRect(x, y, bw, bh); ctx.strokeStyle = settings.accent; ctx.lineWidth = Math.max(2, h * 0.006); ctx.strokeRect(x, y, bw, bh); }
+  const cx = x + bw / 2, u = bh / 100; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.shadowColor = 'rgba(0,0,0,.5)'; ctx.shadowBlur = u * 0.6;
+  const line = (txt, size, yy, color, weight) => { ctx.font = `${weight || 700} ${size}px ${fontStack()}`; let s = size; while (ctx.measureText(txt).width > bw * 0.92 && s > 8) { s *= 0.94; ctx.font = `${weight || 700} ${s}px ${fontStack()}`; } ctx.fillStyle = color; ctx.fillText(txt, cx, y + yy * u); };
+  line(o.head, u * 12, 14, settings.accent); ctx.fillStyle = settings.accent; ctx.fillRect(cx - bw * 0.2, y + 23 * u, bw * 0.4, Math.max(2, u * 0.7));
+  line(o.bank ? 'Bank: ' + o.bank : '', u * 9, 35, '#fff', 600); line('Account number', u * 6.5, 50, 'rgba(255,255,255,.75)', 500);
+  line(o.no, u * 19, 65, '#fff', 800); line(o.name, u * 10, 82, '#fff', 700); if (o.note) line(o.note, u * 6, 93, settings.accent, 600);
+  ctx.restore();
+}
+function drawExtras(ctx, w, h) { drawOffer(ctx, w, h); drawTicker(ctx, w, h); }
+
 let frameCfg = Object.assign({}, Frame.DEF, store.get('frame', {}));
 const saveFrame = () => store.set('frame', frameCfg);
 function drawFrameLayer(ctx, w, h, sc) {   // the photo frame stays out of the way of words on the same edge
   if (!frameCfg.on || (sc.text && (sc.text.mode === 'full' || frameCfg.pos === 'bottom'))) return;
   Frame.draw(ctx, w, h, frameCfg);
 }
-function renderScene(ctx, w, h, sc, overlays, withFrame) {
+function renderScene(ctx, w, h, sc, overlays, withFrame, corners) {
   if (sc.fade < 1 && sc.prev) { drawBase(ctx, w, h, sc.prev, 1); drawBase(ctx, w, h, sc.base, sc.fade); } else drawBase(ctx, w, h, sc.base, 1);
   if (sc.text) drawTextLayer(ctx, w, h, sc.text, false);
   if (withFrame) drawFrameLayer(ctx, w, h, sc);
-  if (overlays) { drawLowerThird(ctx, w, h, !!(sc.text && sc.text.mode === 'lower') || (withFrame && frameCfg.on && frameCfg.pos === 'bottom')); drawLogo(ctx, w, h); }
+  if (corners) drawCorners(ctx, w, h, sc);
+  if (overlays) { drawExtras(ctx, w, h); drawLowerThird(ctx, w, h, !!(sc.text && sc.text.mode === 'lower') || (withFrame && frameCfg.on && frameCfg.pos === 'bottom')); drawLogo(ctx, w, h); }
 }
 function renderTV() {
   const m = settings.tvMode;
-  if (m === 'mirror') renderScene(tctx, TW, TH, P, true, frameCfg.tv);
-  else if (m === 'smart') { if (P.text) drawTextLayer(tctx, TW, TH, P.text, true); else renderScene(tctx, TW, TH, P, false, frameCfg.tv); }
+  if (m === 'mirror') renderScene(tctx, TW, TH, P, true, frameCfg.tv, true);
+  else if (m === 'smart') { if (P.text) { drawTextLayer(tctx, TW, TH, P.text, true); drawCorners(tctx, TW, TH, P); } else { renderScene(tctx, TW, TH, P, false, frameCfg.tv, true); if (ext.tv) drawExtras(tctx, TW, TH); } }
   else if (m === 'welcome') drawBase(tctx, TW, TH, WELCOME, 1);
   else { tctx.fillStyle = '#000'; tctx.fillRect(0, 0, TW, TH); }
 }
@@ -213,9 +256,10 @@ function tick() {
   const now = performance.now(), dt = Math.min(0.25, (now - last) / 1000); last = now;
   updateScene(P, dt); updateScene(V, dt);
   sources.forEach(s => { const z = s.src.zoom || 1, a = s.src.zShown || 1; if (a !== z) s.src.zShown = Math.abs(z - a) < 0.01 ? z : a + (z - a) * Math.min(1, dt * 8); });
+  offerAlpha += ((ext.of.on ? 1 : 0) - offerAlpha) * Math.min(1, dt * 8);
   LT.alpha += ((LT.on ? 1 : 0) - LT.alpha) * Math.min(1, dt * 9);
-  renderScene(pctx, W, H, P, true, true);
-  if (safeMode) renderScene(vctx, 640, 360, V, false, true);
+  renderScene(pctx, W, H, P, true, true, true);
+  if (safeMode) renderScene(vctx, 640, 360, V, false, true, true);
   if (tvWin && !tvWin.closed) { if (tvWin.__ready && tvWin.__stream !== tvStream) tvWin.setStream(tvStream); renderTV(); }
   if (analyser) {
     analyser.getByteTimeDomainData(meterBuf); let pk = 0;
@@ -664,6 +708,8 @@ addEventListener('keydown', e => {
   if (t.type === 'range' && k.startsWith('Arrow')) return;          // let sliders use the arrows
   if (k === 'Enter' && tag === 'button') return;                     // Enter on a focused button just presses it
   if (k === 'p' || k === 'P') { takePhoto(); return; } if (k === 'f' || k === 'F') { $('#btnFrame').click(); return; }
+  if (k === 'o' || k === 'O') { toggleOffer(); return; } if (k === 's' || k === 'S') { toggleTicker(); return; } if (k === 'r' || k === 'R') { toggleRec(); return; }
+  if (k === ']') { setPlanCur(planCur + 1); return; } if (k === '[') { setPlanCur(Math.max(0, planCur - 1)); return; }
   if (k === '?') { $('#dlgKeys').showModal(); return; }
   if (k === '/') { const si = $('.pane.on input[id$=Search]'); if (si) { e.preventDefault(); si.focus(); si.select(); } return; }
   if (k === '+' || k === '=') { setZoom(0.5); return; } if (k === '-' || k === '_') { setZoom(-0.5); return; } if (k === '0') { setZoom(0, true); return; }
@@ -761,6 +807,130 @@ async function takePhoto() {
   const blob = await new Promise(ok => cv.toBlob(ok, 'image/jpeg', 0.93)); addShot(blob, name, '');
 }
 $('#btnShot').onclick = e => { e.target.blur(); takePhoto(); }; $('#shotNow').onclick = takePhoto;
+
+
+/* ---------------------------------------------------------------- messages tab: scrolling message + offering card */
+function paintExtUi() {
+  $('#btnTicker').textContent = 'Scroll: ' + (ext.tk.on ? 'on' : 'off'); $('#btnTicker').classList.toggle('on', ext.tk.on); $('#tkToggle').textContent = ext.tk.on ? 'Hide scrolling message' : 'Show scrolling message';
+  $('#btnOffer').textContent = 'Offering: ' + (ext.of.on ? 'on' : 'off'); $('#btnOffer').classList.toggle('on', ext.of.on); $('#ofToggle').textContent = ext.of.on ? 'Hide offering card' : 'Show offering card';
+}
+function toggleTicker() { if (!ext.tk.text.trim() && !ext.tk.on) { toast('Type the scrolling message first (Messages tab).'); $$('.tabs [data-tab]').find(b => b.dataset.tab === 'msgs').click(); return; } ext.tk.on = !ext.tk.on; saveExt(); paintExtUi(); }
+function toggleOffer(on) { ext.of.on = on === undefined ? !ext.of.on : on; saveExt(); paintExtUi(); }
+$('#tkText').value = ext.tk.text; $('#tkText').oninput = e => { ext.tk.text = e.target.value; saveExt(); };
+$('#tkSpeed').value = ext.tk.speed; $('#tkSpeed').oninput = e => { ext.tk.speed = Number(e.target.value); saveExt(); };
+$('#tkPos').value = ext.tk.pos; $('#tkPos').onchange = e => { ext.tk.pos = e.target.value; saveExt(); };
+[['ofHead', 'head'], ['ofBank', 'bank'], ['ofNo', 'no'], ['ofName', 'name'], ['ofNote', 'note']].forEach(([id, key]) => { $('#' + id).value = ext.of[key]; $('#' + id).oninput = e => { ext.of[key] = e.target.value; saveExt(); }; });
+$('#ofMode').value = ext.of.mode; $('#ofMode').onchange = e => { ext.of.mode = e.target.value; saveExt(); };
+$('#extTv').checked = ext.tv; $('#extTv').onchange = e => { ext.tv = e.target.checked; saveExt(); };
+$('#tkToggle').onclick = toggleTicker; $('#btnTicker').onclick = e => { e.target.blur(); toggleTicker(); };
+$('#ofToggle').onclick = () => toggleOffer(); $('#btnOffer').onclick = e => { e.target.blur(); toggleOffer(); };
+$('#sCorner').checked = settings.corner; $('#sCorner').onchange = e => { settings.corner = e.target.checked; saveSettings(); };
+paintExtUi();
+
+/* ---------------------------------------------------------------- record on this computer (no internet needed) */
+let localRec = null, recStart = 0, recBytes = 0, recW = null, recChunks = [], recTimer = null;
+function recName() { const d = new Date(); return `LCRM-service-${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}-${pad(d.getHours())}${pad(d.getMinutes())}.webm`; }
+async function startLocalRec() {
+  resumeAudio(); if (!window.MediaRecorder || !pickMime()) return toast('This browser cannot record. Use Chrome or Edge.');
+  if (!shotDir && window.showDirectoryPicker) { toast('Choose the folder where recordings are saved (once).'); await pickShotFolder(); }
+  recW = null; recChunks = []; recBytes = 0;
+  if (shotDir) { try {
+    if ((await shotDir.queryPermission({ mode: 'readwrite' })) !== 'granted' && (await shotDir.requestPermission({ mode: 'readwrite' })) !== 'granted') throw new Error('no permission');
+    const fh = await shotDir.getFileHandle(recName(), { create: true }); recW = await fh.createWritable();
+  } catch (e) { toast('Could not use the folder (' + e.message + '). Recording will be kept in memory instead - keep recordings short.'); } }
+  const stream = new MediaStream([...progStream.getVideoTracks(), ...dest.stream.getAudioTracks()]);
+  localRec = new MediaRecorder(stream, { mimeType: pickMime(), videoBitsPerSecond: 4000000, audioBitsPerSecond: 160000 });
+  let chain = Promise.resolve();
+  localRec.ondataavailable = e => { if (!e.data || !e.data.size) return; recBytes += e.data.size; if (recW) { const w = recW; chain = chain.then(() => w.write(e.data)).catch(() => {}); } else recChunks.push(e.data); localRec._chain = chain; };
+  localRec.onstop = async () => {
+    await (localRec._chain || chain); const name = recName();
+    if (recW) { try { await recW.close(); } catch (e) {} toast('Recording saved in “' + shotDir.name + '”.', 7000); }
+    else if (recChunks.length) { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob(recChunks, { type: 'video/webm' })); a.download = name; document.body.appendChild(a); a.click(); a.remove(); toast('Recording saved to Downloads.', 7000); }
+    recW = null; recChunks = []; localRec = null;
+  };
+  localRec.start(1000); recStart = Date.now(); $('#btnRec').classList.add('rec');
+  recTimer = setInterval(() => { const s = Math.round((Date.now() - recStart) / 1000); $('#btnRec').textContent = `■ Stop ${fmtTime(s).replace(/^00:/, '')} · ${(recBytes / 1048576).toFixed(0)} MB`; }, 1000); $('#btnRec').textContent = '■ Stop 00:00';
+}
+function stopLocalRec() { clearInterval(recTimer); if (localRec && localRec.state !== 'inactive') localRec.stop(); $('#btnRec').classList.remove('rec'); $('#btnRec').textContent = '● Record'; }
+function toggleRec() { localRec ? stopLocalRec() : startLocalRec(); }
+$('#btnRec').onclick = e => { e.target.blur(); toggleRec(); };
+addEventListener('beforeunload', e => { if (localRec) { e.preventDefault(); e.returnValue = ''; } });
+
+/* ---------------------------------------------------------------- service plan */
+const PLAN_DEF = [
+  { min: 15, title: 'Praise & worship', kind: 'note', ref: '' }, { min: 5, title: 'Opening prayer', kind: 'note', ref: '' }, { min: 5, title: 'Opening hymn', kind: 'hymn', ref: '1' },
+  { min: 5, title: 'Scripture reading', kind: 'scripture', ref: 'Psalm 23' }, { min: 10, title: 'Tithe & offering', kind: 'offering', ref: '' }, { min: 5, title: 'Announcements', kind: 'words', ref: 'Announcements' },
+  { min: 40, title: 'Sermon', kind: 'note', ref: '' }, { min: 5, title: 'Closing hymn', kind: 'hymn', ref: '' }, { min: 5, title: 'Closing prayer & benediction', kind: 'note', ref: '' }];
+let plan = store.get('plan', null) || PLAN_DEF.map(x => Object.assign({ id: Math.random().toString(36).slice(2, 7), done: false }, x)), planCur = -1, planStartAt = 0, planItemAt = 0;
+const savePlan = () => store.set('plan', plan);
+const KINDS = [['note', 'Note only'], ['hymn', 'Hymn number'], ['song', 'Lyrics song'], ['scripture', 'Scripture'], ['offering', 'Offering card'], ['words', 'Words on screen'], ['cam', 'Camera number']];
+function runPlanItem(it) {
+  const tab = n => $$('.tabs [data-tab]').find(b => b.dataset.tab === n); const ref = (it.ref || '').trim();
+  try {
+    if (it.kind === 'offering') { toggleOffer(true); return; } else if (ext.of.on && it.kind !== 'note') toggleOffer(false);
+    if (it.kind === 'hymn') { tab('hymns').click(); $('#hymnSearch').value = ref; renderHymnList(); if (ref) loadHymns(hymnLang).then(rows => { const h = rows.find(x => x.n === ref.padStart(3, '0')); if (h) openHymn(h); }); }
+    else if (it.kind === 'song') { const s = songs.find(x => x.title.toLowerCase().includes(ref.toLowerCase())); tab('songs').click(); $('#songSearch').value = ref; renderSongList(); if (s) openSong(s.id); }
+    else if (it.kind === 'scripture') { tab('bible').click(); $('#bibleRef').value = ref; $('#bibleForm').requestSubmit(); }
+    else if (it.kind === 'words') { const t = ref || it.title; putText({}, t, ''); }
+    else if (it.kind === 'cam') { const s = ordered()[Number(ref) - 1]; if (s) putBase(s.src); }
+  } catch (e) { toast('Could not open this item: ' + e.message); }
+}
+function renderPlan() {
+  const host = $('#planList'); host.innerHTML = '';
+  plan.forEach((it, i) => {
+    const r = document.createElement('div'); r.className = 'planrow' + (i === planCur ? ' cur' : '') + (it.done ? ' done' : '');
+    const ck = document.createElement('input'); ck.type = 'checkbox'; ck.checked = !!it.done; ck.onchange = () => { it.done = ck.checked; savePlan(); renderPlan(); };
+    const mn = document.createElement('input'); mn.type = 'number'; mn.min = 0; mn.value = it.min; mn.title = 'Minutes'; mn.oninput = () => { it.min = Number(mn.value) || 0; savePlan(); };
+    const ti = document.createElement('input'); ti.value = it.title; ti.placeholder = 'Item'; ti.oninput = () => { it.title = ti.value; savePlan(); };
+    const kd = document.createElement('select'); KINDS.forEach(([v, t]) => { const o = document.createElement('option'); o.value = v; o.textContent = t; kd.appendChild(o); }); kd.value = it.kind; kd.onchange = () => { it.kind = kd.value; savePlan(); };
+    const rf = document.createElement('input'); rf.value = it.ref || ''; rf.placeholder = 'number / verse / text'; rf.oninput = () => { it.ref = rf.value; savePlan(); };
+    const bt = document.createElement('div'); bt.style.cssText = 'display:flex;gap:4px';
+    const mk = (t, fn, tip) => { const b = document.createElement('button'); b.textContent = t; b.title = tip || ''; b.onclick = fn; bt.appendChild(b); };
+    mk('Go', () => { setPlanCur(i); }, 'Open this item'); mk('↑', () => { if (i > 0) { [plan[i - 1], plan[i]] = [plan[i], plan[i - 1]]; savePlan(); renderPlan(); } }); mk('↓', () => { if (i < plan.length - 1) { [plan[i + 1], plan[i]] = [plan[i], plan[i + 1]]; savePlan(); renderPlan(); } });
+    mk('×', () => { plan.splice(i, 1); savePlan(); if (planCur >= plan.length) planCur = -1; renderPlan(); });
+    r.append(ck, mn, ti, kd, rf, bt); host.appendChild(r);
+  });
+}
+function setPlanCur(i) { if (i < 0 || i >= plan.length) return; if (planCur >= 0 && planCur !== i) plan[planCur].done = true; planCur = i; planItemAt = Date.now(); if (!planStartAt) planStartAt = Date.now(); savePlan(); renderPlan(); runPlanItem(plan[i]); paintPlanMini(); }
+function paintPlanMini() { $('#planMini').hidden = planCur < 0; if (planCur >= 0) $('#pmText').textContent = `Plan ${planCur + 1}/${plan.length}: ${plan[planCur].title}` + (plan[planCur + 1] ? `  →  next: ${plan[planCur + 1].title}` : '  (last item)'); }
+$('#pmNext').onclick = () => setPlanCur(planCur + 1); $('#pmPrev').onclick = () => setPlanCur(Math.max(0, planCur - 1));
+$('#planNext').onclick = () => setPlanCur(planCur + 1); $('#planPrev').onclick = () => setPlanCur(Math.max(0, planCur - 1));
+$('#planStart').onclick = () => { planStartAt = Date.now(); planCur = -1; plan.forEach(p => { p.done = false; }); savePlan(); setPlanCur(0); };
+$('#planAdd').onclick = () => { plan.push({ id: Math.random().toString(36).slice(2, 7), min: 5, title: 'New item', kind: 'note', ref: '', done: false }); savePlan(); renderPlan(); };
+$('#planReset').onclick = () => { plan.forEach(p => { p.done = false; }); planCur = -1; planStartAt = 0; savePlan(); renderPlan(); paintPlanMini(); $('#planClock').textContent = 'Service not started.'; };
+setInterval(() => {
+  if (!planStartAt) return; const total = plan.reduce((a, p) => a + (p.min || 0), 0), el = Math.round((Date.now() - planStartAt) / 60000), it = Math.round((Date.now() - planItemAt) / 60000), cur = plan[planCur];
+  $('#planClock').textContent = `Service running ${el} min of ${total} planned` + (cur ? ` · “${cur.title}” ${it} min` + (cur.min && it > cur.min ? ' (over time)' : ` of ${cur.min}`) : '');
+}, 5000);
+renderPlan();
+
+/* ---------------------------------------------------------------- facebook comments */
+let chTimer = null, chLive = null; const chSeen = new Set(), GRAPH = 'https://graph.facebook.com/v19.0';
+$('#chOpen').href = cfg.facebookProducerUrl || 'https://www.facebook.com/live/producer/';
+$('#chTok').value = store.get('chTok', ''); $('#chRem').checked = !!store.get('chTok', '');
+const chMsg = (t, bad) => { $('#chMsg').textContent = t; $('#chMsg').style.color = bad ? 'var(--red)' : ''; };
+async function graph(path, tok) { const r = await fetch(GRAPH + path + (path.includes('?') ? '&' : '?') + 'access_token=' + encodeURIComponent(tok)); const j = await r.json(); if (j.error) throw new Error(j.error.message); return j; }
+function addComment(c) {
+  const who = (c.from && c.from.name) || 'Someone', it = { text: c.message, ref: who }; it.show = () => { target().text = { text: it.text, ref: it.ref, mode: 'lower', item: it }; afterChange(); };
+  const n = document.createElement('div'); n.className = 'item txt'; n._item = it; it.el = n; n.innerHTML = `<div class="lab">${esc(who)}</div><div class="body">${esc(c.message)}</div>`;
+  n.onclick = () => { it.show(); }; $('#chatList').prepend(n); $('#chatEmpty').style.display = 'none';
+}
+async function pollComments(tok) {
+  try {
+    const j = await graph(`/${chLive}/comments?filter=stream&live_filter=no_filter&order=chronological&limit=50&fields=from{name},message,created_time`, tok);
+    (j.data || []).forEach(c => { if (!chSeen.has(c.id) && c.message) { chSeen.add(c.id); addComment(c); } }); chMsg('Reading comments from the live video…');
+  } catch (e) { chMsg('Facebook said: ' + e.message, true); }
+}
+$('#chStart').onclick = async () => {
+  const tok = $('#chTok').value.trim(); if (!tok) return chMsg('Paste the page access token first.', true);
+  store.set('chTok', $('#chRem').checked ? tok : ''); chMsg('Looking for your live video…'); clearInterval(chTimer);
+  try {
+    const j = await graph('/me/live_videos?fields=id,status,title&limit=5', tok);
+    const v = (j.data || []).find(x => /LIVE/.test(x.status || '')) || (j.data || [])[0]; if (!v) throw new Error('No live video found on this page yet. Start the live video first, then try again.');
+    chLive = v.id; chMsg(`Found “${v.title || 'live video'}” (${v.status}). Reading comments…`); await pollComments(tok); chTimer = setInterval(() => pollComments(tok), 4000);
+  } catch (e) { chMsg('Facebook said: ' + e.message, true); }
+};
+$('#chStop').onclick = () => { clearInterval(chTimer); chMsg('Stopped.'); }; $('#chHide').onclick = () => clearText();
 
 /* TV window */
 async function openTV() {
