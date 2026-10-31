@@ -62,7 +62,7 @@
     checkOrientation();
     setStatus('Connecting…', 'warn');
     try { wake = await navigator.wakeLock?.request('screen'); } catch (e) {}
-    Signal.onError = m => setStatus('The database refused the link (' + m.replace(/^.*?:\s*/, '') + '). Ask the admin to set the Firebase rules - see SETUP.', 'bad');
+    Signal.onError = m => setStatus('The database refused the link (' + m.replace(/^.*?:\s*/, '') + ') on ' + Signal.dbHost() + '. Ask the admin to set the Firebase rules - see SETUP.', 'bad');
     try { db = await Signal.connect(); } catch (e) { setStatus('No internet: ' + e.message, 'bad'); return; }
     db.onValue(`rooms/${room}/tally/${camId}`, v => { $('stage').className = 'stage ' + (v === 'program' ? 'program' : v === 'preview' ? 'preview' : ''); $('tally').textContent = v === 'program' ? 'ON AIR' : 'NEXT'; });
     publish().catch(() => { retryTimer = setTimeout(() => publish().catch(() => {}), 8000); });

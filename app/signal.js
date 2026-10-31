@@ -77,6 +77,7 @@
   window.Signal = {
     isLocal: useLocal,
     onError: null,
+    dbHost() { try { return new URL(dbUrl()).hostname.replace('.firebaseio.com', ''); } catch (e) { return '?'; } },
     async connect() {
       if (useLocal) return localBackend();
       if (typeof firebase === 'undefined') {
