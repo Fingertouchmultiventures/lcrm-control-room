@@ -14,6 +14,8 @@
 <body>
 <video id="v" autoplay muted playsinline></video>
 <div id="hint">Waiting for the control room…</div>
+<script src="config.js"></script>
+<script src="signal.js"></script>
 <script>
   const v = document.getElementById('v'), hint = document.getElementById('hint');
   window.__ready = true; window.__stream = null;
@@ -23,5 +25,7 @@
   document.addEventListener('dblclick', () => { if (document.fullscreenElement) document.exitFullscreen(); });
   document.addEventListener('fullscreenchange', () => document.body.classList.toggle('full', !!document.fullscreenElement));
 </script>
+<script src="tv.js"></script>
+<script src="pwa.js"></script>
 </body>
 </html>

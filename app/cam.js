@@ -16,7 +16,7 @@
 
   let dc, db, stream, pc, room, camId, camName, facing, curSid, unsubs = [], pending = [], watchdog, retryTimer, wake, stopped = false;
 
-  $('room').value = cleanRoom(qs.get('room')) || store.get('lcrm_cam_room', '');
+  $('room').value = cleanRoom(qs.get('room')) || cfg.defaultRoom || store.get('lcrm_cam_room', '');
   $('name').value = qs.get('name') || store.get('lcrm_cam_name', '');
   $('facing').value = qs.get('facing') || store.get('lcrm_cam_facing', 'environment');
   $('res').value = qs.get('res') || store.get('lcrm_cam_res', '720');

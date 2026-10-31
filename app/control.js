@@ -260,7 +260,8 @@ function tick() {
   LT.alpha += ((LT.on ? 1 : 0) - LT.alpha) * Math.min(1, dt * 9);
   renderScene(pctx, W, H, P, true, true, true);
   if (safeMode) renderScene(vctx, 640, 360, V, false, true, true);
-  if (tvWin && !tvWin.closed) { if (tvWin.__ready && tvWin.__stream !== tvStream) tvWin.setStream(tvStream); renderTV(); }
+  if (tvWin && !tvWin.closed && tvWin.__ready && tvWin.__stream !== tvStream) tvWin.setStream(tvStream);
+  if ((tvWin && !tvWin.closed) || tvPeers.size) renderTV();
   if (analyser) {
     analyser.getByteTimeDomainData(meterBuf); let pk = 0;
     for (let i = 0; i < meterBuf.length; i++) pk = Math.max(pk, Math.abs(meterBuf[i] - 128));
@@ -337,6 +338,8 @@ function ensureSource(id, name, kind) {
     s.audioOn = !s.audioOn; s.gain.gain.value = s.audioOn ? 1 : 0; $('.aud', tile).classList.toggle('on', s.audioOn); $('.aud', tile).textContent = s.audioOn ? 'Sound on' : 'Sound';
   };
   $('.cambtn', tile).onclick = () => { if (s.dc && s.dc.readyState === 'open') { s.dc.send(JSON.stringify({ t: 'shoot' })); toast('Photo requested from ' + s.name + '…'); } else toast('This phone is not connected, or it needs to reload the camera page to get the new version.'); };
+  $('b', tile).title = 'Click to rename this camera'; $('b', tile).style.cursor = 'text';
+  $('b', tile).onclick = e => { e.stopPropagation(); const n = prompt('Name for this camera (e.g. Pulpit, Choir, Back of church):', s.name); if (n && n.trim()) { s.name = n.trim(); camLabels[s.id] = s.name; store.set('camLabels', camLabels); updateTile(s); } };
   $('.rm', tile).onclick = () => removeSource(s);
   sources.set(id, s); $('#camGrid').appendChild(tile); updateTile(s); updateCounts();
   return s;
@@ -374,16 +377,38 @@ async function startSignaling() {
   try { await Promise.race([db.set(`rooms/${room}/_ping`, Date.now()), new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 10000))]); }   // proves the database accepts us
   catch (e) { if (!blocked) { setNet('Cannot reach the database', 'bad'); toast('Cannot reach the Firebase database (' + e.message + '). Check the databaseURL in config.js and the Firebase rules.', 12000); } return; }
   if (!blocked) setNet(db.name === 'local' ? 'Test mode' : 'Online - room ' + room + ' (' + Signal.dbHost() + ')', 'ok');
+  watchTVs();
   db.onChildAdded(`rooms/${room}/cams`, camId => {
     if (watching.has(camId)) return; watching.add(camId);
     db.onValue(`rooms/${room}/cams/${camId}`, v => onCam(camId, v));
   });
 }
+
+/* the TV screen on another window or device (tv.html opened on its own) */
+const tvPeers = new Map();
+function watchTVs() {
+  db.onChildAdded(`rooms/${room}/tvs`, id => db.onValue(`rooms/${room}/tvs/${id}`, v => onTV(id, v)));
+}
+async function onTV(id, v) {
+  const old = tvPeers.get(id); if (!v) { if (old) { try { old.pc.close(); } catch (e) {} tvPeers.delete(id); } return; }
+  if (old && old.sid === v.sid) return; if (old) { try { old.pc.close(); } catch (e) {} if (old.unsub) old.unsub(); }
+  const sid = v.sid, tid = 'tv-' + id, pc = new RTCPeerConnection({ iceServers: cfg.iceServers }), rec = { pc, sid }; tvPeers.set(id, rec);
+  pc.onicecandidate = e => { if (e.candidate && tvPeers.get(id) === rec) db.push(`rooms/${room}/cand/${tid}/${sid}/ctrl`, e.candidate.toJSON()); };
+  try {
+    await pc.setRemoteDescription(v.offer);
+    const tr = pc.getTransceivers().find(t => t.receiver.track.kind === 'video'); tr.direction = 'sendonly'; await tr.sender.replaceTrack(tvStream.getVideoTracks()[0]);
+    try { const p = tr.sender.getParameters(); if (!p.encodings || !p.encodings.length) p.encodings = [{}]; p.encodings[0].maxBitrate = 6000000; tr.sender.setParameters(p).catch(() => {}); } catch (e) {}
+    const ans = await pc.createAnswer(); await pc.setLocalDescription(ans); await db.set(`rooms/${room}/ans/${tid}/${sid}`, { type: ans.type, sdp: ans.sdp });
+    rec.unsub = db.onChildAdded(`rooms/${room}/cand/${tid}/${sid}/phone`, (k2, c) => { if (tvPeers.get(id) === rec) pc.addIceCandidate(c).catch(() => {}); });
+  } catch (e) { console.warn('tv peer', e); }
+}
+const tvPeerCount = () => [...tvPeers.values()].filter(p => p.pc.connectionState !== 'closed' && p.pc.connectionState !== 'failed').length;
 function setNet(text, kind) { $('#netText').textContent = text; $('#net .dot').className = 'dot ' + (kind || ''); }
+const camLabels = store.get('camLabels', {});
 function onCam(id, v) {
   const s = sources.get(id);
   if (!v) { if (s && s.kind === 'phone') { s.state = 'offline'; s.sid = null; updateTile(s); } return; }
-  const cam = ensureSource(id, v.name || 'Camera', 'phone'); cam.name = v.name || cam.name; updateTile(cam);
+  const cam = ensureSource(id, camLabels[id] || v.name || 'Camera', 'phone'); cam.name = camLabels[id] || v.name || cam.name; updateTile(cam);
   if (cam.sid === v.sid) return; cam.sid = v.sid; connectPhone(cam, v);
 }
 async function connectPhone(s, v) {
@@ -424,13 +449,31 @@ function syncTally() {
   });
 }
 
-$('#addWebcam').onclick = async () => {
+/* cameras on this computer: built-in webcam, USB webcams, HDMI capture cards */
+const webcamIds = store.get('webcamIds', []);
+async function addWebcam(deviceId, label) {
+  const key = 'pc-' + String(deviceId || 'default').slice(0, 10); if (sources.has(key) && sources.get(key).state === 'live') return toast('That camera is already added.');
   try {
-    const st = await navigator.mediaDevices.getUserMedia({ video: { width: { ideal: 1280 }, height: { ideal: 720 } }, audio: false });
-    const s = ensureSource('pc-cam-' + Math.random().toString(36).slice(2, 5), 'This computer', 'webcam');
-    s.stream = st; s.video.srcObject = st; s.state = 'live'; updateTile(s); st.getVideoTracks()[0].onended = () => { s.state = 'offline'; updateTile(s); };
-  } catch (e) { toast('Could not open the camera: ' + e.message); }
-};
+    const st = await navigator.mediaDevices.getUserMedia({ video: Object.assign({ width: { ideal: 1280 }, height: { ideal: 720 } }, deviceId ? { deviceId: { exact: deviceId } } : {}), audio: false });
+    const s = ensureSource(key, camLabels[key] || label || 'This computer', 'webcam'); s.stream = st; s.video.srcObject = st; s.video.play().catch(() => {}); s.state = 'live'; updateTile(s);
+    st.getVideoTracks()[0].onended = () => { s.state = 'offline'; updateTile(s); };
+    if (deviceId && !webcamIds.find(x => x[0] === deviceId)) { webcamIds.push([deviceId, label]); store.set('webcamIds', webcamIds); }
+  } catch (e) { toast('Could not open that camera: ' + e.message + (/in use|busy|Could not start/i.test(e.message) ? ' (another program may be using it)' : '')); }
+}
+async function showWebcams() {
+  const list = $('#webcamList'); list.innerHTML = '<p class="hint">Looking for cameras…</p>'; $('#dlgWebcam').showModal();
+  try { (await navigator.mediaDevices.getUserMedia({ video: true, audio: false })).getTracks().forEach(t => t.stop()); } catch (e) { list.innerHTML = `<p class="hint">The browser did not allow the camera (${esc(e.message)}). Click the camera icon in the address bar and Allow.</p>`; return; }
+  const devs = (await navigator.mediaDevices.enumerateDevices()).filter(d => d.kind === 'videoinput'); list.innerHTML = devs.length ? '' : '<p class="hint">No camera found. Plug the webcam in, then click Refresh.</p>';
+  devs.forEach((d, i) => {
+    const key = 'pc-' + d.deviceId.slice(0, 10), added = sources.has(key) && sources.get(key).state === 'live', r = document.createElement('div'); r.className = 'row2'; r.style.margin = '6px 0';
+    r.innerHTML = `<span style="flex:1">${esc(d.label || 'Camera ' + (i + 1))}</span>`; const b = document.createElement('button'); b.textContent = added ? 'Added' : 'Add'; b.disabled = added; b.onclick = async () => { await addWebcam(d.deviceId, d.label || 'Webcam ' + (i + 1)); b.textContent = 'Added'; b.disabled = true; }; r.appendChild(b); list.appendChild(r);
+  });
+}
+$('#addWebcam').onclick = showWebcams; $('#webcamRefresh').onclick = showWebcams; $('#webcamClose').onclick = () => $('#dlgWebcam').close();
+if (navigator.mediaDevices) navigator.mediaDevices.addEventListener('devicechange', () => { if ($('#dlgWebcam').open) showWebcams(); else toast('A camera was plugged in or removed. Click “+ This computer’s camera” to add it.', 6000); });
+(async () => {   // bring back the cameras added last time (only if the browser already allows the camera)
+  try { const p = await navigator.permissions.query({ name: 'camera' }); if (p.state !== 'granted') return; const have = (await navigator.mediaDevices.enumerateDevices()).filter(d => d.kind === 'videoinput').map(d => d.deviceId); for (const [id, lab] of webcamIds) if (have.includes(id)) await addWebcam(id, lab); } catch (e) {}
+})();
 if (!(navigator.mediaDevices && navigator.mediaDevices.getDisplayMedia)) { $('#addScreen').hidden = true; }   // phones cannot share a screen
 $('#addScreen').onclick = async () => {
   try {
