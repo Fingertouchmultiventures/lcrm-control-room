@@ -991,7 +991,10 @@ async function openTV() {
 $('#btnTv').onclick = openTV;
 
 /* phones dialog */
+let lanBase = '', lanUrls = [];
+if (Signal.isLan) fetch('/lan-info').then(r => r.json()).then(j => { lanUrls = j.urls || []; lanBase = lanUrls[0] || ''; }).catch(() => {});
 function publicBase() {
+  if (Signal.isLan) return lanBase;
   const local = ['localhost', '127.0.0.1'].includes(location.hostname) || location.protocol === 'file:';
   if (!local) return location.origin + location.pathname.replace(/[^/]*$/, '');
   const u = (settings.publicUrl || '').trim().replace(/\/+$/, ''); return u ? u + '/' : '';
@@ -999,7 +1002,7 @@ function publicBase() {
 function refreshPhoneLink() {
   $('#roomCode').textContent = room; const base = publicBase(); $('#pubUrl').value = settings.publicUrl; $('#pubUrl').parentElement;
   const link = base ? `${base}cam.html?room=${room}${Signal.isLocal ? '&local=1' : ''}` : '';
-  $('#phoneLink').value = link || '(type the online address above first)'; $('#waLink').href = link ? 'https://wa.me/?text=' + encodeURIComponent('LCRM camera link - open on the phone and tap Start camera: ' + link) : '#';
+  $('#phoneLink').value = link || (Signal.isLan ? '(start-lan.bat shows the address; it is not ready yet)' : '(type the online address above first)'); if (Signal.isLan && lanUrls.length) $('#phoneLink').title = 'Also: ' + lanUrls.join('  '); $('#waLink').href = link ? 'https://wa.me/?text=' + encodeURIComponent('LCRM camera link - open on the phone and tap Start camera: ' + link) : '#';
 }
 $('#btnPhones').onclick = () => { refreshPhoneLink(); $('#dlgPhones').showModal(); };
 $('#pubUrl').oninput = e => { settings.publicUrl = e.target.value; saveSettings(); refreshPhoneLink(); };

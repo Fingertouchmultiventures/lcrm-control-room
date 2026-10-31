@@ -142,3 +142,14 @@ All cameras use the **same link and the same room code**; you only give each one
 - **TV screen anywhere:** open `tv.html` on any window or device (a second laptop, a TV browser, an installed app window). It joins the same church room by itself and shows the TV picture; click once for full screen. The *Open TV screen* button still works for a pop-up on the same laptop.
 - **One job per window:** you can run the control room in one window, the TV in another, and the laptop webcam inside the control room, or open the camera page as its own window. Keep the control room window visible (not minimised).
 - **Internet:** phones and the TV window find the control room through Firebase, so they need internet (about a few KB). They do **not** need Facebook. Streaming to Facebook is a separate switch. Recording on the laptop needs no internet.
+
+## No internet at all? Church-network mode
+Cameras, the TV screen and the control room can work with **no internet**, over the church Wi-Fi/router only (Facebook streaming of course still needs internet; recording on the laptop does not).
+1. Connect the laptop and the phones to the **same Wi-Fi** (internet not needed).
+2. On the laptop double-click **`relay/start-lan.bat`** (instead of `start.bat`). The black window lists addresses such as `https://192.168.1.20:8788/cam.html`. If Windows asks, **Allow access on private networks**.
+3. On the laptop open `http://localhost:8787/control.html?lan=1`. The top bar says *Online - room … (church network)*.
+4. On each phone open the **Camera** address from the black window. The browser warns that the connection is not private (the laptop made its own certificate): tap **Advanced → Proceed** once. Then tap **Start camera**. For a TV or second screen open the **TV** address the same way.
+- The "Connect phones" box shows the same address. WhatsApp will not work offline, so type the address (or read it off the laptop).
+- Only phones and TVs can use this network address; the Facebook streaming part stays on the laptop only.
+- If `openssl` is installed the relay makes its own certificate; otherwise it uses a built-in one in `relay/lan-default`, which is fine for a private church network but is not secret.
+- Not tested on real phones: some phones may need you to open the address in Chrome (not an in-app browser).

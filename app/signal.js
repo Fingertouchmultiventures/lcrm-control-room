@@ -38,6 +38,34 @@
     };
   }
 
+  // Church-network mode: the relay program on the laptop introduces phones/TV to the control room (no internet needed).
+  const qsLan = new URLSearchParams(location.search).get('lan') === '1';
+  try { if (qsLan) sessionStorage.setItem('lcrm_lan', '1'); } catch (e) {}
+  const useLan = !useLocal && (qsLan || (function () { try { return sessionStorage.getItem('lcrm_lan') === '1'; } catch (e) { return false; } })() || location.port === String(cfg.lanPort || 8788));
+  function lanBackend() {
+    return new Promise((resolve, reject) => {
+      const url = (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/sig';
+      let ws, id = 0, opened = false; const subs = new Map(), dcs = new Set(), queue = [];
+      const send = o => { const t = JSON.stringify(o); if (ws && ws.readyState === 1) ws.send(t); else queue.push(t); };
+      function open() {
+        ws = new WebSocket(url);
+        ws.onopen = () => { opened = true; subs.forEach((v, i) => ws.send(JSON.stringify({ op: 'sub', id: i, path: v.path, kind: v.kind }))); dcs.forEach(p => ws.send(JSON.stringify({ op: 'dc', path: p }))); queue.splice(0).forEach(t => ws.send(t)); resolve(api); };
+        ws.onmessage = e => { let m; try { m = JSON.parse(e.data); } catch (x) { return; } const sub = subs.get(m.id); if (!sub) return; if (m.t === 'value') sub.cb(m.v); else sub.cb(m.k, m.v); };
+        ws.onclose = () => { if (!opened) return reject(new Error('Cannot reach the relay on this laptop. Is start-lan.bat running?')); setTimeout(open, 1500); };
+        ws.onerror = () => {};
+      }
+      const sub = (path, kind, cb) => { const i = ++id; subs.set(i, { path, kind, cb }); send({ op: 'sub', id: i, path, kind }); return () => { subs.delete(i); send({ op: 'unsub', id: i }); }; };
+      const api = {
+        name: 'lan',
+        set: async (p, v) => send({ op: 'set', path: p, value: v }), remove: async p => send({ op: 'remove', path: p }), push: async (p, v) => send({ op: 'push', path: p, value: v }),
+        onValue: (p, cb) => sub(p, 'value', cb), onChildAdded: (p, cb) => sub(p, 'child', cb),
+        onDisconnectRemove: p => { dcs.add(p); send({ op: 'dc', path: p }); }
+      };
+      cfg.iceServers = [];   // same network: no outside help needed
+      open();
+    });
+  }
+
   function localBackend() {
     const KEY = 'lcrm_local_db';
     const subs = new Set();
@@ -76,10 +104,12 @@
 
   window.Signal = {
     isLocal: useLocal,
+    isLan: useLan,
     onError: null,
-    dbHost() { try { return new URL(dbUrl()).hostname.replace('.firebaseio.com', ''); } catch (e) { return '?'; } },
+    dbHost() { if (useLan) return 'church network'; try { return new URL(dbUrl()).hostname.replace('.firebaseio.com', ''); } catch (e) { return '?'; } },
     async connect() {
       if (useLocal) return localBackend();
+      if (useLan) return lanBackend();
       if (typeof firebase === 'undefined') {
         await loadScript('https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js');
         await loadScript('https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js');

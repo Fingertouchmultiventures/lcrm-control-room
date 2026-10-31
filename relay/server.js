@@ -21,6 +21,8 @@ const TOKEN = process.env.TOKEN || '';                  // optional shared passw
 const FFMPEG = process.env.FFMPEG || 'ffmpeg';
 const APP_DIR = process.env.APP_DIR || path.join(__dirname, '..', 'app');
 const ALLOW_ORIGINS = (process.env.ALLOW_ORIGINS || '').split(',').map(s => s.trim()).filter(Boolean);
+const LAN = process.env.LAN === '1', LAN_PORT = Number(process.env.LAN_PORT) || 8788;
+function lanUrls() { const out = []; const ni = require('os').networkInterfaces(); Object.values(ni).forEach(a => (a || []).forEach(i => { if (i.family === 'IPv4' && !i.internal) out.push(i.address); })); return out; }
 const GUID = '258EAFA5-E914-47DA-95CA-C5AB0DC85B11';
 const MAX_FRAME = 32 * 1024 * 1024;
 
@@ -32,8 +34,12 @@ const FFMPEG_OK = !ff.error && ff.status === 0;
 const FFMPEG_VERSION = FFMPEG_OK ? (ff.stdout.split('\n')[0] || 'ffmpeg') : null;
 
 // ---------- static files ----------
-const server = http.createServer((req, res) => {
+function handler(req, res) {
   const url = new URL(req.url, 'http://x');
+  if (url.pathname === '/lan-info') {
+    res.writeHead(200, { 'content-type': 'application/json', 'access-control-allow-origin': '*' });
+    return res.end(JSON.stringify({ lan: LAN, urls: LAN ? lanUrls().map(ip => `https://${ip}:${LAN_PORT}/`) : [] }));
+  }
   if (url.pathname === '/relay-status') {
     res.writeHead(200, { 'content-type': 'application/json', 'access-control-allow-origin': '*' });
     return res.end(JSON.stringify({ ok: true, ffmpeg: FFMPEG_VERSION }));
@@ -47,7 +53,8 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, { 'content-type': MIME[path.extname(file)] || 'application/octet-stream', 'cache-control': 'no-cache' });
     res.end(data);
   });
-});
+}
+const server = http.createServer(handler);
 
 // ---------- minimal WebSocket (RFC 6455) ----------
 class Conn {
@@ -95,23 +102,62 @@ class Conn {
   close() { try { this.frame(8, Buffer.alloc(0)); this.socket.end(); } catch (e) {} this.finish(); }
 }
 
-server.on('upgrade', (req, socket) => {
+function onUpgrade(req, socket, fromLan) {
   const url = new URL(req.url, 'http://x');
-  const origin = req.headers.origin || '';
+  const origin = req.headers.origin || '', isSig = url.pathname === '/sig';
   let originOk = !origin;
   if (origin) {
-    try { const h = new URL(origin).hostname; originOk = h === 'localhost' || h === '127.0.0.1' || ALLOW_ORIGINS.includes(origin) || ALLOW_ORIGINS.includes('*'); } catch (e) {}
+    try {
+      const h = new URL(origin).hostname, hostHdr = (req.headers.host || '').replace(/:\d+$/, '');
+      originOk = h === 'localhost' || h === '127.0.0.1' || ALLOW_ORIGINS.includes(origin) || ALLOW_ORIGINS.includes('*') || (isSig && h === hostHdr);
+    } catch (e) {}
   }
   const key = req.headers['sec-websocket-key'];
-  if (!key || !originOk || (TOKEN && url.searchParams.get('token') !== TOKEN)) {
+  // the church-network (LAN) server only ever offers the phone/TV introduction service, never the Facebook streaming one
+  if (!key || !originOk || (fromLan && !isSig) || (!isSig && TOKEN && url.searchParams.get('token') !== TOKEN)) {
     socket.end('HTTP/1.1 403 Forbidden\r\n\r\n');
     if (!originOk) console.log('Blocked connection from origin', origin, '- add it to ALLOW_ORIGINS in start.bat');
     return;
   }
   const accept = crypto.createHash('sha1').update(key + GUID).digest('base64');
   socket.write('HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: ' + accept + '\r\n\r\n');
-  session(new Conn(socket));
-});
+  const c = new Conn(socket); if (isSig) signalSession(c); else session(c);
+}
+server.on('upgrade', (req, socket) => onUpgrade(req, socket, false));
+
+// ---------- tiny realtime tree for phones / TV to find the control room with NO internet (same job as Firebase) ----------
+const tree = {}, sigSessions = new Set(); let pushSeq = 0;
+const parts = p => String(p).split('/').filter(Boolean);
+const getAt = (t, p) => parts(p).reduce((o, k) => (o == null || typeof o !== 'object' ? undefined : o[k]), t);
+function setAt(p, v) {
+  const ks = parts(p); if (!ks.length) return; let o = tree;
+  ks.slice(0, -1).forEach(k => { if (typeof o[k] !== 'object' || o[k] === null) o[k] = {}; o = o[k]; });
+  if (v === null || v === undefined) delete o[ks[ks.length - 1]]; else o[ks[ks.length - 1]] = v;
+}
+function notifyAll() {
+  sigSessions.forEach(s => s.subs.forEach((sub, id) => {
+    const v = getAt(tree, sub.path);
+    if (sub.kind === 'value') { const str = JSON.stringify(v === undefined ? null : v); if (str !== sub.last) { sub.last = str; s.conn.send({ id, t: 'value', v: v === undefined ? null : v }); } }
+    else {
+      const keys = v && typeof v === 'object' ? Object.keys(v).sort() : [];
+      sub.seen.forEach(k => { if (!keys.includes(k)) sub.seen.delete(k); });
+      keys.forEach(k => { if (!sub.seen.has(k)) { sub.seen.add(k); s.conn.send({ id, t: 'child', k, v: v[k] }); } });
+    }
+  }));
+}
+function signalSession(conn) {
+  const s = { conn, subs: new Map(), dc: new Set() }; sigSessions.add(s);
+  conn.onText = txt => {
+    let m; try { m = JSON.parse(txt); } catch (e) { return; }
+    if (m.op === 'set') { setAt(m.path, m.value); notifyAll(); }
+    else if (m.op === 'remove') { setAt(m.path, null); notifyAll(); }
+    else if (m.op === 'push') { setAt(m.path + '/' + Date.now().toString(36) + String(pushSeq++).padStart(4, '0'), m.value); notifyAll(); }
+    else if (m.op === 'dc') s.dc.add(m.path);
+    else if (m.op === 'sub') { s.subs.set(m.id, { path: m.path, kind: m.kind, last: '__none__', seen: new Set() }); notifyAll(); }
+    else if (m.op === 'unsub') s.subs.delete(m.id);
+  };
+  conn.onClose = () => { sigSessions.delete(s); s.dc.forEach(p => setAt(p, null)); notifyAll(); };
+}
 
 // ---------- one streaming session per browser connection ----------
 const SERVER_RE = /^rtmps?:\/\/[A-Za-z0-9.\-:]+(\/[A-Za-z0-9._\-\/]*)?$/;
@@ -191,3 +237,31 @@ server.listen(PORT, HOST, () => {
   console.log(' Keep this window open while streaming.');
   console.log('==============================================');
 });
+
+if (LAN) {
+  const https = require('https');
+  function tlsFiles() {
+    const mine = path.join(__dirname, 'lan-cert'), def = path.join(__dirname, 'lan-default');
+    const ok = d => fs.existsSync(path.join(d, 'cert.pem')) && fs.existsSync(path.join(d, 'key.pem'));
+    if (!ok(mine)) {   // make our own certificate if openssl exists on this computer
+      try { fs.mkdirSync(mine, { recursive: true }); const r = spawnSync('openssl', ['req', '-x509', '-newkey', 'rsa:2048', '-nodes', '-keyout', path.join(mine, 'key.pem'), '-out', path.join(mine, 'cert.pem'), '-days', '3650', '-subj', '/CN=LCRM Church LAN', '-addext', 'subjectAltName=DNS:localhost,DNS:lcrm.local'], { encoding: 'utf8' }); if (r.status !== 0) fs.rmSync(mine, { recursive: true, force: true }); } catch (e) {}
+    }
+    const d = ok(mine) ? mine : def;
+    return { key: fs.readFileSync(path.join(d, 'key.pem')), cert: fs.readFileSync(path.join(d, 'cert.pem')), own: d === mine };
+  }
+  try {
+    const t = tlsFiles(), lanServer = https.createServer({ key: t.key, cert: t.cert }, handler);
+    lanServer.on('upgrade', (req, socket) => onUpgrade(req, socket, true));
+    lanServer.listen(LAN_PORT, '0.0.0.0', () => {
+      console.log('==============================================');
+      console.log(' CHURCH-NETWORK MODE (no internet needed for cameras)');
+      console.log(' On each phone / TV open one of these (tap Advanced > Proceed, once):');
+      lanUrls().forEach(ip => { console.log('   Camera : https://' + ip + ':' + LAN_PORT + '/cam.html'); console.log('   TV     : https://' + ip + ':' + LAN_PORT + '/tv.html'); });
+      console.log(' On this laptop open: http://localhost:' + PORT + '/control.html?lan=1');
+      console.log(' (certificate: ' + (t.own ? 'made on this computer' : 'built-in, fine for a private church network') + ')');
+      console.log(' If Windows asks, Allow access on PRIVATE networks.');
+      console.log('==============================================');
+    });
+    lanServer.on('error', e => console.log('Church-network mode could not start: ' + e.message));
+  } catch (e) { console.log('Church-network mode could not start: ' + e.message); }
+}
