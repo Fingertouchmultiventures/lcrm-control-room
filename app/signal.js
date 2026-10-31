@@ -16,8 +16,13 @@
     });
   }
 
+  // the database address can be overridden with ?db=https://NAME-default-rtdb.firebaseio.com (remembered on this device)
+  function dbUrl() {
+    try { const q = new URLSearchParams(location.search).get('db'); if (q) localStorage.setItem('lcrm_db', q); const v = localStorage.getItem('lcrm_db'); if (v && /^https:\/\/.+/.test(v)) return v; } catch (e) {}
+    return cfg.databaseURL;
+  }
   function firebaseBackend() {
-    if (!firebase.apps.length) firebase.initializeApp({ databaseURL: cfg.databaseURL });
+    if (!firebase.apps.length) firebase.initializeApp({ databaseURL: dbUrl() });
     const db = firebase.database();
     // any refusal (usually the database rules) is reported to the page so it can tell the user
     const report = e => { const m = (e && e.message) || String(e); if (window.Signal && typeof Signal.onError === 'function') Signal.onError(m); };

@@ -5,7 +5,7 @@ window.LCRM_CONFIG = {
 
   // Firebase Realtime Database used ONLY to introduce phones to the control room
   // (WebRTC "handshake"). No video goes through Firebase.
-  databaseURL: "https://lcrm-live-default-rtdb.firebaseio.com",
+  databaseURL: "https://lcrm-control-room-default-rtdb.firebaseio.com",
 
   // STUN helps phones and the laptop find each other. On the same Wi-Fi this is
   // almost always enough. If a phone on mobile data cannot connect, add a TURN
