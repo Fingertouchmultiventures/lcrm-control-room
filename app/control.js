@@ -27,7 +27,7 @@ const fontStack = () => `"${settings.font}", "Segoe UI", Arial, sans-serif`;
 /* ---------------------------------------------------------------- room */
 const urlQ = new URLSearchParams(location.search);
 const newRoomCode = () => Array.from({ length: 6 }, () => 'abcdefghjkmnpqrstuvwxyz23456789'[Math.floor(Math.random() * 31)]).join('');
-let room = (urlQ.get('room') || '').toLowerCase().replace(/[^a-z0-9]/g, '') || store.get('room', '') || newRoomCode();
+let room = (urlQ.get('room') || '').toLowerCase().replace(/[^a-z0-9]/g, '') || store.get('room_custom', '') || (window.LCRM_CONFIG.defaultRoom || '') || newRoomCode();   // same code on every computer unless you make a new one
 store.set('room', room);
 
 /* ---------------------------------------------------------------- scenes */
@@ -611,7 +611,7 @@ $('#btnPhones').onclick = () => { refreshPhoneLink(); $('#dlgPhones').showModal(
 $('#pubUrl').oninput = e => { settings.publicUrl = e.target.value; saveSettings(); refreshPhoneLink(); };
 $('#copyLink').onclick = async () => { try { await navigator.clipboard.writeText($('#phoneLink').value); toast('Link copied.'); } catch (e) { $('#phoneLink').select(); } };
 $('#closePhones').onclick = () => $('#dlgPhones').close();
-$('#newRoom').onclick = () => { if (!confirm('Make a new room code? Phones will need the new link.')) return; store.set('room', newRoomCode()); location.href = location.pathname + (Signal.isLocal ? '?local=1' : ''); };
+$('#newRoom').onclick = () => { if (!confirm('Make a new room code? Phones will need the new link.')) return; store.set('room_custom', newRoomCode()); location.href = location.pathname + (Signal.isLocal ? '?local=1' : ''); };
 
 /* look & logo dialog */
 const fields = { sChurch: 'church', sBg: 'bg', sBg2: 'bg2', sText: 'text', sAccent: 'accent', sFont: 'font', sSize: 'size', sAlign: 'align' };
