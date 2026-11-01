@@ -168,3 +168,15 @@ Phones and browsers stop cameras when the screen locks or the page is hidden. Th
 
 ## Monitors
 The PROGRAM / NEXT labels now sit under the pictures. The monitors scroll with the page; tick "Pin monitors" to keep them on screen.
+
+## Telling camera handlers what is happening
+- **On-air cue:** each phone shows a big red "YOU ARE ON AIR" banner (and buzzes) the moment you put it on air, "GET READY - YOU ARE NEXT" when it is in Preview, and "Off air" when you leave it.
+- **Photo flash:** when a photo is taken (from the phone or from the 📷 button) the phone's screen flashes white; the camera tile flashes in the control room when the photo arrives.
+- **Messages:** click 💬 on a camera (or "Message camera handlers" for everyone). Pick a quick message ("Zoom in a little", "Hold steady"…) or type one. The phone buzzes and shows it; the handler taps "Got it" or "Can't do it" and you see the reply.
+- **Transitions:** the list beside Black/Welcome now has fade, cut, dip to black/white, wipes, pushes, zooms, circle, doors, blinds and random.
+
+## Camera handler cues, pings, transitions and sharp photos
+- Each phone shows a coloured border and a big **ON AIR** (red) or **NEXT** (green) when you switch to it, so the handler can adjust. The phone screen flashes and buzzes when you take a photo from it.
+- **Ping** (speech icon on each camera tile, or "Ping all"): send a quick message such as "Zoom in a little" to a phone; the handler taps "Got it" or "Can't now" and you see the answer.
+- **Transitions:** Fade, Cut, Dip to black/white, 4 wipes, 3 slides, zoom in/out, iris, barn doors, blinds, or Random (the "Transition" menu).
+- **Photos:** when you press the shutter on a phone that is on air, the control room asks that phone for a full-resolution still from its real camera (sharp, focused), then adds your frame. If the phone does not answer within 6 seconds it falls back to the video picture. Hold the phone steady for a moment; a blurred scene cannot be fixed afterwards.

@@ -50,7 +50,7 @@
         <button id="btnBlack">Black <kbd>B</kbd></button>
         <button id="btnWelcome">Welcome <kbd>W</kbd></button>
         <button id="btnClearText">Clear words <kbd>C</kbd></button>
-        <select id="trans" title="How pictures change"><option value="fade">Fade</option><option value="cut">Cut</option></select>
+        <select id="trans" title="How pictures change when you switch"></select>
       </div>
       <div class="bar" id="planMini" hidden>
         <button id="pmPrev" title="Previous plan item ([)">&#9664;</button><span id="pmText" class="hint" style="flex:1;margin:0"></span><button id="pmNext" title="Next plan item (])">Next &#9654;</button>
@@ -134,6 +134,7 @@
       <div class="pane on" id="pane-cams">
         <div class="toolbar">
           <button id="addWebcam">+ This computer's camera</button>
+          <button id="btnPingAll" title="Send a message to the people holding the cameras">&#128172; Message camera handlers</button>
           <button id="addScreen">+ Share a window or screen (PowerPoint, EasyWorship…)</button>
         </div>
         <div class="grid" id="camGrid"></div>
@@ -292,6 +293,14 @@
   <div class="row2"><button class="ghost" id="webcamRefresh">Refresh</button><button id="webcamClose">Done</button></div>
 </dialog>
 
+<dialog id="dlgPing">
+  <h2>Message the camera handler</h2>
+  <p class="hint">Appears on the phone with a buzz. They can tap “Got it”.</p>
+  <label>To <select id="pingTo"></select></label>
+  <div id="pingQuick" class="quick"></div>
+  <div style="display:flex;gap:8px;margin-top:10px"><input id="pingText" placeholder="Or type your own message…" style="flex:1" maxlength="140"><button id="sendPing" class="primary">Send</button></div>
+  <div class="row-end"><button id="closePing">Close</button></div>
+</dialog>
 <dialog id="dlgKeys">
   <h2>Keyboard shortcuts</h2>
   <table class="keys">

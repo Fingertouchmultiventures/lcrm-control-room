@@ -42,7 +42,7 @@ const target = () => (safeMode ? V : P);
 function setBase(sc, src) {
   if (sc.base === src) return;
   if (sc === P && sc.base.type === 'vid') { try { sc.base.el.pause(); } catch (e) {} }
-  sc.prev = sc.base; sc.base = src; sc.fade = settings.trans === 'cut' ? 1 : 0;
+  sc.prev = sc.base; sc.base = src; { const t = pickTrans(); sc.tr = t; sc.dur = TRANS_DUR[t] || 0.5; sc.fade = t === 'cut' ? 1 : 0; }
   if (src.type === 'live' && sc === P) lastLive = src;
   afterChange();
 }
@@ -55,7 +55,31 @@ function take() {
   if (P.base.type === 'vid') P.base.el.play().catch(() => {});
   afterChange();
 }
-function updateScene(sc, dt) { if (sc.fade < 1) { sc.fade = Math.min(1, sc.fade + dt / 0.35); if (sc.fade >= 1) sc.prev = null; } }
+const TRANS = { fade: 'Fade', cut: 'Cut', dipblack: 'Dip to black', dipwhite: 'Dip to white', wipeL: 'Wipe left to right', wipeR: 'Wipe right to left', wipeU: 'Wipe upwards', wipeD: 'Wipe downwards', slideL: 'Push left', slideR: 'Push right', slideU: 'Push up', zoomIn: 'Zoom in', zoomOut: 'Zoom out', iris: 'Circle open', barn: 'Doors open', blinds: 'Blinds', random: 'Surprise me (random)' };
+const TRANS_DUR = { fade: 0.35, dipblack: 0.8, dipwhite: 0.7, wipeL: 0.6, wipeR: 0.6, wipeU: 0.6, wipeD: 0.6, slideL: 0.6, slideR: 0.6, slideU: 0.6, zoomIn: 0.65, zoomOut: 0.65, iris: 0.75, barn: 0.7, blinds: 0.7 };
+function pickTrans() { let t = settings.trans || 'fade'; if (!TRANS[t]) t = 'fade'; if (t === 'random') { const k = Object.keys(TRANS_DUR); t = k[Math.floor(Math.random() * k.length)]; } return t; }
+function drawTrans(ctx, w, h, sc) {   // draws the old picture turning into the new one
+  const e = sc.fade * sc.fade * (3 - 2 * sc.fade), t = sc.tr || 'fade', A = (src, a) => drawBase(ctx, w, h, src, a), clip = fn => { ctx.save(); ctx.beginPath(); fn(); ctx.clip(); A(sc.base, 1); ctx.restore(); };
+  const dip = col => { A(e < 0.5 ? sc.prev : sc.base, 1); ctx.globalAlpha = e < 0.5 ? e * 2 : (1 - e) * 2; ctx.fillStyle = col; ctx.fillRect(0, 0, w, h); };
+  if (t === 'dipblack') dip('#000'); else if (t === 'dipwhite') dip('#fff');
+  else if (t === 'wipeL') { A(sc.prev, 1); clip(() => ctx.rect(0, 0, w * e, h)); }
+  else if (t === 'wipeR') { A(sc.prev, 1); clip(() => ctx.rect(w * (1 - e), 0, w * e, h)); }
+  else if (t === 'wipeU') { A(sc.prev, 1); clip(() => ctx.rect(0, h * (1 - e), w, h * e)); }
+  else if (t === 'wipeD') { A(sc.prev, 1); clip(() => ctx.rect(0, 0, w, h * e)); }
+  else if (t === 'iris') { A(sc.prev, 1); clip(() => ctx.arc(w / 2, h / 2, e * Math.hypot(w, h) / 2, 0, Math.PI * 2)); }
+  else if (t === 'barn') { A(sc.prev, 1); clip(() => ctx.rect(w / 2 * (1 - e), 0, w * e, h)); }
+  else if (t === 'blinds') { A(sc.prev, 1); clip(() => { const n = 8, sw = w / n; for (let i = 0; i < n; i++) ctx.rect(i * sw, 0, sw * e, h); }); }
+  else if (t === 'slideL' || t === 'slideR' || t === 'slideU') {
+    const dx = t === 'slideL' ? -1 : t === 'slideR' ? 1 : 0, dy = t === 'slideU' ? -1 : 0;
+    ctx.save(); ctx.translate(dx * w * e, dy * h * e); A(sc.prev, 1); ctx.restore();
+    ctx.save(); ctx.translate(-dx * w * (1 - e), -dy * h * (1 - e)); A(sc.base, 1); ctx.restore();
+  }
+  else if (t === 'zoomIn') { A(sc.base, 1); ctx.save(); const z = 1 + e * 0.6; ctx.translate(w / 2, h / 2); ctx.scale(z, z); ctx.translate(-w / 2, -h / 2); A(sc.prev, 1 - e); ctx.restore(); }
+  else if (t === 'zoomOut') { A(sc.prev, 1); ctx.save(); const z = 1.6 - e * 0.6; ctx.translate(w / 2, h / 2); ctx.scale(z, z); ctx.translate(-w / 2, -h / 2); A(sc.base, e); ctx.restore(); }
+  else { A(sc.prev, 1); A(sc.base, e); }
+  ctx.globalAlpha = 1;
+}
+function updateScene(sc, dt) { if (sc.fade < 1) { sc.fade = Math.min(1, sc.fade + dt / (sc.dur || 0.35)); if (sc.fade >= 1) sc.prev = null; } }
 
 function afterChange() { refreshMarks(); syncTally(); }
 function isOn(sc, item) { return item.src ? sc.base === item.src : !!(sc.text && sc.text.item === item); }
@@ -233,7 +257,7 @@ function drawFrameLayer(ctx, w, h, sc) {   // the photo frame stays out of the w
   Frame.draw(ctx, w, h, frameCfg);
 }
 function renderScene(ctx, w, h, sc, overlays, withFrame, corners) {
-  if (sc.fade < 1 && sc.prev) { drawBase(ctx, w, h, sc.prev, 1); drawBase(ctx, w, h, sc.base, sc.fade); } else drawBase(ctx, w, h, sc.base, 1);
+  if (sc.fade < 1 && sc.prev) drawTrans(ctx, w, h, sc); else drawBase(ctx, w, h, sc.base, 1);
   if (sc.text) drawTextLayer(ctx, w, h, sc.text, false);
   if (withFrame) drawFrameLayer(ctx, w, h, sc);
   if (corners) drawCorners(ctx, w, h, sc);
@@ -330,14 +354,15 @@ function ensureSource(id, name, kind) {
   if (kind === 'phone' && !camOrder.includes(id)) { camOrder.push(id); store.set('camOrder', camOrder); }
   s = { id, name, kind, seq: ++seq, video, stream: null, state: 'connecting', src: { type: 'live', id, fit: kind === 'screen' ? 'contain' : 'auto' }, gain: null, audioOn: false, sid: null, pc: null, tally: undefined };
   const tile = document.createElement('div'); tile.className = 'item cam'; tile._item = s; s.el = tile;
-  tile.innerHTML = `<div class="thumb"><span class="num"></span><div class="off"></div></div><div class="meta"><span class="dot"></span><b></b><small class="res"></small><button class="cambtn" title="Ask this phone to take a photo" hidden>&#128247;</button><button class="aud" title="Use this camera's sound" hidden>Sound</button><button class="rm" hidden>Remove</button></div>`;
+  tile.innerHTML = `<div class="thumb"><span class="num"></span><div class="off"></div></div><div class="meta"><span class="dot"></span><b></b><small class="res"></small><button class="pingbtn" title="Send a message to this camera's handler" hidden>&#128172;</button><button class="cambtn" title="Ask this phone to take a photo" hidden>&#128247;</button><button class="aud" title="Use this camera's sound" hidden>Sound</button><button class="rm" hidden>Remove</button></div>`;
   $('.thumb', tile).prepend(video);
   tile.addEventListener('click', e => { if (e.target.closest('button')) return; setActive(listOfCams(), listOfCams().indexOf(s)); putBase(s.src); });
   $('.aud', tile).onclick = () => {
     resumeAudio(); if (!s.gain) s.gain = routeStream(s.stream); if (!s.gain) return toast('This camera is not sending sound. Turn on "Send this phone\'s microphone" on the phone.');
     s.audioOn = !s.audioOn; s.gain.gain.value = s.audioOn ? 1 : 0; $('.aud', tile).classList.toggle('on', s.audioOn); $('.aud', tile).textContent = s.audioOn ? 'Sound on' : 'Sound';
   };
-  $('.cambtn', tile).onclick = () => { if (s.dc && s.dc.readyState === 'open') { s.dc.send(JSON.stringify({ t: 'shoot' })); toast('Photo requested from ' + s.name + '…'); } else toast('This phone is not connected, or it needs to reload the camera page to get the new version.'); };
+  $('.pingbtn', tile).onclick = () => openPing(s.id);
+  $('.cambtn', tile).onclick = () => { if (s.dc && s.dc.readyState === 'open') { s.dc.send(JSON.stringify({ t: 'shoot' })); flashTile(s); toast('Photo requested from ' + s.name + '…'); } else toast('This phone is not connected, or it needs to reload the camera page to get the new version.'); };
   $('b', tile).title = 'Click to rename this camera'; $('b', tile).style.cursor = 'text';
   $('b', tile).onclick = e => { e.stopPropagation(); const n = prompt('Name for this camera (e.g. Pulpit, Choir, Back of church):', s.name); if (n && n.trim()) { s.name = n.trim(); camLabels[s.id] = s.name; store.set('camLabels', camLabels); updateTile(s); } };
   $('.rm', tile).onclick = () => removeSource(s);
@@ -350,7 +375,7 @@ function updateTile(s) {
   $('.dot', t).className = 'dot ' + (live ? 'ok' : s.state === 'connecting' ? 'warn' : 'bad');
   $('.off', t).textContent = s.state === 'connecting' ? 'Connecting…' : 'Camera offline';
   t.classList.toggle('offline', !live);
-  $('.rm', t).hidden = s.kind === 'phone' ? live : false; $('.cambtn', t).hidden = s.kind !== 'phone' || !live; $('.aud', t).hidden = !(s.stream && s.stream.getAudioTracks().length);
+  $('.rm', t).hidden = s.kind === 'phone' ? live : false; $('.cambtn', t).hidden = s.kind !== 'phone' || !live; $('.pingbtn', t).hidden = s.kind !== 'phone' || !live; $('.aud', t).hidden = !(s.stream && s.stream.getAudioTracks().length);
   updateCounts();
 }
 const orderIdx = s => (s.kind === 'phone' ? camOrder.indexOf(s.id) : 1000 + s.seq);
@@ -409,6 +434,7 @@ function onCam(id, v) {
   const s = sources.get(id);
   if (!v) { if (s && s.kind === 'phone') { s.state = 'offline'; s.sid = null; updateTile(s); } return; }
   const cam = ensureSource(id, camLabels[id] || v.name || 'Camera', 'phone'); cam.name = camLabels[id] || v.name || cam.name; updateTile(cam);
+  if (!cam.ackUnsub) cam.ackUnsub = db.onValue(`rooms/${room}/pingack/${id}`, a => { if (a && cam.lastPing && a.n === cam.lastPing) { cam.lastPing = 0; toast(`${cam.name}: ${a.r === 'no' ? 'cannot do it - ' + (a.m || 'see them') : 'got it ✓'}`, 5000); } });
   if (cam.sid === v.sid) return; cam.sid = v.sid; connectPhone(cam, v);
 }
 async function connectPhone(s, v) {
@@ -419,7 +445,7 @@ async function connectPhone(s, v) {
   pc.ondatachannel = e => {   // the phone sends photos here
     s.dc = e.channel; e.channel.binaryType = 'arraybuffer'; let parts = [], meta = null;
     e.channel.onmessage = m => {
-      if (typeof m.data === 'string') { const j = JSON.parse(m.data); if (j.t === 'shot') { meta = j; parts = []; } else if (j.t === 'end' && meta) { addShot(new Blob(parts, { type: 'image/jpeg' }), meta.name, s.name); meta = null; parts = []; } }
+      if (typeof m.data === 'string') { const j = JSON.parse(m.data); if (j.t === 'shot') { meta = j; parts = []; } else if (j.t === 'end' && meta) { flashTile(s); const mt = meta, bl = new Blob(parts, { type: 'image/jpeg' }); meta = null; parts = []; if (mt.fr && s.waitShot) { s.waitShot(bl, mt.name); } else addShot(bl, mt.name, s.name); } }
       else parts.push(m.data);
     };
   };
@@ -440,6 +466,21 @@ async function connectPhone(s, v) {
     s.unsubCand = db.onChildAdded(`rooms/${room}/cand/${s.id}/${sid}/phone`, (k, c) => { if (s.pc === pc) pc.addIceCandidate(c).catch(() => {}); });
   } catch (e) { console.warn('connectPhone', e); s.state = 'offline'; updateTile(s); }
 }
+function flashTile(s) { const t = $('.thumb', s.el); t.classList.add('shotflash'); setTimeout(() => t.classList.remove('shotflash'), 450); }
+const PINGS = ['Zoom in a little', 'Zoom out a little', 'Hold steady', 'Move to your left', 'Move to your right', 'Tilt up', 'Tilt down', 'Turn the phone sideways', 'Take a photo now', 'Stand by - you are next', 'Check your battery / plug in', 'Please call me'];
+function openPing(id) {
+  const sel = $('#pingTo'); sel.innerHTML = '<option value="*">All cameras</option>' + [...sources.values()].filter(s => s.kind === 'phone').map(s => `<option value="${s.id}">${s.name}</option>`).join('');
+  sel.value = id && sources.has(id) ? id : '*';
+  if (!$('#pingQuick').children.length) PINGS.forEach(p => { const b = document.createElement('button'); b.textContent = p; b.onclick = () => { $('#pingText').value = p; sendPing(); }; $('#pingQuick').appendChild(b); });
+  $('#pingText').value = ''; $('#dlgPing').showModal(); $('#pingText').focus();
+}
+function sendPing() {
+  const text = $('#pingText').value.trim(); if (!text) return; const to = $('#pingTo').value, n = Date.now();
+  const list = to === '*' ? [...sources.values()].filter(s => s.kind === 'phone' && s.state === 'live') : [sources.get(to)].filter(Boolean);
+  if (!list.length) return toast('No connected phone to send to.');
+  list.forEach((s, i) => { s.lastPing = n + i; db.set(`rooms/${room}/ping/${s.id}`, { text, n: n + i, from: 'Control room' }).catch(() => {}); });
+  toast(`Sent to ${list.length === 1 ? list[0].name : list.length + ' cameras'}: ${text}`); $('#dlgPing').close();
+}
 function syncTally() {
   if (!db) return;
   sources.forEach(s => {
@@ -454,7 +495,7 @@ const webcamIds = store.get('webcamIds', []);
 async function addWebcam(deviceId, label) {
   const key = 'pc-' + String(deviceId || 'default').slice(0, 10); if (sources.has(key) && sources.get(key).state === 'live') return toast('That camera is already added.');
   try {
-    const st = await navigator.mediaDevices.getUserMedia({ video: Object.assign({ width: { ideal: 1280 }, height: { ideal: 720 } }, deviceId ? { deviceId: { exact: deviceId } } : {}), audio: false });
+    const st = await navigator.mediaDevices.getUserMedia({ video: Object.assign({ width: { ideal: 1920 }, height: { ideal: 1080 } }, deviceId ? { deviceId: { exact: deviceId } } : {}), audio: false });
     const s = ensureSource(key, camLabels[key] || label || 'This computer', 'webcam'); s.stream = st; s.video.srcObject = st; s.video.play().catch(() => {}); s.state = 'live'; updateTile(s);
     st.getVideoTracks()[0].onended = () => { s.state = 'offline'; updateTile(s); };
     if (deviceId && !webcamIds.find(x => x[0] === deviceId)) { webcamIds.push([deviceId, label]); store.set('webcamIds', webcamIds); }
@@ -736,7 +777,7 @@ $('#btnBlack').onclick = () => { const t = target(); t.text = null; setBase(t, B
 $('#btnWelcome').onclick = () => { const t = target(); t.text = null; setBase(t, WELCOME); afterChange(); };
 $('#btnClearText').onclick = clearText;
 $('#btnTake').onclick = take;
-$('#trans').value = settings.trans; $('#trans').onchange = e => { settings.trans = e.target.value; saveSettings(); };
+$('#trans').innerHTML = Object.keys(TRANS).map(k => `<option value="${k}">${TRANS[k]}</option>`).join(''); if (!TRANS[settings.trans]) settings.trans = 'fade'; $('#trans').value = settings.trans; $('#trans').onchange = e => { settings.trans = e.target.value; saveSettings(); };
 $('#safeMode').onchange = e => {
   e.target.blur(); safeMode = e.target.checked; $('#pvMon').hidden = !safeMode; $('#mons').classList.toggle('two', safeMode); $('#btnTake').disabled = !safeMode;
   if (safeMode) { V.base = P.base; V.prev = null; V.fade = 1; V.text = P.text ? Object.assign({}, P.text) : null; }
@@ -777,6 +818,7 @@ $('#zIn').onclick = () => setZoom(0.5); $('#zOut').onclick = () => setZoom(-0.5)
 // double-click anything in the lists: the first click already made it NEXT, this sends it on air at once
 document.addEventListener('dblclick', e => { if (!safeMode) return; const n = e.target.closest('.item'); if (n && !e.target.closest('button')) take(); });
 $('#pinMon').checked = store.get('pinMon', '') === '1'; $('.stage').classList.toggle('pinned', $('#pinMon').checked); $('#pinMon').onchange = e => { $('.stage').classList.toggle('pinned', e.target.checked); store.set('pinMon', e.target.checked ? '1' : ''); e.target.blur(); };
+$('#btnPingAll').onclick = () => openPing('*'); $('#sendPing').onclick = sendPing; $('#closePing').onclick = () => $('#dlgPing').close(); $('#pingText').onkeydown = e => { if (e.key === 'Enter') { e.preventDefault(); sendPing(); } e.stopPropagation(); };
 $('#btnKeys').onclick = () => $('#dlgKeys').showModal(); $('#closeKeys').onclick = () => $('#dlgKeys').close();
 
 
@@ -840,15 +882,35 @@ async function addShot(blob, name, from, skipDisk) {
   toast(where ? (where === 'folder' ? `Photo saved in “${shotDir.name}”.` : 'Photo saved to Downloads.') : 'Photo received from ' + (from || 'the phone') + '.');
   if (!skipDisk && from) { /* phone photos are already saved on the phone */ }
 }
+async function framed(blob) {   // put the photo frame on a full-size picture
+  if (!(frameCfg.on && frameCfg.photos)) return blob;
+  try { const bm = await createImageBitmap(blob), cv = document.createElement('canvas'); cv.width = bm.width; cv.height = bm.height; const cx = cv.getContext('2d'); cx.drawImage(bm, 0, 0); Frame.draw(cx, cv.width, cv.height, frameCfg); return await new Promise(ok => cv.toBlob(ok, 'image/jpeg', 0.95)); } catch (e) { return blob; }
+}
+let shooting = false;
 async function takePhoto() {
-  const el = P.base.type === 'live' ? elOf(P.base) : null; let cv = document.createElement('canvas'), name;
-  if (el) {
-    const [vw, vh] = dimsOf(el); cv.width = vw; cv.height = vh; const cx = cv.getContext('2d'); cx.drawImage(el, 0, 0);
-    if (frameCfg.on && frameCfg.photos) { Frame.draw(cx, vw, vh, frameCfg); }
-    const s = sources.get(P.base.id); name = shotName((s && s.name || 'camera').replace(/[^A-Za-z0-9]+/g, ''));
-  } else { cv.width = W; cv.height = H; cv.getContext('2d').drawImage(progCanvas, 0, 0); name = shotName('screen'); }
+  if (shooting) return toast('One moment, still saving the last photo…'); shooting = true; setTimeout(() => { shooting = false; }, 6500);
+  const el = P.base.type === 'live' ? elOf(P.base) : null, s = P.base.type === 'live' ? sources.get(P.base.id) : null; let name;
   $('#progMon').classList.add('flash'); setTimeout(() => $('#progMon').classList.remove('flash'), 220);
-  const blob = await new Promise(ok => cv.toBlob(ok, 'image/jpeg', 0.93)); addShot(blob, name, '');
+  try {
+    if (el) {
+      name = shotName((s && s.name || 'camera').replace(/[^A-Za-z0-9]+/g, ''));
+      // 1) a phone: ask it for a real full-resolution still from its own camera (sharp, focused, not a video frame)
+      if (s && s.dc && s.dc.readyState === 'open') {
+        const got = await new Promise(ok => { const t = setTimeout(() => { s.waitShot = null; ok(null); }, 6000); s.waitShot = (bl, nm) => { clearTimeout(t); s.waitShot = null; ok({ bl, nm }); }; try { s.dc.send(JSON.stringify({ t: 'shoot', fr: 1 })); } catch (e) { clearTimeout(t); ok(null); } });
+        if (got) { await addShot(await framed(got.bl), got.nm, ''); return; }
+        toast('The phone did not answer in time - used the video picture instead.');
+      }
+      // 2) a laptop/USB camera: its own still mode at maximum size
+      const tr = s && s.stream && s.stream.getVideoTracks()[0];
+      if (tr && window.ImageCapture && s.kind === 'webcam') { try { const ic = new ImageCapture(tr); let o = {}; try { const c = await ic.getPhotoCapabilities(); if (c.imageWidth) { o.imageWidth = c.imageWidth.max; o.imageHeight = c.imageHeight.max; } } catch (e) {} const bl = await ic.takePhoto(o); if (bl && bl.size) { await addShot(await framed(bl), name, ''); return; } } catch (e) {} }
+      // 3) last resort: the video picture at its own full size
+      const [vw, vh] = dimsOf(el), cv = document.createElement('canvas'); cv.width = vw; cv.height = vh; const cx = cv.getContext('2d'); cx.drawImage(el, 0, 0);
+      if (frameCfg.on && frameCfg.photos) Frame.draw(cx, vw, vh, frameCfg);
+      await addShot(await new Promise(ok => cv.toBlob(ok, 'image/jpeg', 0.95)), name, ''); return;
+    }
+    const cv = document.createElement('canvas'); cv.width = W; cv.height = H; cv.getContext('2d').drawImage(progCanvas, 0, 0);
+    await addShot(await new Promise(ok => cv.toBlob(ok, 'image/jpeg', 0.95)), shotName('screen'), '');
+  } finally { shooting = false; }
 }
 $('#btnShot').onclick = e => { e.target.blur(); takePhoto(); }; $('#shotNow').onclick = takePhoto;
 

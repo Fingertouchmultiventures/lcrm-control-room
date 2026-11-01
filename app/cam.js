@@ -64,7 +64,20 @@
     try { wake = await navigator.wakeLock?.request('screen'); } catch (e) {}
     Signal.onError = m => setStatus('The database refused the link (' + m.replace(/^.*?:\s*/, '') + ') on ' + Signal.dbHost() + '. Ask the admin to set the Firebase rules - see SETUP.', 'bad');
     try { db = await Signal.connect(); } catch (e) { setStatus('No internet: ' + e.message, 'bad'); return; }
-    db.onValue(`rooms/${room}/tally/${camId}`, v => { $('stage').className = 'stage ' + (v === 'program' ? 'program' : v === 'preview' ? 'preview' : ''); $('tally').textContent = v === 'program' ? 'ON AIR' : 'NEXT'; });
+    let lastTally = null;
+    db.onValue(`rooms/${room}/tally/${camId}`, v => {
+      $('stage').className = 'stage ' + (v === 'program' ? 'program' : v === 'preview' ? 'preview' : ''); $('tally').textContent = v === 'program' ? 'ON AIR' : 'NEXT';
+      const now = v === 'program' ? 'air' : v === 'preview' ? 'next' : 'off';
+      if (lastTally !== null && now !== lastTally) {   // tell the person holding the phone what just happened
+        if (now === 'air') cue('air', '● YOU ARE ON AIR', 3500, [300]); else if (now === 'next') cue('next', 'GET READY - YOU ARE NEXT', 3000, [80, 60, 80]); else if (lastTally === 'air') cue('off', 'Off air', 1500, [60]);
+      }
+      lastTally = now;
+    });
+    let pingN = null;
+    db.onValue(`rooms/${room}/ping/${camId}`, m => {
+      if (pingN === null) { pingN = m ? m.n : 0; return; }   // ignore an old message that was waiting
+      if (!m || m.n === pingN) return; pingN = m.n; showPing(m);
+    });
     publish().catch(() => { retryTimer = setTimeout(() => publish().catch(() => {}), 8000); });
   }
 
@@ -80,7 +93,7 @@
     const conn = pc = new RTCPeerConnection({ iceServers: cfg.iceServers });
     stream.getTracks().forEach(t => conn.addTrack(t, stream));
     dc = conn.createDataChannel('ctl'); dc.binaryType = 'arraybuffer';      // lets the control room ask for photos and receive them
-    dc.onmessage = e => { try { const m = JSON.parse(e.data); if (m.t === 'shoot') shoot(true); } catch (err) {} };
+    dc.onmessage = e => { try { const m = JSON.parse(e.data); if (m.t === 'shoot') shoot(true, m.fr); } catch (err) {} };
     conn.onicecandidate = e => { if (e.candidate && curSid === sid) db.push(`rooms/${room}/cand/${camId}/${sid}/phone`, e.candidate.toJSON()); };
     conn.onconnectionstatechange = () => {
       if (pc !== conn) return;
@@ -168,17 +181,28 @@
   const shotMsg = t => { $('shotmsg').textContent = t; };
   async function snap() {
     const track = stream && stream.getVideoTracks()[0]; if (!track) throw new Error('camera is not on');
-    try { if (window.ImageCapture) { const b = await new ImageCapture(track).takePhoto(); if (b && b.size) return b; } } catch (e) {}
-    const v = $('preview'), cv = document.createElement('canvas'); cv.width = v.videoWidth; cv.height = v.videoHeight; cv.getContext('2d').drawImage(v, 0, 0);
-    return new Promise(ok => cv.toBlob(ok, 'image/jpeg', 0.92));
+    // 1) the phone's real still-photo mode: full sensor resolution, autofocus and proper exposure (not a frame of the video)
+    try {
+      if (window.ImageCapture) {
+        const ic = new ImageCapture(track); let opt = { fillLightMode: 'off' };
+        try { const caps = await ic.getPhotoCapabilities(); if (caps.imageWidth && caps.imageHeight) { opt.imageWidth = caps.imageWidth.max; opt.imageHeight = caps.imageHeight.max; } if (caps.redEyeReduction === 'controllable') opt.redEyeReduction = false; } catch (e) {}
+        let b; try { b = await ic.takePhoto(opt); } catch (e) { b = await ic.takePhoto(); }
+        if (b && b.size) return b;
+      }
+    } catch (e) {}
+    // 2) otherwise the sharpest frame we have: ask for the camera's largest picture just for this instant
+    const v = $('preview'); let w = v.videoWidth, h = v.videoHeight;
+    const cv = document.createElement('canvas'); cv.width = w; cv.height = h; cv.getContext('2d').drawImage(v, 0, 0, w, h);
+    return new Promise(ok => cv.toBlob(ok, 'image/jpeg', 0.97));
   }
   async function smaller(blob, maxW) {
     try { const bm = await createImageBitmap(blob), s = Math.min(1, maxW / bm.width), cv = document.createElement('canvas'); cv.width = Math.round(bm.width * s); cv.height = Math.round(bm.height * s);
-      cv.getContext('2d').drawImage(bm, 0, 0, cv.width, cv.height); return await new Promise(ok => cv.toBlob(ok, 'image/jpeg', 0.9)); } catch (e) { return blob; }
+      const cx = cv.getContext('2d'); cx.imageSmoothingQuality = 'high'; cx.drawImage(bm, 0, 0, cv.width, cv.height); return await new Promise(ok => cv.toBlob(ok, 'image/jpeg', 0.95)); } catch (e) { return blob; }
   }
+  let curFr = 0;
   async function sendToLaptop(blob, name) {
     if (!dc || dc.readyState !== 'open') return false;
-    const buf = await blob.arrayBuffer(); dc.send(JSON.stringify({ t: 'shot', name, size: buf.byteLength }));
+    const buf = await blob.arrayBuffer(); dc.send(JSON.stringify({ t: 'shot', name, size: buf.byteLength, fr: curFr }));
     for (let o = 0; o < buf.byteLength; o += 16000) { while (dc.bufferedAmount > 1e6) await new Promise(r => setTimeout(r, 40)); dc.send(buf.slice(o, o + 16000)); }
     dc.send(JSON.stringify({ t: 'end' })); return true;
   }
@@ -187,10 +211,19 @@
     try { if (!remote && navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file] }); return; } } catch (e) { if (e.name === 'AbortError') return; }
     const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 20000);
   }
-  async function shoot(remote) {
+  function buzz(p) { try { if (navigator.vibrate && (!navigator.userActivation || navigator.userActivation.hasBeenActive)) navigator.vibrate(p); } catch (e) {} }
+  let cueT;
+  function cue(cls, text, ms, vib) { const c = $('cue'); c.className = 'cue show ' + cls; c.textContent = text; buzz(vib || [60]); clearTimeout(cueT); cueT = setTimeout(() => { c.className = 'cue ' + cls; }, ms); }
+  function screenFlash() { const f = $('fullflash'); f.classList.remove('go'); void f.offsetWidth; f.classList.add('go'); buzz([40]); }
+  let curPing = null;
+  function showPing(m) { curPing = m; $('pingFrom').textContent = (m.from || 'Control room') + ' says'; $('pingMsg').textContent = m.text; $('pingBox').classList.add('show'); buzz([200, 100, 200, 100, 200]); }
+  function ackPing(r) { if (!curPing) return; $('pingBox').classList.remove('show'); db.set(`rooms/${room}/pingack/${camId}`, { n: curPing.n, r, m: r === 'no' ? 'cannot do it right now' : '' }).catch(() => {}); curPing = null; }
+  $('pingOk').onclick = () => ackPing('ok'); $('pingNo').onclick = () => ackPing('no');
+  async function shoot(remote, fr) {
     try {
+      screenFlash();
       $('preview').classList.add('flash'); setTimeout(() => $('preview').classList.remove('flash'), 300); shotMsg('Taking photo…');
-      const full = await snap(), d = new Date(), pad = n => String(n).padStart(2, '0');
+      curFr = fr || 0; const full = await snap(), d = new Date(), pad = n => String(n).padStart(2, '0');
       const name = `LCRM-${(camName || 'camera').replace(/[^A-Za-z0-9]+/g, '')}-${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}-${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}.jpg`;
       const sent = await sendToLaptop(await smaller(full, 2560), name);
       await saveHere(full, name, remote);

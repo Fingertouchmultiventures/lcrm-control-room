@@ -125,7 +125,10 @@ dialog h2 { margin:0 0 8px; font-size:18px; }
 #btnFrame.on { background:#2a3550; border-color:var(--gold); color:#fff; }
 #dlgFrame .form label { display:block; } #dlgFrame .form input[type=text], #dlgFrame .form textarea, #dlgFrame .form select { width:100%; }
 .item .shotbtns { display:flex; gap:6px; padding:4px 8px 8px; } .item .shotbtns button { padding:3px 8px; font-size:12px; }
-.item .cambtn { padding:2px 6px; }
+.item .cambtn, .item .pingbtn { padding:2px 6px; }
+.thumb.shotflash::after { content:''; position:absolute; inset:0; background:#fff; animation:shf .45s forwards; pointer-events:none; } @keyframes shf { 0%{opacity:.95} 100%{opacity:0} }
+.quick { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; } .quick button { font-size:12px; padding:5px 9px; }
+.row-end { display:flex; justify-content:flex-end; margin-top:14px; }
 
 .card2 { background:var(--panel); border:1px solid var(--line); border-radius:var(--r); padding:12px; margin-bottom:12px; } .card2 h3 { margin:0 0 8px; font-size:15px; }
 .card2 textarea { width:100%; } .form2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:8px; } .form2 label { display:block; } .form2 input, .form2 select { width:100%; }

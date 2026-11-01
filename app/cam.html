@@ -26,6 +26,13 @@
   button { width:100%; padding: 14px; border:0; border-radius: 12px; font-size: 17px; font-weight: 700; background: var(--gold); color:#1a1300; margin-top:14px; }
   button.ghost { background: transparent; border:1px solid var(--line); color: var(--text); font-weight:600; }
   button.danger { background: var(--red); color:#fff; }
+  .cue { position:fixed; left:0; right:0; top:0; z-index:50; padding:18px 12px; text-align:center; font-weight:900; font-size:clamp(22px,7vw,40px); letter-spacing:.04em; color:#fff; transform:translateY(-110%); transition:transform .18s; pointer-events:none; }
+  .cue.show { transform:none; } .cue.air { background:var(--red); } .cue.next { background:#16a34a; } .cue.off { background:#444; }
+  #fullflash { position:fixed; inset:0; background:#fff; opacity:0; pointer-events:none; z-index:60; } #fullflash.go { animation:ffl .4s; } @keyframes ffl { 0%{opacity:.95} 100%{opacity:0} }
+  .pingbox { position:fixed; left:10px; right:10px; top:10px; z-index:70; background:#111827; border:2px solid #facc15; border-radius:14px; padding:14px; display:none; box-shadow:0 10px 40px #000a; }
+  .pingbox.show { display:block; animation:pb .3s; } @keyframes pb { from{transform:translateY(-30px);opacity:0} }
+  #pingFrom { font-size:12px; color:#facc15; font-weight:800; letter-spacing:.06em; text-transform:uppercase; } #pingMsg { font-size:clamp(22px,6vw,32px); font-weight:800; margin:6px 0 12px; }
+  .pbtn { display:flex; gap:8px; } .pbtn button { flex:1; } .pbtn .alt { background:#374151; color:#fff; }
   .stage { position:relative; border-radius: 14px; overflow:hidden; background:#000; border: 4px solid transparent; transition: border-color .15s; }
   .stage video { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; background:#000; }
   .stage.program { border-color: var(--red); } .stage.preview { border-color: var(--green); }
@@ -61,6 +68,9 @@
     <div id="err" class="warn-box"></div>
   </div>
 
+  <div id="cue" class="cue"></div>
+  <div id="fullflash"></div>
+  <div id="pingBox" class="pingbox"><div id="pingFrom">Control room</div><div id="pingMsg"></div><div class="pbtn"><button id="pingOk">Got it</button><button id="pingNo" class="alt">Can’t do it</button></div></div>
   <div id="live" class="hide">
     <div id="stage" class="stage"><video id="preview" autoplay muted playsinline></video><div class="tally" id="tally">ON AIR</div></div>
     <div class="card" style="margin-top:14px">
