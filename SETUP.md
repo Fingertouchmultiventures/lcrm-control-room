@@ -153,3 +153,18 @@ Cameras, the TV screen and the control room can work with **no internet**, over 
 - Only phones and TVs can use this network address; the Facebook streaming part stays on the laptop only.
 - If `openssl` is installed the relay makes its own certificate; otherwise it uses a built-in one in `relay/lan-default`, which is fine for a private church network but is not secret.
 - Not tested on real phones: some phones may need you to open the address in Chrome (not an in-app browser).
+
+## Keeping the Facebook stream steady (error -10053 / "session has been invalidated")
+
+That message means the secure connection from the laptop to Facebook was cut (Facebook, the network, an antivirus/VPN, or data stopped flowing for a moment).
+- The control room now **reconnects by itself** with the same stream key (status shows "Reconnecting in Ns… try N"). Recording on the laptop keeps going. If Facebook's Live Producer still shows your live, it usually resumes; if not, click Go Live again there.
+- Use the **open-control-room.bat** shortcut (in the relay folder). It opens the control room in its own window with background throttling turned off, so the stream keeps flowing when you switch windows. Do not minimize that window.
+- Use a wired network cable if you can; set quality to Normal or Weak if your upload is under ~5 Mbps.
+- Update FFmpeg (gyan.dev "release essentials" build) and allow ffmpeg/node in your antivirus and VPN.
+- Reset the stream key in Facebook if it was ever shared.
+
+## Phone cameras in the background
+Phones and browsers stop cameras when the screen locks or the page is hidden. The camera page now restarts its camera automatically and has a **small-window (Picture-in-Picture)** button to keep running while you use other apps. Keep the phone plugged in, screen on, and Do Not Disturb enabled. Not guaranteed on every phone; for rock-solid use keep the camera page in front.
+
+## Monitors
+The PROGRAM / NEXT labels now sit under the pictures. The monitors scroll with the page; tick "Pin monitors" to keep them on screen.

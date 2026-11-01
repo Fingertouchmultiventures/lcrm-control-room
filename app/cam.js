@@ -114,6 +114,30 @@
     });
   }
 
+  /* ---- keep feeding the control room: bring the camera back if the phone/browser switched it off ---- */
+  let mutedSince = 0, reviving = false;
+  async function revive() {
+    if (reviving || stopped || !stream) return; reviving = true;
+    try {
+      const old = stream, next = await getStream(), vt = next.getVideoTracks()[0];
+      const vs = pc && pc.getSenders().find(s => s.track && s.track.kind === 'video'); if (vs) await vs.replaceTrack(vt);
+      old.getTracks().forEach(t => { try { t.stop(); } catch (e) {} }); stream = next; $('preview').srcObject = next; checkOrientation(); mutedSince = 0; setStatus('Camera restarted - feeding the control room', 'ok');
+    } catch (e) { setStatus('Camera is off (' + e.message + '). Bring this page to the front.', 'bad'); }
+    reviving = false;
+  }
+  setInterval(() => {
+    if (stopped || !stream) return; const vt = stream.getVideoTracks()[0];
+    if (!vt || vt.readyState === 'ended') return revive();
+    if (vt.muted) { mutedSince = mutedSince || Date.now(); if (Date.now() - mutedSince > 3000 && document.visibilityState === 'visible') revive(); } else mutedSince = 0;
+  }, 2000);
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && !stopped && stream) setTimeout(() => { const vt = stream.getVideoTracks()[0]; if (!vt || vt.readyState === 'ended' || vt.muted) revive(); }, 600); });
+  // small floating window keeps the camera running when you leave this page (Chrome on Android, desktop Chrome/Edge)
+  const pipOk = !!(document.pictureInPictureEnabled && $('preview').requestPictureInPicture);
+  $('pip').hidden = !pipOk;
+  async function goPip() { try { await $('preview').play(); await $('preview').requestPictureInPicture(); shotMsg('Camera is in a small window. You can leave this page.'); } catch (e) { shotMsg('Could not make the small window: ' + e.message); } }
+  $('pip').onclick = goPip;
+  try { navigator.mediaSession.setActionHandler('enterpictureinpicture', goPip); $('preview').autoPictureInPicture = true; } catch (e) {}
+
   async function flip() {
     facing = facing === 'user' ? 'environment' : 'user';
     $('facing').value = facing; store.set('lcrm_cam_facing', facing);

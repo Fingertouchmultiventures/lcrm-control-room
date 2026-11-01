@@ -776,6 +776,7 @@ function panZoom(dx, dy) { const src = zoomTarget(); if (!src || (src.zoom || 1)
 $('#zIn').onclick = () => setZoom(0.5); $('#zOut').onclick = () => setZoom(-0.5); $('#zReset').onclick = () => setZoom(0, true);
 // double-click anything in the lists: the first click already made it NEXT, this sends it on air at once
 document.addEventListener('dblclick', e => { if (!safeMode) return; const n = e.target.closest('.item'); if (n && !e.target.closest('button')) take(); });
+$('#pinMon').checked = store.get('pinMon', '') === '1'; $('.stage').classList.toggle('pinned', $('#pinMon').checked); $('#pinMon').onchange = e => { $('.stage').classList.toggle('pinned', e.target.checked); store.set('pinMon', e.target.checked ? '1' : ''); e.target.blur(); };
 $('#btnKeys').onclick = () => $('#dlgKeys').showModal(); $('#closeKeys').onclick = () => $('#dlgKeys').close();
 
 
@@ -1022,7 +1023,7 @@ $('#clearImgs').onclick = () => { settings.bgImage = ''; settings.logo = ''; bgI
 $('#closeLook').onclick = () => $('#dlgLook').close();
 
 /* ---------------------------------------------------------------- Facebook Live via the relay */
-let ws = null, rec = null, streaming = false, streamStart = 0, stopping = false;
+let ws = null, rec = null, streaming = false, streamStart = 0, stopping = false, userLive = false, retryN = 0, retryTimer = null, stableTimer = null;
 $('#fbKey').value = settings.rememberKey ? settings.key : ''; $('#rememberKey').checked = settings.rememberKey;
 $('#bitrate').value = String(settings.bitrate); $('#relayUrl').value = settings.relayUrl; $('#fbServer').value = settings.fbServer; $('#relayToken').value = settings.token;
 $('#fbLink').href = cfg.facebookProducerUrl || 'https://www.facebook.com/live/producer';
@@ -1041,38 +1042,49 @@ function setLiveUi(on) {
 function updateLiveClock() { $('#liveBadge').textContent = '● LIVE ' + fmtTime(Math.round((Date.now() - streamStart) / 1000)); }
 function pickMime() { return ['video/webm;codecs=vp8,opus', 'video/webm;codecs=vp9,opus', 'video/webm'].find(m => window.MediaRecorder && MediaRecorder.isTypeSupported(m)); }
 
-function startStream() {
+function startStream(isRetry) {
+  if (isRetry !== true) { retryN = 0; userLive = true; streamStart = 0; clearTimeout(retryTimer); }
   resumeAudio();
-  const key = $('#fbKey').value.trim(); if (!key) return setStatus('Paste the stream key from Facebook first (click the link above the box).', 'bad');
+  const key = $('#fbKey').value.trim(); if (!key) { userLive = false; return setStatus('Paste the stream key from Facebook first (click the link above the box).', 'bad'); }
   if (!window.MediaRecorder || !pickMime()) return setStatus('This browser cannot stream. Use Chrome or Edge.', 'bad');
   const url = settings.relayUrl + (settings.token ? (settings.relayUrl.includes('?') ? '&' : '?') + 'token=' + encodeURIComponent(settings.token) : '');
   setStatus('Connecting to the relay program…', 'warn'); $('#btnGoLive').disabled = true; stopping = false;
-  try { ws = new WebSocket(url); } catch (e) { $('#btnGoLive').disabled = false; return setStatus('The relay address is not valid.', 'bad'); }
+  try { ws = new WebSocket(url); } catch (e) { userLive = false; $('#btnGoLive').disabled = false; return setStatus('The relay address is not valid.', 'bad'); }
   const mine = ws; let opened = false;
   ws.onopen = () => { opened = true; mine.send(JSON.stringify({ cmd: 'start', server: settings.fbServer, key, bitrate: settings.bitrate, fps: 30 })); };
-  ws.onerror = () => { if (!opened && ws === mine) { $('#btnGoLive').disabled = false; setStatus('Cannot reach the relay at ' + settings.relayUrl + '. Is start.bat running on this laptop?', 'bad'); } };
-  ws.onclose = () => { if (ws === mine) { if (streaming && !stopping) endStream('The relay program closed.'); ws = null; $('#btnGoLive').disabled = false; } };
+  ws.onerror = () => { if (!opened && ws === mine) { if (isRetry === true && userLive) return dropped('the relay program is not answering'); userLive = false; $('#btnGoLive').disabled = false; setStatus('Cannot reach the relay at ' + settings.relayUrl + '. Is start.bat running on this laptop?', 'bad'); } };
+  ws.onclose = () => { if (ws === mine) { if (streaming && !stopping) return dropped('the relay program closed'); ws = null; $('#btnGoLive').disabled = false; } };
   ws.onmessage = ev => {
     let m; try { m = JSON.parse(ev.data); } catch (e) { return; }
     if (m.type === 'ready') beginRecording(mine);
-    else if (m.type === 'error') { setStatus(m.message, 'bad'); $('#btnGoLive').disabled = false; try { mine.close(); } catch (e) {} }
+    else if (m.type === 'error') { if (isRetry === true && userLive) return dropped(m.message); userLive = false; setStatus(m.message, 'bad'); $('#btnGoLive').disabled = false; try { mine.close(); } catch (e) {} }
     else if (m.type === 'stats') {
       const slow = m.speed && parseFloat(m.speed) < 0.9; const behind = mine.bufferedAmount > 4e6;
       setStatus(`Streaming · ${m.bitrate && m.bitrate !== 'N/A' ? m.bitrate.replace('kbits/s', ' kbps') : '…'}` + (slow ? ' · computer is too slow, lower the quality' : '') + (behind ? ' · internet upload too slow' : ''), slow || behind ? 'warn' : 'ok');
-    } else if (m.type === 'ended') { const tail = (m.tail || []).join(' ').slice(0, 200); endStream(m.reason + (m.code && !stopping && tail ? ' (' + tail + ')' : '')); }
+    } else if (m.type === 'ended') { const tail = (m.tail || []).join(' ').slice(0, 200); dropped(m.reason + (m.code && !stopping && tail ? ' (' + tail + ')' : '')); }
   };
+}
+// Facebook/the network dropped the stream: put it back automatically (same key) instead of ending the broadcast
+function dropped(reason) {
+  try { rec && rec.state !== 'inactive' && rec.stop(); } catch (e) {} rec = null; try { ws && ws.close(); } catch (e) {} ws = null; clearTimeout(stableTimer);
+  if (!userLive || stopping) return endStream(reason);
+  if (retryN >= 60) { userLive = false; return endStream((reason || '') + ' - gave up after many tries. Click Start Facebook Live again.'); }
+  retryN++; const delay = Math.min(2 + retryN * 2, 15), short = String(reason || '').replace(/\[[^\]]*\]/g, '').replace(/\s+/g, ' ').trim().slice(0, 90);
+  setLiveUi(true); $('#btnGoLive').disabled = false; $('#liveBadge').textContent = '● RECONNECTING';
+  setStatus(`The connection to Facebook dropped${short ? ' (' + short + ')' : ''}. Reconnecting in ${delay}s… (try ${retryN}). Recording on this laptop is not affected.`, 'warn');
+  clearTimeout(retryTimer); retryTimer = setTimeout(() => { if (userLive && !stopping) startStream(true); }, delay * 1000);
 }
 function beginRecording(sock) {
   const stream = new MediaStream([...progStream.getVideoTracks(), ...dest.stream.getAudioTracks()]);
   rec = new MediaRecorder(stream, { mimeType: pickMime(), videoBitsPerSecond: Math.round(settings.bitrate * 1000 * 1.15), audioBitsPerSecond: 128000 });
   rec.ondataavailable = e => { if (e.data && e.data.size && sock.readyState === 1) sock.send(e.data); };
   rec.onerror = () => endStream('The recorder stopped unexpectedly.');
-  rec.start(250); streamStart = Date.now(); setLiveUi(true); $('#btnGoLive').disabled = false;
+  rec.start(250); if (!streamStart) streamStart = Date.now(); clearTimeout(stableTimer); stableTimer = setTimeout(() => { retryN = 0; }, 30000); setLiveUi(true); $('#btnGoLive').disabled = false;
   setStatus('Sending to Facebook… In Facebook Live Producer, wait for the preview, then click “Go Live”.', 'ok');
 }
 function stopStream() {
   if (!confirm('Stop the Facebook live broadcast?')) return;
-  stopping = true; try { rec && rec.state !== 'inactive' && rec.stop(); } catch (e) {}
+  userLive = false; clearTimeout(retryTimer); stopping = true; try { rec && rec.state !== 'inactive' && rec.stop(); } catch (e) {}
   try { ws && ws.readyState === 1 && ws.send(JSON.stringify({ cmd: 'stop' })); } catch (e) {}
   setStatus('Stopping…', 'warn');
   setTimeout(() => { if (streaming) endStream('Stopped.'); }, 2500);
