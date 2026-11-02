@@ -936,28 +936,66 @@ paintExtUi();
 /* ---------------------------------------------------------------- record on this computer (no internet needed) */
 let localRec = null, recStart = 0, recBytes = 0, recW = null, recChunks = [], recTimer = null;
 function recName() { const d = new Date(); return `LCRM-service-${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}-${pad(d.getHours())}${pad(d.getMinutes())}.webm`; }
-async function startLocalRec() {
-  resumeAudio(); if (!window.MediaRecorder || !pickMime()) return toast('This browser cannot record. Use Chrome or Edge.');
-  if (!shotDir && window.showDirectoryPicker) { toast('Choose the folder where recordings are saved (once).'); await pickShotFolder(); }
-  recW = null; recChunks = []; recBytes = 0;
-  if (shotDir) { try {
-    if ((await shotDir.queryPermission({ mode: 'readwrite' })) !== 'granted' && (await shotDir.requestPermission({ mode: 'readwrite' })) !== 'granted') throw new Error('no permission');
-    const fh = await shotDir.getFileHandle(recName(), { create: true }); recW = await fh.createWritable();
-  } catch (e) { toast('Could not use the folder (' + e.message + '). Recording will be kept in memory instead - keep recordings short.'); } }
-  const stream = new MediaStream([...progStream.getVideoTracks(), ...dest.stream.getAudioTracks()]);
-  localRec = new MediaRecorder(stream, { mimeType: pickMime(), videoBitsPerSecond: 4000000, audioBitsPerSecond: 160000 });
-  let chain = Promise.resolve();
-  localRec.ondataavailable = e => { if (!e.data || !e.data.size) return; recBytes += e.data.size; if (recW) { const w = recW; chain = chain.then(() => w.write(e.data)).catch(() => {}); } else recChunks.push(e.data); localRec._chain = chain; };
-  localRec.onstop = async () => {
-    await (localRec._chain || chain); const name = recName();
-    if (recW) { try { await recW.close(); } catch (e) {} toast('Recording saved in “' + shotDir.name + '”.', 7000); }
-    else if (recChunks.length) { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob(recChunks, { type: 'video/webm' })); a.download = name; document.body.appendChild(a); a.click(); a.remove(); toast('Recording saved to Downloads.', 7000); }
-    recW = null; recChunks = []; localRec = null;
-  };
-  localRec.start(1000); recStart = Date.now(); $('#btnRec').classList.add('rec');
-  recTimer = setInterval(() => { const s = Math.round((Date.now() - recStart) / 1000); $('#btnRec').textContent = `■ Stop ${fmtTime(s).replace(/^00:/, '')} · ${(recBytes / 1048576).toFixed(0)} MB`; }, 1000); $('#btnRec').textContent = '■ Stop 00:00';
+function haveSound() { return !!(micStream && micStream.getAudioTracks().some(t => t.readyState === 'live') && !micMuted) || [...sources.values()].some(s => s.audioOn); }
+async function ensureSound() {   // a recording with no sound is useless: switch the microphone on if nothing is feeding the mix
+  if (haveSound()) return true;
+  if (store.get('mic', null) !== null || !micStream) { try { await micStart(); } catch (e) {} }
+  return haveSound();
 }
-function stopLocalRec() { clearInterval(recTimer); if (localRec && localRec.state !== 'inactive') localRec.stop(); $('#btnRec').classList.remove('rec'); $('#btnRec').textContent = '● Record'; }
+function recMime() { return ['video/webm;codecs=vp8,opus', 'video/webm;codecs=vp9,opus', 'video/webm'].find(m => MediaRecorder.isTypeSupported(m)); }
+let recMode = '', recWs = null, recSilentAt = 0, recSoundTimer = null;
+function connectRecRelay() {   // the relay program writes the file and turns it into a clean MP4 afterwards
+  return new Promise(ok => {
+    let done = false, w; const fin = v => { if (!done) { done = true; ok(v); } };
+    try { w = new WebSocket(settings.relayUrl + (settings.relayUrl.includes('?') ? '&' : '?') + 'mode=record' + (settings.token ? '&token=' + encodeURIComponent(settings.token) : '')); } catch (e) { return fin(null); }
+    w.binaryType = 'arraybuffer'; const t = setTimeout(() => { try { w.close(); } catch (e) {} fin(null); }, 2500);
+    w.onerror = () => { clearTimeout(t); fin(null); }; w.onclose = () => { clearTimeout(t); fin(null); };
+    w.onmessage = ev => { let m; try { m = JSON.parse(ev.data); } catch (e) { return; } if (m.type === 'hello') { clearTimeout(t); fin({ w, dir: m.dir }); } };
+  });
+}
+async function startLocalRec() {
+  resumeAudio(); if (!window.MediaRecorder || !recMime()) return toast('This browser cannot record. Use Chrome or Edge.');
+  const snd = await ensureSound(); if (!snd) toast('No sound input is on, so this recording will have NO SOUND. Click "Sound input" (Look & logo) or turn on a camera\'s Sound.', 9000);
+  const stream = new MediaStream([...progStream.getVideoTracks(), ...dest.stream.getAudioTracks()]);
+  const relay = await connectRecRelay();
+  if (relay) {
+    recMode = 'relay'; recWs = relay.w; let name = '';
+    relay.w.onmessage = ev => { let m; try { m = JSON.parse(ev.data); } catch (e) { return; }
+      if (m.type === 'recording') name = m.file;
+      else if (m.type === 'error') toast(m.message, 9000);
+      else if (m.type === 'converting') { $('#btnRec').textContent = 'Making your MP4…'; toast('Recording stopped. Making a clean MP4 - this takes a few minutes; keep the relay window open.', 8000); }
+      else if (m.type === 'recdone') { $('#btnRec').textContent = '● Record'; $('#btnRec').disabled = false; toast(m.mp4 ? 'Your recording is ready (MP4, plays everywhere): ' + m.mp4 : 'Recording kept: ' + m.raw + (m.note ? ' - ' + m.note : ''), 20000); recWs = null; } };
+    relay.w.onclose = () => { if (recWs === relay.w) { recWs = null; if (localRec) toast('The relay closed - stopping the recording. The part already recorded is saved in the relay\'s recordings folder.', 9000); if (localRec) stopLocalRec(); } };
+    relay.w.send(JSON.stringify({ cmd: 'record' }));
+    localRec = new MediaRecorder(stream, { mimeType: recMime(), videoBitsPerSecond: 4000000, audioBitsPerSecond: 160000 });
+    localRec.ondataavailable = e => { if (e.data && e.data.size && relay.w.readyState === 1) { recBytes += e.data.size; relay.w.send(e.data); } };
+    localRec.onstop = () => { try { relay.w.send(JSON.stringify({ cmd: 'stop' })); } catch (e) {} localRec = null; };
+    localRec.start(500);
+    toast('Recording to the relay folder: ' + relay.dir, 7000);
+  } else {
+    recMode = 'folder';
+    if (!shotDir && window.showDirectoryPicker) { toast('Relay is not running, so recording to a folder on this computer. Choose the folder (once).'); await pickShotFolder(); }
+    recW = null; recChunks = []; recBytes = 0;
+    if (shotDir) { try {
+      if ((await shotDir.queryPermission({ mode: 'readwrite' })) !== 'granted' && (await shotDir.requestPermission({ mode: 'readwrite' })) !== 'granted') throw new Error('no permission');
+      const fh = await shotDir.getFileHandle(recName(), { create: true }); recW = await fh.createWritable();
+    } catch (e) { toast('Could not use the folder (' + e.message + '). Recording will be kept in memory instead - keep recordings short.'); } }
+    localRec = new MediaRecorder(stream, { mimeType: recMime(), videoBitsPerSecond: 4000000, audioBitsPerSecond: 160000 });
+    let chain = Promise.resolve();
+    localRec.ondataavailable = e => { if (!e.data || !e.data.size) return; recBytes += e.data.size; if (recW) { const w = recW; chain = chain.then(() => w.write(e.data)).catch(() => {}); } else recChunks.push(e.data); localRec._chain = chain; };
+    localRec.onstop = async () => {
+      await (localRec._chain || chain); const name = recName();
+      if (recW) { try { await recW.close(); } catch (e) {} toast('Recording saved in “' + shotDir.name + '”. (Start the relay next time for a cleaner MP4.)', 9000); }
+      else if (recChunks.length) { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob(recChunks, { type: 'video/webm' })); a.download = name; document.body.appendChild(a); a.click(); a.remove(); toast('Recording saved to Downloads.', 7000); }
+      recW = null; recChunks = []; localRec = null;
+    };
+    localRec.start(1000);
+  }
+  recBytes = 0; recStart = Date.now(); recSilentAt = 0; $('#btnRec').classList.add('rec');
+  recTimer = setInterval(() => { const s = Math.round((Date.now() - recStart) / 1000); const quiet = s > 6 && level < 0.01; recSilentAt = quiet ? (recSilentAt || Date.now()) : 0;
+    $('#btnRec').textContent = `■ Stop ${fmtTime(s).replace(/^00:/, '')} · ${(recBytes / 1048576).toFixed(0)} MB` + (recSilentAt && Date.now() - recSilentAt > 5000 ? ' · ⚠ NO SOUND' : ''); }, 1000); $('#btnRec').textContent = '■ Stop 00:00';
+}
+function stopLocalRec() { clearInterval(recTimer); if (localRec && localRec.state !== 'inactive') { try { localRec.requestData(); } catch (e) {} localRec.stop(); } $('#btnRec').classList.remove('rec'); $('#btnRec').textContent = recMode === 'relay' ? 'Saving…' : '● Record'; if (recMode === 'relay') { $('#btnRec').disabled = true; setTimeout(() => { if ($('#btnRec').disabled && !recWs) { $('#btnRec').disabled = false; $('#btnRec').textContent = '● Record'; } }, 4000); } }
 function toggleRec() { localRec ? stopLocalRec() : startLocalRec(); }
 $('#btnRec').onclick = e => { e.target.blur(); toggleRec(); };
 addEventListener('beforeunload', e => { if (localRec) { e.preventDefault(); e.returnValue = ''; } });
@@ -1105,7 +1143,7 @@ function updateLiveClock() { $('#liveBadge').textContent = '● LIVE ' + fmtTime
 function pickMime() { return ['video/webm;codecs=vp8,opus', 'video/webm;codecs=vp9,opus', 'video/webm'].find(m => window.MediaRecorder && MediaRecorder.isTypeSupported(m)); }
 
 function startStream(isRetry) {
-  if (isRetry !== true) { retryN = 0; userLive = true; streamStart = 0; clearTimeout(retryTimer); }
+  if (isRetry !== true) { retryN = 0; userLive = true; streamStart = 0; clearTimeout(retryTimer); ensureSound().then(ok => { if (!ok) toast('No sound input is on - Facebook will have NO SOUND. Click "Sound input" (Look & logo) or turn on a camera\'s Sound.', 9000); }); }
   resumeAudio();
   const key = $('#fbKey').value.trim(); if (!key) { userLive = false; return setStatus('Paste the stream key from Facebook first (click the link above the box).', 'bad'); }
   if (!window.MediaRecorder || !pickMime()) return setStatus('This browser cannot stream. Use Chrome or Edge.', 'bad');

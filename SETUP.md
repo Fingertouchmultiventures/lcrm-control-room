@@ -180,3 +180,9 @@ The PROGRAM / NEXT labels now sit under the pictures. The monitors scroll with t
 - **Ping** (speech icon on each camera tile, or "Ping all"): send a quick message such as "Zoom in a little" to a phone; the handler taps "Got it" or "Can't now" and you see the answer.
 - **Transitions:** Fade, Cut, Dip to black/white, 4 wipes, 3 slides, zoom in/out, iris, barn doors, blinds, or Random (the "Transition" menu).
 - **Photos:** when you press the shutter on a phone that is on air, the control room asks that phone for a full-resolution still from its real camera (sharp, focused), then adds your frame. If the phone does not answer within 6 seconds it falls back to the video picture. Hold the phone steady for a moment; a blurred scene cannot be fixed afterwards.
+
+## Recording the service (for posting later)
+- Press **Record** (or R). With the relay running, the recording is written to the **relay\recordings** folder (change it with the REC_DIR setting). It is saved at once as a `.webm`, and when you press Stop the relay turns it into a clean **.mp4** (steady 30 fps, sound in sync) that plays everywhere and can be uploaded to Facebook. Keep the relay window open until the "recording is ready" message appears (a few minutes for a long service).
+- It records what the **program monitor** shows plus the sound mix, not Facebook. It works whether or not you are live, and keeps going if Facebook drops.
+- **Sound:** the recording only has sound if a sound input is on. Pressing Record or Go Live now switches the microphone on automatically if nothing is feeding the mix, and the Record button shows "⚠ NO SOUND" if the level stays silent. Check the sound meter before the service.
+- If the relay is not running, recording falls back to a folder on this computer (a rougher WebM file).

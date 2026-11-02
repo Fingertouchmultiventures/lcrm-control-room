@@ -1,2 +1,4 @@
-relay/lan-cert/
-relay/ffmpeg.exe
+node_modules/
+*.flv
+*.zip
+relay/recordings/

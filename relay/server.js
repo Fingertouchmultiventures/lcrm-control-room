@@ -121,7 +121,7 @@ function onUpgrade(req, socket, fromLan) {
   }
   const accept = crypto.createHash('sha1').update(key + GUID).digest('base64');
   socket.write('HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: ' + accept + '\r\n\r\n');
-  const c = new Conn(socket); if (isSig) signalSession(c); else session(c);
+  const c = new Conn(socket); if (isSig) signalSession(c); else if (url.searchParams.get('mode') === 'record') recordSession(c); else session(c);
 }
 server.on('upgrade', (req, socket) => onUpgrade(req, socket, false));
 
@@ -157,6 +157,51 @@ function signalSession(conn) {
     else if (m.op === 'unsub') s.subs.delete(m.id);
   };
   conn.onClose = () => { sigSessions.delete(s); s.dc.forEach(p => setAt(p, null)); notifyAll(); };
+}
+
+
+// ---------- recording of the service on this laptop (separate from Facebook) ----------
+// The browser sends the picture+sound; we write it to disk at once (safe even if something crashes),
+// then turn it into a clean, smooth MP4 (fixed 30 fps, sound kept in sync) that plays everywhere and can be uploaded to Facebook.
+const REC_DIR = process.env.REC_DIR || path.join(__dirname, 'recordings');
+function recordSession(conn) {
+  let out = null, raw = '', base = '', bytes = 0, finished = false;
+  conn.send({ type: 'hello', ffmpeg: FFMPEG_VERSION, dir: REC_DIR });
+  conn.onText = txt => {
+    let m; try { m = JSON.parse(txt); } catch (e) { return; }
+    if (m.cmd === 'record' && !out) {
+      try { fs.mkdirSync(REC_DIR, { recursive: true }); } catch (e) {}
+      const d = new Date(), p = n => String(n).padStart(2, '0');
+      base = 'LCRM-service-' + d.getFullYear() + p(d.getMonth() + 1) + p(d.getDate()) + '-' + p(d.getHours()) + p(d.getMinutes()) + p(d.getSeconds());
+      raw = path.join(REC_DIR, base + '.webm');
+      try { out = fs.createWriteStream(raw); out.on('error', e => conn.send({ type: 'error', message: 'Cannot write to ' + REC_DIR + ': ' + e.message })); }
+      catch (e) { return conn.send({ type: 'error', message: 'Cannot write to ' + REC_DIR + ': ' + e.message }); }
+      console.log(new Date().toLocaleTimeString(), 'Recording ->', raw); conn.send({ type: 'recording', file: raw });
+    } else if (m.cmd === 'stop') finish();
+  };
+  conn.onBinary = buf => { if (out) { bytes += buf.length; out.write(buf); } };
+  conn.onClose = () => finish();
+  function finish() {
+    if (finished || !out) return; finished = true;
+    const o = out; out = null;
+    o.end(() => {
+      if (!FFMPEG_OK || bytes < 2000) return conn.send({ type: 'recdone', raw, mp4: null, note: FFMPEG_OK ? 'Nothing was recorded.' : 'FFmpeg was not found, so the raw recording was kept as it is.' });
+      const mp4 = path.join(REC_DIR, base + '.mp4');
+      conn.send({ type: 'converting', raw });
+      const args = ['-hide_banner', '-loglevel', 'error', '-nostdin', '-y', '-fflags', '+genpts', '-i', raw,
+        '-vf', 'fps=30', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-pix_fmt', 'yuv420p', '-g', '60',
+        '-af', 'aresample=async=1:first_pts=0', '-c:a', 'aac', '-b:a', '160k', '-ar', '48000', '-movflags', '+faststart', mp4];
+      const p = spawn(FFMPEG, args, { stdio: ['ignore', 'ignore', 'pipe'] }); let err = '';
+      p.stderr.on('data', d => { err += d; });
+      p.on('error', e => conn.send({ type: 'recdone', raw, mp4: null, note: 'Could not start FFmpeg: ' + e.message }));
+      p.on('close', code => {
+        let ok = false; try { ok = code === 0 && fs.statSync(mp4).size > 1000; } catch (e) {}
+        console.log(new Date().toLocaleTimeString(), 'Recording ready:', ok ? mp4 : raw, ok ? '' : '(conversion failed: ' + err.slice(-200) + ')');
+        conn.send({ type: 'recdone', raw, mp4: ok ? mp4 : null, note: ok ? '' : 'Conversion failed, the raw recording was kept.' });
+        setTimeout(() => { try { conn.socket.end(); } catch (e) {} }, 500);
+      });
+    });
+  }
 }
 
 // ---------- one streaming session per browser connection ----------
